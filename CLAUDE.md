@@ -25,6 +25,9 @@ huggingface.co, us.aws.cdn.hf.co (modèles Whisper ; mettre `HF_HUB_DISABLE_XET=
 - `detourage.py` : format « visuels en haut / personne en bas » — re-détoure la moitié
   basse sur noir pur (contour lissé, restes de mur supprimés) + débruitage et netteté.
 
+## Rangement
+- Les vidéos terminées vont dans le dossier `vidéos finales/` du dépôt.
+
 ## Préférences
 - Réponses en français.
 - Format vertical 9:16 (réels/TikTok).
