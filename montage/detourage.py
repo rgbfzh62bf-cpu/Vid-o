@@ -73,7 +73,7 @@ def process(frame):
     return frame
 
 
-SHARP = "hqdn3d=1.5:1.5:3:3,cas=0.55"
+SHARP = "unsharp=7:7:1.2:5:5:0,cas=0.6"
 
 if a.test is not None:
     raw = subprocess.check_output(["ffmpeg", "-v", "error", "-ss", str(a.test), "-i", a.src,
