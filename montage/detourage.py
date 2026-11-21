@@ -87,7 +87,7 @@ dec = subprocess.Popen(["ffmpeg", "-v", "error", "-i", a.src, "-f", "rawvideo",
 enc = subprocess.Popen(["ffmpeg", "-v", "error", "-y", "-f", "rawvideo", "-pix_fmt", "rgb24",
                         "-s", f"{W}x{H}", "-r", "30", "-i", "-", "-i", a.src,
                         "-map", "0:v", "-map", "1:a", "-vf", SHARP + ",format=yuv420p",
-                        "-c:v", "libx264", "-preset", "medium", "-crf", "16",
+                        "-c:v", "libx264", "-preset", "medium", "-b:v", "17M", "-maxrate", "22M", "-bufsize", "34M",
                         "-c:a", "copy", "-movflags", "+faststart", a.out], stdin=subprocess.PIPE)
 n, t0 = 0, time.time()
 fs = W * H * 3
