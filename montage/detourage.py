@@ -6,7 +6,9 @@ Usage: python3 detourage.py SRC OUT [--test FRAME_SECONDS]
   existing cut-out (old background = 0), holes filled, leftover wall removed,
   outline smoothed, then composited onto pure black.
 - Captions sitting at the top of the bottom half (white text) are preserved.
-- The final encode applies light denoise + contrast-adaptive sharpening.
+- Full-screen shots (no black split-screen background) are matted with
+  RobustVideoMatting on the whole frame; captions/graphics are kept on top.
+- The final encode applies unsharp + contrast-adaptive sharpening.
 """
 import argparse, subprocess, sys, time
 import numpy as np, cv2
@@ -60,7 +62,73 @@ def matte(region):
     return al
 
 
+import onnxruntime as ort
+
+RVM_PATH = "/home/user/models/rvm.onnx"   # RobustVideoMatting mobilenetv3 (GitHub release v1.0.0)
+_sess = None
+_rec = None
+FW, FH = 1080, 1920                       # inference size for full-screen shots
+
+
+def rvm_alpha(frame, reset=False):
+    """Full-frame AI matting (temporally consistent)."""
+    global _sess, _rec
+    if _sess is None:
+        _sess = ort.InferenceSession(RVM_PATH, providers=["CPUExecutionProvider"])
+    if reset or _rec is None:
+        _rec = [np.zeros((1, 1, 1, 1), np.float32)] * 4
+    small = cv2.resize(frame, (FW, FH), interpolation=cv2.INTER_AREA)
+    x = (small.astype(np.float32) / 255).transpose(2, 0, 1)[None]
+    _, pha, *_rec = _sess.run(None, {"src": x, "r1i": _rec[0], "r2i": _rec[1], "r3i": _rec[2],
+                                     "r4i": _rec[3], "downsample_ratio": np.array([0.25], np.float32)})
+    al = cv2.resize(pha[0, 0], (W, H), interpolation=cv2.INTER_CUBIC)
+    # edge-aware refinement on full-res luma, then clean the soft fringe
+    g = cv2.cvtColor(frame, cv2.COLOR_RGB2GRAY).astype(np.float32) / 255
+    al = cv2.ximgproc.guidedFilter(g, np.clip(al, 0, 1), 6, 1e-3)
+    al = np.clip((al - 0.08) / 0.84, 0, 1)
+    # keep only the main body (drop specks)
+    n, lab, st, _ = cv2.connectedComponentsWithStats((al > 0.5).astype(np.uint8))
+    if n > 2:
+        big = 1 + np.argmax(st[1:, cv2.CC_STAT_AREA])
+        keep = cv2.dilate((lab == big).astype(np.uint8), np.ones((25, 25), np.uint8))
+        al *= keep
+    return al
+
+
+def overlay_mask(frame):
+    """Graphics drawn on top of the person (white captions, coloured pyramid)."""
+    f = frame.astype(np.int16)
+    mx, mn = f.max(2), f.min(2)
+    white = mn > 185
+    sat = (mx - mn) / np.maximum(mx, 1)
+    colour = (sat > 0.62) & (mx > 150)
+    m = (white | colour).astype(np.uint8)
+    m = cv2.morphologyEx(m, cv2.MORPH_OPEN, np.ones((3, 3), np.uint8))
+    # only keep real graphic blobs, not isolated bright skin pixels
+    m = cv2.dilate(m, np.ones((5, 5), np.uint8)).astype(np.float32)
+    return cv2.GaussianBlur(m, (0, 0), 1.2)
+
+
+def is_fullscreen(frame):
+    """Split-screen shots have an exactly-black old background in the bottom half."""
+    reg = frame[Y0 + 600:H - 200:8, ::8]
+    return (reg.max(axis=2) == 0).mean() < 0.35
+
+
+_prev_full = False
+
+
 def process(frame):
+    global _prev_full
+    if is_fullscreen(frame):
+        al = rvm_alpha(frame, reset=not _prev_full)
+        if not _prev_full:      # warm up the recurrent state on the first frame of the shot
+            for _ in range(3):
+                al = rvm_alpha(frame)
+        _prev_full = True
+        al = np.maximum(al, overlay_mask(frame))[..., None]
+        return (frame.astype(np.float32) * al).astype(np.uint8)
+    _prev_full = False
     reg = frame[Y0:].copy()
     al = matte(reg)[..., None]
     out = (reg.astype(np.float32) * al).astype(np.uint8)
