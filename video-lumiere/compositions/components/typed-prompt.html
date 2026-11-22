@@ -262,7 +262,7 @@
               return out;
             }
             function chunkGap(chunk) {
-              if (cadence === "uniform") return chunk.length * 0.02;
+              if (cadence === "uniform") return chunk.length * 0.016;
               return chunk.length * (0.05 + rnd() * 0.04);
             }
 
@@ -284,7 +284,7 @@
                 if (cueList[wordIndex] != null) {
                   t = Math.max(t, cueList[wordIndex]);
                 } else if (wordIndex > 0) {
-                  t += cadence === "uniform" ? 0.11 : 0.1 + rnd() * 0.1;
+                  t += cadence === "uniform" ? 0.04 : 0.1 + rnd() * 0.1;
                 }
                 chunksOf(typedWord).forEach(function (chunk) {
                   t += chunkGap(chunk);
