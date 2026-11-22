@@ -21,7 +21,7 @@ n=max(1e-6,(dx*dx+dy*dy)**0.5); M=1-s*(dx*xn+dy*yn)/n*0.5 if s else np.ones_like
 if v: M=M*(1-v*np.clip(((xn/1.3)**2+((yn+0.4)/1.5)**2),0,1))
 M=(M*E_)[...,None]*np.float32(g)
 lut=lambda a:255*np.clip(a/255,0,1)**gam
-r=subprocess.Popen(['ffmpeg','-v','error','-i',W+f'seg/s{i}.mp4','-f','rawvideo','-pix_fmt','rgb24','-'],stdout=subprocess.PIPE)
+r=subprocess.Popen(['ffmpeg','-v','error','-i',W+f'{SEG}/s{i}.mp4','-f','rawvideo','-pix_fmt','rgb24','-'],stdout=subprocess.PIPE)
 p=subprocess.Popen(['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s',f'{w}x{h}','-r','30','-i','-','-c:v','libx264','-crf','14','-preset','slow','-pix_fmt','yuv420p',W+f'{OUT}/o{i}.mp4'],stdin=subprocess.PIPE)
 while True:
   b=r.stdout.read(h*w*3)
