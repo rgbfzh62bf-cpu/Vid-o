@@ -15,6 +15,11 @@
       "name": "typed-prompt",
       "type": "hyperframes:component",
       "target": "compositions/components/typed-prompt.html"
+    },
+    {
+      "name": "spring-pop",
+      "type": "hyperframes:component",
+      "target": "compositions/components/spring-pop.html"
     }
   ]
 }
