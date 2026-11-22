@@ -14,13 +14,15 @@ S={'rim':(0.97,(0.92,0.98,1.10),(1,0,0.16),0.14,1.05),
    'soft':(1.07,(1.02,1.0,0.98),(0,-0.3,0.05),0.0,0.94),
    'golden':(1.04,(1.15,1.03,0.80),(1,-0.4,0.10),0.04,1.0)}[st]
 E_,g,(dx,dy,s),v,gam=S
-h,w=1920,1080; y,x=np.mgrid[0:h,0:w].astype(np.float32); xn=(x/w-0.5)*2; yn=(y/h-0.5)*2
+import os,json
+SEG=os.environ.get('SEG','seg'); OUT=os.environ.get('OUT','out')
+h,w=map(int,subprocess.check_output(['ffprobe','-v','error','-select_streams','v:0','-show_entries','stream=height,width','-of','csv=p=0:s=x',W+f'{SEG}/s{i}.mp4']).decode().strip().split('x')[::-1]); y,x=np.mgrid[0:h,0:w].astype(np.float32); xn=(x/w-0.5)*2; yn=(y/h-0.5)*2
 n=max(1e-6,(dx*dx+dy*dy)**0.5); M=1-s*(dx*xn+dy*yn)/n*0.5 if s else np.ones_like(xn)
 if v: M=M*(1-v*np.clip(((xn/1.3)**2+((yn+0.4)/1.5)**2),0,1))
 M=(M*E_)[...,None]*np.float32(g)
 lut=lambda a:255*np.clip(a/255,0,1)**gam
 r=subprocess.Popen(['ffmpeg','-v','error','-i',W+f'seg/s{i}.mp4','-f','rawvideo','-pix_fmt','rgb24','-'],stdout=subprocess.PIPE)
-p=subprocess.Popen(['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s','1080x1920','-r','30','-i','-','-c:v','libx264','-crf','14','-preset','slow','-pix_fmt','yuv420p',W+f'out/o{i}.mp4'],stdin=subprocess.PIPE)
+p=subprocess.Popen(['ffmpeg','-v','error','-y','-f','rawvideo','-pix_fmt','rgb24','-s',f'{w}x{h}','-r','30','-i','-','-c:v','libx264','-crf','14','-preset','slow','-pix_fmt','yuv420p',W+f'{OUT}/o{i}.mp4'],stdin=subprocess.PIPE)
 while True:
   b=r.stdout.read(h*w*3)
   if len(b)<h*w*3: break
