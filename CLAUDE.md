@@ -31,6 +31,10 @@ huggingface.co, us.aws.cdn.hf.co (modèles Whisper ; mettre `HF_HUB_DISABLE_XET=
 
 ## Rangement
 - Les vidéos terminées vont dans le dossier `vidéos finales/` du dépôt.
+- Dossier Drive de destination « VIDÉOS FINALES » (id `1K-LeQe14q5eoioX9NVCneYNbeWSxmW2g`) :
+  https://drive.google.com/drive/folders/1K-LeQe14q5eoioX9NVCneYNbeWSxmW2g
+  Limites constatées : le connecteur Google Drive refuse les fichiers > 10 Mo, et le
+  dossier a renvoyé `canAddChildren: false` pour le compte connecté.
 
 ## Préférences
 - Réponses en français.
