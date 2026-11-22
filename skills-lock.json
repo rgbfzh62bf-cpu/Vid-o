@@ -43,33 +43,12 @@
       "skillPath": "skills/media-use/SKILL.md",
       "computedHash": "92dd44f9a4271af5e8d20950dfb977e0147a3dbcf8335360ed13d825244aca8c"
     },
-    "relight": {
-      "source": "prime-skills/runcomfy-agent-skills",
-      "commit": "fca19ae084c2ae4667f5c8affbb99da5103d5832",
-      "sourceType": "github",
-      "skillPath": "relight/SKILL.md",
-      "computedHash": "fe5c0d8e80c2705092fd76e348994ca4aaa49ea0cbea761aba9af82f3c0964cf"
-    },
     "reverse-any-video": {
       "source": "heygen-com/hyperframes",
       "commit": "71dc6f2fe1fdbd797ea72c35a420f649ba88a905",
       "sourceType": "github",
       "skillPath": "skills/reverse-any-video/SKILL.md",
       "computedHash": "ff697348c4f2b0590f156b939fcf7e550c7a17bc40bf210d07e71ccbd42db753"
-    },
-    "runcomfy-cli": {
-      "source": "prime-skills/runcomfy-agent-skills",
-      "commit": "fca19ae084c2ae4667f5c8affbb99da5103d5832",
-      "sourceType": "github",
-      "skillPath": "runcomfy-cli/SKILL.md",
-      "computedHash": "7f472efd73f4172515f3301d6e06427784da690f58605a7268d8573a0b37a91b"
-    },
-    "video-edit": {
-      "source": "agentspace-so/runcomfy-skills",
-      "commit": "94bff26ecaa69dd425c7dffbf6479498672a3894",
-      "sourceType": "github",
-      "skillPath": "video-edit/SKILL.md",
-      "computedHash": "b666f441d10b6b387be2c88fd1dba9954b8e5baf179c8f3ee85984654e2f51db"
     }
   }
 }
