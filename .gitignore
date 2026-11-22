@@ -1,2 +1,7 @@
 raw/
 work/
+video-lumiere/assets/*.mp4
+video-lumiere/assets/*.m4a
+video-lumiere/renders/
+video-lumiere/.hyperframes/
+video-lumiere/render.log
