@@ -26,7 +26,9 @@ ONLY=os.environ.get('ONLY')
 for suf in ([{'a':''}.get(ONLY,ONLY)] if ONLY else ['','_b','_c']):
   rel=load(W+f'relit/r{i}{suf}.png'); PS=float(os.environ.get('PS','22')); Gp=np.clip(b(ratio(rel,m,PS),PS*0.7),0.3,2.4); Gb=b(ratio(rel,n,60),40)
   CH=float(os.environ.get('CH','0.4')); neu=lambda G:(G.mean(2,keepdims=True)*(1-CH)+G*CH)
-  Gp=neu(Gp); Gb=neu(Gb); GL=Gp
+  Gp=neu(Gp); Gb=neu(Gb)
+  KP=float(os.environ.get('KP','1')); KB=float(os.environ.get('KB','1')); PMIN=float(os.environ.get('PMIN','0'))
+  Gp=np.maximum(1+KP*(Gp-1),PMIN); Gb=1+KB*(Gb-1); GL=Gp
   if os.environ.get('LOWFLAT'):
     sel=(m>0.5)&(yy[:,0][:,None]>hy1); GL=np.ones_like(Gp)*np.median(Gp[sel],axis=0)
   maps.append((Gp,Gb,GL))
