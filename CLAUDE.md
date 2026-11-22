@@ -15,6 +15,11 @@ Any video task (make, edit, cut, animate, caption, render, convert): load skills
 5. `reverse-any-video` when user gives a video to copy or recreate.
 New skill needed? Use `find-skills`.
 
+## Skill choice
+- Only free skills: no paid API, no paid account, no credits. Local tools or free tiers only.
+- Pick the best performers: high install count (1K+), reputable source, active repo.
+- No free option? Say so and propose a local workaround. Never install a paid one without asking.
+
 ## Token rules
 - Reuse registry blocks over custom code.
 - Read only needed file parts. No full-file dumps in chat.
