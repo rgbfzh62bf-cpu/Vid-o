@@ -1,0 +1,95 @@
+<!--
+  stickers: cut-out photo stickers that pop on each finger-snap cut and leave just before the next.
+  Motion follows the registry spring-pop component (back.out overshoot, separate opacity ease).
+  Photos: Openverse (CC BY / CC BY-SA / CC0), cut out locally with RMBG-1.4.
+-->
+<template>
+  <div id="root" data-composition-id="stickers" data-duration="21.566667" data-fps="30">
+    <style>
+      #root { position: absolute; inset: 0; overflow: hidden; pointer-events: none; }
+      #root .st { position: absolute; opacity: 0; transform-origin: 50% 60%; filter: drop-shadow(0 14px 22px rgba(0,0,0,.35)); }
+      #root .st img { display: block; width: 100%; height: auto; }
+      #root .badge { position: absolute; opacity: 0; padding: 18px 34px; border-radius: 999px; background: #fff; color: #111114;
+        font: 800 54px/1 Inter, sans-serif; letter-spacing: -0.5px; white-space: nowrap; box-shadow: 0 10px 24px rgba(0,0,0,.3); }
+      #root .badge.hot { background: #ff4d2e; color: #fff; }
+      #root .icon { position: absolute; opacity: 0; filter: drop-shadow(0 14px 22px rgba(0,0,0,.35)); }
+    </style>
+
+    <!-- 1 Manger léger sans maigrir ? -->
+    <div id="st-scale" class="st" style="left:745px; top:250px; width:300px;"><img src="assets/stk/scale.png" alt="balance" /></div>
+    <!-- 2 Les calories cachées -->
+    <div id="st-loupe" class="st" style="left:30px; top:330px; width:460px;"><img src="assets/stk/loupe.png" alt="loupe" /></div>
+    <!-- 3 Huile : 90 kcal la cuillère -->
+    <div id="st-oil" class="st" style="left:60px; top:300px; width:230px;"><img src="assets/stk/oil.png" alt="huile" /></div>
+    <div id="st-spoon" class="st" style="left:720px; top:600px; width:360px;"><img src="assets/stk/spoon.png" alt="cuillère" /></div>
+    <div id="bd-oil" class="badge hot" style="left:700px; top:420px;">+90 kcal</div>
+    <!-- 4 Jus d'orange = soda -->
+    <div id="st-oj" class="st" style="left:770px; top:300px; width:230px;"><img src="assets/stk/oj.png" alt="jus d'orange" /></div>
+    <div id="bd-oj" class="badge hot" style="left:60px; top:470px;">= un soda</div>
+    <!-- 5 Sauces : salade = burger -->
+    <div id="st-salad" class="st" style="left:700px; top:380px; width:340px;"><img src="assets/stk/salad.png" alt="salade" /></div>
+    <div id="st-burger" class="st" style="left:700px; top:330px; width:350px;"><img src="assets/stk/burger.png" alt="burger" /></div>
+    <!-- 6 Grignoter devant les écrans -->
+    <div id="st-chips" class="st" style="left:40px; top:360px; width:330px;"><img src="assets/stk/chips.png" alt="chips" /></div>
+    <!-- 7 Le week-end qui efface tout -->
+    <div id="st-pizza" class="st" style="left:40px; top:400px; width:320px;"><img src="assets/stk/pizza.png" alt="pizza" /></div>
+    <div id="st-beer" class="st" style="left:790px; top:330px; width:220px;"><img src="assets/stk/beer.png" alt="bière" /></div>
+    <!-- 8 Alcool : calories vides -->
+    <div id="st-wine" class="st" style="left:780px; top:320px; width:240px;"><img src="assets/stk/wine.png" alt="vin" /></div>
+    <div id="bd-wine" class="badge" style="left:50px; top:470px;">0 nutriment</div>
+    <!-- 9 Tes habitudes = tes résultats -->
+    <svg id="ic-check" class="icon" style="left:760px; top:400px;" width="250" height="250" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" fill="#22c55e" stroke="#fff" stroke-width="6" />
+      <path d="M28 52 L44 67 L73 36" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+    <!-- 10 Envoie ça à un ami -->
+    <svg id="ic-send" class="icon" style="left:760px; top:400px;" width="250" height="250" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="46" fill="#111114" stroke="#fff" stroke-width="6" />
+      <path d="M26 50 L74 30 L60 74 L50 56 Z" fill="#fff" stroke="#fff" stroke-width="3" stroke-linejoin="round" />
+    </svg>
+
+    <script src="assets/gsap.min.js"></script>
+    <script>
+      (function () {
+        var tl = gsap.timeline({ paused: true });
+        // shot boundaries = finger snaps
+        var T = [0, 1.733333, 3.633333, 5.966667, 8.233333, 10.766667, 12.366667, 14.033333, 16.633333, 18.933333, 21.566667];
+        function pop(sel, at, rot) {
+          tl.fromTo(sel, { scale: 0.5, rotation: rot - 10, y: 40 }, { scale: 1, rotation: rot, y: 0, duration: 0.42, ease: "back.out(1.9)" }, at);
+          tl.fromTo(sel, { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "power2.out" }, at);
+        }
+        function drift(sel, at, end, rot) {
+          tl.to(sel, { y: -14, rotation: rot + 2, duration: Math.max(0.2, end - at - 0.6), ease: "sine.inOut" }, at + 0.42);
+        }
+        function out(sel, end) {
+          tl.to(sel, { scale: 0.6, opacity: 0, duration: 0.14, ease: "power2.in" }, end - 0.16);
+        }
+        function show(sel, shot, delay, rot) {
+          var a = T[shot - 1] + 0.04 + delay, e = T[shot];
+          pop(sel, a, rot); drift(sel, a, e, rot); out(sel, e);
+        }
+        show("#st-scale", 1, 0, 6);
+        show("#st-loupe", 2, 0, -12);
+        show("#st-oil", 3, 0, -4);
+        show("#st-spoon", 3, 0.15, -14);
+        show("#bd-oil", 3, 0.35, 4);
+        show("#st-oj", 4, 0, 5);
+        show("#bd-oj", 4, 0.3, -4);
+        // salad turns into a burger halfway through the shot
+        var s5 = T[4] + 0.04, mid = T[4] + 1.15;
+        pop("#st-salad", s5, -6);
+        tl.to("#st-salad", { scale: 0.4, rotation: 20, opacity: 0, duration: 0.16, ease: "power2.in" }, mid - 0.16);
+        pop("#st-burger", mid, 6); drift("#st-burger", mid, T[5], 6); out("#st-burger", T[5]);
+        show("#st-chips", 6, 0, -8);
+        show("#st-pizza", 7, 0, -6);
+        show("#st-beer", 7, 0.15, 7);
+        show("#st-wine", 8, 0, 6);
+        show("#bd-wine", 8, 0.3, -4);
+        show("#ic-check", 9, 0, 0);
+        show("#ic-send", 10, 0, -8);
+        window.__timelines = window.__timelines || {};
+        window.__timelines["stickers"] = tl;
+      })();
+    </script>
+  </div>
+</template>
