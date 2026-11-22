@@ -15,6 +15,19 @@ Any video task (make, edit, cut, animate, caption, render, convert): load skills
 5. `reverse-any-video` when user gives a video to copy or recreate.
 New skill needed? Use `find-skills`.
 
+## Output format (always)
+Every video = Instagram Reel, unless user says otherwise.
+- 1080×1920, 9:16, 30 fps.
+- Safe zones: keep text/stickers out of top 250 px, bottom 420 px, right 140 px (IG UI).
+- Export: H.264 High, yuv420p, AAC 48 kHz 192k, loudness -14 LUFS, `+faststart`, max ~12 Mbps.
+
+## Audience (fiche avatar)
+All topics, scripts, on-screen words: written for this person, spoken to directly ("tu").
+- 20-35 ans.
+- Veut perdre du poids, ne sait pas comment s'y prendre.
+- Stagne malgré ses efforts.
+Speak to their frustration and confusion; simple, concrete, no jargon.
+
 ## Skill choice
 - Only free skills: no paid API, no paid account, no credits. Local tools or free tiers only.
 - Pick the best performers: high install count (1K+), reputable source, active repo.
