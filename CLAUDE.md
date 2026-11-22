@@ -17,10 +17,11 @@ New skill needed? Use `find-skills`.
 
 ## Output format (always)
 Every video = Instagram Reel, unless user says otherwise.
-- 4K vertical master: 2160×3840, 9:16, 30 fps. Keep source footage at full res end to end (never downscale raw to 1080p).
-- Composition stays 1080×1920; render with `--resolution portrait-4k --quality delivery`.
-- Safe zones (in 1080×1920 composition px): keep text/stickers out of top 250, bottom 420, right 140 (IG UI).
-- Export: H.264 High L5.1, yuv420p, ~40 Mbps, AAC 48 kHz 192k, loudness -14 LUFS, `+faststart`.
+- Deliver 1080×1920, 9:16, 30 fps (IG streams max 1080p; no 4K delivery).
+- Work from full-res source (4K raw) end to end; downscale only at final export (lanczos) for sharper result.
+- Safe zones (1080×1920 px): keep text/stickers out of top 250, bottom 420, right 140 (IG UI).
+- Export: H.264 High, yuv420p, CRF 17 max 15 Mbps, AAC 48 kHz 192k, loudness -14 LUFS, `+faststart`.
+- Tell user: enable "Importer en qualité maximale" in Instagram, upload on Wi-Fi.
 
 ## Audience (fiche avatar)
 All topics, scripts, on-screen words: written for this person, spoken to directly ("tu").
