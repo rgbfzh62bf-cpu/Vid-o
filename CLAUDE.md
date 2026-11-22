@@ -37,5 +37,7 @@ huggingface.co, us.aws.cdn.hf.co (modèles Whisper ; mettre `HF_HUB_DISABLE_XET=
   dossier a renvoyé `canAddChildren: false` pour le compte connecté.
 
 ## Préférences
+- Livraison : envoyer chaque vidéo finie dans la conversation (SendUserFile) ; l'utilisateur
+  la télécharge et la met lui-même dans le Drive « VIDÉOS FINALES ». Ne pas l'envoyer sur Drive.
 - Réponses en français.
 - Format vertical 9:16 (réels/TikTok).
