@@ -1,0 +1,29 @@
+# Crédits images (via Openverse)
+
+- b1f1: « Sneakers Lights » — Burst (CC0) https://stocksnap.io/photo/sneakers-lights-T2K6CXYMQ4
+- b1f2: « Grilled Chicken » — Krzysztof%20Puszczy%u0144ski (CC0) https://stocksnap.io/photo/grilled-chicken-34LMASJHCT
+- b1f3: « Girl Woman » — Alexandre Vanier (CC0) https://stocksnap.io/photo/girl-woman-46BMYP2BDJ
+- b1a1: « Bread Sausage » — Carissa Gan (CC0) https://stocksnap.io/photo/bread-sausage-EZ65X36DQV
+- b1a2: « Glass of Water 'eh » — CVIja(x) (BY-NC-SA) https://www.flickr.com/photos/191441905@N04/51903566814
+- b1a3: « Salad Lettuce » — Jeffrey Betts (CC0) https://stocksnap.io/photo/salad-lettuce-Z0133GNPXT
+- b1t1: « お弁当 / lunch box » — CookieM (BY-NC-ND) https://www.flickr.com/photos/83776439@N00/19031544498
+- b1t2: « Pizza Cheese » — Peter Belch (CC0) https://stocksnap.io/photo/pizza-cheese-L1S7QIJIAT
+- b1t3: « Samsung Smartphone » — Wilfred Iven (CC0) https://stocksnap.io/photo/samsung-smartphone-PPAI8G4ADT
+- b2f1: « Free gym dumbbell floor photo » — ? (CC0) https://www.rawpixel.com/image/5920917/photo-image-public-domain-free-workout
+- b2f2: « Electronic kitchen scale » — ? (CC0) https://www.rawpixel.com/image/6036390/photo-image-public-domain-black-kitchen
+- b2f3: « Stairs Steps » — Jay Mantri (CC0) https://stocksnap.io/photo/stairs-steps-FGYA14H1MG
+- b2a1: « Breakfast yogurt bowl » — ? (CC0) https://www.rawpixel.com/image/6024347/photo-image-public-domain-food-free
+- b2a2: « Potatoes Onions » — Maciej Szlachta (CC0) https://stocksnap.io/photo/potatoes-onions-RYSFFCA1QV
+- b2a3: « Free vegetable soup image » — ? (CC0) https://www.rawpixel.com/image/5912467/image-public-domain-food-branch
+- b2t1: « Shopping list image element » — Miiruuku (CC0) https://www.rawpixel.com/image/11419510/shopping-list-image-element
+- b2t2: « Small Plate by Wedgwood Factory » — clevelandart (CC0) https://www.rawpixel.com/image/9671267/small-plate-wedgwood-factory
+- b2t3: « None » — ? (CC0) https://www.rawpixel.com/image/5942277/free-public-domain-cc0-photo
+- b3f1: « City Walking » — Matt Moloney (CC0) https://stocksnap.io/photo/city-walking-39NOIAL9TE
+- b3f2: « Salmon Fish » — Lukasz Kowalewski (CC0) https://stocksnap.io/photo/salmon-fish-AV3IUF5EDB
+- b3f3: « Bicycle Bike » — Alisa Anton (CC0) https://stocksnap.io/photo/bicycle-bike-Y2KCFMGHD1
+- b3a1: « Free tricolor lentils close image » — ? (CC0) https://www.rawpixel.com/image/5918822/image-public-domain-food-free
+- b3a2: « Red Apple » — Matt Bango (CC0) https://stocksnap.io/photo/red-apple-VXET3VQIV3
+- b3a3: « Espresso Coffee » — Jakub Kapusnak (CC0) https://stocksnap.io/photo/espresso-coffee-FWJUQILGVG
+- b3t1: « Dark Chocolate » — Micha%u0142%20Grosicki (CC0) https://stocksnap.io/photo/dark-chocolate-Z7A3GBMGOX
+- b3t2: « Journal Notepad » — Cathryn Lavery (CC0) https://stocksnap.io/photo/journal-notepad-DPKNIIN5X3
+- b3t3: « Side view hand writing checklist » — ? (CC0) https://www.rawpixel.com/image/5927216/photo-image-paper-public-domain-hand
