@@ -16,7 +16,7 @@
 - b2a2: « Potatoes Onions » — Maciej Szlachta (CC0) https://stocksnap.io/photo/potatoes-onions-RYSFFCA1QV
 - b2a3: « Free vegetable soup image » — ? (CC0) https://www.rawpixel.com/image/5912467/image-public-domain-food-branch
 - b2t1: « Shopping list image element » — Miiruuku (CC0) https://www.rawpixel.com/image/11419510/shopping-list-image-element
-- b2t2: « Small Plate by Wedgwood Factory » — clevelandart (CC0) https://www.rawpixel.com/image/9671267/small-plate-wedgwood-factory
+- b2t2: « White dish clipart, illustration vector » — ? (CC0) https://www.rawpixel.com/image/7372076/vector-public-domain-illustrations-white
 - b2t3: « None » — ? (CC0) https://www.rawpixel.com/image/5942277/free-public-domain-cc0-photo
 - b3f1: « City Walking » — Matt Moloney (CC0) https://stocksnap.io/photo/city-walking-39NOIAL9TE
 - b3f2: « Salmon Fish » — Lukasz Kowalewski (CC0) https://stocksnap.io/photo/salmon-fish-AV3IUF5EDB
