@@ -23,4 +23,5 @@ New skill needed? Use `find-skills`.
 ## Légende Instagram (toujours)
 - Chaque légende/titre de réel contient « Commente « CHANGEMENT » » (mot-clé de l'utilisateur), suivi de la promesse liée au sujet.
   Ex. : « Commente « CHANGEMENT » si tu veux fondre, couper ton appétit et tenir sur le long terme. »
+- Légende courte : 1 ou 2 phrases, 20 mots max (hors hashtags).
 - Écrire la légende dans `caption.txt` du projet.
