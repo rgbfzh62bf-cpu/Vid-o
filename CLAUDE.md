@@ -21,8 +21,8 @@ New skill needed? Use `find-skills`.
 - Report results in 1-3 lines.
 
 ## Légende Instagram (toujours)
-- Structure : promesse/question liée au sujet d'abord, puis « Commente « CHANGEMENT » » (mot-clé) + phrase finale.
-  Ne jamais commencer par « Commente ».
+- Structure validée (pour toutes les vidéos) : phrase 1 = question liée au sujet ;
+  phrase 2 = « Commente « CHANGEMENT » et je t'envoie ma méthode. » Ne jamais commencer par « Commente ».
   Ex. : « Tu veux fondre, couper ton appétit et tenir sur le long terme ? Commente « CHANGEMENT » et je t'envoie ma méthode. »
 - Légende courte : 1 ou 2 phrases, 20 mots max (hors hashtags), « Commente « CHANGEMENT » » compris dans les 20.
 - Écrire la légende dans `caption.txt` du projet.
