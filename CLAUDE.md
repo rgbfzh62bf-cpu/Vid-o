@@ -19,3 +19,8 @@ New skill needed? Use `find-skills`.
 - Reuse registry blocks over custom code.
 - Read only needed file parts. No full-file dumps in chat.
 - Report results in 1-3 lines.
+
+## Légende Instagram (toujours)
+- Chaque légende/titre de réel contient « Commente « CHANGEMENT » » (mot-clé de l'utilisateur), suivi de la promesse liée au sujet.
+  Ex. : « Commente « CHANGEMENT » si tu veux fondre, couper ton appétit et tenir sur le long terme. »
+- Écrire la légende dans `caption.txt` du projet.
