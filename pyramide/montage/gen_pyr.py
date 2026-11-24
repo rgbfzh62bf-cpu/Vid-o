@@ -1,6 +1,6 @@
 import json
-S=[21.90,50.65,88.25,108.95,123.70,198.15,284.70,407.55]
-F=[135,146,205,104,117,220,285,238]
+S=[21.90,50.65,88.25,108.95,123.70,198.15,284.70,320.95]
+F=[135,146,205,104,117,220,285,288]
 O=[];c=0
 for f in F: O.append(c/30); c+=f
 TOT=c/30
@@ -14,10 +14,10 @@ caps=[
  (4,[(None,"Si tu fais de la musculation"),(124.71,"trois fois par semaine,"),(125.79,"félicitations,"),(126.65,"t'es dans le top 30 %.")]),
  (5,[(None,"Si tu cuisines tous tes repas"),(199.23,"à l'avance le dimanche"),(199.93,"pour tes cinq jours suivants"),(200.95,"et que ton seul resto,"),(201.95,"c'est ton repas plaisir"),(202.69,"de la semaine,"),(203.65,"félicitations,"),(204.47,"t'es dans le top 15 %.")]),
  (6,[(None,"Si tu as trois réflexes simples,"),(286.11,"d'abord manger des légumes"),(287.05,"à chaque repas,"),(288.13,"un café après manger"),(289.03,"et prendre une photo de toi"),(290.37,"chaque mois pour voir"),(291.01,"tes vrais progrès,"),(292.05,"félicitations,"),(292.99,"tu es dans le top 5 %.")]),
- (7,[(None,"Si tu t'abonnes à mon compte"),(408.54,"dès maintenant"),(408.98,"et que tu commentes « CHANGEMENT »,"),(410.24,"et je t'envoie ma méthode complète"),(411.38,"pour perdre du poids"),(412.28,"sans régime extrême,"),(413.26,"félicitations,"),(414.26,"t'es maintenant dans le top 1 %.")]),
+ (7,[(None,"Et si tu t'abonnes à mon compte"),(322.12,"dès maintenant,"),(322.82,"que tu commentes « CHANGEMENT »"),(323.98,"et que je t'envoie ma méthode complète"),(326.04,"pour perdre du poids"),(327.06,"sans un régime extrême,"),(328.52,"félicitations,"),(329.22,"tu es dans le top 1 %.")]),
 ]
-pyr_in=[23.86,53.32,92.88,110.68,125.79,203.65,292.05,413.26]
-fill=[25.44,54.54,93.88,111.58,126.97,204.71,293.31,414.86]
+pyr_in=[23.86,53.32,92.88,110.68,125.79,203.65,292.05,328.52]
+fill=[25.44,54.54,93.88,111.58,126.97,204.71,293.31,329.52]
 # profile fills: (block, src time, target id)
 pf=[(0,22.40,'l1'),(1,51.24,'l2'),(2,89.10,'l3'),(3,109.24,'l4'),(4,124.27,'l5'),(5,198.60,'l6'),(5,201.95,'l7'),(6,286.85,'p1'),(6,288.27,'p2'),(6,289.95,'p3')]
 capel=[];k=0
