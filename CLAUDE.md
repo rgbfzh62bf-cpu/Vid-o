@@ -35,3 +35,4 @@ New skill needed? Use `find-skills`.
   (ex. référence = bio Instagram qui se remplit → nous = checklist perte de poids qui se remplit). Jamais copier un visuel hors sujet.
 - Prises : toujours face caméra. Tête baissée/sur le côté = l'utilisateur lit sa tablette → prise à rejeter, prendre une autre prise.
 - Montage : couper les blancs/hésitations > 0,25 s à l'intérieur des phrases (petit jump cut OK), pour que ça enchaîne.
+- Son : livrer à −14 LUFS (pic vrai ≤ −1 dB). Musique de fond si la référence en a une (≈ −14 dB sous la voix), CC0 via Freesound.

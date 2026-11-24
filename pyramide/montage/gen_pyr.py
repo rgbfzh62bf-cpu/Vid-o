@@ -95,7 +95,7 @@ html,body{{width:1080px;height:1920px;overflow:hidden;background:var(--top-bg)}}
 .pyr{{position:absolute;opacity:0}}
 .pyr text{{fill:#fff;font-family:"Nunito",Arial,sans-serif;font-weight:900;stroke:#000;stroke-width:5px;paint-order:stroke;}}
 #pyrA{{left:207px;top:191px;width:667px;height:571px}}
-#pyrB{{left:206px;top:1335px;width:667px;height:571px;transform-origin:50% 0;}}
+#pyrB{{left:206px;top:1375px;width:667px;height:571px;transform-origin:50% 0;}}
 #sep{{position:absolute;left:0;top:959px;width:1080px;height:2px;background:var(--line);box-shadow:0 2px 0 #010001;z-index:4}}
 #bottom{{position:absolute;left:0;top:961px;width:1080px;height:960px;object-fit:cover}}
 #final{{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}}
@@ -103,7 +103,7 @@ html,body{{width:1080px;height:1920px;overflow:hidden;background:var(--top-bg)}}
  text-shadow:0 0 2px #000,0 0 2px #000,1px 1px 2px #000,-1px -1px 2px #000;}}
 </style></head><body>
 <div id="root" data-composition-id="main" data-start="0" data-duration="{TOT:.6f}" data-width="1080" data-height="1920" data-fps="30" data-layout-allow-overlap="true" data-layout-allow-overflow="true">
-<audio id="voice" src="assets/voice.wav" data-start="0" data-duration="{TOT:.6f}" data-track-index="0"></audio>
+<audio id="voice" src="assets/mix.wav" data-start="0" data-duration="{TOT:.6f}" data-track-index="0"></audio>
 <video id="bottom" class="clip" src="assets/bottom.mp4" data-start="0" data-duration="{O[7]:.6f}" data-track-index="1" muted playsinline></video>
 <div id="tophalf" class="clip" data-start="0" data-duration="{O[7]:.6f}" data-track-index="2">
  <div id="profile">
@@ -122,7 +122,7 @@ html.append(f'<div id="sep" class="clip" data-start="0" data-duration="{O[7]:.6f
 html.append(f'<video id="final" class="clip" src="assets/final.mp4" data-start="{O[7]:.6f}" data-duration="{F[7]/30:.6f}" data-track-index="1" muted playsinline></video>\n')
 html.append(f'<div id="pyrBwrap" class="clip" data-start="{O[7]:.6f}" data-duration="{F[7]/30:.6f}" data-track-index="4" style="position:absolute;inset:0;z-index:5"><div id="pyrB" class="pyr">'+svg('B',40)+'</div></div>\n')
 for k,st,du,txt,b in capel:
-  extra=' style="top:1150px"' if b==7 else ''
+  extra=' style="top:1190px"' if b==7 else ''
   html.append(f'<div id="c{k}" class="clip cap"{extra} data-start="{st:.3f}" data-duration="{du:.3f}" data-track-index="5">{txt}</div>\n')
 js=["window.__timelines=window.__timelines||{};","const tl=gsap.timeline({paused:true});"]
 for b in range(7):
