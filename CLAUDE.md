@@ -31,3 +31,5 @@ New skill needed? Use `find-skills`.
 - Reproduction d'un réel : copier à l'identique (typo, tailles, couleurs, trait, détourage, liseré, transitions, rythme), seul le sujet/la personne change.
 - Agir en autonomie sur tout ce qui rend bien et reste qualitatif ; ne pas faire ce qui rendrait faux ou moche (ex. incruster l'utilisateur dans un fond d'une autre vidéo) et garder la version propre.
 - Skills gratuits autorisés si besoin ; jamais de skills payants.
+- Animations : garder la même mécanique/le même style que la vidéo de référence, mais adapter le contenu au sujet de l'utilisateur
+  (ex. référence = bio Instagram qui se remplit → nous = checklist perte de poids qui se remplit). Jamais copier un visuel hors sujet.
