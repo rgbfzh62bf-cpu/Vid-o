@@ -26,3 +26,8 @@ New skill needed? Use `find-skills`.
   Ex. : « Tu veux fondre, couper ton appétit et tenir sur le long terme ? Commente « CHANGEMENT » et je t'envoie ma méthode. »
 - Légende courte : 1 ou 2 phrases, 20 mots max (hors hashtags), « Commente « CHANGEMENT » » compris dans les 20.
 - Écrire la légende dans `caption.txt` du projet.
+
+## Autonomie (toutes les vidéos)
+- Reproduction d'un réel : copier à l'identique (typo, tailles, couleurs, trait, détourage, liseré, transitions, rythme), seul le sujet/la personne change.
+- Agir en autonomie sur tout ce qui rend bien et reste qualitatif ; ne pas faire ce qui rendrait faux ou moche (ex. incruster l'utilisateur dans un fond d'une autre vidéo) et garder la version propre.
+- Skills gratuits autorisés si besoin ; jamais de skills payants.
