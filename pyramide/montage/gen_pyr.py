@@ -1,11 +1,23 @@
 import json
 S=[21.90,50.65,88.25,108.95,123.70,198.15,284.70,320.95]
 F=[135,146,205,104,117,220,285,288]
-O=[];c=0
-for f in F: O.append(c/30); c+=f
-TOT=c/30
-def m(b,t): return round(max(O[b], O[b]+(t-S[b])),3)
-def end(b): return round(O[b]+F[b]/30,3)
+O0=[];c=0
+for f in F: O0.append(c/30); c+=f
+_cp=json.load(open('/home/user/Vid-o/pyramide/montage/cutplan.json'))
+_K=[x for b in _cp['keeps'] for x in b]
+def R(t):
+  fr=t*30;cum=0
+  for s_,e_ in _K:
+    if fr<s_: return round(cum/30,3)
+    if fr<e_: return round((cum+fr-s_)/30,3)
+    cum+=e_-s_
+  return round(cum/30,3)
+O=[R(x) for x in O0]
+TOT=sum(_cp['newF'])/30
+def m(b,t): return R(max(O0[b], O0[b]+(t-S[b])))
+Fold=list(F)
+def end(b): return R(O0[b]+Fold[b]/30)
+F=list(_cp['newF'])
 caps=[
  (0,[(None,"Si tu bois tous les jours"),(22.78,"un litre et demi d'eau,"),(23.86,"ne t'emballe pas trop"),(24.54,"car ça te met juste"),(25.20,"dans le top 90 %.")]),
  (1,[(None,"Si tu manges des protéines"),(51.64,"à chaque repas,"),(52.38,"même au petit-déj,"),(53.32,"félicitations,"),(54.04,"t'es maintenant dans le top 80 %.")]),
