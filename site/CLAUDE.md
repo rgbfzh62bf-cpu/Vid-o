@@ -20,7 +20,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - Avant / après : photo miroir (parcours.jpg) = 2018, 52 kg. Maintenant = 73 kg ; photo actuelle à recevoir.
 - Formule 1 Programmation sur mesure : 160 €/mois. Formule 2 Programmation + Nutrition : 200 €/mois.
 - Suivi sur l'appli Athlyse (App Store : https://apps.apple.com/fr/app/athlyse/id6759957694).
-- Appel découverte gratuit, 30 min, visio Google Meet via Calendly : https://calendly.com/alexis-bloque22/30min
+- Appel découverte gratuit, 30 min, visio Google Meet via Calendly : https://calendly.com/alexisbloquecoaching/30min
 - Instagram : @alexisblq_coaching.
 - E-mail pro : alexis.bloquecoaching@gmail.com (formulaire Netlify à envoyer ici).
 
