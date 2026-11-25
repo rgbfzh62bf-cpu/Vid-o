@@ -35,4 +35,11 @@ for f in os.listdir(here):
     elif f in ('mentions-legales.html','cgv.html'):
         t=open(os.path.join(here,f)).read().replace('</head>',ICONS+'\n</head>',1)
         open(os.path.join(out,f),'w').write(t)
+open(os.path.join(out,'_headers'),'w').write('''/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+''')
 print(sorted(os.listdir(out)))
