@@ -251,7 +251,7 @@ html{scroll-behavior:smooth}
 @keyframes dot{0%,22%{background:var(--accent)}25%,100%{background:rgba(15,27,45,.25)}}
 @media (prefers-reduced-motion:reduce){.scr:first-child{opacity:1!important}}
 @media (max-width:820px){.app-grid{grid-template-columns:1fr}}
-.bubble{position:fixed;z-index:7;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:0;height:60px;padding:0 18px 0 18px;border-radius:999px;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:700;box-shadow:0 14px 34px -10px rgba(0,0,0,.7),0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent);animation:bpulse 2.6s ease-out infinite;transition:gap .3s,background .2s}
+.bubble{position:fixed;z-index:7;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(88px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:0;height:60px;padding:0 18px 0 18px;border-radius:999px;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:700;box-shadow:0 14px 34px -10px rgba(0,0,0,.7),0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent);animation:bpulse 2.6s ease-out infinite;transition:gap .3s,background .2s}
 .bubble .b-ico svg{width:24px;height:24px;display:block;animation:wiggle 2.6s ease-in-out infinite}
 .bubble .b-txt{max-width:0;overflow:hidden;white-space:nowrap;transition:max-width .35s cubic-bezier(.2,.8,.2,1)}
 .bubble:hover,.bubble:focus-visible{gap:10px;background:var(--ink);color:var(--bg)}
