@@ -30,3 +30,6 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 
 ## Avant mise en ligne
 Voir `MISE-EN-LIGNE.md` (médiateur de la consommation obligatoire, hébergeur, formulaire Netlify, Calendly, adresse mail coaching).
+
+## Aperçu claude.ai
+Images en fichiers séparés = cassées dans l’appli d’Alexis. Publier un aperçu avec images inlinées (data URI) depuis le scratchpad vers les URL existantes : site https://claude.ai/artifact/RrFDYNC85ithxauYMMkANm , liens https://claude.ai/artifact/1XBNvJcfkLxQxs3YXXKiZj . Le repo garde les chemins relatifs.
