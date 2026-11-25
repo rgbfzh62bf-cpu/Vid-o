@@ -244,19 +244,6 @@ html{scroll-behavior:smooth}
 .cert svg{width:30px;height:30px;color:var(--accent);flex:none}
 .cert span{display:grid;line-height:1.3}
 .cert small{font-size:.78rem;color:var(--muted)}
-.cal{position:fixed;inset:0;z-index:30;background:rgba(4,9,18,.82);backdrop-filter:blur(6px);display:grid;place-items:center;padding:calc(env(safe-area-inset-top,0px) + 12px) max(12px,env(safe-area-inset-right,0px)) calc(env(safe-area-inset-bottom,0px) + 12px) max(12px,env(safe-area-inset-left,0px));animation:fade .25s both}
-.cal-box{width:min(1000px,100%);height:min(760px,100%);background:var(--surface);border:1px solid var(--accent);border-radius:22px;display:grid;grid-template-rows:auto 1fr auto;overflow:hidden;box-shadow:0 40px 90px -30px rgba(0,0,0,.8)}
-.cal-head{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 18px;border-bottom:1px solid var(--line)}
-.cal-head p{display:grid;line-height:1.3}
-.cal-head small{color:var(--muted);font-size:.8rem}
-.cal-x{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--bg);color:var(--ink);font-size:1rem;cursor:pointer;flex:none}
-.cal-x:hover{border-color:var(--accent)}
-.cal-body{position:relative;background:#fff;min-height:0}
-.cal-body iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
-.cal-load{position:absolute;inset:0;display:grid;place-items:center;color:#5A6678;font-family:var(--f-mono);font-size:.85rem}
-.cal-alt{margin:0;padding:10px 18px;font-size:.8rem;color:var(--muted);text-align:center;border-top:1px solid var(--line)}
-.cal-alt a{color:var(--accent)}
-.toast{position:fixed;z-index:31;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);width:min(440px,calc(100% - 32px));background:var(--accent);color:var(--on-accent);border-radius:16px;padding:14px 18px;display:grid;gap:2px;box-shadow:0 20px 50px -15px rgba(0,0,0,.7);animation:fade .4s both}
 footer{border-top:1px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px;color:var(--muted);font-size:.9rem}
 
@@ -291,7 +278,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   </nav>
 </div>
 
-<a class="bubble" href="https://calendly.com/alexis-bloque22/30min" target="_blank" rel="noopener" data-calendly aria-label="Réserver mon appel découverte"><span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span class="b-txt">Réserver mon appel</span></a>
+<a class="bubble" href="https://calendly.com/alexis-bloque22/30min" target="_blank" rel="noopener" aria-label="Réserver mon appel découverte"><span class="b-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span class="b-txt">Réserver mon appel</span></a>
 
 <header class="hero" id="top">
   <div class="wrap">
@@ -500,15 +487,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 <footer><div class="wrap"><span>© 2026 Alexis Coaching · Alexis Bloqué, coach sportif</span><span><a href="mentions-legales.html">Mentions légales</a> · <a href="https://www.instagram.com/alexisblq_coaching/" target="_blank" rel="noopener">@alexisblq_coaching</a></span></div></footer>
 
-<div class="cal" id="cal" hidden role="dialog" aria-modal="true" aria-labelledby="calTitle">
-  <div class="cal-box">
-    <div class="cal-head"><p id="calTitle"><b>Réserve ton appel découverte</b><small>Choisis ton créneau · Lien Google Meet envoyé par mail</small></p><button class="cal-x" id="calX" type="button" aria-label="Fermer">✕</button></div>
-    <div class="cal-body" id="calBody"><div class="cal-load">Chargement de l'agenda…</div></div>
-    <p class="cal-alt">L'agenda ne s'affiche pas ? <a id="calAlt" href="https://calendly.com/alexis-bloque22/30min" target="_blank" rel="noopener">Ouvrir dans un nouvel onglet ↗</a></p>
-  </div>
-</div>
-<div class="toast" id="toast" hidden role="status"><b>C'est réservé ✓</b>Tu vas recevoir le lien Google Meet par mail. À très vite !</div>
-
 <div class="lb" id="lb" hidden><div class="photo" id="lbImg"></div></div>
 
 <script>
@@ -562,29 +540,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   bg.addEventListener('click',()=>setMenu(menu.hidden));
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
   addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden)setMenu(false)});
-
-  // Calendly intégré au site
-  const CAL_URL='https://calendly.com/alexis-bloque22/30min';
-  const cal=document.getElementById('cal'), calBody=document.getElementById('calBody'), toast=document.getElementById('toast');
-  const closeCal=()=>{cal.hidden=true;document.body.style.overflow=''};
-  const openCal=()=>{
-    if(!calBody.querySelector('iframe')){
-      const f=document.createElement('iframe');
-      f.title='Agenda de réservation';f.loading='lazy';
-      f.src=CAL_URL+'?embed_type=Inline&hide_gdpr_banner=1&embed_domain='+encodeURIComponent(location.hostname||'localhost');
-      f.addEventListener('load',()=>{const l=calBody.querySelector('.cal-load');if(l)l.remove()});
-      calBody.appendChild(f);
-    }
-    cal.hidden=false;document.body.style.overflow='hidden';document.getElementById('calX').focus();
-  };
-  document.querySelectorAll('[data-calendly]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();openCal()}));
-  document.getElementById('calX').addEventListener('click',closeCal);
-  cal.addEventListener('click',e=>{if(e.target===cal)closeCal()});
-  addEventListener('keydown',e=>{if(e.key==='Escape'&&!cal.hidden)closeCal()});
-  addEventListener('message',e=>{
-    if(!/calendly\.com$/.test((()=>{try{return new URL(e.origin).hostname}catch(_){return''}})()))return;
-    if(e.data&&e.data.event==='calendly.event_scheduled'){setTimeout(closeCal,2500);toast.hidden=false;setTimeout(()=>toast.hidden=true,7000)}
-  });
 
   // Galerie -> agrandissement
   const lb=document.getElementById('lb'), lbImg=document.getElementById('lbImg');
