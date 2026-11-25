@@ -14,6 +14,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - Pas de numéro de téléphone sur le site (seulement mentions légales).
 
 ## Faits validés
+- Bilan chaque semaine : confirmé par Alexis.
 - Alexis Bloqué, coach sportif, auto-entrepreneur. SIRET 990 253 981 00015.
 - CQP Instructeur Fitness. Carte pro 07825ED0287 (préf. Yvelines, exp. 18/09/2030).
 - Parcours sportif : golf 7 ans, foot 5-6 ans, volley 1 an, tennis 1 an, aïkido 1 an, puis musculation 8 ans (depuis 2018), force athlétique 3 ans. Disponible 6/7. Recontact sous 24 h.
