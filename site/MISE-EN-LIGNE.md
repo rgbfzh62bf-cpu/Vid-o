@@ -10,3 +10,4 @@
 - [ ] Captures de l'appli Athlyse (optionnel) pour remplacer les écrans d'exemple.
 - [ ] Faire relire les mentions légales (comptable / CCI).
 - [ ] **Page de liens** (`liens.html`) : ajouter doctype/head comme index, puis mettre `ton-domaine.fr/liens` dans la bio Instagram.
+- [ ] **Calendly** : remplacer les liens `data-calendly` (index.html) et « Réserver un appel » (liens.html) par le lien Calendly.
