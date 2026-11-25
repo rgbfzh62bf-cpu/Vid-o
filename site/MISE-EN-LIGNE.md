@@ -4,7 +4,7 @@
 
 - [ ] **Médiateur de la consommation** : s'inscrire (CM2C, Medicys, CNPM, AME Conso…), puis ajouter son nom + site dans `mentions-legales.html` (case « Médiateur »).
 - [ ] **Hébergeur** : remplir nom, adresse, site dans `mentions-legales.html` (case « Hébergement »).
-- [ ] **Formulaire de contact** : brancher l'envoi réel vers alexis.bloque22@gmail.com (ex. Netlify Forms).
+- [ ] **Formulaire de contact** : code prêt (Netlify Forms, formulaire « contact »). Sur Netlify : Forms > activer, puis Form notifications > Email vers l’adresse coaching. Tester un envoi.
 - [ ] **Domaine** : relier le nom de domaine à l'hébergeur.
 - [ ] **Version finale** : ajouter `<!doctype html>`, `<html lang="fr">`, `<head>` avec meta viewport à `index.html`.
 - [ ] Captures de l'appli Athlyse (optionnel) pour remplacer les écrans d'exemple.
