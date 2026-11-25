@@ -5,7 +5,7 @@
 - [x] **Médiateur de la consommation** : CM2C (payé). Ajouté aux mentions légales. Vérifier l’adresse postale exacte sur l’attestation CM2C.
 - [x] **Hébergeur** : Netlify, Inc. (adresse postale exacte à vérifier sur netlify.com).
 - [ ] **Formulaire de contact** : code prêt (Netlify Forms, formulaire « contact »). Sur Netlify : Forms > activer, puis Form notifications > Email vers l’adresse coaching. Tester un envoi.
-- [x] **Domaine** acheté : alexis-coaching.fr (Hostinger). Reste : le relier à Netlify (DNS).
+- [x] **Domaine** alexis-coaching.fr relié : DNS Hostinger A @ 75.2.60.5 + CNAME www alexis-coaching.netlify.app (25/11/2026). Vérifier https actif dans Netlify.
 - [x] **Version finale** : dossier `site-en-ligne/` + `alexis-coaching-site.zip` (doctype, head, meta, favicon). À régénérer après chaque modif si déploiement manuel.
 - [ ] Faire relire les mentions légales (comptable / CCI).
 - [ ] **Page de liens** (`liens.html`) : ajouter doctype/head comme index, puis mettre `alexis-coaching.fr/liens` dans la bio Instagram.
