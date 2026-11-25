@@ -26,10 +26,8 @@ a{color:inherit}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
-.logo{font-family:var(--f-display);font-weight:900;font-size:clamp(1.6rem,4.5vw,2.6rem);line-height:1;text-transform:uppercase;text-decoration:none;letter-spacing:.14em;display:flex;gap:.4em}
+.logo{font-family:var(--f-display);font-weight:900;font-size:clamp(1.9rem,6.2vw,3.4rem);line-height:1;text-transform:uppercase;text-decoration:none;letter-spacing:.14em;display:flex;gap:.4em}
 .logo span{color:var(--accent)}
-.logo img{display:block;height:60px;width:auto}
-@media (max-width:480px){.logo img{height:40px}}
 .nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
 .nav ul a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted);transition:color .2s}
 .nav ul a:hover{color:var(--ink)}
@@ -41,6 +39,10 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn:hover .arr{transform:translateX(4px)}
 .ico-sm svg{width:16px;height:16px;display:block}
 .btn-call:hover .ico-sm{animation:wiggle 1s ease}
+.nav-links{display:none;list-style:none;margin:0 0 0 auto;padding:0;gap:28px}
+.nav-links a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+@media (min-width:980px){.nav-links{display:flex}}
 .nav-r{display:flex;align-items:center;gap:12px}
 .burger{width:48px;height:48px;border-radius:50%;border:2px solid var(--line);background:var(--surface);display:grid;place-content:center;gap:5px;cursor:pointer;transition:border-color .2s}
 .burger:hover{border-color:var(--accent)}
@@ -295,7 +297,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 <nav class="nav" aria-label="Navigation principale">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Alexis Coaching, retour en haut"><img src="logo.png" alt="Alexis Coaching" width="663" height="301"></a>
+    <a class="logo" href="#top">Alexis<span>Coaching</span></a>
+    <ul class="nav-links">
+      <li><a href="#parcours">Qui suis-je</a></li>
+      <li><a href="#methode">Approche</a></li>
+      <li><a href="#appli">L'appli</a></li>
+      <li><a href="#formules">Tarifs</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
     <div class="nav-r">
       <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     </div>
