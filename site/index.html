@@ -13,6 +13,7 @@
 }
 
 *{box-sizing:border-box}
+[hidden]{display:none!important}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1rem;line-height:1.6;overflow-x:hidden}
 .wrap{max-width:1160px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
 h1,h2,h3{font-family:var(--f-display);text-transform:uppercase;line-height:.92;margin:0;text-wrap:balance;letter-spacing:.01em}
@@ -36,6 +37,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .btn.ghost:hover{color:var(--bg)}
 .btn .arr{transition:transform .25s}
 .btn:hover .arr{transform:translateX(4px)}
+.ico-sm svg{width:16px;height:16px;display:block}
+.btn-call:hover .ico-sm{animation:wiggle 1s ease}
 .nav-r{display:flex;align-items:center;gap:12px}
 .burger{width:48px;height:48px;border-radius:50%;border:2px solid var(--line);background:var(--surface);display:grid;place-content:center;gap:5px;cursor:pointer;transition:border-color .2s}
 .burger:hover{border-color:var(--accent)}
@@ -156,19 +159,35 @@ textarea{min-height:110px;resize:vertical}
 
 html{scroll-behavior:smooth}
 [id]{scroll-margin-top:80px}
-.call{background:var(--accent);color:var(--on-accent)}
-.call .wrap{display:grid;gap:20px;justify-items:start;padding-block:72px}
-.call h2{font-size:clamp(2.4rem,7vw,5rem);font-weight:900}
-.call p{max-width:50ch;opacity:.9}
-.mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
-.contacts{display:flex;flex-wrap:wrap;gap:10px 24px;font-weight:600}
-.contacts a{text-decoration:none;border-bottom:2px solid currentColor}
-.mail a.addr{font-family:var(--f-mono);font-size:clamp(1rem,3.4vw,1.4rem);font-weight:600;color:var(--on-accent);background:color-mix(in srgb,var(--ink) 18%,transparent);padding:14px 20px;border-radius:14px;text-decoration:none;user-select:all;word-break:break-all}
-.mail a.addr:hover{background:color-mix(in srgb,var(--ink) 30%,transparent)}
-.call .btn{background:var(--bg);border-color:var(--bg);color:var(--ink)}
-.call .btn:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.call.flash{animation:flash 1s ease}
-@keyframes flash{30%{filter:brightness(1.18)}}
+.call{padding-block:96px;position:relative;overflow:hidden}
+.call::before{content:"";position:absolute;left:50%;top:40%;width:900px;height:900px;max-width:none;transform:translate(-50%,-50%);background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 60%);pointer-events:none}
+.call .wrap{position:relative}
+.call-card{border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:28px;background:linear-gradient(150deg,var(--surface-2),var(--surface) 60%);padding:clamp(28px,5vw,56px);display:grid;gap:36px;box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
+.call-top{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+.ring{position:relative;width:84px;height:84px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center}
+.ring::before,.ring::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid var(--accent);animation:pulse 2.4s ease-out infinite}
+.ring::after{animation-delay:1.2s}
+.ring svg{width:36px;height:36px;animation:wiggle 2.4s ease-in-out infinite}
+@keyframes pulse{from{transform:scale(1);opacity:.9}to{transform:scale(1.9);opacity:0}}
+@keyframes wiggle{0%,60%,100%{transform:rotate(0)}66%{transform:rotate(-14deg)}72%{transform:rotate(12deg)}78%{transform:rotate(-8deg)}84%{transform:rotate(0)}}
+.call h2{font-size:clamp(2.4rem,6.5vw,4.6rem);font-weight:900}
+.call h2 em{font-style:normal;color:var(--accent)}
+.call-top p{color:var(--muted);margin-top:12px;max-width:52ch}
+.ways{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.way{background:color-mix(in srgb,var(--bg) 55%,transparent);border:1px solid var(--line);border-radius:20px;padding:22px;display:grid;gap:14px;align-content:start;min-width:0;transition:transform .3s cubic-bezier(.2,.8,.2,1),border-color .3s}
+.way:hover{transform:translateY(-4px);border-color:var(--accent)}
+.way .ico{width:44px;height:44px;border-radius:12px;background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent);display:grid;place-items:center}
+.way .ico svg{width:22px;height:22px}
+.way .lbl{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.way .val{font-weight:700;font-size:1.05rem;overflow-wrap:anywhere;user-select:all}
+.way .acts{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:inherit;font-size:.85rem;font-weight:700;padding:9px 14px;border-radius:999px;border:1.5px solid var(--accent);color:var(--accent);background:transparent;text-decoration:none;cursor:pointer;transition:background .2s,color .2s}
+.chip:hover,.chip.main{background:var(--accent);color:var(--on-accent)}
+.chip.main:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.call.flash .call-card{animation:glow 1.2s ease}
+@keyframes glow{30%{box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 60%,transparent),0 40px 80px -40px rgba(0,0,0,.7)}}
+@media (max-width:820px){.ways{grid-template-columns:1fr}}
+@media (max-width:520px){.call-top{grid-template-columns:1fr}.ring{width:68px;height:68px}}
 footer{border-top:1px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px;color:var(--muted);font-size:.9rem}
 
@@ -187,7 +206,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   <div class="wrap">
     <a class="logo" href="#top">Alexis<span>Coaching</span></a>
     <div class="nav-r">
-      <a class="btn" href="#appel">Passer un appel</a>
+      <a class="btn btn-call" href="#appel"><span class="ico-sm" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span>Passer un appel</a>
       <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     </div>
   </div>
@@ -331,7 +350,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     <form id="form" class="reveal" novalidate>
       <label for="f-name">Prénom<input id="f-name" name="name" required autocomplete="given-name"></label>
       <label for="f-mail">E-mail<input id="f-mail" name="email" type="email" required autocomplete="email"></label>
-      <label for="f-plan">Formule<select id="f-plan" name="plan"><option>Programmation sur mesure</option><option>Programmation + Nutrition</option><option>Je ne sais pas encore</option></select></label>
+      <label for="f-plan">Formule<select id="f-plan" name="plan"><option>Programmation sur mesure</option><option>Programmation + Nutrition</option></select></label>
       <label for="f-goal">Ton objectif<textarea id="f-goal" name="goal" placeholder="Ex. : perdre 6 kg avant l'été, faire ma première traction…"></textarea></label>
       <button class="btn" type="submit">Envoyer ma demande <span class="arr">→</span></button>
       <p class="ok" id="ok" hidden></p>
@@ -341,14 +360,24 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 <section class="call" id="appel">
   <div class="wrap">
-    <p class="eyebrow" style="color:inherit;opacity:.85">Passer un appel</p>
-    <h2>Écris-moi,<br>je te rappelle.</h2>
-    <p>Envoie-moi un mail avec ton numéro et tes disponibilités, ou écris-moi sur Instagram. Je te rappelle pour un appel découverte gratuit de 15 minutes.</p>
-    <div class="mail">
-      <a class="addr" id="mailAddr" href="mailto:alexis.bloque22@gmail.com?subject=Demande%20d'appel%20d%C3%A9couverte">alexis.bloque22@gmail.com</a>
-      <button class="btn" type="button" id="copyMail">Copier l'adresse</button>
+    <div class="call-card reveal">
+      <div class="call-top">
+        <div class="ring" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+        <div>
+          <p class="eyebrow">Passer un appel · Appel découverte gratuit</p>
+          <h2>Parlons de <em>ton objectif.</em></h2>
+          <p>15 minutes pour faire le point sur ton niveau et tes attentes, et trouver la formule qui te correspond. Choisis le moyen qui te va le mieux.</p>
+        </div>
+      </div>
+      <div class="ways">
+        <div class="way"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><span class="lbl">E-mail</span><span class="val" id="mailAddr">alexis.bloque22@gmail.com</span>
+          <div class="acts"><a class="chip main" href="mailto:alexis.bloque22@gmail.com?subject=Demande%20d'appel%20d%C3%A9couverte">Écrire un mail</a><button class="chip" type="button" data-copy="alexis.bloque22@gmail.com">Copier</button></div></div>
+        <div class="way"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span class="lbl">Téléphone</span><span class="val">06 52 93 35 73</span>
+          <div class="acts"><a class="chip main" href="tel:+33652933573">Appeler</a><button class="chip" type="button" data-copy="06 52 93 35 73">Copier</button></div></div>
+        <div class="way"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></span><span class="lbl">Instagram</span><span class="val">@alexisblq_coaching</span>
+          <div class="acts"><a class="chip main" href="https://www.instagram.com/alexisblq_coaching/" target="_blank" rel="noopener">Voir le profil</a></div></div>
+      </div>
     </div>
-    <div class="contacts"><span>Tél. : <span style="user-select:all">06 52 93 35 73</span></span><a href="https://www.instagram.com/alexisblq_coaching/" target="_blank" rel="noopener">Instagram : @alexisblq_coaching</a></div>
   </div>
 </section>
 
@@ -395,12 +424,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   // Passer un appel -> section mail
   const call=document.getElementById('appel');
   document.querySelectorAll('a[href="#appel"]').forEach(a=>a.addEventListener('click',()=>{call.classList.remove('flash');void call.offsetWidth;call.classList.add('flash')}));
-  const cb=document.getElementById('copyMail'), addr=document.getElementById('mailAddr').textContent;
-  cb.addEventListener('click',()=>{
-    const done=()=>{cb.textContent='Adresse copiée';setTimeout(()=>cb.textContent="Copier l'adresse",2000)};
-    const sel=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById('mailAddr'));const s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent='Adresse sélectionnée'};
-    try{navigator.clipboard.writeText(addr).then(done,sel)}catch(e){sel()}
-  });
+  document.querySelectorAll('[data-copy]').forEach(cb=>cb.addEventListener('click',()=>{
+    const done=()=>{cb.textContent='Copié ✓';setTimeout(()=>cb.textContent='Copier',2000)};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(cb.closest('.way').querySelector('.val'));const s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent='Sélectionné'};
+    try{navigator.clipboard.writeText(cb.dataset.copy).then(done,sel)}catch(e){sel()}
+  }));
 
   // Menu burger
   const bg=document.getElementById('burger'), menu=document.getElementById('menu');
