@@ -10,4 +10,4 @@
 - [ ] Faire relire les mentions légales (comptable / CCI).
 - [ ] **Page de liens** (`liens.html`) : ajouter doctype/head comme index, puis mettre `ton-domaine.fr/liens` dans la bio Instagram.
 - [ ] **Calendly** : remplacer les liens `data-calendly` (index.html) et « Réserver un appel » (liens.html) par le lien Calendly.
-- [ ] **Avant / après (section Qui suis-je)** : AVANT = photo miroir `parcours.jpg`, 2018, 52 kg. Manque : photo récente (même pose, torse visible) + poids actuel. Rappeler à Alexis.
+- [ ] **Avant / après (section Qui suis-je)** : AVANT = photo miroir `parcours.jpg`, 2018, 52 kg. MAINTENANT = 73 kg. Manque : photo récente (même pose, torse visible). Rappeler à Alexis.

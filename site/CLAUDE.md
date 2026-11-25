@@ -17,7 +17,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - Alexis Bloqué, coach sportif, auto-entrepreneur. SIRET 990 253 981 00015.
 - CQP Instructeur Fitness. Carte pro 07825ED0287 (préf. Yvelines, exp. 18/09/2030).
 - 8 ans de musculation, 3 ans de force athlétique. Disponible 6/7. Recontact sous 24 h.
-- Avant / après : photo miroir (parcours.jpg) = 2018, 52 kg. Photo actuelle + poids actuel : à recevoir.
+- Avant / après : photo miroir (parcours.jpg) = 2018, 52 kg. Maintenant = 73 kg ; photo actuelle à recevoir.
 - Formule 1 Programmation sur mesure : 160 €/mois. Formule 2 Programmation + Nutrition : 200 €/mois.
 - Suivi sur l'appli Athlyse (App Store : https://apps.apple.com/fr/app/athlyse/id6759957694).
 - Appel découverte gratuit, 30 min, visio Google Meet via Calendly : https://calendly.com/alexis-bloque22/30min
