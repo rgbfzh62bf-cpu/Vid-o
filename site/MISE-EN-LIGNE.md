@@ -12,3 +12,4 @@
 - [x] **Calendly** : lien calendly.com/alexisbloquecoaching/30min en place (site + liens).
 - [ ] **Avant / après (section Qui suis-je)** : AVANT = photo miroir `parcours.jpg`, 2018, 52 kg. MAINTENANT = 73 kg. Manque : photo récente (même pose, torse visible). Rappeler à Alexis.
 - [x] **Site public** : validé par un tiers le 25/11/2026.
+- [ ] **Sécurité comptes** : activer la double authentification (Netlify, GitHub, Hostinger, Gmail coaching) + verrouillage du domaine Hostinger.
