@@ -28,9 +28,6 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
 .logo{font-family:var(--f-display);font-weight:900;font-size:clamp(1.9rem,6.2vw,3.4rem);line-height:1;text-transform:uppercase;text-decoration:none;letter-spacing:.14em;display:flex;gap:.4em}
 .logo span{color:var(--accent)}
-.nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
-.nav ul a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted);transition:color .2s}
-.nav ul a:hover{color:var(--ink)}
 .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-body);font-weight:700;font-size:.95rem;padding:14px 22px;border-radius:999px;border:2px solid var(--accent);background:var(--accent);color:var(--on-accent);text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,color .2s}
 .btn:hover{transform:translateY(-2px);background:var(--ink);border-color:var(--ink);color:var(--bg)}
 .btn.ghost{background:transparent;color:var(--ink)}
@@ -40,9 +37,11 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .ico-sm svg{width:16px;height:16px;display:block}
 .btn-call:hover .ico-sm{animation:wiggle 1s ease}
 .nav-links{display:none;list-style:none;margin:0 0 0 auto;padding:0;gap:28px}
-.nav-links a{text-decoration:none;font-weight:600;font-size:.95rem;color:var(--muted);transition:color .2s}
+.nav-links a{white-space:nowrap;text-decoration:none;font-weight:600;font-size:.95rem;color:var(--muted);transition:color .2s}
 .nav-links a:hover{color:var(--ink)}
-@media (min-width:980px){.nav-links{display:flex}}
+@media (min-width:1180px){.nav-links{display:flex}}
+.nav-cta{display:none;padding:11px 20px;font-size:.9rem;white-space:nowrap}
+@media (min-width:760px){.nav-cta{display:inline-flex}}
 .nav-r{display:flex;align-items:center;gap:12px}
 .burger{width:48px;height:48px;border-radius:50%;border:2px solid var(--line);background:var(--surface);display:grid;place-content:center;gap:5px;cursor:pointer;transition:border-color .2s}
 .burger:hover{border-color:var(--accent)}
@@ -306,6 +305,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-r">
+      <a class="btn nav-cta" href="#appel">Réserver mon appel</a>
       <button class="burger" id="burger" type="button" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu"><span></span><span></span><span></span></button>
     </div>
   </div>
