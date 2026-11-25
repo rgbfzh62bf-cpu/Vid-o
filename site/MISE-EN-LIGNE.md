@@ -3,7 +3,7 @@
 À vérifier AVANT de publier le site sur le domaine.
 
 - [x] **Médiateur de la consommation** : CM2C (payé). Ajouté aux mentions légales. Vérifier l’adresse postale exacte sur l’attestation CM2C.
-- [ ] **Hébergeur** : remplir nom, adresse, site dans `mentions-legales.html` (case « Hébergement »).
+- [x] **Hébergeur** : Netlify, Inc. (adresse postale exacte à vérifier sur netlify.com).
 - [ ] **Formulaire de contact** : code prêt (Netlify Forms, formulaire « contact »). Sur Netlify : Forms > activer, puis Form notifications > Email vers l’adresse coaching. Tester un envoi.
 - [x] **Domaine** acheté : alexis-coaching.fr (Hostinger). Reste : le relier à Netlify (DNS).
 - [x] **Version finale** : dossier `site-en-ligne/` + `alexis-coaching-site.zip` (doctype, head, meta, favicon). À régénérer après chaque modif si déploiement manuel.
