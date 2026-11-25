@@ -1,22 +1,16 @@
-<title>Coaching sur mesure</title>
+<title>Alexis Coaching</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
 <style>
 /* Layout: bandes pleine largeur, hero texte + cadre photo, 2 formules côte à côte, carnet d'entraînement en fil rouge */
 :root{
-  --bg:#F3F5F7; --surface:#FFFFFF; --ink:#0F1B2D; --muted:#5A6678; --line:#D8DEE6;
-  --accent:#FF5A1F; --accent-2:#1F6FFF; --on-accent:#FFFFFF;
+  --bg:#0B1628; --surface:#12223A; --surface-2:#16305A; --ink:#FFFFFF; --muted:#A9B6C9; --line:#22385A;
+  --accent:#5B9BEF; --accent-2:#8EC0FF; --on-accent:#0B1628; color-scheme:dark;
   --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
   --f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   --f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0B121D; --surface:#132033; --ink:#EEF2F7; --muted:#9AA6B8; --line:#24344B;
-  --accent:#FF6A33; --accent-2:#5B95FF; --on-accent:#0B121D; color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0B121D; --surface:#132033; --ink:#EEF2F7; --muted:#9AA6B8; --line:#24344B;
-  --accent:#FF6A33; --accent-2:#5B95FF; --on-accent:#0B121D; color-scheme:dark}
 
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:1rem;line-height:1.6;overflow-x:hidden}
@@ -31,14 +25,15 @@ a{color:inherit}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
-.logo{font-family:var(--f-display);font-weight:900;font-size:1.6rem;text-transform:uppercase;text-decoration:none;letter-spacing:.02em}
+.logo{font-family:var(--f-display);font-weight:900;font-size:1.5rem;text-transform:uppercase;text-decoration:none;letter-spacing:.14em;display:flex;gap:.4em}
 .logo span{color:var(--accent)}
 .nav ul{display:flex;gap:24px;list-style:none;margin:0;padding:0}
 .nav ul a{text-decoration:none;font-weight:500;font-size:.95rem;color:var(--muted);transition:color .2s}
 .nav ul a:hover{color:var(--ink)}
-.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-body);font-weight:700;font-size:.95rem;padding:14px 22px;border-radius:999px;border:2px solid var(--ink);background:var(--ink);color:var(--bg);text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,color .2s}
-.btn:hover{transform:translateY(-2px);background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-body);font-weight:700;font-size:.95rem;padding:14px 22px;border-radius:999px;border:2px solid var(--accent);background:var(--accent);color:var(--on-accent);text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,color .2s}
+.btn:hover{transform:translateY(-2px);background:var(--ink);border-color:var(--ink);color:var(--bg)}
 .btn.ghost{background:transparent;color:var(--ink)}
+.btn.ghost:hover{color:var(--bg)}
 .btn .arr{transition:transform .25s}
 .btn:hover .arr{transform:translateX(4px)}
 @media (max-width:760px){.nav ul{display:none}}
@@ -58,9 +53,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .photo{position:relative;border-radius:20px;overflow:hidden;background:
   repeating-linear-gradient(135deg,color-mix(in srgb,var(--ink) 6%,transparent) 0 12px,transparent 12px 24px),var(--surface);
   border:1px solid var(--line);display:grid;place-items:center;min-height:240px;max-width:100%}
-.photo img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:62% 35%;position:absolute;inset:0}
 .photo .ph{font-family:var(--f-mono);font-size:.78rem;color:var(--muted);text-align:center;padding:16px;letter-spacing:.06em}
-.hero .photo{aspect-ratio:4/5;animation:fade 1s .3s both;will-change:transform}
+.hero .photo{aspect-ratio:5/4;border-color:var(--accent);animation:fade 1s .3s both;will-change:transform}
 .tag{position:absolute;left:16px;bottom:16px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-family:var(--f-mono);font-size:.78rem;line-height:1.4;box-shadow:0 10px 30px -12px rgba(0,0,0,.35);animation:fade .8s .9s both}
 .tag b{color:var(--accent)}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr;padding-block:40px 56px}.hero .photo{aspect-ratio:4/3}}
@@ -80,9 +75,8 @@ section{padding-block:88px}
 /* Formules */
 .plans{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px}
 .plan{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:22px;transition:transform .35s cubic-bezier(.2,.8,.2,1),box-shadow .35s,border-color .35s}
-.plan:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(15,27,45,.35);border-color:var(--accent)}
-.plan.featured{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.plan.featured .muted,.plan.featured li{color:color-mix(in srgb,var(--bg) 78%,transparent)}
+.plan:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(0,0,0,.6);border-color:var(--accent)}
+.plan.featured{background:linear-gradient(160deg,var(--surface-2),var(--surface));border-color:var(--accent)}
 .badge{position:absolute;top:-13px;right:28px;background:var(--accent);color:var(--on-accent);font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
 .plan h3{font-size:2.4rem;font-weight:800}
 .plan .muted{color:var(--muted)}
@@ -93,22 +87,20 @@ section{padding-block:88px}
 .plan li::before{content:"";width:18px;height:18px;margin-top:3px;border-radius:50%;background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/12px no-repeat}
 .plan li.plus{color:inherit;font-weight:700}
 .plan .btn{margin-top:auto;align-self:flex-start}
-.plan.featured .btn{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
-.plan.featured .btn:hover{background:var(--bg);border-color:var(--bg);color:var(--ink)}
 
 .sample{font-family:var(--f-mono);font-size:.8rem;border:1px dashed var(--line);border-radius:14px;padding:14px 16px;display:grid;gap:6px}
-.plan.featured .sample{border-color:color-mix(in srgb,var(--bg) 25%,transparent)}
+.plan.featured .sample{border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
 .sample .row{display:flex;justify-content:space-between;gap:12px;font-variant-numeric:tabular-nums}
 .sample .k{opacity:.7}
-.macros{display:flex;height:10px;border-radius:99px;overflow:hidden;margin-top:6px;background:color-mix(in srgb,var(--bg) 15%,transparent)}
+.macros{display:flex;height:10px;border-radius:99px;overflow:hidden;margin-top:6px;background:var(--line)}
 .macros i{display:block;height:100%;width:0;transition:width 1.2s cubic-bezier(.2,.8,.2,1)}
-.macros i:nth-child(1){background:var(--accent)} .macros i:nth-child(2){background:var(--accent-2)} .macros i:nth-child(3){background:#F4B740}
+.macros i:nth-child(1){background:var(--accent)} .macros i:nth-child(2){background:var(--accent-2)} .macros i:nth-child(3){background:var(--ink)}
 .in .macros i:nth-child(1){width:30%} .in .macros i:nth-child(2){width:48%} .in .macros i:nth-child(3){width:22%}
 @media (max-width:860px){.plans{grid-template-columns:1fr}}
 
 /* Méthode */
 .steps{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s}
-.step{border-top:3px solid var(--ink);padding-top:18px;display:grid;gap:10px;counter-increment:s}
+.step{border-top:3px solid var(--accent);padding-top:18px;display:grid;gap:10px;counter-increment:s}
 .step::before{content:"0" counter(s);font-family:var(--f-mono);font-size:.8rem;color:var(--accent)}
 .step h3{font-size:1.7rem;font-weight:800}
 .step p{color:var(--muted);font-size:.95rem}
@@ -123,10 +115,10 @@ section{padding-block:88px}
 @media (max-width:700px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:150px}.g1,.g2{grid-column:span 2}.g3,.g4{grid-column:span 1}.g1{grid-row:span 2}}
 
 /* Chiffres */
-.stats{background:var(--ink);color:var(--bg)}
+.stats{background:var(--surface);border-block:1px solid var(--line)}
 .stats .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-block:64px}
 .stat b{display:block;font-family:var(--f-display);font-weight:900;font-size:clamp(3rem,7vw,5rem);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
-.stat span{color:color-mix(in srgb,var(--bg) 75%,transparent)}
+.stat span{color:var(--muted)}
 @media (max-width:640px){.stats .wrap{grid-template-columns:1fr}}
 
 /* FAQ */
@@ -153,10 +145,12 @@ html{scroll-behavior:smooth}
 .call h2{font-size:clamp(2.4rem,7vw,5rem);font-weight:900}
 .call p{max-width:50ch;opacity:.9}
 .mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.contacts{display:flex;flex-wrap:wrap;gap:10px 24px;font-weight:600}
+.contacts a{text-decoration:none;border-bottom:2px solid currentColor}
 .mail a.addr{font-family:var(--f-mono);font-size:clamp(1rem,3.4vw,1.4rem);font-weight:600;color:var(--on-accent);background:color-mix(in srgb,var(--ink) 18%,transparent);padding:14px 20px;border-radius:14px;text-decoration:none;user-select:all;word-break:break-all}
 .mail a.addr:hover{background:color-mix(in srgb,var(--ink) 30%,transparent)}
-.call .btn{background:var(--ink);border-color:var(--ink);color:var(--bg)}
-.call .btn:hover{background:var(--bg);border-color:var(--bg);color:var(--ink)}
+.call .btn{background:var(--bg);border-color:var(--bg);color:var(--ink)}
+.call .btn:hover{background:var(--ink);border-color:var(--ink);color:var(--bg)}
 .call.flash{animation:flash 1s ease}
 @keyframes flash{30%{filter:brightness(1.18)}}
 footer{border-top:1px solid var(--line)}
@@ -175,7 +169,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 <nav class="nav" aria-label="Navigation principale">
   <div class="wrap">
-    <a class="logo" href="#top">[Ton<span>nom</span>]</a>
+    <a class="logo" href="#top">Alexis<span>Coaching</span></a>
     <ul>
       <li><a href="#formules">Formules</a></li>
       <li><a href="#methode">Méthode</a></li>
@@ -190,7 +184,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 <header class="hero" id="top">
   <div class="wrap">
     <div>
-      <p class="eyebrow">Coaching en ligne · 100 % sur mesure</p>
+      <p class="eyebrow">Alexis Bloqué · Coach sportif</p>
       <h1><span class="line"><span>Un programme</span></span><span class="line"><span>fait pour toi,</span></span><span class="line"><span>pas copié-collé.</span></span></h1>
       <p class="lead">Je construis ta programmation selon ton niveau, ton matériel et ton emploi du temps. Si tu le souhaites, j'ajoute un suivi nutrition adapté à tes objectifs.</p>
       <div class="ctas">
@@ -199,15 +193,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       </div>
     </div>
     <div class="photo" id="heroPhoto" data-photo="hero">
-      <span class="ph">PHOTO PRINCIPALE<br>(portrait / séance)</span>
+      <img src="hero.jpg" alt="Alexis, coach sportif, concentré à l'entraînement">
       <div class="tag">Semaine 6 · Squat<br><b>4 × 6 @ RPE 8</b> · repos 2:30</div>
     </div>
   </div>
 </header>
 
 <div class="marquee" aria-hidden="true"><div class="track">
-  <span>Force</span><span>Perte de poids</span><span>Prise de muscle</span><span>Nutrition</span><span>Mobilité</span><span>Remise en forme</span>
-  <span>Force</span><span>Perte de poids</span><span>Prise de muscle</span><span>Nutrition</span><span>Mobilité</span><span>Remise en forme</span>
+  <span>Renforcement musculaire</span><span>Perte de poids</span><span>Prise de masse musculaire</span><span>Préparation physique</span><span>Nutrition</span>
+  <span>Renforcement musculaire</span><span>Perte de poids</span><span>Prise de masse musculaire</span><span>Préparation physique</span><span>Nutrition</span>
 </div></div>
 
 <section id="formules">
@@ -325,15 +319,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   <div class="wrap">
     <p class="eyebrow" style="color:inherit;opacity:.85">Passer un appel</p>
     <h2>Écris-moi,<br>je te rappelle.</h2>
-    <p>Envoie-moi un mail avec ton numéro et tes disponibilités. Je te rappelle pour un appel découverte gratuit de 15 minutes.</p>
+    <p>Envoie-moi un mail avec ton numéro et tes disponibilités, ou écris-moi sur Instagram. Je te rappelle pour un appel découverte gratuit de 15 minutes.</p>
     <div class="mail">
-      <a class="addr" id="mailAddr" href="mailto:ton.adresse@mail.com?subject=Demande%20d'appel%20d%C3%A9couverte">ton.adresse@mail.com</a>
+      <a class="addr" id="mailAddr" href="mailto:alexis.bloque22@gmail.com?subject=Demande%20d'appel%20d%C3%A9couverte">alexis.bloque22@gmail.com</a>
       <button class="btn" type="button" id="copyMail">Copier l'adresse</button>
     </div>
+    <div class="contacts"><span>Tél. : <span style="user-select:all">06 52 93 35 73</span></span><a href="https://www.instagram.com/alexisblq_coaching/" target="_blank" rel="noopener">Instagram : @alexisblq_coaching</a></div>
   </div>
 </section>
 
-<footer><div class="wrap"><span>© 2026 [Ton nom] Coaching</span><span>Mentions légales · Instagram</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Alexis Coaching · Alexis Bloqué, coach sportif</span><span>Mentions légales · <a href="https://www.instagram.com/alexisblq_coaching/" target="_blank" rel="noopener">@alexisblq_coaching</a></span></div></footer>
 
 <div class="lb" id="lb" hidden><div class="photo" id="lbImg"></div></div>
 
