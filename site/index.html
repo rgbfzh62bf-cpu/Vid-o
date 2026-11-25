@@ -146,6 +146,19 @@ textarea{min-height:110px;resize:vertical}
 .ok{font-family:var(--f-mono);font-size:.82rem;color:var(--accent)}
 @media (max-width:860px){.contact .wrap{grid-template-columns:1fr}}
 
+html{scroll-behavior:smooth}
+[id]{scroll-margin-top:80px}
+.call{background:var(--accent);color:var(--on-accent)}
+.call .wrap{display:grid;gap:20px;justify-items:start;padding-block:72px}
+.call h2{font-size:clamp(2.4rem,7vw,5rem);font-weight:900}
+.call p{max-width:50ch;opacity:.9}
+.mail{display:flex;flex-wrap:wrap;align-items:center;gap:12px}
+.mail a.addr{font-family:var(--f-mono);font-size:clamp(1rem,3.4vw,1.4rem);font-weight:600;color:var(--on-accent);background:color-mix(in srgb,var(--ink) 18%,transparent);padding:14px 20px;border-radius:14px;text-decoration:none;user-select:all;word-break:break-all}
+.mail a.addr:hover{background:color-mix(in srgb,var(--ink) 30%,transparent)}
+.call .btn{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.call .btn:hover{background:var(--bg);border-color:var(--bg);color:var(--ink)}
+.call.flash{animation:flash 1s ease}
+@keyframes flash{30%{filter:brightness(1.18)}}
 footer{border-top:1px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px;color:var(--muted);font-size:.9rem}
 
@@ -168,8 +181,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <li><a href="#methode">Méthode</a></li>
       <li><a href="#galerie">Galerie</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="#appel">Contact</a></li>
     </ul>
-    <a class="btn" href="#contact">Réserver un appel</a>
+    <a class="btn" href="#appel">Passer un appel</a>
   </div>
 </nav>
 
@@ -307,6 +321,18 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   </div>
 </section>
 
+<section class="call" id="appel">
+  <div class="wrap">
+    <p class="eyebrow" style="color:inherit;opacity:.85">Passer un appel</p>
+    <h2>Écris-moi,<br>je te rappelle.</h2>
+    <p>Envoie-moi un mail avec ton numéro et tes disponibilités. Je te rappelle pour un appel découverte gratuit de 15 minutes.</p>
+    <div class="mail">
+      <a class="addr" id="mailAddr" href="mailto:ton.adresse@mail.com?subject=Demande%20d'appel%20d%C3%A9couverte">ton.adresse@mail.com</a>
+      <button class="btn" type="button" id="copyMail">Copier l'adresse</button>
+    </div>
+  </div>
+</section>
+
 <footer><div class="wrap"><span>© 2026 [Ton nom] Coaching</span><span>Mentions légales · Instagram</span></div></footer>
 
 <div class="lb" id="lb" hidden><div class="photo" id="lbImg"></div></div>
@@ -345,6 +371,16 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     e.preventDefault();
     if(!f.checkValidity()){ok.hidden=false;ok.textContent='Remplis ton prénom et un e-mail valide.';return}
     ok.hidden=false;ok.textContent='Aperçu : l\'envoi réel sera branché à la mise en ligne.';
+  });
+
+  // Passer un appel -> section mail
+  const call=document.getElementById('appel');
+  document.querySelectorAll('a[href="#appel"]').forEach(a=>a.addEventListener('click',()=>{call.classList.remove('flash');void call.offsetWidth;call.classList.add('flash')}));
+  const cb=document.getElementById('copyMail'), addr=document.getElementById('mailAddr').textContent;
+  cb.addEventListener('click',()=>{
+    const done=()=>{cb.textContent='Adresse copiée';setTimeout(()=>cb.textContent="Copier l'adresse",2000)};
+    const sel=()=>{const r=document.createRange();r.selectNodeContents(document.getElementById('mailAddr'));const s=getSelection();s.removeAllRanges();s.addRange(r);cb.textContent='Adresse sélectionnée'};
+    try{navigator.clipboard.writeText(addr).then(done,sel)}catch(e){sel()}
   });
 
   // Galerie -> agrandissement
