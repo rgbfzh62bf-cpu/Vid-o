@@ -21,6 +21,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - Suivi sur l'appli Athlyse (App Store : https://apps.apple.com/fr/app/athlyse/id6759957694).
 - Appel découverte gratuit, 30 min, visio Google Meet via Calendly : https://calendly.com/alexis-bloque22/30min
 - Instagram : @alexisblq_coaching.
+- E-mail pro : alexis.bloquecoaching@gmail.com (formulaire Netlify à envoyer ici).
 
 ## Design
 - Bleu nuit #0B1628, blanc, accent bleu #5B9BEF. Polices : Big Shoulders Display / Manrope / JetBrains Mono.
