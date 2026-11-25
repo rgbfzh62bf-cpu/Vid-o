@@ -23,7 +23,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - Appel découverte gratuit, 30 min, visio Google Meet via Calendly : https://calendly.com/alexisbloquecoaching/30min
 - Instagram : @alexisblq_coaching.
 - Médiateur de la consommation : CM2C (www.cm2c.net), adhésion payée.
-- Paiement : virement bancaire uniquement (pas de Stripe / wallet). Mensuel, sans engagement. Client peut programmer un virement permanent.
+- Paiement : virement bancaire uniquement, mensuel à l’avance. Sans engagement, chaque mois commencé dû, pas de remboursement. Rétractation 14 j (prorata si démarrage anticipé). CGV : cgv.html.
 - Domaine : alexis-coaching.fr (Hostinger, payé 3 ans, jusqu’en 2029).
 - E-mail pro : alexis.bloquecoaching@gmail.com (formulaire Netlify à envoyer ici).
 
