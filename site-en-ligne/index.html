@@ -66,8 +66,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 
 /* Hero */
 .hero .wrap{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:48px;align-items:center;padding-block:56px 72px}
-.hero h1{font-size:clamp(3rem,6.4vw,5.6rem);font-weight:900}
-.hero h1 .line{display:block;overflow:hidden}
+.hero h1{line-height:1.02;font-size:clamp(3rem,6.4vw,5.6rem);font-weight:900}
+.hero h1 .line{display:block;overflow:hidden;padding-top:.14em;margin-top:-.14em}
 .hero h1 .line>span{display:inline-block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
 .hero h1 .line:nth-child(2)>span{animation-delay:.12s;color:var(--accent)}
 .hero h1 .line:nth-child(3)>span{animation-delay:.24s}
@@ -328,7 +328,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   <div class="wrap">
     <div>
       <p class="eyebrow">Alexis Bloqué · Coach sportif</p>
-      <h1><span class="line"><span>Un programme</span></span><span class="line"><span>fait pour toi,</span></span><span class="line"><span>pas copié-collé.</span></span></h1>
+      <h1><span class="line"><span>Ton coach sur mesure,</span></span><span class="line"><span>à tes côtés</span></span><span class="line"><span>jusqu'à ton objectif.</span></span></h1>
       <p class="lead">Je suis Alexis, coach sportif. Je crée ta programmation sur mesure selon ton niveau, ton matériel et ton emploi du temps, avec un suivi nutrition si tu le souhaites.</p>
       <ul class="trust"><li>8 ans de musculation</li><li>3 ans de force athlétique</li><li>Suivi sur l'appli Athlyse</li></ul>
       <div class="ctas">
