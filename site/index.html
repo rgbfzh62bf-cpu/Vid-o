@@ -238,6 +238,11 @@ html{scroll-behavior:smooth}
 @keyframes bpulse{0%{box-shadow:0 14px 34px -10px rgba(0,0,0,.7),0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent)}70%,100%{box-shadow:0 14px 34px -10px rgba(0,0,0,.7),0 0 0 18px transparent}}
 .trust{list-style:none;margin:20px 0 0;padding:0;display:flex;flex-wrap:wrap;gap:8px;animation:fade .8s .55s both}
 .trust li{font-size:.85rem;font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid var(--accent);color:var(--ink);background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.cert{display:inline-flex;align-items:center;gap:12px;padding:10px 16px 10px 12px;border-radius:14px;border:1px solid var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--ink);text-decoration:none;transition:background .2s,transform .2s}
+.cert:hover{background:color-mix(in srgb,var(--accent) 22%,transparent);transform:translateY(-2px)}
+.cert svg{width:30px;height:30px;color:var(--accent);flex:none}
+.cert span{display:grid;line-height:1.3}
+.cert small{font-size:.78rem;color:var(--muted)}
 footer{border-top:1px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px;color:var(--muted);font-size:.9rem}
 
@@ -305,6 +310,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <p class="eyebrow">Qui suis-je</p>
       <h2 class="ptitle">Je suis passé par là avant toi.</h2>
       <p class="ptext">J'ai commencé la musculation il y a 8 ans, puis je me suis lancé dans la force athlétique il y a 3 ans. Les doutes, les plateaux, la motivation qui baisse : je connais. C'est cette expérience que je mets dans chaque programme.</p>
+      <a class="cert" href="https://recherche-educateur.sports.gouv.fr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Éducateur sportif diplômé</b><small>Carte pro n° 07825ED0287 · Vérifier sur sports.gouv.fr ↗</small></span></a>
       <a class="btn" href="#methode">Découvrir mon approche <span class="arr">→</span></a>
     </div>
   </div>
