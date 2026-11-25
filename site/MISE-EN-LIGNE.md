@@ -2,7 +2,7 @@
 
 À vérifier AVANT de publier le site sur le domaine.
 
-- [ ] **Médiateur de la consommation** : s'inscrire (CM2C, Medicys, CNPM, AME Conso…), puis ajouter son nom + site dans `mentions-legales.html` (case « Médiateur »).
+- [x] **Médiateur de la consommation** : CM2C (payé). Ajouté aux mentions légales. Vérifier l’adresse postale exacte sur l’attestation CM2C.
 - [ ] **Hébergeur** : remplir nom, adresse, site dans `mentions-legales.html` (case « Hébergement »).
 - [ ] **Formulaire de contact** : code prêt (Netlify Forms, formulaire « contact »). Sur Netlify : Forms > activer, puis Form notifications > Email vers l’adresse coaching. Tester un envoi.
 - [x] **Domaine** acheté : alexis-coaching.fr (Hostinger). Reste : le relier à Netlify (DNS).
