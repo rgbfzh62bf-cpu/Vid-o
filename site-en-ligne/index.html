@@ -568,8 +568,8 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     if(!f.checkValidity()){ok.hidden=false;ok.textContent='Remplis ton prénom et un e-mail valide.';return}
     const btn=f.querySelector('button[type=submit]');btn.disabled=true;
     fetch('https://formsubmit.co/ajax/alexis.bloquecoaching@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
-      .then(r=>r.json()).then(d=>{if(!(d&&(d.success===true||d.success==='true')))throw 0;ok.hidden=false;ok.textContent='Merci ! Ta demande est bien envoyée. Je te réponds sous 24 h.';f.reset()})
-      .catch(()=>{ok.hidden=false;ok.textContent='L\'envoi n\'a pas marché. Écris-moi directement par mail ou réserve ton appel.'})
+      .then(r=>r.json()).then(d=>{if(!(d&&(d.success===true||d.success==='true')))throw new Error((d&&d.message)||'');ok.hidden=false;ok.textContent='Merci ! Ta demande est bien envoyée. Je te réponds sous 24 h.';f.reset()})
+      .catch(err=>{ok.hidden=false;ok.textContent='L\'envoi n\'a pas marché. Écris-moi directement par mail ou réserve ton appel.'+(err&&err.message?' ('+err.message+')':'')})
       .finally(()=>btn.disabled=false);
   });
 
