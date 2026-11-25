@@ -18,7 +18,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - CQP Instructeur Fitness. Carte pro 07825ED0287 (préf. Yvelines, exp. 18/09/2030).
 - Parcours sportif : golf 7 ans, foot 5-6 ans, volley 1 an, tennis 1 an, aïkido 1 an, puis musculation 8 ans (depuis 2018), force athlétique 3 ans. Disponible 6/7. Recontact sous 24 h.
 - Photo d’accueil : coach.jpg (en salle, casque, t-shirt SPC ; crédit photographe en filigrane coupé).
-- Avant / après : photo miroir (parcours.jpg) = 2018, 52 kg. Maintenant = 73 kg ; photo actuelle à recevoir.
+- Avant / après MASQUÉ pour l’instant (seule la photo 2018 « Mes débuts » est affichée, bloc à remettre dans index.html via le commentaire AVANT/APRÈS). photo miroir (parcours.jpg) = 2018, 52 kg. Maintenant = 73 kg ; photo actuelle à recevoir.
 - Formule 1 Programmation sur mesure : 160 €/mois. Formule 2 Programmation + Nutrition : 200 €/mois.
 - Suivi sur l'appli Athlyse (App Store : https://apps.apple.com/fr/app/athlyse/id6759957694).
 - Appel découverte gratuit, 30 min, visio Google Meet via Calendly : https://calendly.com/alexisbloquecoaching/30min
