@@ -163,6 +163,7 @@ form{display:grid;gap:14px;background:var(--surface);border:1px solid var(--line
 label{font-size:.85rem;font-weight:700;display:grid;gap:6px}
 input,select,textarea{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:12px 14px;width:100%}
 textarea{min-height:110px;resize:vertical}
+.hp{display:none!important}
 .ok{font-family:var(--f-mono);font-size:.82rem;color:var(--accent)}
 @media (max-width:860px){.contact .wrap{grid-template-columns:1fr}}
 
@@ -504,10 +505,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <p style="color:var(--muted);margin-top:18px;max-width:44ch">Laisse-moi tes infos. Je te recontacte sous 24 h pour un appel découverte gratuit.</p>
     </div>
     <form id="form" class="reveal" name="contact" method="POST" novalidate>
-      <input type="hidden" name="_subject" value="Nouvelle demande · Alexis Coaching">
-      <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_captcha" value="false">
-      <p hidden><label>Ne pas remplir <input name="_honey" tabindex="-1" autocomplete="off"></label></p>
+      <input type="hidden" name="access_key" value="4e372227-41eb-480b-92f6-5a36ae9dcc69">
+      <input type="hidden" name="subject" value="Nouvelle demande · Alexis Coaching">
+      <input type="hidden" name="from_name" value="Site Alexis Coaching">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label for="f-name">Prénom<input id="f-name" name="name" required autocomplete="given-name"></label>
       <label for="f-mail">E-mail<input id="f-mail" name="email" type="email" required autocomplete="email"></label>
       <label for="f-plan">Formule<select id="f-plan" name="plan"><option>Programmation sur mesure</option><option>Programmation + Nutrition</option></select></label>
@@ -556,7 +557,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     e.preventDefault();
     if(!f.checkValidity()){ok.hidden=false;ok.textContent='Remplis ton prénom et un e-mail valide.';return}
     const btn=f.querySelector('button[type=submit]');btn.disabled=true;
-    fetch('https://formsubmit.co/ajax/alexis.bloquecoaching@gmail.com',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
+    fetch('https://api.web3forms.com/submit',{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)})
       .then(r=>r.json()).then(d=>{if(!(d&&(d.success===true||d.success==='true')))throw new Error((d&&d.message)||'');ok.hidden=false;ok.textContent='Merci ! Ta demande est bien envoyée. Je te réponds sous 24 h.';f.reset()})
       .catch(err=>{ok.hidden=false;ok.textContent='L\'envoi n\'a pas marché. Écris-moi directement par mail ou réserve ton appel.'+(err&&err.message?' ('+err.message+')':'')})
       .finally(()=>btn.disabled=false);
