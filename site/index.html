@@ -168,7 +168,7 @@ textarea{min-height:110px;resize:vertical}
 
 html{scroll-behavior:smooth}
 [id]{scroll-margin-top:80px}
-.call{padding-block:96px;position:relative;overflow:hidden}
+.call{padding-block:24px 96px;position:relative;overflow:hidden}
 .call::before{content:"";position:absolute;left:50%;top:40%;width:900px;height:900px;max-width:none;transform:translate(-50%,-50%);background:radial-gradient(circle,color-mix(in srgb,var(--accent) 22%,transparent),transparent 60%);pointer-events:none}
 .call .wrap{position:relative}
 .call-card{border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:28px;background:linear-gradient(150deg,var(--surface-2),var(--surface) 60%);padding:clamp(28px,5vw,56px);display:grid;gap:36px;box-shadow:0 40px 80px -40px rgba(0,0,0,.7)}
@@ -272,7 +272,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <p class="lead">Je construis ta programmation selon ton niveau, ton matériel et ton emploi du temps. Si tu le souhaites, j'ajoute un suivi nutrition adapté à tes objectifs.</p>
       <div class="ctas">
         <a class="btn" href="#formules">Voir les 2 formules <span class="arr">→</span></a>
-        <a class="btn ghost" href="#methode">Comment ça marche</a>
+        <a class="btn ghost" href="#appel">Passer un appel</a>
       </div>
     </div>
     <div class="photo" id="heroPhoto" data-photo="hero">
@@ -334,6 +334,29 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         </div>
         <a class="btn" href="#contact" data-plan="Programmation + Nutrition">Choisir cette formule <span class="arr">→</span></a>
       </article>
+    </div>
+  </div>
+</section>
+
+<section class="call" id="appel">
+  <div class="wrap">
+    <div class="call-card reveal">
+      <div class="call-top">
+        <div class="ring" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
+        <div>
+          <p class="eyebrow">Passer un appel · Appel découverte gratuit</p>
+          <h2>Parlons de <em>ton objectif.</em></h2>
+          <p>15 minutes pour faire le point sur ton niveau et tes attentes, et trouver la formule qui te correspond. Choisis le moyen qui te va le mieux.</p>
+        </div>
+      </div>
+      <div class="ways">
+        <div class="way"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><span class="lbl">E-mail</span><span class="val" id="mailAddr">alexis.bloque22@gmail.com</span>
+          <div class="acts"><a class="chip main" href="mailto:alexis.bloque22@gmail.com?subject=Demande%20d'appel%20d%C3%A9couverte">Écrire un mail</a><button class="chip" type="button" data-copy="alexis.bloque22@gmail.com">Copier</button></div></div>
+        <div class="way"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span class="lbl">Téléphone</span><span class="val">06 52 93 35 73</span>
+          <div class="acts"><a class="chip main" href="tel:+33652933573">Appeler</a><button class="chip" type="button" data-copy="06 52 93 35 73">Copier</button></div></div>
+        <div class="way"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></span><span class="lbl">Instagram</span><span class="val">@alexisblq_coaching</span>
+          <div class="acts"><a class="chip main" href="https://www.instagram.com/alexisblq_coaching/" target="_blank" rel="noopener">Voir le profil</a></div></div>
+      </div>
     </div>
   </div>
 </section>
@@ -454,29 +477,6 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <button class="btn" type="submit">Envoyer ma demande <span class="arr">→</span></button>
       <p class="ok" id="ok" hidden></p>
     </form>
-  </div>
-</section>
-
-<section class="call" id="appel">
-  <div class="wrap">
-    <div class="call-card reveal">
-      <div class="call-top">
-        <div class="ring" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></div>
-        <div>
-          <p class="eyebrow">Passer un appel · Appel découverte gratuit</p>
-          <h2>Parlons de <em>ton objectif.</em></h2>
-          <p>15 minutes pour faire le point sur ton niveau et tes attentes, et trouver la formule qui te correspond. Choisis le moyen qui te va le mieux.</p>
-        </div>
-      </div>
-      <div class="ways">
-        <div class="way"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><span class="lbl">E-mail</span><span class="val" id="mailAddr">alexis.bloque22@gmail.com</span>
-          <div class="acts"><a class="chip main" href="mailto:alexis.bloque22@gmail.com?subject=Demande%20d'appel%20d%C3%A9couverte">Écrire un mail</a><button class="chip" type="button" data-copy="alexis.bloque22@gmail.com">Copier</button></div></div>
-        <div class="way"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span class="lbl">Téléphone</span><span class="val">06 52 93 35 73</span>
-          <div class="acts"><a class="chip main" href="tel:+33652933573">Appeler</a><button class="chip" type="button" data-copy="06 52 93 35 73">Copier</button></div></div>
-        <div class="way"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></span><span class="lbl">Instagram</span><span class="val">@alexisblq_coaching</span>
-          <div class="acts"><a class="chip main" href="https://www.instagram.com/alexisblq_coaching/" target="_blank" rel="noopener">Voir le profil</a></div></div>
-      </div>
-    </div>
   </div>
 </section>
 
