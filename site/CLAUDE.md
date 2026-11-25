@@ -36,3 +36,6 @@ Voir `MISE-EN-LIGNE.md` (médiateur de la consommation obligatoire, hébergeur, 
 
 ## Aperçu claude.ai
 Images en fichiers séparés = cassées dans l’appli d’Alexis. Publier un aperçu avec images inlinées (data URI) depuis le scratchpad vers les URL existantes : site https://claude.ai/artifact/RrFDYNC85ithxauYMMkANm , liens https://claude.ai/artifact/1XBNvJcfkLxQxs3YXXKiZj . Le repo garde les chemins relatifs.
+
+## Mise en ligne
+Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-newton-swewu8`. Après CHAQUE modif du site : `python3 site/build.py`, commit, push.
