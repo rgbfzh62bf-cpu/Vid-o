@@ -29,6 +29,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - E-mail pro : alexis.bloquecoaching@gmail.com (formulaire Netlify à envoyer ici).
 
 ## Design
+- Logo : logo.jpg (haltère bleue + ALEXIS COACHING). Favicon favicon*.png / apple-touch-icon.png, partage réseaux partage.jpg.
 - Bleu nuit #0B1628, blanc, accent bleu #5B9BEF. Polices : Big Shoulders Display / Manrope / JetBrains Mono.
 - Ordre de page : Qui suis-je → Approche → Appli → Tarifs → Appel → FAQ → Commencer.
 
