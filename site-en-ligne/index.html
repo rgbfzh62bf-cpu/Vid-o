@@ -297,6 +297,10 @@ html{scroll-behavior:smooth}
 .hero .photo.hero-photo{margin:0;aspect-ratio:4/5;min-height:0;border-color:var(--accent);box-shadow:0 30px 70px -30px rgba(0,0,0,.8);animation:fade 1s .3s both}
 .hero-photo img{object-position:50% 20%}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero .photo.hero-photo{aspect-ratio:4/5;max-width:460px;width:100%;justify-self:center}}
+.shot{margin:0;display:grid;gap:8px}
+.shot img{display:block;width:100%;max-width:100%;height:280px;object-fit:cover;object-position:top;border-radius:16px;border:1px solid var(--line);background:var(--bg)}
+.plan.featured .shot img{border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+.shot figcaption{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;color:var(--muted);text-align:center}
 footer{border-top:1px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px;color:var(--muted);font-size:.9rem}
 
@@ -457,11 +461,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <li>Correction technique sur vidéo</li>
           <li>Échanges par message</li>
         </ul>
-        <div class="sample" aria-label="Exemple de séance">
-          <div class="row"><span class="k">Développé couché</span><span>4 × 8 · 70 kg</span></div>
-          <div class="row"><span class="k">Rowing barre</span><span>4 × 10 · 60 kg</span></div>
-          <div class="row"><span class="k">Gainage</span><span>3 × 45 s</span></div>
-        </div>
+        <figure class="shot"><img src="app2.jpg" alt="Exemple de séance de musculation dans l'appli Athlyse" loading="lazy"><figcaption>Ta séance du jour dans l'appli Athlyse</figcaption></figure>
         <a class="btn" href="#contact" data-plan="Programmation sur mesure">Choisir cette formule <span class="arr">→</span></a>
       </article>
 
@@ -478,11 +478,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <li>Suivi du poids, des mensurations et de l'énergie</li>
           <li>Adaptation de la nutrition à chaque bilan</li>
         </ul>
-        <div class="sample" aria-label="Exemple de répartition des macros">
-          <div class="row"><span class="k">Objectif journalier</span><span>2 300 kcal</span></div>
-          <div class="row"><span>P 170 g</span><span>G 275 g</span><span>L 60 g</span></div>
-          <div class="macros"><i></i><i></i><i></i></div>
-        </div>
+        <figure class="shot"><img src="app3.jpg" alt="Exemple de suivi nutrition dans l'appli Athlyse" loading="lazy"><figcaption>Ton suivi nutrition dans l'appli Athlyse</figcaption></figure>
         <a class="btn" href="#contact" data-plan="Programmation + Nutrition">Choisir cette formule <span class="arr">→</span></a>
       </article>
     </div>
