@@ -256,15 +256,20 @@ html{scroll-behavior:smooth}
 .name-tag{display:grid;gap:2px;left:16px;top:16px;bottom:auto}
 .name-tag b{font-family:var(--f-display);font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:1.4rem;color:var(--ink);line-height:1}
 .name-tag span{color:var(--accent);font-size:.72rem;letter-spacing:.06em}
-.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;width:100%;counter-reset:tl}
-.tl li{position:relative;display:grid;gap:2px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);counter-increment:tl}
-.tl li::before{content:none}
-.tl b{font-size:.92rem}
-.tl span{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
-.tl li.hi{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
-.tl li.hi span{color:var(--accent)}
-.tl li:last-child{grid-column:span 2}
-@media (max-width:520px){.tl{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:12px;width:100%}
+.tl li{display:grid;grid-template-columns:118px minmax(0,1fr) 150px;grid-template-areas:"n b y";column-gap:14px;align-items:center}
+.tl b{grid-area:n;font-size:.92rem;font-weight:700}
+.tl .bar{grid-area:b;height:12px;border-radius:99px;background:var(--surface);border:1px solid var(--line);overflow:hidden}
+.tl .bar i{display:block;height:100%;width:var(--w);border-radius:99px;background:color-mix(in srgb,var(--accent) 45%,var(--surface));transform-origin:left;transform:scaleX(1)}
+.tl.in .bar i{animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both}
+.tl li:nth-child(2) .bar i{animation-delay:.08s}.tl li:nth-child(3) .bar i{animation-delay:.16s}.tl li:nth-child(4) .bar i{animation-delay:.24s}.tl li:nth-child(5) .bar i{animation-delay:.32s}.tl li:nth-child(6) .bar i{animation-delay:.4s}.tl li:nth-child(7) .bar i{animation-delay:.48s}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.tl .yr{grid-area:y;font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.tl li.hi b{color:var(--accent)}
+.tl li.hi .bar{border-color:color-mix(in srgb,var(--accent) 50%,transparent)}
+.tl li.hi .bar i{background:var(--accent)}
+.tl li.hi .yr{color:var(--accent)}
+@media (max-width:520px){.tl li{grid-template-columns:96px minmax(0,1fr);grid-template-areas:"n b" ". y";row-gap:2px}}
 footer{border-top:1px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px;color:var(--muted);font-size:.9rem}
 
@@ -336,14 +341,14 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <p class="eyebrow">Qui suis-je</p>
       <h2 class="ptitle">Je suis passé par là avant toi.</h2>
       <p class="ptext">Le sport fait partie de ma vie depuis tout petit. J'ai touché à plusieurs disciplines avant de trouver la mienne : la salle. Les doutes, les plateaux, la motivation qui baisse, je connais. C'est toute cette expérience que je mets dans chaque programme.</p>
-      <ol class="tl">
-        <li><b>Golf</b><span>7 ans</span></li>
-        <li><b>Football</b><span>5-6 ans</span></li>
-        <li><b>Volley-ball</b><span>1 an</span></li>
-        <li><b>Tennis</b><span>1 an</span></li>
-        <li><b>Aïkido</b><span>1 an</span></li>
-        <li class="hi"><b>Musculation</b><span>8 ans · depuis 2018</span></li>
-        <li class="hi"><b>Force athlétique</b><span>3 ans · aujourd'hui</span></li>
+      <ol class="tl reveal" aria-label="Mon parcours sportif, du plus ancien au plus récent">
+        <li class="" style="--w:87.5%"><b>Golf</b><span class="bar"><i></i></span><span class="yr">7 ans</span></li>
+        <li class="" style="--w:68.8%"><b>Football</b><span class="bar"><i></i></span><span class="yr">5-6 ans</span></li>
+        <li class="" style="--w:12.5%"><b>Volley-ball</b><span class="bar"><i></i></span><span class="yr">1 an</span></li>
+        <li class="" style="--w:12.5%"><b>Tennis</b><span class="bar"><i></i></span><span class="yr">1 an</span></li>
+        <li class="" style="--w:12.5%"><b>Aïkido</b><span class="bar"><i></i></span><span class="yr">1 an</span></li>
+        <li class="hi" style="--w:100.0%"><b>Musculation</b><span class="bar"><i></i></span><span class="yr">8 ans · depuis 2018</span></li>
+        <li class="hi" style="--w:37.5%"><b>Force athlétique</b><span class="bar"><i></i></span><span class="yr">3 ans · aujourd'hui</span></li>
       </ol>
       <a class="cert" href="https://recherche-educateur.sports.gouv.fr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Éducateur sportif diplômé · CQP Instructeur Fitness</b><small>Carte pro n° 07825ED0287 · Vérifier sur sports.gouv.fr ↗</small></span></a>
       <a class="btn" href="#methode">Découvrir mon approche <span class="arr">→</span></a>
