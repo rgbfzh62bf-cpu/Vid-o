@@ -41,6 +41,6 @@ Images en fichiers séparés = cassées dans l’appli d’Alexis. Publier un ap
 
 ## Mise en ligne
 RÈGLE D’ALEXIS : ne rien envoyer (push = mise en ligne Netlify) tant qu’il n’a pas dit que la série de modifications est terminée. Montrer en aperçu, committer en local, puis UN push à son feu vert.
-IMPORTANT : crédits Netlify limités. 25/11/2026 : quota gratuit épuisé, Alexis est passé sur l’offre Personal (9 $/mois, 1 000 crédits) pour débloquer ; il compte l’annuler ensuite. REGROUPER les modifs, demander validation, puis UN SEUL push par série de changements.
+IMPORTANT : crédits Netlify limités. 25/11/2026 : quota gratuit épuisé, Alexis est passé sur l’offre Personal (9 $/mois, 1 000 crédits) pour débloquer ; résilié, repasse en gratuit le 24/12/2026. REGROUPER les modifs, demander validation, puis UN SEUL push par série de changements.
 Hébergeur définitif : Netlify (choix d’Alexis : sécurité avant tout, badge « Powered by Netlify » accepté). En-têtes de sécurité via _headers (build.py).
 Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-newton-swewu8`. Après CHAQUE modif du site : `python3 site/build.py`, commit, push.
