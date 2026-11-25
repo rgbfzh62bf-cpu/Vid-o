@@ -256,13 +256,14 @@ html{scroll-behavior:smooth}
 .name-tag{display:grid;gap:2px;left:16px;top:16px;bottom:auto}
 .name-tag b{font-family:var(--f-display);font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:1.4rem;color:var(--ink);line-height:1}
 .name-tag span{color:var(--accent);font-size:.72rem;letter-spacing:.06em}
-.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;width:100%;counter-reset:tl}
+.tl{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;width:100%;counter-reset:tl}
 .tl li{position:relative;display:grid;gap:2px;padding:10px 12px;border:1px solid var(--line);border-radius:12px;background:var(--surface);counter-increment:tl}
 .tl li::before{content:counter(tl);position:absolute;top:8px;right:10px;font-family:var(--f-mono);font-size:.65rem;color:var(--muted)}
 .tl b{font-size:.92rem}
 .tl span{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
 .tl li.hi{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
 .tl li.hi span{color:var(--accent)}
+.tl li:last-child{grid-column:span 2}
 @media (max-width:520px){.tl{grid-template-columns:repeat(2,minmax(0,1fr))}}
 footer{border-top:1px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px;color:var(--muted);font-size:.9rem}
@@ -340,6 +341,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
         <li><b>Football</b><span>5-6 ans</span></li>
         <li><b>Volley-ball</b><span>1 an</span></li>
         <li><b>Tennis</b><span>1 an</span></li>
+        <li><b>Aïkido</b><span>1 an</span></li>
         <li class="hi"><b>Musculation</b><span>8 ans · depuis 2018</span></li>
         <li class="hi"><b>Force athlétique</b><span>3 ans · aujourd'hui</span></li>
       </ol>
