@@ -116,8 +116,10 @@ section{padding-block:88px}
 
 /* Chiffres */
 .stats{background:var(--surface);border-block:1px solid var(--line)}
-.stats .wrap{display:grid;justify-items:center;text-align:center;padding-block:56px}
-.stat{display:grid;gap:8px;max-width:40ch}
+.stats .wrap{display:grid;gap:28px;text-align:center;padding-block:56px}
+.stat-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.stat{display:grid;gap:8px}
+@media (max-width:640px){.stat-row{grid-template-columns:1fr}}
 .stat b{display:block;font-family:var(--f-display);font-weight:900;font-size:clamp(3rem,7vw,5rem);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
 .stat span{color:var(--muted)}
 @media (max-width:640px){.stats .wrap{grid-template-columns:1fr}}
@@ -268,7 +270,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 <div class="stats">
   <div class="wrap">
-    <div class="stat"><b data-count="6" data-suffix="/7">6/7</b><span>Je suis disponible 6 jours sur 7 pour répondre à tes questions et t'accompagner.</span></div>
+    <p class="eyebrow stats-title">Mon expérience terrain</p>
+    <div class="stat-row">
+      <div class="stat"><b data-count="8" data-suffix=" ans">8 ans</b><span>de musculation</span></div>
+      <div class="stat"><b data-count="3" data-suffix=" ans">3 ans</b><span>de force athlétique</span></div>
+      <div class="stat"><b data-count="6" data-suffix="/7">6/7</b><span>disponible pour répondre à tes questions</span></div>
+    </div>
   </div>
 </div>
 
