@@ -42,7 +42,7 @@ a{color:inherit}
 body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
 .nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:14px}
-.logo{font-family:var(--f-display);font-weight:900;font-size:clamp(1.9rem,6.2vw,3.4rem);line-height:1;text-transform:uppercase;text-decoration:none;letter-spacing:.14em;display:flex;gap:.4em}
+.logo{font-family:var(--f-display);font-weight:900;font-size:clamp(1.35rem,7.4vw,3.4rem);line-height:1;text-transform:uppercase;text-decoration:none;letter-spacing:.14em;display:flex;gap:.4em}
 .logo span{color:var(--accent)}
 .btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-body);font-weight:700;font-size:.95rem;padding:14px 22px;border-radius:999px;border:2px solid var(--accent);background:var(--accent);color:var(--on-accent);text-decoration:none;cursor:pointer;transition:transform .2s,background .2s,color .2s}
 .btn:hover{transform:translateY(-2px);background:var(--ink);border-color:var(--ink);color:var(--bg)}
@@ -304,6 +304,17 @@ html{scroll-behavior:smooth}
 .shot img{display:block;width:100%;max-width:100%;height:280px;object-fit:cover;object-position:top;border-radius:16px;border:1px solid var(--line);background:var(--bg)}
 .plan.featured .shot img{border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
 .shot figcaption{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;color:var(--muted);text-align:center}
+@media (max-width:420px){
+  .way .val{font-size:.92rem;overflow-wrap:normal;word-break:normal}
+  .way{padding:18px}
+  form .btn{white-space:nowrap}
+  select{font-size:14px;padding-right:8px}
+  .logo{letter-spacing:.08em}
+  .plan{padding:24px 20px;min-width:0}
+  .plan h3{font-size:2rem}
+  .plan .btn{align-self:stretch;justify-content:center}
+}
+footer a{display:inline-block;padding-block:10px}
 footer{border-top:1px solid var(--line)}
 footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding-block:28px;color:var(--muted);font-size:.9rem}
 
@@ -502,7 +513,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <div class="acts"><a class="chip main" href="https://calendly.com/alexisbloquecoaching/30min" target="_blank" rel="noopener" data-calendly>Réserver mon appel</a></div></div>
         <div class="way"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><span class="lbl">E-mail</span><span class="val" id="mailAddr">alexis.bloquecoaching<wbr>@gmail.com</span>
           <div class="acts"><a class="chip main" href="mailto:alexis.bloquecoaching@gmail.com?subject=Demande%20d'appel%20d%C3%A9couverte">Écrire un mail</a><button class="chip" type="button" data-copy="alexis.bloquecoaching@gmail.com">Copier</button></div></div>
-        <div class="way"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></span><span class="lbl">Instagram</span><span class="val">@alexisblq_coaching</span>
+        <div class="way"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></span><span class="lbl">Instagram</span><span class="val">@alexisblq<wbr>_coaching</span>
           <div class="acts"><a class="chip main" href="https://www.instagram.com/alexisblq_coaching/" target="_blank" rel="noopener">Voir le profil</a></div></div>
       </div>
     </div>
