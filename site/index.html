@@ -116,7 +116,8 @@ section{padding-block:88px}
 
 /* Chiffres */
 .stats{background:var(--surface);border-block:1px solid var(--line)}
-.stats .wrap{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;padding-block:64px}
+.stats .wrap{display:grid;justify-items:center;text-align:center;padding-block:56px}
+.stat{display:grid;gap:8px;max-width:40ch}
 .stat b{display:block;font-family:var(--f-display);font-weight:900;font-size:clamp(3rem,7vw,5rem);line-height:1;color:var(--accent);font-variant-numeric:tabular-nums}
 .stat span{color:var(--muted)}
 @media (max-width:640px){.stats .wrap{grid-template-columns:1fr}}
@@ -259,7 +260,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     <div class="steps">
       <div class="step reveal"><h3>Appel découverte</h3><p>On parle de ton objectif, de ton passé sportif et de tes contraintes.</p></div>
       <div class="step reveal"><h3>Bilan complet</h3><p>Questionnaire, photos et mesures pour partir d'une base précise.</p></div>
-      <div class="step reveal"><h3>Ton programme</h3><p>Tu reçois ton plan sous 72 h, avec la nutrition si tu as choisi la formule 2.</p></div>
+      <div class="step reveal"><h3>Ton programme</h3><p>Tu reçois ton plan personnalisé, avec la nutrition si tu as choisi la formule 2.</p></div>
       <div class="step reveal"><h3>Suivi et ajustements</h3><p>Un bilan chaque semaine. On ajuste dès que tu progresses ou que ta vie change.</p></div>
     </div>
   </div>
@@ -267,9 +268,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
 
 <div class="stats">
   <div class="wrap">
-    <div class="stat"><b data-count="50">0</b><span>personnes accompagnées</span></div>
-    <div class="stat"><b data-count="72" data-suffix=" h">0</b><span>pour recevoir ton programme</span></div>
-    <div class="stat"><b data-count="7" data-suffix="/7">0</b><span>pour poser tes questions</span></div>
+    <div class="stat"><b data-count="6" data-suffix="/7">6/7</b><span>Je suis disponible 6 jours sur 7 pour répondre à tes questions et t'accompagner.</span></div>
   </div>
 </div>
 
