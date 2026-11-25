@@ -6,7 +6,7 @@
 - [ ] **Hébergeur** : remplir nom, adresse, site dans `mentions-legales.html` (case « Hébergement »).
 - [ ] **Formulaire de contact** : code prêt (Netlify Forms, formulaire « contact »). Sur Netlify : Forms > activer, puis Form notifications > Email vers l’adresse coaching. Tester un envoi.
 - [x] **Domaine** acheté : alexis-coaching.fr (Hostinger). Reste : le relier à Netlify (DNS).
-- [ ] **Version finale** : ajouter `<!doctype html>`, `<html lang="fr">`, `<head>` avec meta viewport à `index.html`.
+- [x] **Version finale** : dossier `site-en-ligne/` + `alexis-coaching-site.zip` (doctype, head, meta, favicon). À régénérer après chaque modif si déploiement manuel.
 - [ ] Faire relire les mentions légales (comptable / CCI).
 - [ ] **Page de liens** (`liens.html`) : ajouter doctype/head comme index, puis mettre `alexis-coaching.fr/liens` dans la bio Instagram.
 - [ ] **Calendly** : remplacer les liens `data-calendly` (index.html) et « Réserver un appel » (liens.html) par le lien Calendly.

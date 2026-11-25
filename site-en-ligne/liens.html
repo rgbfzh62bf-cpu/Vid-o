@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Alexis Bloqué, coach sportif diplômé. Programmation sur mesure et suivi nutrition en ligne, sur l'appli Athlyse. Appel découverte gratuit.">
+<meta property="og:title" content="Alexis Coaching · Coach sportif">
+<meta property="og:description" content="Alexis Bloqué, coach sportif diplômé. Programmation sur mesure et suivi nutrition en ligne, sur l'appli Athlyse. Appel découverte gratuit.">
+<meta property="og:image" content="https://alexis-coaching.fr/hero.jpg">
+<meta property="og:url" content="https://alexis-coaching.fr/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230B1628'/%3E%3Ctext x='32' y='44' font-family='Arial' font-weight='900' font-size='34' text-anchor='middle' fill='%235B9BEF'%3EA%3C/text%3E%3C/svg%3E">
+<title>Liens Alexis Coaching</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@800;900&family=Manrope:wght@500;700&family=JetBrains+Mono:wght@400&display=swap">
+<style>
+/* Page de liens : colonne centrée, photo, gros boutons empilés */
+:root{--bg:#0B1628;--surface:#12223A;--surface-2:#16305A;--ink:#FFFFFF;--muted:#A9B6C9;--line:#22385A;--accent:#5B9BEF;--on-accent:#0B1628;color-scheme:dark;
+  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;--f-body:"Manrope",system-ui,sans-serif;--f-mono:"JetBrains Mono",ui-monospace,monospace}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;min-height:100vh;background:radial-gradient(ellipse 80% 50% at 50% 0%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%),var(--bg);color:var(--ink);font-family:var(--f-body)}
+main{max-width:520px;margin:0 auto;padding-block:48px 40px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:grid;gap:28px;justify-items:center;text-align:center}
+.avatar{width:120px;height:120px;border-radius:50%;object-fit:cover;object-position:62% 35%;border:3px solid var(--accent);box-shadow:0 0 0 6px color-mix(in srgb,var(--accent) 18%,transparent);animation:pop .6s cubic-bezier(.2,.8,.2,1) both}
+h1{margin:0;font-family:var(--f-display);font-weight:900;text-transform:uppercase;letter-spacing:.14em;font-size:2.2rem;line-height:1}
+h1 span{color:var(--accent)}
+.sub{margin:8px 0 0;font-family:var(--f-mono);font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.bio{margin:12px 0 0;color:var(--muted);font-size:.95rem;max-width:40ch}
+.links{display:grid;gap:12px;width:100%}
+.l{display:grid;grid-template-columns:44px 1fr 20px;align-items:center;gap:14px;text-align:left;padding:14px 16px;border-radius:18px;background:var(--surface);border:1px solid var(--line);color:var(--ink);text-decoration:none;font-weight:700;transition:transform .25s cubic-bezier(.2,.8,.2,1),border-color .25s,background .25s;animation:up .5s cubic-bezier(.2,.8,.2,1) both}
+.l:hover{transform:translateY(-3px) scale(1.01);border-color:var(--accent);background:var(--surface-2)}
+.l small{display:block;font-weight:500;font-size:.8rem;color:var(--muted)}
+.l .i{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 16%,transparent);color:var(--accent)}
+.l .i svg{width:22px;height:22px}
+.l .go{color:var(--muted);transition:transform .25s}
+.l:hover .go{transform:translateX(4px);color:var(--accent)}
+.l.main{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.l.main small{color:color-mix(in srgb,var(--on-accent) 75%,transparent)}
+.l.main .i{background:color-mix(in srgb,var(--on-accent) 14%,transparent);color:var(--on-accent)}
+.l.main .go{color:var(--on-accent)}
+.l.main:hover{background:var(--ink);border-color:var(--ink)}
+.links .l:nth-child(2){animation-delay:.05s}.links .l:nth-child(3){animation-delay:.1s}.links .l:nth-child(4){animation-delay:.15s}.links .l:nth-child(5){animation-delay:.2s}.links .l:nth-child(6){animation-delay:.25s}
+.cert{font-size:.8rem;color:var(--muted)}
+.cert a{color:var(--accent)}
+footer{font-size:.75rem;color:var(--muted)}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes pop{from{transform:scale(.85)}to{transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <img class="avatar" src="hero.jpg" alt="Alexis, coach sportif">
+  <div>
+    <h1>Alexis <span>Coaching</span></h1>
+    <p class="sub">Coach sportif · Éducateur diplômé</p>
+    <p class="bio">Programmation sur mesure et suivi nutrition. 8 ans de musculation, 3 ans de force athlétique.</p>
+  </div>
+
+  <nav class="links" aria-label="Liens">
+    <a class="l main" href="index.html#formules"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 6.5h11M6.5 17.5h11M3 9v6M21 9v6M6 6v12M18 6v12"/></svg></span><span>Découvrir mes formules<small>Programmation 160 € · + Nutrition 200 € / mois</small></span><span class="go">→</span></a>
+    <a class="l" href="https://calendly.com/alexisbloquecoaching/30min" target="_blank" rel="noopener"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span>Réserver un appel découverte<small>Gratuit · 30 minutes en visio</small></span><span class="go">→</span></a>
+    <a class="l" href="index.html"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></span><span>Mon site<small>Qui suis-je, approche, FAQ</small></span><span class="go">→</span></a>
+    <a class="l" href="https://www.instagram.com/alexisblq_coaching/" target="_blank" rel="noopener"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8" fill="currentColor"/></svg></span><span>Instagram<small>@alexisblq_coaching</small></span><span class="go">↗</span></a>
+    <a class="l" href="https://apps.apple.com/fr/app/athlyse/id6759957694" target="_blank" rel="noopener"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2" width="12" height="20" rx="3"/><path d="M11 18h2"/></svg></span><span>L'appli Athlyse<small>Disponible sur l'App Store</small></span><span class="go">↗</span></a>
+    <a class="l" href="mailto:alexis.bloquecoaching@gmail.com?subject=Demande%20d'information"><span class="i"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></span><span>M'écrire<small>alexis.bloquecoaching@gmail.com</small></span><span class="go">→</span></a>
+  </nav>
+
+  <p class="cert">Carte pro n° 07825ED0287 · <a href="https://recherche-educateur.sports.gouv.fr" target="_blank" rel="noopener">vérifier</a></p>
+  <footer>© 2026 Alexis Coaching · <a href="mentions-legales.html" style="color:inherit">Mentions légales</a></footer>
+</main>
+</body>
+</html>
