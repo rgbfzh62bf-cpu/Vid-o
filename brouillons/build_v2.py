@@ -61,7 +61,7 @@ def apply_theme(wb):
                 b=cell.border
                 if b and any(s is not None and s.style for s in (b.left,b.right,b.top,b.bottom)):
                     cell.border=Border(left=_side(b.left),right=_side(b.right),top=_side(b.top),bottom=_side(b.bottom))
-        ws.sheet_properties.tabColor=NAVY if ws.title in('COMMENCER ICI','MES 1RM','BILAN') else ACC
+        ws.sheet_properties.tabColor=NAVY if ws.title in('COMMENCER ICI','MES 1RM','VARIANTES','BILAN') else ACC
         import os; TH=os.environ.get('THEME','C')
         if TH in('B','C'):
             # bandeau d'en-tête bleu nuit, comme le site
@@ -93,6 +93,40 @@ def header(ws,title,sub,logo,tc=(10,13),t0=3,bw=17):
     paint(ws,2,3,a,b,BLACK)
     for c in range(2,b+1): ws.cell(4,c).border=Border(bottom=Side(style='thick',color=BLUE))
 
+VARIANTES={
+ 'Squat pause 2 temps':[
+  ('C’est quoi ?','Un squat normal, avec un arrêt de 2 secondes en bas avant de remonter.'),
+  ('Comment faire','Descends comme d’habitude, sous contrôle. En bas, arrête-toi et compte 2 secondes sans bouger. Reste gainé : ventre serré, dos fixe, genoux qui poussent vers l’extérieur. Puis remonte d’un coup, sans rebond.'),
+  ('Pourquoi','Sans rebond en bas, tu dois tenir ta position et repartir avec tes jambes. Tu gagnes en contrôle et en force au moment le plus dur de la remontée.'),
+  ('À éviter','Te relâcher ou t’asseoir sur tes talons pendant la pause. Repartir avant la fin des 2 secondes. Faire ta pause plus haut que ta profondeur habituelle.')],
+ 'Développé couché pause 3 temps':[
+  ('C’est quoi ?','Un développé couché avec la barre immobile 3 secondes sur la poitrine avant de pousser.'),
+  ('Comment faire','Mets-toi en place comme d’habitude : omoplates serrées, pieds au sol, fesses posées. Descends la barre jusqu’à la poitrine, garde-la immobile en comptant 3 secondes, sans l’écraser contre toi. Puis pousse fort.'),
+  ('Pourquoi','Plus de rebond : la poussée part uniquement de ta force. Tu renforces le départ de la barre et tu apprends la pause demandée en compétition.'),
+  ('À éviter','Faire rebondir la barre. Relâcher les omoplates pendant la pause. Décoller les fesses du banc en poussant.')],
+ 'Soulevé de terre jambes tendues (RDL)':[
+  ('C’est quoi ?','Un soulevé de terre qui part du haut, jambes presque tendues. Il travaille surtout l’arrière des cuisses, les fessiers et le dos.'),
+  ('Comment faire','Debout, barre en main, genoux légèrement fléchis et fixes. Recule les hanches comme pour fermer une porte avec les fesses : la barre glisse le long des cuisses. Descends jusqu’à sentir l’étirement derrière les cuisses, dos bien droit, puis remonte en poussant les hanches vers l’avant. La barre ne touche pas le sol.'),
+  ('Pourquoi','Il renforce les muscles qui t’aident à décoller la barre au soulevé de terre et à tenir ta position au squat.'),
+  ('À éviter','Arrondir le dos pour descendre plus bas. Plier les genoux comme pour un squat. Laisser la barre s’éloigner des jambes.')],
+ 'Développé couché pieds levés':[
+  ('C’est quoi ?','Un développé couché avec les pieds levés : posés au bout du banc ou en l’air, genoux pliés.'),
+  ('Comment faire','Allonge-toi et lève les pieds. Serre les omoplates, garde le dos posé. Descends la barre jusqu’à la poitrine sous contrôle, puis pousse.'),
+  ('Pourquoi','Sans l’aide des jambes, le haut du corps travaille seul. Tu sens mieux ta trajectoire et tu la corriges plus facilement.'),
+  ('À éviter','Bouger sur le banc ou te tortiller pour pousser. Vouloir charger autant qu’au développé couché normal : ici les charges sont plus légères, c’est normal.')],
+ 'Deadlift pause genou':[
+  ('C’est quoi ?','Un soulevé de terre avec un arrêt d’1 seconde quand la barre arrive au niveau des genoux.'),
+  ('Comment faire','Mets-toi en place comme d’habitude. Décolle la barre et monte jusqu’aux genoux. Arrête-toi 1 seconde : barre collée aux jambes, épaules au-dessus de la barre, dos bien droit. Puis termine le mouvement jusqu’en haut.'),
+  ('Pourquoi','Tu renforces ta position au passage des genoux, là où on perd souvent la barre, et tu apprends à la garder près du corps.'),
+  ('À éviter','Laisser la barre s’éloigner des jambes. Monter les hanches avant les épaules. Arrondir le dos pendant l’arrêt.')],
+ '· série principale':[
+  ('C’est quoi ?','Le jour lourd, le mouvement se fait en deux temps : une série principale, la plus lourde de la séance, puis des séries allégées, un peu moins chargées.'),
+  ('Comment faire','Échauffe-toi en montant la charge petit à petit jusqu’à la série principale. Fais-la à la charge conseillée, au RPE cible. Puis enlève du poids et fais les séries allégées.'),
+  ('Pourquoi','La série principale t’habitue aux charges lourdes. Les séries allégées ajoutent du volume avec une technique propre.'),
+  ('À éviter','Dépasser le RPE cible sur la série principale. Bâcler les séries allégées : même technique, même placement.')],
+}
+VTITLE={'· série principale':'SÉRIE PRINCIPALE ET SÉRIES ALLÉGÉES'}
+
 def build(days,label,out,logo):
     wb=openpyxl.Workbook()
     # ===== COMMENCER ICI =====
@@ -102,7 +136,7 @@ def build(days,label,out,logo):
     blocks=[
      ('COMMENT ÇA MARCHE',[
       ('1','Entre tes 1RM','Onglet MES 1RM : entre ton 1RM au squat, au développé couché et au soulevé de terre. Tout le reste se calcule tout seul.'),
-      ('2','Lis ta séance','La CHARGE CONSEILLÉE se calcule toute seule à partir de ton 1RM. Chaque semaine elle monte : +5 kg au squat, +2,5 kg au développé couché, +7,5 kg au soulevé de terre.'),
+      ('2','Lis ta séance','La CHARGE CONSEILLÉE se calcule toute seule à partir de ton 1RM. Chaque semaine elle monte : +5 kg au squat, +2,5 kg au développé couché, +7,5 kg au soulevé de terre. Un exercice que tu ne connais pas ? Il est expliqué dans l’onglet VARIANTES.'),
       ('3','Note ce que tu fais','Remplis les cases blanches à bord bleu : charge faite, RPE fait, observations. Le reste est verrouillé.'),
       ('4','Suis ta progression','Chaque séance et chaque semaine affichent ton tonnage, au total et par mouvement. L’onglet BILAN montre l’évolution sur le bloc.'),
       ('5','Recommence','Après la semaine 4, tu repars en semaine 1. Dans MES 1RM, passe le NUMÉRO DU BLOC à 2, puis 3… : chaque charge conseillée prend +2,5 kg par bloc.')]),
@@ -169,6 +203,27 @@ def build(days,label,out,logo):
     note(15,'1 la première fois, puis 2, 3… Garde les mêmes 1RM : change seulement le numéro du bloc. Chaque bloc ajoute 2,5 kg aux charges conseillées.',40)
     dvb=DataValidation(type='whole',operator='between',formula1='1',formula2='50',allow_blank=False,showErrorMessage=True,error='Entre un numéro de bloc (1, 2, 3…).'); mx.add_data_validation(dvb); dvb.add('D14')
     mx.protection.sheet=True
+    # ===== VARIANTES =====
+    vs=wb.create_sheet('VARIANTES'); vs.sheet_view.showGridLines=False
+    for c,w in zip('ABCDEFGHIJKLM',[2,13,30,8,8,8,12,8,9,34,12,8,30]): vs.column_dimensions[c].width=w
+    header(vs,'VARIANTES',f'Version {label.lower()} · comment faire chaque exercice',logo)
+    found={}
+    for day,exs in days.items():
+        for e in exs:
+            for k in VARIANTES:
+                if (k in e[1]) if k.startswith('·') else e[1]==k: found.setdefault(k,[]).append(day.split(' · ')[0])
+    r=6
+    for k,jours in found.items():
+        jl=' · '.join(dict.fromkeys(jours))
+        vs.merge_cells(start_row=r,start_column=2,end_row=r,end_column=10); vs.cell(r,2,VTITLE.get(k,k.upper())).font=fn(12,True,WHITE); vs.cell(r,2).alignment=LFT
+        vs.merge_cells(start_row=r,start_column=11,end_row=r,end_column=13); vs.cell(r,11,jl).font=fn(10,True,WHITE); vs.cell(r,11).alignment=Alignment(horizontal='right',vertical='center',indent=1)
+        paint(vs,r,r,2,13,BLACK); vs.row_dimensions[r].height=26; r+=1
+        for i,(a,c) in enumerate(VARIANTES[k]):
+            vs.merge_cells(start_row=r,start_column=2,end_row=r,end_column=3); vs.cell(r,2,a).font=fn(10,True,BLACK); vs.cell(r,2).alignment=LFT
+            vs.merge_cells(start_row=r,start_column=4,end_row=r,end_column=13); vs.cell(r,4,c).font=fn(10); vs.cell(r,4).alignment=LFT
+            paint(vs,r,r,2,13,PALE if i%2==0 else WHITE); vs.row_dimensions[r].height=max(26,14*(-(-len(c)//150))+12); r+=1
+        r+=1
+    vs.protection.sheet=True
     BLOC="'MES 1RM'!$D$14"
     REF={'S':"'MES 1RM'!$D$7",'B':"'MES 1RM'!$D$8",'D':"'MES 1RM'!$D$9"}
 
@@ -302,7 +357,7 @@ def build(days,label,out,logo):
     b.protection.sheet=True
     for w in wb.worksheets:
         w.page_setup.orientation='landscape'; w.sheet_properties.pageSetUpPr.fitToPage=True; w.page_setup.fitToWidth=1; w.page_setup.fitToHeight=0
-        w.sheet_properties.tabColor=BLACK if w.title in('COMMENCER ICI','MES 1RM','BILAN') else BLUE
+        w.sheet_properties.tabColor=BLACK if w.title in('COMMENCER ICI','MES 1RM','VARIANTES','BILAN') else BLUE
     apply_theme(wb)
     wb.save(out)
 
