@@ -102,7 +102,7 @@ def build(days,label,out,logo):
       ('1','Entre tes 1RM','Onglet MES 1RM : entre ton 1RM au squat, au développé couché et au soulevé de terre. Tout le reste se calcule tout seul.'),
       ('2','Lis ta séance','Chaque exercice a un % de ton 1RM. La CHARGE CONSEILLÉE se calcule toute seule, arrondie à 2,5 kg.'),
       ('3','Note ce que tu fais','Remplis les cases blanches à bord bleu : charge faite, RPE fait, observations. Le reste est verrouillé.'),
-      ('4','Suis ta progression','Chaque séance et chaque semaine affichent ton tonnage et tes répétitions. L’onglet BILAN montre l’évolution sur le bloc.'),
+      ('4','Suis ta progression','Chaque séance et chaque semaine affichent ton tonnage, au total et par mouvement. L’onglet BILAN montre l’évolution sur le bloc.'),
       ('5','Recommence','Après la semaine 4, tu repars en semaine 1. Dans MES 1RM, passe le NUMÉRO DU BLOC à 2, puis 3… : chaque charge conseillée prend +2,5 kg par bloc.')]),
      ('APRÈS LA SEMAINE 4',[
       ('4','Toujours 4 semaines','Le programme est construit pour 4 semaines : l’intensité monte de la semaine 1 à la semaine 4. Ne continue jamais sur une semaine 5 ou 6.'),
@@ -213,34 +213,32 @@ def build(days,label,out,logo):
                 lr=[x for x,t,_ in rows if t==lt]
                 if not lr: continue
                 s.row_dimensions[r].height=22
-                s.merge_cells(start_row=r,start_column=2,end_row=r,end_column=3); s.cell(r,2,f'TONNAGE {lname}').font=fn(9,True,BLACK); s.cell(r,2).alignment=LFT
-                s.cell(r,4,'='+'+'.join(f'O{x}' for x in lr)).number_format='0" réps"'
+                s.merge_cells(start_row=r,start_column=2,end_row=r,end_column=4); s.cell(r,2,f'TONNAGE {lname}').font=fn(9,True,BLACK); s.cell(r,2).alignment=LFT
                 s.merge_cells(start_row=r,start_column=5,end_row=r,end_column=6); s.cell(r,5,'Prévu').alignment=Alignment(horizontal='right',vertical='center')
                 s.cell(r,7,'='+'+'.join(f'IF(ISNUMBER(G{x}),D{x}*E{x}*G{x},0)' for x in lr)).number_format='# ##0" kg"'
                 s.merge_cells(start_row=r,start_column=8,end_row=r,end_column=10); s.cell(r,8,'Réalisé').alignment=Alignment(horizontal='right',vertical='center')
                 s.cell(r,11,'='+'+'.join(f'IF(ISNUMBER(K{x}),O{x}*K{x},0)' for x in lr)).number_format='# ##0" kg"'
                 for col in range(2,NC+1):
                     c=s.cell(r,col); c.fill=fl(LIGHT); c.border=BOX
-                    if col!=2: c.font=fn(10 if col in(4,7,11) else 8,col in(4,7,11),BLACK if col in(4,7,11) else MUTED)
-                    if col in(4,7,11): c.alignment=C
+                    if col!=2: c.font=fn(10 if col in(7,11) else 8,col in(7,11),BLACK if col in(7,11) else MUTED)
+                    if col in(7,11): c.alignment=C
                 r+=1
             s.row_dimensions[r].height=24
-            s.merge_cells(start_row=r,start_column=2,end_row=r,end_column=3); s.cell(r,2,'TOTAL SÉANCE').font=fn(9,True,WHITE); s.cell(r,2).alignment=LFT
-            s.cell(r,4,f'=SUM(O{first}:O{last})').number_format='0" réps"'
+            s.merge_cells(start_row=r,start_column=2,end_row=r,end_column=4); s.cell(r,2,'TOTAL SÉANCE').font=fn(9,True,WHITE); s.cell(r,2).alignment=LFT
             s.merge_cells(start_row=r,start_column=5,end_row=r,end_column=6); s.cell(r,5,'Tonnage prévu').alignment=Alignment(horizontal='right',vertical='center')
             s.cell(r,7,'='+prev).number_format='# ##0" kg"'
             s.merge_cells(start_row=r,start_column=8,end_row=r,end_column=10); s.cell(r,8,'Tonnage réalisé').alignment=Alignment(horizontal='right',vertical='center')
             s.cell(r,11,'='+real).number_format='# ##0" kg"'
             for col in range(2,NC+1):
                 c=s.cell(r,col); c.fill=fl(BLUE); 
-                if col!=2: c.font=fn(10 if col in(4,7,11) else 8,col in(4,7,11),WHITE)
-                if col in(4,7,11): c.alignment=C
+                if col!=2: c.font=fn(10 if col in(7,11) else 8,col in(7,11),WHITE)
+                if col in(7,11): c.alignment=C
             day_rows.append(r); r+=2
         # tableau de bord
-        tp='+'.join(f'G{x}' for x in day_rows); tr='+'.join(f'K{x}' for x in day_rows); rp='+'.join(f'D{x}' for x in day_rows)
-        cards=[(2,3,'TONNAGE PRÉVU',f'={tp}','# ##0" kg"'),(4,6,'RÉPÉTITIONS',f'={rp}','0'),(7,9,'TONNAGE RÉALISÉ',f'={tr}','# ##0" kg"'),
+        tp='+'.join(f'G{x}' for x in day_rows); tr='+'.join(f'K{x}' for x in day_rows)
+        cards=[(2,4,'TONNAGE PRÉVU',f'={tp}','# ##0" kg"'),(5,9,'TONNAGE RÉALISÉ',f'={tr}','# ##0" kg"'),
                (10,10,'VS SEMAINE PRÉCÉDENTE',None,'+0%;-0%;0%'),(11,13,'SÉANCES',f'{len(days)} séances',None)]
-        week_tot[wname]=(f"'{wname}'!B{dash+1}",f"'{wname}'!G{dash+1}",f"'{wname}'!D{dash+1}")
+        week_tot[wname]=(f"'{wname}'!B{dash+1}",f"'{wname}'!E{dash+1}")
         for a,b,t,v,nf in cards:
             if a!=b:
                 s.merge_cells(start_row=dash,start_column=a,end_row=dash,end_column=b); s.merge_cells(start_row=dash+1,start_column=a,end_row=dash+1,end_column=b)
@@ -258,15 +256,15 @@ def build(days,label,out,logo):
     b=wb.create_sheet('BILAN'); b.sheet_view.showGridLines=False
     for c,w in zip('ABCDEFGHIJKLM',[2,13,30,8,8,8,12,8,9,34,12,8,30]): b.column_dimensions[c].width=w
     header(b,'BILAN','Se remplit tout seul · tonnage = séries × réps × charge',logo)
-    hd=[(2,3,'SEMAINE'),(4,6,'RÉPÉTITIONS'),(7,9,'TONNAGE PRÉVU (kg)'),(10,10,'TONNAGE RÉALISÉ (kg)')]
+    hd=[(2,3,'SEMAINE'),(4,6,'TONNAGE PRÉVU (kg)'),(7,10,'TONNAGE RÉALISÉ (kg)')]
     for a,c2,h in hd:
         if a!=c2: b.merge_cells(start_row=6,start_column=a,end_row=6,end_column=c2)
         b.cell(6,a,h).font=fn(9,True,WHITE); b.cell(6,a).alignment=C
     paint(b,6,6,2,10,BLACK); b.row_dimensions[6].height=28
     for j,(wname,wsub,*_) in enumerate(WEEKS):
         rr=7+j; b.row_dimensions[rr].height=26
-        tp,tr,rp=week_tot[wname]
-        for a,c2,v,nf in [(2,3,wname,None),(4,6,'='+rp,'0'),(7,9,'='+tp,'# ##0'),(10,10,'='+tr,'# ##0')]:
+        tp,tr=week_tot[wname]
+        for a,c2,v,nf in [(2,3,wname,None),(4,6,'='+tp,'# ##0'),(7,10,'='+tr,'# ##0')]:
             if a!=c2: b.merge_cells(start_row=rr,start_column=a,end_row=rr,end_column=c2)
             c=b.cell(rr,a,v); c.alignment=C if a>2 else LFT; c.font=fn(10,a==2,BLACK)
             if nf: c.number_format=nf
@@ -274,7 +272,7 @@ def build(days,label,out,logo):
     # données graphiques (colonnes cachées O:Q)
     b['O6'],b['P6'],b['Q6']='Semaine','Tonnage prévu','Tonnage réalisé'
     for j,(wname,*_) in enumerate(WEEKS):
-        b.cell(7+j,15,f'S{j+1}'); b.cell(7+j,16,f'=G{7+j}'); b.cell(7+j,17,f'=J{7+j}')
+        b.cell(7+j,15,f'S{j+1}'); b.cell(7+j,16,f'=D{7+j}'); b.cell(7+j,17,f'=G{7+j}')
     for c in 'OPQ': b.column_dimensions[c].hidden=True
     ch=BarChart(); ch.type='col'; ch.title='Tonnage par semaine (kg)'; ch.height=8; ch.width=22; ch.legend.position='b'
     ch.add_data(Reference(b,min_col=16,max_col=17,min_row=6,max_row=10),titles_from_data=True); ch.set_categories(Reference(b,min_col=15,min_row=7,max_row=10))
