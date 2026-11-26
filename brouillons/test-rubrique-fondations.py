@@ -61,7 +61,6 @@ SECTION = f"""<section id="programmes">
         <figcaption>Semaine 1, exemple avec des 1RM de 100 kg (squat), 70 kg (développé couché) et 120 kg (soulevé de terre)</figcaption>
       </figure>
       <div class="prog-more reveal">
-        <ol class="prog-steps"><li><b>1</b><span>Tu achètes le programme : paiement unique de 29 €</span></li><li><b>2</b><span>Tu le reçois sur l'appli Athlyse</span></li><li><b>3</b><span>Tu t'entraînes seul, à ton rythme</span></li></ol>
         <ul class="prog-inc">
           <li><b>Tout se passe sur l'appli Athlyse</b><span>Tu télécharges l'appli et tu retrouves tes séances jour par jour, avec les consignes de chaque exercice et de chaque variante.</span></li>
           <li><b>Tes charges calculées à partir de tes 1RM</b><span>Et la charge monte chaque semaine, sans que tu aies à calculer.</span></li>
