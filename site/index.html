@@ -215,13 +215,14 @@ html{scroll-behavior:smooth}
 .store small{display:block;font-weight:500;font-size:.72rem;opacity:.75}
 .store svg{width:24px;height:24px}
 .store:hover{transform:translateY(-2px);background:var(--accent);color:var(--on-accent)}
-.phone{position:relative;width:min(300px,100%);aspect-ratio:468/987;justify-self:center;border-radius:44px;border:10px solid #1C2B42;background:var(--bg);box-shadow:0 0 0 2px var(--line),0 50px 90px -30px rgba(0,0,0,.8),0 0 120px -20px color-mix(in srgb,var(--accent) 45%,transparent);overflow:hidden;animation:float 6s ease-in-out infinite}
+.phone{position:relative;width:min(300px,100%);aspect-ratio:600/1305;justify-self:center;border-radius:44px;border:10px solid #1C2B42;background:var(--bg);box-shadow:0 0 0 2px var(--line),0 50px 90px -30px rgba(0,0,0,.8),0 0 120px -20px color-mix(in srgb,var(--accent) 45%,transparent);overflow:hidden;animation:float 6s ease-in-out infinite}
 @keyframes float{50%{transform:translateY(-12px)}}
 .notch{position:absolute;top:10px;left:50%;transform:translateX(-50%);width:90px;height:24px;border-radius:20px;background:#1C2B42;z-index:2}
 .screens{position:absolute;inset:0}
-.scr{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;animation:cycle 16s infinite}
+.scr{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:top;opacity:0;animation:cycle 20s infinite}
 .scr:nth-child(2){animation-delay:4s}.scr:nth-child(3){animation-delay:8s}.scr:nth-child(4){animation-delay:12s}
-@keyframes cycle{0%{opacity:0;transform:translateX(16px)}3%,22%{opacity:1;transform:none}25%,100%{opacity:0;transform:translateX(-16px)}}
+.scr:nth-child(5){animation-delay:16s}
+@keyframes cycle{0%{opacity:0;transform:translateX(16px)}3%,18%{opacity:1;transform:none}20%,100%{opacity:0;transform:translateX(-16px)}}
 .scr .sk{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
 .scr h4{margin:0 0 4px;font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:1.5rem;line-height:1}
 .ex{display:flex;justify-content:space-between;gap:8px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;font-size:.74rem}
@@ -234,9 +235,10 @@ html{scroll-behavior:smooth}
 .ring2{justify-self:center;width:120px;height:120px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--accent) 80%,var(--line) 0);margin-block:6px}
 .ring2 span{width:92px;height:92px;border-radius:50%;background:var(--bg);display:grid;place-items:center;font-family:var(--f-display);font-weight:800;font-size:1.6rem}
 .dots{position:absolute;bottom:70px;z-index:2;left:50%;transform:translateX(-50%);display:flex;gap:6px}
-.dots i{width:6px;height:6px;border-radius:50%;background:rgba(15,27,45,.25);animation:dot 16s infinite}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(15,27,45,.25);animation:dot 20s infinite}
 .dots i:nth-child(2){animation-delay:4s}.dots i:nth-child(3){animation-delay:8s}.dots i:nth-child(4){animation-delay:12s}
-@keyframes dot{0%,22%{background:var(--accent)}25%,100%{background:rgba(15,27,45,.25)}}
+.dots i:nth-child(5){animation-delay:16s}
+@keyframes dot{0%,18%{background:var(--accent)}20%,100%{background:rgba(15,27,45,.25)}}
 @media (prefers-reduced-motion:reduce){.scr:first-child{opacity:1!important}}
 @media (max-width:820px){.app-grid{grid-template-columns:1fr}}
 .bubble{position:fixed;z-index:7;right:calc(20px + env(safe-area-inset-right,0px));bottom:calc(62px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:0;height:60px;padding:0 18px 0 18px;border-radius:999px;background:var(--accent);color:var(--on-accent);text-decoration:none;font-weight:700;box-shadow:0 14px 34px -10px rgba(0,0,0,.7),0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent);animation:bpulse 2.6s ease-out infinite;transition:gap .3s,background .2s}
@@ -287,7 +289,7 @@ html{scroll-behavior:smooth}
 .hero-photo img{object-position:50% 20%}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero .photo.hero-photo{aspect-ratio:4/5;max-width:460px;width:100%;justify-self:center}}
 .shot{margin:0;display:grid;gap:8px}
-.shot img{display:block;width:100%;max-width:100%;height:280px;object-fit:cover;object-position:top;border-radius:16px;border:1px solid var(--line);background:var(--bg)}
+.shot img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:top;border-radius:16px;border:1px solid var(--line);background:var(--bg)}
 .plan.featured .shot img{border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
 .shot figcaption{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;color:var(--muted);text-align:center}
 @media (max-width:420px){
@@ -429,12 +431,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
     </div>
     <div class="phone reveal" aria-label="Écrans de l'appli Athlyse">
       <div class="screens">
-        <img class="scr" src="app1.jpg" alt="Accueil de l'appli Athlyse : vue d'ensemble de la journée">
-        <img class="scr" src="app2.jpg" alt="Séance du jour dans Athlyse : exercices, séries et charges" loading="lazy">
-        <img class="scr" src="app3.jpg" alt="Suivi nutrition dans Athlyse : calories et macros" loading="lazy">
-        <img class="scr" src="app4.jpg" alt="Suivi du poids dans Athlyse : courbe et pesées" loading="lazy">
+        <img class="scr" src="ath-accueil.jpg" alt="Accueil de l'appli Athlyse : la vue d'ensemble de ta journée">
+        <img class="scr" src="ath-seance.jpg" alt="Ta séance du jour programmée par ton coach dans Athlyse" loading="lazy">
+        <img class="scr" src="ath-correction.jpg" alt="Retour du coach et correction de ta technique sur vidéo dans Athlyse" loading="lazy">
+        <img class="scr" src="ath-nutrition.jpg" alt="Suivi de ta nutrition, calories et macros dans Athlyse" loading="lazy">
+        <img class="scr" src="ath-messages.jpg" alt="Messagerie et bilan de la semaine avec Alexis dans Athlyse" loading="lazy">
       </div>
-      <div class="dots"><i></i><i></i><i></i><i></i></div>
+      <div class="dots"><i></i><i></i><i></i><i></i><i></i></div>
     </div>
   </div>
 </section>
@@ -458,7 +461,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <li>Correction technique sur vidéo</li>
           <li>Échanges par message</li>
         </ul>
-        <figure class="shot"><img src="app2.jpg" alt="Exemple de séance de musculation dans l'appli Athlyse" loading="lazy"><figcaption>Ta séance du jour dans l'appli Athlyse</figcaption></figure>
+        <figure class="shot"><img src="ath-seance.jpg" style="object-position:50% 50%" alt="Exemple de séance programmée par ton coach dans l'appli Athlyse" loading="lazy"><figcaption>Ta séance du jour dans l'appli Athlyse</figcaption></figure>
         <a class="btn" href="#contact" data-plan="Programmation sur mesure">Choisir cette formule <span class="arr">→</span></a>
       </article>
 
@@ -475,7 +478,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <li>Suivi du poids, des mensurations et de l'énergie</li>
           <li>Adaptation de la nutrition à chaque bilan</li>
         </ul>
-        <figure class="shot"><img src="app3.jpg" alt="Exemple de suivi nutrition dans l'appli Athlyse" loading="lazy"><figcaption>Ton suivi nutrition dans l'appli Athlyse</figcaption></figure>
+        <figure class="shot"><img src="ath-nutrition.jpg" style="object-position:50% 56%" alt="Exemple de suivi nutrition dans l'appli Athlyse" loading="lazy"><figcaption>Ton suivi nutrition dans l'appli Athlyse</figcaption></figure>
         <a class="btn" href="#contact" data-plan="Programmation + Nutrition">Choisir cette formule <span class="arr">→</span></a>
       </article>
     </div>
