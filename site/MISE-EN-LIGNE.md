@@ -14,3 +14,4 @@
 - [x] **Site public** : validé par un tiers le 25/11/2026.
 - [ ] **Sécurité comptes** : activer la double authentification (Netlify, GitHub, Hostinger, Gmail coaching) + verrouillage du domaine Hostinger.
 - [x] **Abonnement Netlify Personal résilié** : retour automatique en gratuit le 24/12/2026 (925 crédits dispo d’ici là).
+- [ ] **Lien Google Play d’Athlyse** : remplacer PLAYSTORE_URL dans site/index.html et site/liens.html AVANT la mise en ligne.
