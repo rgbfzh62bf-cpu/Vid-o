@@ -30,6 +30,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - E-mail pro : alexis.bloquecoaching@gmail.com .
 
 ## Design
+- RÈGLE D’ALEXIS (26/11) : le site doit être fait pour ordinateur, tablette ET téléphone, avec RIEN qui change d’une version à l’autre : même contenu, mêmes textes, mêmes boutons, mêmes infos partout (jamais de contenu caché ou raccourci sur une taille d’écran). Seule la disposition s’adapte à la largeur. Toujours vérifier les 3 (téléphone 320-430 px, tablette 768 et 1024 px, ordinateur 1440 px).
 - Gras : uniquement pour les titres (ex. intitulés de la liste « L’appli », noms de sports). Jamais une ligne isolée en gras au milieu d’une liste ou d’un texte.
 - PHOTOS : à CHAQUE photo reçue (site, vidéo, autre), la recadrer soi-même et vérifier le rendu sur téléphone ET ordinateur avant de proposer.
 - TOUJOURS vérifier le rendu téléphone (320, 375, 390, 430 px) en plus de l’ordinateur : aucun débordement horizontal, boutons faciles à toucher.
