@@ -62,7 +62,8 @@ Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-
 - Public : débuter sans s'engager dans un coaching (ne jamais parler d'argent), puis coaching quand on stagne.
 - Livraison : fichier Google Sheets / .xlsx (pas Athlyse). Build : brouillons/build_v2.py + build_prog.py → Fondations-force-athletique-{3,4}-jours.xlsx. 1RM saisi une fois, 4 semaines, puis retour S1 avec +2,5 kg par bloc.
 - Ne jamais dire publiquement que le programme s'inspire d'autres coachs. Ne jamais modifier les fichiers Drive partagés par d'autres.
-- Google Sheets natifs (Drive d’Alexis, privés) : 3 j https://docs.google.com/spreadsheets/d/1m90WYHYbvLuBUhLZWMh002qJrFl51Dz_qqcy2GgEFqk/edit · 4 j https://docs.google.com/spreadsheets/d/1d56PHP5C_h4gHxRnFP8AqDs0y2pZRC1c6XU_PHMCu9o/edit (créés depuis les xlsx ; lien client = remplacer /edit par /copy).
+- Google Sheets natifs (Drive d’Alexis, privés) : 3 j https://docs.google.com/spreadsheets/d/1nEaEZcDa-pquKL3F3uHpF2nOdthdPolYwpAq1aoqG6E/edit · 4 j https://docs.google.com/spreadsheets/d/1g3rzinAjCz1YAT_gkZ_o33HerfckXgP4ZKaMSibi-pA/edit (créés depuis les xlsx ; lien client = remplacer /edit par /copy).
+- Tonnage : récap par mouvement (S/B/D, variantes comprises) en fin de séance ; renfo hors tonnage.
 - Tableur : thème C (fond bleu nuit autour, tableaux clairs, en-tête et résumé bleu nuit, accent bleu). THEME=B = fond blanc, en-tête bleu nuit.
 - CGV programme : brouillon brouillons/cgv-programme.html (à intégrer au lancement, [PLATEFORME] à remplacer).
 - À faire : choix Payhip ou Gumroad, série en plus en semaine 4 (garder ou non), vérifier URSSAF (activité vente de contenu numérique) et CM2C.

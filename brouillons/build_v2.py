@@ -114,7 +114,8 @@ def build(days,label,out,logo):
       ('6-7','Maîtrisé','Il te reste 3 à 4 répétitions. Technique propre.'),
       ('RIR 2','Renfo','Arrête la série quand il te reste 2 répétitions.')]),
      ('TONNAGE',[
-      ('kg','C’est quoi ?','Séries × répétitions × charge. C’est le volume de travail total : il augmente de semaine en semaine : c’est la surcharge progressive.'),
+      ('kg','C’est quoi ?','Séries × répétitions × charge. C’est ton volume de travail : il augmente de semaine en semaine, c’est la surcharge progressive.'),
+      ('S·B·D','Par mouvement','À la fin de chaque séance : ton tonnage au squat, au développé couché et au soulevé de terre (variantes comprises). Les exercices de renfo ne comptent pas : on suit leur charge, pas leur tonnage.'),
       ('prévu','Tonnage prévu','Calculé avec tes charges conseillées.'),
       ('réalisé','Tonnage réalisé','Calculé avec les charges que tu notes.')]),
      ('À LIRE AVANT DE COMMENCER',[
@@ -206,13 +207,29 @@ def build(days,label,out,logo):
             # pied de séance
             main=[x for x,t,_ in rows if t]
             prev='+'.join(f'IF(ISNUMBER(G{x}),D{x}*E{x}*G{x},0)' for x in main) or '0'
-            real='+'.join(f'IF(ISNUMBER(K{x}),O{x}*K{x},0)' for x,t,e in rows if 'Gainage' not in e) or '0'
+            real='+'.join(f'IF(ISNUMBER(K{x}),O{x}*K{x},0)' for x in main) or '0'
+            # récap tonnage par mouvement (variantes comprises)
+            for lt,lname in (('S','SQUAT'),('B','DÉVELOPPÉ COUCHÉ'),('D','SOULEVÉ DE TERRE')):
+                lr=[x for x,t,_ in rows if t==lt]
+                if not lr: continue
+                s.row_dimensions[r].height=22
+                s.merge_cells(start_row=r,start_column=2,end_row=r,end_column=3); s.cell(r,2,f'TONNAGE {lname}').font=fn(9,True,BLACK); s.cell(r,2).alignment=LFT
+                s.cell(r,4,'='+'+'.join(f'O{x}' for x in lr)).number_format='0" réps"'
+                s.merge_cells(start_row=r,start_column=5,end_row=r,end_column=6); s.cell(r,5,'Prévu').alignment=Alignment(horizontal='right',vertical='center')
+                s.cell(r,7,'='+'+'.join(f'IF(ISNUMBER(G{x}),D{x}*E{x}*G{x},0)' for x in lr)).number_format='# ##0" kg"'
+                s.merge_cells(start_row=r,start_column=8,end_row=r,end_column=10); s.cell(r,8,'Réalisé').alignment=Alignment(horizontal='right',vertical='center')
+                s.cell(r,11,'='+'+'.join(f'IF(ISNUMBER(K{x}),O{x}*K{x},0)' for x in lr)).number_format='# ##0" kg"'
+                for col in range(2,NC+1):
+                    c=s.cell(r,col); c.fill=fl(LIGHT); c.border=BOX
+                    if col!=2: c.font=fn(10 if col in(4,7,11) else 8,col in(4,7,11),BLACK if col in(4,7,11) else MUTED)
+                    if col in(4,7,11): c.alignment=C
+                r+=1
             s.row_dimensions[r].height=24
             s.merge_cells(start_row=r,start_column=2,end_row=r,end_column=3); s.cell(r,2,'TOTAL SÉANCE').font=fn(9,True,WHITE); s.cell(r,2).alignment=LFT
             s.cell(r,4,f'=SUM(O{first}:O{last})').number_format='0" réps"'
             s.merge_cells(start_row=r,start_column=5,end_row=r,end_column=6); s.cell(r,5,'Tonnage prévu').alignment=Alignment(horizontal='right',vertical='center')
             s.cell(r,7,'='+prev).number_format='# ##0" kg"'
-            s.merge_cells(start_row=r,start_column=8,end_row=r,end_column=10); s.cell(r,8,'Tonnage réalisé (avec tes charges)').alignment=Alignment(horizontal='right',vertical='center')
+            s.merge_cells(start_row=r,start_column=8,end_row=r,end_column=10); s.cell(r,8,'Tonnage réalisé').alignment=Alignment(horizontal='right',vertical='center')
             s.cell(r,11,'='+real).number_format='# ##0" kg"'
             for col in range(2,NC+1):
                 c=s.cell(r,col); c.fill=fl(BLUE); 
