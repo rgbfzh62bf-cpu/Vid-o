@@ -36,28 +36,29 @@ INFO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=
 SECTION = f"""<section id="programmes">
   <div class="wrap">
     <div class="head reveal">
-      <div><p class="eyebrow ath-eb"><img src="athlyse-logo-blanc.png" alt="Logo Athlyse" width="57" height="47"><span>Programme de force athlétique · sur l'appli Athlyse</span></p><h2 style="margin-top:10px">Fondations :<br>la force athlétique en autonomie.</h2></div>
-      <p>Un programme de 4 semaines sur squat, développé couché et soulevé de terre, à suivre seul et à ton rythme, directement sur l'appli Athlyse.</p>
+      <div><p class="eyebrow ath-eb"><img src="athlyse-logo-blanc.png" alt="Logo Athlyse" width="57" height="47"><span>Programmes à acheter · force athlétique · sur l'appli Athlyse</span></p><h2 style="margin-top:10px">Pas prêt pour un coaching ?<br>Achète ton programme.</h2></div>
+      <p>Fondations, ce sont deux programmes de force athlétique tout prêts, de 4 semaines, sur squat, développé couché et soulevé de terre. Tu en achètes un, une seule fois à 29 €, et tu le suis seul sur l'appli Athlyse.</p>
     </div>
     <div class="prog-grid">
       <div class="prog-cards reveal">
         <article class="prog-row">
-          <div><p class="eyebrow">Sur l'appli Athlyse</p><h3>3 jours / semaine</h3><p class="muted">Squat et développé couché, une séance légère, une séance lourde.</p></div>
-          <div class="prog-buy"><div class="price">29 €</div><a class="btn" href="#programmes">Acheter</a></div>
+          <div><p class="eyebrow">Programme Fondations</p><h3>3 jours / semaine</h3><p class="muted">Squat et développé couché, une séance légère, une séance lourde.</p></div>
+          <div class="prog-buy"><div class="price">29 €<small>paiement unique</small></div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
         <article class="prog-row">
-          <div><p class="eyebrow">Sur l'appli Athlyse</p><h3>4 jours / semaine</h3><p class="muted">Plus de séances pour travailler chaque mouvement plus souvent.</p></div>
-          <div class="prog-buy"><div class="price">29 €</div><a class="btn" href="#programmes">Acheter</a></div>
+          <div><p class="eyebrow">Programme Fondations</p><h3>4 jours / semaine</h3><p class="muted">Plus de séances pour travailler chaque mouvement plus souvent.</p></div>
+          <div class="prog-buy"><div class="price">29 €<small>paiement unique</small></div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
       </div>
       <figure class="prog-shot reveal"><img src="{IMG}" alt="Le programme Fondations dans l'appli Athlyse : jour 1 de la semaine 1"><figcaption>Exemple : jour 1, semaine 1 (1RM squat 100 kg, développé couché 70 kg)</figcaption></figure>
       <div class="prog-more reveal">
+        <ol class="prog-steps"><li><b>1</b><span>Tu achètes le programme : paiement unique de 29 €</span></li><li><b>2</b><span>Tu le reçois sur l'appli Athlyse</span></li><li><b>3</b><span>Tu t'entraînes seul, à ton rythme</span></li></ol>
         <ul class="prog-inc">
           <li><b>Tout se passe sur l'appli Athlyse</b><span>Tu télécharges l'appli et tu retrouves tes séances jour par jour, avec les consignes de chaque exercice et de chaque variante.</span></li>
           <li><b>Tes charges calculées à partir de tes 1RM</b><span>Et la charge monte chaque semaine, sans que tu aies à calculer.</span></li>
         </ul>
         <p class="prog-auto">{INFO}<span>En autonomie, sans suivi : après l'achat, il n'y a ni retour sur ta technique, ni échange avec moi. Tout est expliqué dans l'appli.</span></p>
-        <p class="prog-pay">Paiement unique · accès illimité · programme sur l'appli Athlyse</p>
+        <p class="prog-pay">Une fois acheté, le programme reste accessible sans limite de durée</p>
       </div>
     </div>
     <p class="prog-note reveal">Envie d'aller plus loin avec un suivi personnalisé ? <a href="#appel">On en parle →</a></p>
@@ -76,6 +77,13 @@ CSS = """
 .prog-row h3{font-size:1.7rem;font-weight:800;margin:2px 0 4px}.prog-row .muted{margin:0;font-size:.9rem}
 .prog-buy{display:grid;gap:8px;justify-items:center;flex:none}
 .prog-buy .price{font-size:2.4rem}.prog-buy .btn{padding:10px 22px}
+.prog-steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.prog-steps li{display:flex;gap:10px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px}
+.prog-steps b{flex:none;width:30px;height:30px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-family:var(--f-display);font-size:1.1rem}
+.prog-steps span{font-size:.85rem;line-height:1.35}
+.prog-buy .price small{display:block;font-family:var(--f-body);font-size:.7rem;font-weight:600;opacity:.7;text-align:center}
+.prog-buy .price{display:grid;justify-items:center}
+@media (max-width:600px){.prog-steps{grid-template-columns:1fr;gap:8px}.prog-steps li{padding:10px 12px}}
 .prog-inc{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:12px}.prog-inc li{display:grid;gap:2px;padding-left:16px;border-left:3px solid var(--accent)}.prog-inc span{color:var(--muted);font-size:.92rem}
 .prog-shot{margin:0;display:grid;gap:10px;justify-items:center;min-width:0}
 .prog-shot img{width:min(300px,100%);height:auto;display:block;border-radius:44px;border:10px solid #1C2B42;box-shadow:0 0 0 2px var(--line),0 50px 90px -30px rgba(0,0,0,.8),0 0 120px -20px color-mix(in srgb,var(--accent) 45%,transparent)}
@@ -93,7 +101,7 @@ CSS = """
 .prog-row .eyebrow{font-size:.58rem;letter-spacing:.06em}
 .prog-row h3{font-size:1.2rem;margin:2px 0}.prog-row .muted{font-size:.76rem;line-height:1.35}
 .prog-buy{display:flex;align-items:center;justify-content:space-between;gap:8px}
-.prog-buy{flex-wrap:wrap}.prog-buy .price{font-size:1.6rem;white-space:nowrap}.prog-buy .btn{padding:7px 12px;font-size:.8rem}
+.prog-buy{display:grid;justify-items:stretch;gap:6px}.prog-buy .price{font-size:1.6rem;white-space:nowrap;justify-items:start}.prog-buy .price small{text-align:left}.prog-buy .btn{padding:8px 12px;font-size:.82rem;justify-content:center;width:100%}
 @media (max-width:360px){.prog-buy .btn{flex:1 1 100%;justify-content:center}}
 .prog-shot img{width:100%;border-radius:24px;border-width:5px}
 .prog-shot figcaption{font-size:.6rem;line-height:1.3}
