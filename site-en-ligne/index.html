@@ -305,8 +305,7 @@ html{scroll-behavior:smooth}
 .hero-photo img{object-position:50% 20%}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero .photo.hero-photo{aspect-ratio:4/5;max-width:460px;width:100%;justify-self:center}}
 .shot{margin:0;display:grid;gap:8px}
-.shot img{display:block;width:100%;max-width:100%;height:auto;aspect-ratio:1/1;object-fit:cover;object-position:top;border-radius:16px;border:1px solid var(--line);background:var(--bg)}
-.plan.featured .shot img{border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+.shot img{display:block;width:min(260px,72%);height:auto;margin:0 auto;border-radius:0;border:0;background:none;filter:drop-shadow(0 24px 40px rgba(0,0,0,.55))}
 .shot figcaption{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.06em;color:var(--muted);text-align:center}
 @media (max-width:420px){
   .way .val{font-size:.92rem;overflow-wrap:normal;word-break:normal}
@@ -478,7 +477,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <li>Correction technique sur vidéo</li>
           <li>Échanges par message</li>
         </ul>
-        <figure class="shot"><img src="ath-seance.jpg" style="object-position:50% 50%" alt="Exemple de séance programmée par ton coach dans l'appli Athlyse" loading="lazy"><figcaption>Ta séance du jour dans l'appli Athlyse</figcaption></figure>
+        <figure class="shot"><img src="mock-seance.png" alt="Exemple de séance programmée par ton coach dans l'appli Athlyse" loading="lazy"><figcaption>Ta séance du jour dans l'appli Athlyse</figcaption></figure>
         <a class="btn" href="#contact" data-plan="Programmation sur mesure">Choisir cette formule <span class="arr">→</span></a>
       </article>
 
@@ -495,7 +494,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
           <li>Suivi du poids, des mensurations et de l'énergie</li>
           <li>Adaptation de la nutrition à chaque bilan</li>
         </ul>
-        <figure class="shot"><img src="ath-nutrition.jpg" style="object-position:50% 56%" alt="Exemple de suivi nutrition dans l'appli Athlyse" loading="lazy"><figcaption>Ton suivi nutrition dans l'appli Athlyse</figcaption></figure>
+        <figure class="shot"><img src="mock-nutrition.png" alt="Exemple de suivi nutrition dans l'appli Athlyse" loading="lazy"><figcaption>Ton suivi nutrition dans l'appli Athlyse</figcaption></figure>
         <a class="btn" href="#contact" data-plan="Programmation + Nutrition">Choisir cette formule <span class="arr">→</span></a>
       </article>
     </div>
