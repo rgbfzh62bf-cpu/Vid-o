@@ -94,31 +94,31 @@ def header(ws,title,sub,logo,tc=(10,13),t0=3,bw=17):
     for c in range(2,b+1): ws.cell(4,c).border=Border(bottom=Side(style='thick',color=BLUE))
 
 VARIANTES={
- 'Squat pause 2 temps':[
-  ('C’est quoi ?','Un squat normal, avec un arrêt de 2 secondes en bas avant de remonter.'),
-  ('Comment faire','Descends comme d’habitude, sous contrôle. En bas, arrête-toi et compte 2 secondes sans bouger. Reste gainé : ventre serré, dos fixe, genoux qui poussent vers l’extérieur. Puis remonte d’un coup, sans rebond.'),
+ 'Squat pause 2 ct':[
+  ('C’est quoi ?','Un squat avec une pause de 2 secondes en bas. « ct » = count, « compte » en anglais : 2 ct = tu comptes 2 secondes.'),
+  ('Comment faire','Descends comme d’habitude, sous contrôle. Arrivé en bas, fais une pause de 2 secondes sans bouger, en restant gainé. Puis remonte.'),
   ('Pourquoi','Sans rebond en bas, tu dois tenir ta position et repartir avec tes jambes. Tu gagnes en contrôle et en force au moment le plus dur de la remontée.'),
-  ('À éviter','Te relâcher ou t’asseoir sur tes talons pendant la pause. Repartir avant la fin des 2 secondes. Faire ta pause plus haut que ta profondeur habituelle.')],
- 'Développé couché pause 3 temps':[
-  ('C’est quoi ?','Un développé couché avec la barre immobile 3 secondes sur la poitrine avant de pousser.'),
-  ('Comment faire','Mets-toi en place comme d’habitude : omoplates serrées, pieds au sol, fesses posées. Descends la barre jusqu’à la poitrine, garde-la immobile en comptant 3 secondes, sans l’écraser contre toi. Puis pousse fort.'),
-  ('Pourquoi','Plus de rebond : la poussée part uniquement de ta force. Tu renforces le départ de la barre et tu apprends la pause demandée en compétition.'),
-  ('À éviter','Faire rebondir la barre. Relâcher les omoplates pendant la pause. Décoller les fesses du banc en poussant.')],
- 'Soulevé de terre jambes tendues (RDL)':[
-  ('C’est quoi ?','Un soulevé de terre qui part du haut, jambes presque tendues. Il travaille surtout l’arrière des cuisses, les fessiers et le dos.'),
-  ('Comment faire','Debout, barre en main, genoux légèrement fléchis et fixes. Recule les hanches comme pour fermer une porte avec les fesses : la barre glisse le long des cuisses. Descends jusqu’à sentir l’étirement derrière les cuisses, dos bien droit, puis remonte en poussant les hanches vers l’avant. La barre ne touche pas le sol.'),
+  ('À éviter','Te relâcher pendant la pause. Repartir avant la fin des 2 secondes.')],
+ 'Développé couché pause 3 ct':[
+  ('C’est quoi ?','Un développé couché avec une pause de 3 secondes, barre sur la poitrine.'),
+  ('Comment faire','Mets-toi en place comme d’habitude. Descends la barre jusqu’à la poitrine, fais une pause de 3 secondes, barre immobile. Puis pousse.'),
+  ('Pourquoi','Plus de rebond : la poussée part uniquement de ta force. Tu renforces le départ de la barre.'),
+  ('À éviter','Faire rebondir la barre. Te relâcher pendant la pause. Repartir avant la fin des 3 secondes.')],
+ 'RDL':[
+  ('C’est quoi ?','Le RDL part du haut, jambes presque tendues. Il travaille surtout l’arrière des cuisses, les fessiers et le dos.'),
+  ('Comment faire','Debout, barre en main, genoux légèrement fléchis et fixes. Recule les hanches : la barre glisse le long des cuisses. Descends jusqu’à sentir l’étirement derrière les cuisses, dos bien droit, puis remonte en poussant les hanches vers l’avant. La barre ne touche pas le sol.'),
   ('Pourquoi','Il renforce les muscles qui t’aident à décoller la barre au soulevé de terre et à tenir ta position au squat.'),
   ('À éviter','Arrondir le dos pour descendre plus bas. Plier les genoux comme pour un squat. Laisser la barre s’éloigner des jambes.')],
- 'Développé couché pieds levés':[
-  ('C’est quoi ?','Un développé couché avec les pieds levés : posés au bout du banc ou en l’air, genoux pliés.'),
-  ('Comment faire','Allonge-toi et lève les pieds. Serre les omoplates, garde le dos posé. Descends la barre jusqu’à la poitrine sous contrôle, puis pousse.'),
-  ('Pourquoi','Sans l’aide des jambes, le haut du corps travaille seul. Tu sens mieux ta trajectoire et tu la corriges plus facilement.'),
-  ('À éviter','Bouger sur le banc ou te tortiller pour pousser. Vouloir charger autant qu’au développé couché normal : ici les charges sont plus légères, c’est normal.')],
+ 'Développé couché Larsen':[
+  ('C’est quoi ?','Le Larsen, c’est un développé couché sans les pieds au sol : pieds levés.'),
+  ('Comment faire','Allonge-toi et lève les pieds. Garde les omoplates serrées et reste stable sur le banc. Descends la barre jusqu’à la poitrine sous contrôle, puis pousse.'),
+  ('Pourquoi','Sans l’appui des jambes, tu travailles ta stabilité : tout se fait avec le haut du corps.'),
+  ('À éviter','Bouger sur le banc pour pousser. Vouloir charger autant qu’au développé couché normal : ici les charges sont plus légères, c’est normal.')],
  'Deadlift pause genou':[
-  ('C’est quoi ?','Un soulevé de terre avec un arrêt d’1 seconde quand la barre arrive au niveau des genoux.'),
-  ('Comment faire','Mets-toi en place comme d’habitude. Décolle la barre et monte jusqu’aux genoux. Arrête-toi 1 seconde : barre collée aux jambes, épaules au-dessus de la barre, dos bien droit. Puis termine le mouvement jusqu’en haut.'),
-  ('Pourquoi','Tu renforces ta position au passage des genoux, là où on perd souvent la barre, et tu apprends à la garder près du corps.'),
-  ('À éviter','Laisser la barre s’éloigner des jambes. Monter les hanches avant les épaules. Arrondir le dos pendant l’arrêt.')],
+  ('C’est quoi ?','Un soulevé de terre avec une pause d’1 seconde quand la barre arrive aux genoux.'),
+  ('Comment faire','Mets-toi en place comme d’habitude. Décolle la barre. Arrivé aux genoux, fais une pause d’1 seconde, puis repars et termine le mouvement.'),
+  ('Pourquoi','Tu renforces ta position au passage des genoux et tu apprends à garder la barre près du corps.'),
+  ('À éviter','Laisser la barre s’éloigner des jambes pendant la pause. Arrondir le dos.')],
  '· série principale':[
   ('C’est quoi ?','Le jour lourd, le mouvement se fait en deux temps : une série principale, la plus lourde de la séance, puis des séries allégées, un peu moins chargées.'),
   ('Comment faire','Échauffe-toi en montant la charge petit à petit jusqu’à la série principale. Fais-la à la charge conseillée, au RPE cible. Puis enlève du poids et fais les séries allégées.'),

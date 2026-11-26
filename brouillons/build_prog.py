@@ -18,19 +18,19 @@ LEFT=Alignment(horizontal='left',vertical='center',wrap_text=True)
 # type S/B/D = mouvement compté dans le bilan ; '' = renfo (charge libre, RPE 8)
 P4={
  'JOUR 1 · SQUAT & DÉVELOPPÉ COUCHÉ':[
-  ('S','Squat pause 2 temps',5,4,.65,'6','3-4 min','Pause 2 s en bas, gainage serré, sans te relâcher.'),
+  ('S','Squat pause 2 ct',5,4,.65,'6','3-4 min','Pause 2 s en bas, gainage serré, sans te relâcher.'),
   ('B','Développé couché',5,5,.67,'6-7','3 min','Fesses posées, omoplates serrées, barre touche la poitrine.'),
   ('','Tirage vertical poulie',3,'10-12',None,'8','2 min','Tire vers le haut de la poitrine, buste fixe.'),
   ('','Élévations latérales haltères',3,'12-15',None,'8','1-2 min','Coudes légèrement fléchis, monte à hauteur d’épaules.')],
  'JOUR 2 · SOULEVÉ DE TERRE':[
-  ('B','Développé couché pause 3 temps',5,3,.65,'6','3 min','Pause 3 s sur la poitrine, barre immobile.'),
+  ('B','Développé couché pause 3 ct',5,3,.65,'6','3 min','Pause 3 s barre sur la poitrine, puis pousse.'),
   ('D','Soulevé de terre',5,3,.67,'6','3-4 min','Remets-toi en place à chaque répétition. Dos neutre.'),
-  ('D','Soulevé de terre jambes tendues (RDL)',3,8,.45,'6','2-3 min','Sans ceinture. Descends en reculant les hanches, dos plat.'),
+  ('D','RDL',3,8,.45,'6','2-3 min','Sans ceinture. Descends en reculant les hanches, dos plat.'),
   ('','Leg curl assis ou allongé',3,'10-15',None,'8','1-2 min','Contrôle la descente.'),
   ('','Gainage planche',3,'30-45 s',None,'—','1 min','Bassin aligné, respire normalement.')],
  'JOUR 3 · VOLUME HAUT DU CORPS':[
   ('S','Squat',5,5,.65,'6','3 min','Même descente à chaque répétition.'),
-  ('B','Développé couché pieds levés',4,6,.58,'6','2-3 min','Pieds en l’air : le buste travaille seul, trajectoire propre.'),
+  ('B','Développé couché Larsen',4,6,.58,'6','2-3 min','Pieds levés : travaille ta stabilité, trajectoire propre.'),
   ('','Développé militaire barre debout',3,'6-8',None,'8','2 min','Fessiers serrés, ne cambre pas.'),
   ('','Rowing haltère un bras',3,'10-12',None,'8','1-2 min','Tire le coude vers la hanche.'),
   ('','Extension triceps poulie au-dessus de la tête',3,'12',None,'8','1-2 min','Coudes fixes.'),
@@ -40,7 +40,7 @@ P4={
   ('S','Squat · séries allégées',4,3,.70,'6','3 min','Même technique que la série principale.'),
   ('B','Développé couché · série principale',1,3,.77,'7','4 min','Monte en charge jusqu’à cette série.'),
   ('B','Développé couché · séries allégées',4,4,.70,'6','3 min','Même trajectoire, même pause sur la poitrine.'),
-  ('D','Deadlift pause genou',4,3,.62,'6','3 min','Pause 1 s au niveau des genoux, puis termine le mouvement.'),
+  ('D','Deadlift pause genou',4,3,.62,'6','3 min','Arrivé aux genoux : pause 1 s, puis repars.'),
   ('','Extension lombaire au banc',3,'12',None,'8','1-2 min','Mouvement lent et contrôlé.')],
 }
 P3={
@@ -50,9 +50,9 @@ P3={
   ('','Tirage vertical poulie',3,'10-12',None,'8','2 min','Tire vers le haut de la poitrine, buste fixe.'),
   ('','Leg curl assis ou allongé',3,'10-15',None,'8','1-2 min','Contrôle la descente.')],
  'JOUR 2 · SBD LÉGER':[
-  ('S','Squat pause 2 temps',5,3,.60,'6','3 min','Pause 2 s en bas, gainage serré, sans te relâcher.'),
-  ('B','Développé couché pause 3 temps',5,3,.62,'6','3 min','Pause 3 s sur la poitrine, barre immobile.'),
-  ('D','Soulevé de terre jambes tendues (RDL)',4,6,.50,'6','2-3 min','Sans ceinture. Descends en reculant les hanches, dos plat.'),
+  ('S','Squat pause 2 ct',5,3,.60,'6','3 min','Pause 2 s en bas, gainage serré, sans te relâcher.'),
+  ('B','Développé couché pause 3 ct',5,3,.62,'6','3 min','Pause 3 s barre sur la poitrine, puis pousse.'),
+  ('D','RDL',4,6,.50,'6','2-3 min','Sans ceinture. Descends en reculant les hanches, dos plat.'),
   ('','Rowing haltère un bras',3,'10-12',None,'8','1-2 min','Tire le coude vers la hanche.'),
   ('','Gainage planche',3,'30-45 s',None,'—','1 min','Bassin aligné, respire normalement.')],
  'JOUR 3 · SBD LOURD':[
