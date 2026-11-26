@@ -40,7 +40,7 @@ SECTION = f"""<section id="programmes">
       <p>Un programme de 4 semaines sur squat, développé couché et soulevé de terre, à suivre seul et à ton rythme, directement sur l'appli Athlyse.</p>
     </div>
     <div class="prog-grid">
-      <div class="prog-left reveal">
+      <div class="prog-cards reveal">
         <article class="prog-row">
           <div><p class="eyebrow">Sur l'appli Athlyse</p><h3>3 jours / semaine</h3><p class="muted">Squat et développé couché, une séance légère, une séance lourde.</p></div>
           <div class="prog-buy"><div class="price">29 €</div><a class="btn" href="#programmes">Acheter</a></div>
@@ -49,6 +49,9 @@ SECTION = f"""<section id="programmes">
           <div><p class="eyebrow">Sur l'appli Athlyse</p><h3>4 jours / semaine</h3><p class="muted">Plus de séances pour travailler chaque mouvement plus souvent.</p></div>
           <div class="prog-buy"><div class="price">29 €</div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
+      </div>
+      <figure class="prog-shot reveal"><img src="{IMG}" alt="Le programme Fondations dans l'appli Athlyse : jour 1 de la semaine 1"><figcaption>Exemple : jour 1, semaine 1 (1RM squat 100 kg, développé couché 70 kg)</figcaption></figure>
+      <div class="prog-more reveal">
         <ul class="prog-inc">
           <li><b>Tout se passe sur l'appli Athlyse</b><span>Tu télécharges l'appli et tu retrouves tes séances jour par jour, avec les consignes de chaque exercice et de chaque variante.</span></li>
           <li><b>Tes charges calculées à partir de tes 1RM</b><span>Et la charge monte chaque semaine, sans que tu aies à calculer.</span></li>
@@ -56,7 +59,6 @@ SECTION = f"""<section id="programmes">
         <p class="prog-auto">{INFO}<span>En autonomie, sans suivi : après l'achat, il n'y a ni retour sur ta technique, ni échange avec moi. Tout est expliqué dans l'appli.</span></p>
         <p class="prog-pay">Paiement unique · accès illimité · programme sur l'appli Athlyse</p>
       </div>
-      <figure class="prog-shot reveal"><img src="{IMG}" alt="Le programme Fondations dans l'appli Athlyse : jour 1 de la semaine 1"><figcaption>Exemple : jour 1, semaine 1 (1RM squat 100 kg, développé couché 70 kg)</figcaption></figure>
     </div>
     <p class="prog-note reveal">Envie d'aller plus loin avec un suivi personnalisé ? <a href="#appel">On en parle →</a></p>
   </div>
@@ -66,8 +68,10 @@ SECTION = f"""<section id="programmes">
 
 CSS = """
 /* TEST rubrique programmes */
-.prog-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:56px;align-items:center}
-.prog-left{display:grid;gap:14px;min-width:0}
+.prog-grid{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:14px 56px;align-items:center}
+.prog-cards{grid-column:1;grid-row:1;display:grid;gap:14px;min-width:0}
+.prog-more{grid-column:1;grid-row:2;display:grid;gap:14px;min-width:0}
+.prog-shot{grid-column:2;grid-row:1/3}
 .prog-row{display:flex;justify-content:space-between;align-items:center;gap:16px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px}
 .prog-row h3{font-size:1.7rem;font-weight:800;margin:2px 0 4px}.prog-row .muted{margin:0;font-size:.9rem}
 .prog-buy{display:grid;gap:8px;justify-items:center;flex:none}
@@ -81,8 +85,20 @@ CSS = """
 .prog-pay{margin:0;font-size:.8rem;color:var(--muted)}
 .prog-note{margin-top:22px;text-align:center;color:var(--muted);font-size:.95rem}
 .prog-note a{color:var(--accent);font-weight:700;text-decoration:none;white-space:nowrap}
-@media (max-width:820px){.prog-grid{grid-template-columns:1fr;gap:28px}.prog-shot{order:-1}.prog-shot img{width:230px;border-radius:34px;border-width:7px}}
-@media (max-width:420px){.prog-row{padding:14px}.prog-row h3{font-size:1.35rem}.prog-row .muted{font-size:.82rem}.prog-buy .price{font-size:1.9rem}.prog-buy .btn{padding:9px 16px}}
+@media (max-width:820px){
+.prog-grid{grid-template-columns:minmax(0,1fr) minmax(0,40%);gap:0 14px}
+.prog-cards{gap:10px}.prog-more{grid-column:1/-1;margin-top:22px}
+.prog-shot{grid-row:1}
+.prog-row{flex-direction:column;align-items:stretch;gap:8px;padding:12px;border-radius:14px}
+.prog-row .eyebrow{font-size:.58rem;letter-spacing:.06em}
+.prog-row h3{font-size:1.2rem;margin:2px 0}.prog-row .muted{font-size:.76rem;line-height:1.35}
+.prog-buy{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.prog-buy{flex-wrap:wrap}.prog-buy .price{font-size:1.6rem;white-space:nowrap}.prog-buy .btn{padding:7px 12px;font-size:.8rem}
+@media (max-width:360px){.prog-buy .btn{flex:1 1 100%;justify-content:center}}
+.prog-shot img{width:100%;border-radius:24px;border-width:5px}
+.prog-shot figcaption{font-size:.6rem;line-height:1.3}
+}
+@media (min-width:600px) and (max-width:820px){.prog-grid{grid-template-columns:minmax(0,1fr) 250px;gap:0 32px}.prog-row{padding:16px}.prog-row h3{font-size:1.5rem}.prog-row .muted{font-size:.88rem}.prog-buy .price{font-size:2rem}.prog-buy .btn{padding:9px 18px;font-size:.9rem}.prog-shot img{border-width:8px;border-radius:36px}.prog-shot figcaption{font-size:.72rem}}
 """
 
 h = open('index.html').read()
