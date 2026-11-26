@@ -152,15 +152,40 @@ CSS = """
 @media (min-width:600px) and (max-width:820px){.prog-grid,.prog-cards{gap:14px}.prog-row{padding:20px}}
 """
 
+AVIS = """<section id="avis">
+  <div class="wrap">
+    <div class="head reveal"><div><p class="eyebrow">Avis clients</p><h2 style="margin-top:10px">Ce qu'ils en disent</h2></div><p>Les retours des personnes que j'accompagne, publiés tels quels.</p></div>
+    <div class="avis-grid">
+      <figure class="avis reveal">
+        <svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 21v-7.5C3 8.6 5.4 5.3 10.2 3.6l1 1.9C8.4 6.7 7 8.6 6.8 11H10v10H3zm11 0v-7.5c0-4.9 2.4-8.2 7.2-9.9l1 1.9c-2.8 1.2-4.2 3.1-4.4 5.5H21v10h-7z"/></svg>
+        <blockquote>Super coach ! Je fais du renfo avec lui depuis septembre et j'ai déjà bien progressé. Il est pédagogue, motivant, et il sait adapter les séances à mes besoins. Je le recommande vivement.</blockquote>
+        <figcaption>Avis client · renforcement musculaire</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+"""
+AVIS_CSS = """
+/* TEST rubrique avis */
+.avis-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}
+.avis{margin:0;display:grid;grid-template-rows:auto 1fr auto;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
+.avis .q{width:32px;height:32px;color:var(--accent)}
+.avis blockquote{margin:0;font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.55}
+.avis figcaption{font-size:.82rem;color:var(--muted);padding-top:14px;border-top:1px solid var(--line)}
+@media (max-width:600px){.avis{padding:18px;gap:10px;border-radius:14px}.avis .q{width:26px;height:26px}.avis blockquote{font-size:1rem}}
+"""
+
 h = open('index.html').read()
 i = h.index('<section id="faq">')
 h = h[:i] + SECTION + h[i:]
+h = h.replace('<section id="formules">', AVIS + '<section id="formules">', 1)
 k = h.index('</style>', h.index('/* Tablette'))
-h = h[:k] + CSS + h[k:]
+h = h[:k] + CSS + AVIS_CSS + h[k:]
 h = (h.replace('<a href="#formules"><small>04</small>Tarifs</a>',
-               '<a href="#formules"><small>04</small>Tarifs</a>\n    <a href="#programmes"><small>05</small>Programmes</a>')
-      .replace('<small>05</small>FAQ', '<small>06</small>FAQ')
-      .replace('<small>06</small>Commencer', '<small>07</small>Commencer'))
+               '<a href="#avis"><small>04</small>Avis</a>\n    <a href="#formules"><small>05</small>Tarifs</a>\n    <a href="#programmes"><small>06</small>Programmes</a>')
+      .replace('<small>05</small>FAQ', '<small>07</small>FAQ')
+      .replace('<small>06</small>Commencer', '<small>08</small>Commencer'))
 open(os.path.join(out, 'index.html'), 'w').write(inline(h))
 
 l = open('liens.html').read()
