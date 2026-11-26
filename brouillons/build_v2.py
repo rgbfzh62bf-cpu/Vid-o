@@ -24,7 +24,7 @@ def paint(ws,r1,r2,c1,c2,color):
         for c in range(c1,c2+1): ws.cell(r,c).fill=fl(color)
 
 # colonnes semaine
-COLS=[('',2),('JOUR',13),('EXERCICE',30),('SÉRIES',8),('RÉPS',8),('% 1RM',8),('CHARGE\nCONSEILLÉE',12),('RPE\nCIBLE',8),('REPOS',9),('CONSIGNE',34),('CHARGE\nFAITE (kg)',12),('RPE\nFAIT',8),('OBSERVATIONS',30),('',2),('t',1)]
+COLS=[('',2),('JOUR',5),('EXERCICE',26),('SÉRIES',8),('RÉPS',8),('% 1RM',8),('CHARGE\nCONSEILLÉE',12),('RPE\nCIBLE',8),('REPOS',9),('CONSIGNE',34),('CHARGE\nFAITE (kg)',12),('RPE\nFAIT',8),('OBSERVATIONS',30),('',2),('t',1)]
 NC=13
 REPS_NUM='IFERROR(VALUE(LEFT(E{r},FIND("-",E{r}&"-")-1)),0)'
 
@@ -82,13 +82,13 @@ def apply_theme(wb):
                     cell=ws.cell(r,c)
                     if _rgb(cell.fill.fgColor)==WHITE and cell.value is None and cell.protection.locked is not False and not (cell.border and cell.border.left and cell.border.left.style): cell.fill=fl(NAVY)
 
-def header(ws,title,sub,logo,tc=(10,13)):
+def header(ws,title,sub,logo,tc=(10,13),t0=3,bw=17):
     a,b=tc
     for r in range(1,5): paint(ws,r,r,1,NC+1,WHITE)
     ws.row_dimensions[1].height=10; ws.row_dimensions[2].height=42; ws.row_dimensions[3].height=26; ws.row_dimensions[4].height=10
     im=Image(logo); im.width,im.height=110,52; ws.add_image(im,'B2')
-    ws.merge_cells(start_row=2,start_column=3,end_row=2,end_column=a-1); ws['C2']='FONDATIONS · FORCE ATHLÉTIQUE'; ws.column_dimensions['B'].width=max(ws.column_dimensions['B'].width or 0,17); ws['C2'].font=Font(name=F,size=13,bold=True,color=BLACK); ws['C2'].alignment=Alignment(vertical='bottom',indent=1)
-    ws.merge_cells(start_row=3,start_column=3,end_row=3,end_column=a-1); ws['C3']=sub; ws['C3'].font=fn(10,c=MUTED); ws['C3'].alignment=Alignment(vertical='top',indent=1)
+    ws.merge_cells(start_row=2,start_column=t0,end_row=2,end_column=a-1); ws.cell(2,t0).value='FONDATIONS · FORCE ATHLÉTIQUE'; ws.column_dimensions['B'].width=max(ws.column_dimensions['B'].width or 0,bw); ws.cell(2,t0).font=Font(name=F,size=13,bold=True,color=BLACK); ws.cell(2,t0).alignment=Alignment(vertical='bottom',indent=1)
+    ws.merge_cells(start_row=3,start_column=t0,end_row=3,end_column=a-1); ws.cell(3,t0).value=sub; ws.cell(3,t0).font=fn(10,c=MUTED); ws.cell(3,t0).alignment=Alignment(vertical='top',indent=1)
     ws.merge_cells(start_row=2,start_column=a,end_row=3,end_column=b); ws.cell(2,a,title).font=Font(name=F,size=22,bold=True,color=WHITE); ws.cell(2,a).alignment=C
     paint(ws,2,3,a,b,BLACK)
     for c in range(2,b+1): ws.cell(4,c).border=Border(bottom=Side(style='thick',color=BLUE))
@@ -102,7 +102,7 @@ def build(days,label,out,logo):
     blocks=[
      ('COMMENT ÇA MARCHE',[
       ('1','Entre tes 1RM','Onglet MES 1RM : entre ton 1RM au squat, au développé couché et au soulevé de terre. Tout le reste se calcule tout seul.'),
-      ('2','Lis ta séance','Chaque exercice a un % de ton 1RM. La CHARGE CONSEILLÉE se calcule toute seule, arrondie à 2,5 kg.'),
+      ('2','Lis ta séance','La CHARGE CONSEILLÉE se calcule toute seule à partir de ton 1RM. Chaque semaine elle monte : +5 kg au squat, +2,5 kg au développé couché, +7,5 kg au soulevé de terre.'),
       ('3','Note ce que tu fais','Remplis les cases blanches à bord bleu : charge faite, RPE fait, observations. Le reste est verrouillé.'),
       ('4','Suis ta progression','Chaque séance et chaque semaine affichent ton tonnage, au total et par mouvement. L’onglet BILAN montre l’évolution sur le bloc.'),
       ('5','Recommence','Après la semaine 4, tu repars en semaine 1. Dans MES 1RM, passe le NUMÉRO DU BLOC à 2, puis 3… : chaque charge conseillée prend +2,5 kg par bloc.')]),
@@ -172,16 +172,17 @@ def build(days,label,out,logo):
     REF={'S':"'MES 1RM'!$D$7",'B':"'MES 1RM'!$D$8",'D':"'MES 1RM'!$D$9"}
 
     week_tot={}
+    STEP={'S':5,'B':2.5,'D':7.5}
     for wi,(wname,wsub,inc,dset) in enumerate(WEEKS):
         s=wb.create_sheet(wname); s.sheet_view.showGridLines=False
         for i,(h,w) in enumerate(COLS,start=1): s.column_dimensions[L(i)].width=w
         s.column_dimensions['O'].hidden=True
-        header(s,wname,f'Version {label.lower()}',logo)
+        header(s,wname,f'Version {label.lower()} · {wsub}',logo,t0=4,bw=5)
         # tableau de bord semaine (rempli après)
         dash=6; s.row_dimensions[dash].height=18; s.row_dimensions[dash+1].height=34; s.row_dimensions[dash+2].height=10
         r=dash+3; day_rows=[]
         for day,exs in days.items():
-            jour,theme=day.split(' · ')
+            jour=day.split(' · ')[0]
             s.row_dimensions[r].height=30
             for i,(h,_) in enumerate(COLS[2:NC],start=3):
                 c=s.cell(r,i,h); c.font=fn(8,True,WHITE); c.alignment=C
@@ -190,8 +191,8 @@ def build(days,label,out,logo):
             hr=r; r+=1; first=r; rows=[]
             for k,(typ,ex,sets,reps,pct,rpe,rest,tip) in enumerate(exs):
                 n=sets
-                p=round(pct+inc,3) if pct else None
-                vals={3:ex,4:n,5:reps,6:p if p else '—',8:rpe_for(rpe,wi),9:rest,10:tip}
+                p=pct
+                vals={3:ex,4:n,5:reps,6:'—',8:rpe_for(rpe,wi),9:rest,10:tip}
                 bg=LIGHT if typ else GREY
                 for col in range(3,NC+1):
                     c=s.cell(r,col); c.border=BOX; c.alignment=C; c.font=fn(9)
@@ -200,8 +201,8 @@ def build(days,label,out,logo):
                 s.cell(r,3).font=fn(10,True,BLACK); s.cell(r,3).alignment=LFT
                 s.cell(r,10).font=fn(8,c=MUTED,i=True); s.cell(r,10).alignment=LFT
                 if p:
-                    s.cell(r,6).number_format='0%'; s.cell(r,6).font=fn(10,True,BLUE)
-                    g=s.cell(r,7,f'=IF(ISNUMBER({REF[typ]}),ROUND({REF[typ]}*F{r}/2.5,0)*2.5+(MAX(1,{BLOC})-1)*2.5,"")'); g.number_format='0.0" kg"'; g.font=fn(11,True,BLACK)
+                    s.cell(r,6,f'=IF(ISNUMBER(G{r}),G{r}/{REF[typ]},{p})').number_format='0%'; s.cell(r,6).font=fn(10,True,BLUE)
+                    g=s.cell(r,7,f'=IF(ISNUMBER({REF[typ]}),ROUND({REF[typ]}*{p}/2.5,0)*2.5+{wi*STEP[typ]}+(MAX(1,{BLOC})-1)*2.5,"")'); g.number_format='0.0" kg"'; g.font=fn(11,True,BLACK)
                 else:
                     s.cell(r,7,'au ressenti').font=fn(8,c=MUTED,i=True)
                 for col in (11,12,13):
@@ -212,7 +213,7 @@ def build(days,label,out,logo):
                 s.row_dimensions[r].height=32; rows.append((r,typ,ex)); r+=1
             last=r-1
             s.merge_cells(start_row=hr,start_column=2,end_row=last,end_column=2)
-            jc=s.cell(hr,2,f'{jour}\n\n{theme}'); jc.font=fn(11,True,WHITE); jc.alignment=C; paint(s,hr,last,2,2,BLACK)
+            jc=s.cell(hr,2,jour); jc.font=fn(11,True,WHITE); jc.alignment=Alignment(horizontal='center',vertical='center',text_rotation=90); paint(s,hr,last,2,2,BLACK)
             # pied de séance
             main=[x for x,t,_ in rows if t]
             prev='+'.join(f'IF(ISNUMBER(G{x}),D{x}*E{x}*G{x},0)' for x in main) or '0'
@@ -222,8 +223,8 @@ def build(days,label,out,logo):
                 lr=[x for x,t,_ in rows if t==lt]
                 if not lr: continue
                 s.row_dimensions[r].height=22
-                s.merge_cells(start_row=r,start_column=2,end_row=r,end_column=4); s.cell(r,2,f'TONNAGE {lname}').font=fn(9,True,BLACK); s.cell(r,2).alignment=LFT
-                s.merge_cells(start_row=r,start_column=5,end_row=r,end_column=6); s.cell(r,5,'Prévu').alignment=Alignment(horizontal='right',vertical='center')
+                s.merge_cells(start_row=r,start_column=2,end_row=r,end_column=3); s.cell(r,2,f'TONNAGE {lname}').font=fn(9,True,BLACK); s.cell(r,2).alignment=LFT
+                s.merge_cells(start_row=r,start_column=4,end_row=r,end_column=6); s.cell(r,4,'Prévu').alignment=Alignment(horizontal='right',vertical='center')
                 s.cell(r,7,'='+'+'.join(f'IF(ISNUMBER(G{x}),D{x}*E{x}*G{x},0)' for x in lr)).number_format='# ##0" kg"'
                 s.merge_cells(start_row=r,start_column=8,end_row=r,end_column=10); s.cell(r,8,'Réalisé').alignment=Alignment(horizontal='right',vertical='center')
                 s.cell(r,11,'='+'+'.join(f'IF(ISNUMBER(K{x}),O{x}*K{x},0)' for x in lr)).number_format='# ##0" kg"'
@@ -233,8 +234,8 @@ def build(days,label,out,logo):
                     if col in(7,11): c.alignment=C
                 r+=1
             s.row_dimensions[r].height=24
-            s.merge_cells(start_row=r,start_column=2,end_row=r,end_column=4); s.cell(r,2,'TOTAL SÉANCE').font=fn(9,True,WHITE); s.cell(r,2).alignment=LFT
-            s.merge_cells(start_row=r,start_column=5,end_row=r,end_column=6); s.cell(r,5,'Tonnage prévu').alignment=Alignment(horizontal='right',vertical='center')
+            s.merge_cells(start_row=r,start_column=2,end_row=r,end_column=3); s.cell(r,2,'TOTAL SÉANCE').font=fn(9,True,WHITE); s.cell(r,2).alignment=LFT
+            s.merge_cells(start_row=r,start_column=4,end_row=r,end_column=6); s.cell(r,4,'Tonnage prévu').alignment=Alignment(horizontal='right',vertical='center')
             s.cell(r,7,'='+prev).number_format='# ##0" kg"'
             s.merge_cells(start_row=r,start_column=8,end_row=r,end_column=10); s.cell(r,8,'Tonnage réalisé').alignment=Alignment(horizontal='right',vertical='center')
             s.cell(r,11,'='+real).number_format='# ##0" kg"'
@@ -245,9 +246,9 @@ def build(days,label,out,logo):
             day_rows.append(r); r+=2
         # tableau de bord
         tp='+'.join(f'G{x}' for x in day_rows); tr='+'.join(f'K{x}' for x in day_rows)
-        cards=[(2,4,'TONNAGE PRÉVU',f'={tp}','# ##0" kg"'),(5,9,'TONNAGE RÉALISÉ',f'={tr}','# ##0" kg"'),
+        cards=[(2,3,'TONNAGE PRÉVU',f'={tp}','# ##0" kg"'),(4,9,'TONNAGE RÉALISÉ',f'={tr}','# ##0" kg"'),
                (10,10,'VS SEMAINE PRÉCÉDENTE',None,'+0%;-0%;0%'),(11,13,'SÉANCES',f'{len(days)} séances',None)]
-        week_tot[wname]=(f"'{wname}'!B{dash+1}",f"'{wname}'!E{dash+1}")
+        week_tot[wname]=(f"'{wname}'!B{dash+1}",f"'{wname}'!D{dash+1}")
         for a,b,t,v,nf in cards:
             if a!=b:
                 s.merge_cells(start_row=dash,start_column=a,end_row=dash,end_column=b); s.merge_cells(start_row=dash+1,start_column=a,end_row=dash+1,end_column=b)
@@ -257,7 +258,7 @@ def build(days,label,out,logo):
             c=s.cell(dash+1,a,v); c.font=fn(16 if t!='SÉANCES' else 10,True,BLACK if t!='SÉANCES' else MUTED); c.alignment=C
             if nf: c.number_format=nf
             paint(s,dash,dash+1,a,b,PALE)
-        s.freeze_panes=f'C{dash+3}'
+        s.freeze_panes='D1'
         s.protection.sheet=True
         s.page_setup.orientation='landscape'; s.sheet_properties.pageSetUpPr.fitToPage=True; s.page_setup.fitToWidth=1; s.page_setup.fitToHeight=0
 
