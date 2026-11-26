@@ -148,6 +148,12 @@ CSS = """
 }
 @media (max-width:600px){.prog-more .prog-inc{grid-template-columns:1fr;gap:12px}.prog-buy{display:grid;grid-template-columns:minmax(0,1fr);grid-auto-flow:row;justify-items:stretch}.prog-buy .btn{width:100%;justify-content:center}}
 .prog-inc li{align-content:start}
+/* Titre des cartes sur une seule ligne, taille ajustée à la carte */
+.prog-row{container-type:inline-size}
+.prog-row h3{white-space:nowrap;font-size:min(2rem,12.4cqi)}
+@media (max-width:820px){.prog-row h3{font-size:min(1.2rem,12.4cqi)}}
+@media (min-width:600px) and (max-width:820px){.prog-row h3{font-size:min(1.6rem,12.4cqi)}}
+
 @media (min-width:600px) and (max-width:820px){.prog-grid,.prog-cards{gap:14px}.prog-row{padding:20px}}
 """
 
