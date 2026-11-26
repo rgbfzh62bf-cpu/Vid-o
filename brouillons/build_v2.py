@@ -65,7 +65,7 @@ def header(ws,title,sub,logo):
     for r in range(1,5): paint(ws,r,r,1,NC+1,WHITE)
     ws.row_dimensions[1].height=10; ws.row_dimensions[2].height=42; ws.row_dimensions[3].height=26; ws.row_dimensions[4].height=10
     im=Image(logo); im.width,im.height=110,52; ws.add_image(im,'B2')
-    ws.merge_cells('C2:I2'); ws['C2']='PROGRAMME DÉBUTANT · FORCE ATHLÉTIQUE'; ws.column_dimensions['B'].width=max(ws.column_dimensions['B'].width or 0,17); ws['C2'].font=Font(name=F,size=13,bold=True,color=BLACK); ws['C2'].alignment=Alignment(vertical='bottom',indent=1)
+    ws.merge_cells('C2:I2'); ws['C2']='FONDATIONS · FORCE ATHLÉTIQUE'; ws.column_dimensions['B'].width=max(ws.column_dimensions['B'].width or 0,17); ws['C2'].font=Font(name=F,size=13,bold=True,color=BLACK); ws['C2'].alignment=Alignment(vertical='bottom',indent=1)
     ws.merge_cells('C3:I3'); ws['C3']=sub; ws['C3'].font=fn(10,c=MUTED); ws['C3'].alignment=Alignment(vertical='top',indent=1)
     ws.merge_cells('J2:M3'); ws['J2']=title; ws['J2'].font=Font(name=F,size=22,bold=True,color=WHITE); ws['J2'].alignment=C
     paint(ws,2,3,10,13,BLACK)
@@ -261,6 +261,6 @@ def build(days,label,out,logo):
     wb.save(out)
 
 logo,od=sys.argv[1],sys.argv[2]
-build(P4,'4 jours',od+'/programme-debutant-4-jours.xlsx',logo)
-build(P3,'3 jours',od+'/programme-debutant-3-jours.xlsx',logo)
+build(P4,'4 jours',od+'/Fondations-force-athletique-4-jours.xlsx',logo)
+build(P3,'3 jours',od+'/Fondations-force-athletique-3-jours.xlsx',logo)
 print('ok')

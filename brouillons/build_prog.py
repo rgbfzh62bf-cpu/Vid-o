@@ -82,7 +82,7 @@ def build(days,label,out,logo):
     ws.row_dimensions[1].height=8
     im=Image(logo); im.width,im.height=150,100; ws.add_image(im,'B2')
     ws.row_dimensions[2].height=80
-    ws['C2']=f'PROGRAMME DÉBUTANT\nFORCE ATHLÉTIQUE · {label}'; ws['C2'].font=Font(name=F,size=20,bold=True,color=NAVY); ws['C2'].alignment=LEFT
+    ws['C2']=f'FONDATIONS\nFORCE ATHLÉTIQUE · {label}'; ws['C2'].font=Font(name=F,size=20,bold=True,color=NAVY); ws['C2'].alignment=LEFT
     rows=[
      ('TITRE','Comment ça marche'),
      ('1. Tes 1RM','Va dans l’onglet MES 1RM et entre ton maximum sur 1 répétition (1RM) au squat, au développé couché et au soulevé de terre. Tu ne le connais pas ? Entre une charge que tu fais proprement pour quelques répétitions : le fichier estime ton 1RM.'),
@@ -223,6 +223,6 @@ def build(days,label,out,logo):
     wb.save(out)
 
 logo=sys.argv[1]; od=sys.argv[2]
-build(P4,'4 JOURS',od+'/programme-debutant-4-jours.xlsx',logo)
-build(P3,'3 JOURS',od+'/programme-debutant-3-jours.xlsx',logo)
+build(P4,'4 JOURS',od+'/Fondations-force-athletique-4-jours.xlsx',logo)
+build(P3,'3 JOURS',od+'/Fondations-force-athletique-3-jours.xlsx',logo)
 print('ok')
