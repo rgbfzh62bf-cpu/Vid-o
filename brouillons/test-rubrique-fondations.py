@@ -23,7 +23,11 @@ def inline(h):
     return re.sub(r'<link rel="preload"[^>]*>\n?', '', h)
 
 
-IMG = 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(HERE, 'fondations-athlyse.jpg'), 'rb').read()).decode()
+def _b64(p): return 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(HERE, 'athlyse', p), 'rb').read()).decode()
+SHOTS = {v: [_b64(f'fondations-{v}j-jour{n}.jpg') for n in range(1, int(v) + 1)] for v in ('3', '4')}
+IMG = SHOTS['3'][0]
+import json as _json
+SHOTS_JS = _json.dumps(SHOTS)
 
 LISTE = """          <li>Tes séances prêtes sur l'appli Athlyse, jour par jour</li>
           <li>Tes charges calculées à partir de tes 1RM</li>
@@ -36,21 +40,26 @@ INFO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=
 SECTION = f"""<section id="programmes">
   <div class="wrap">
     <div class="head reveal">
-      <div><p class="eyebrow ath-eb"><img src="athlyse-logo-blanc.png" alt="Logo Athlyse" width="57" height="47"><span>Programmes à acheter · force athlétique · sur l'appli Athlyse</span></p><h2 style="margin-top:10px">Pas prêt pour un coaching ?<br>Achète ton programme.</h2></div>
-      <p>Fondations, ce sont deux programmes de force athlétique tout prêts, de 4 semaines, sur squat, développé couché et soulevé de terre. Tu en achètes un, une seule fois à 29 €, et tu le suis seul sur l'appli Athlyse.</p>
+      <div><p class="eyebrow ath-eb"><img src="athlyse-logo-blanc.png" alt="Logo Athlyse" width="57" height="47"><span>Programmes à acheter · force athlétique · sur l'appli Athlyse</span></p><h2 style="margin-top:10px">Fondations :<br>ton programme de force athlétique.</h2></div>
+      <p>Deux programmes de 4 semaines, prêts à suivre seul sur l'appli Athlyse, sur squat, développé couché et soulevé de terre. Tu t'entraînes 3 fois par semaine ? Choisis la version 3 jours. 4 fois ? La version 4 jours. Chaque programme s'achète une seule fois, 29 €.</p>
     </div>
     <div class="prog-grid">
       <div class="prog-cards reveal">
         <article class="prog-row">
-          <div><p class="eyebrow">Programme Fondations</p><h3>3 jours / semaine</h3><p class="muted">Squat et développé couché, une séance légère, une séance lourde.</p></div>
+          <div><p class="eyebrow">Programme Fondations</p><h3>3 séances / semaine</h3><p class="muted">Pour toi qui t'entraînes 3 fois par semaine : une séance squat et développé couché, une légère, une lourde.</p></div>
           <div class="prog-buy"><div class="price">29 €<small>paiement unique</small></div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
         <article class="prog-row">
-          <div><p class="eyebrow">Programme Fondations</p><h3>4 jours / semaine</h3><p class="muted">Plus de séances pour travailler chaque mouvement plus souvent.</p></div>
+          <div><p class="eyebrow">Programme Fondations</p><h3>4 séances / semaine</h3><p class="muted">Pour toi qui t'entraînes 4 fois par semaine : chaque mouvement travaillé plus souvent.</p></div>
           <div class="prog-buy"><div class="price">29 €<small>paiement unique</small></div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
       </div>
-      <figure class="prog-shot reveal"><img src="{IMG}" alt="Le programme Fondations dans l'appli Athlyse : jour 1 de la semaine 1"><figcaption>Exemple : jour 1, semaine 1 (1RM squat 100 kg, développé couché 70 kg)</figcaption></figure>
+      <figure class="prog-shot reveal" id="progShot">
+        <div class="prog-tabs" role="tablist" aria-label="Version"><button type="button" class="on" data-v="3">3 jours</button><button type="button" data-v="4">4 jours</button></div>
+        <img id="progImg" src="{IMG}" alt="Le programme Fondations dans l'appli Athlyse : version 3 jours, jour 1 de la semaine 1">
+        <div class="prog-tabs days" role="tablist" aria-label="Jour" id="progDays"></div>
+        <figcaption>Semaine 1, exemple avec des 1RM de 100 kg (squat), 70 kg (développé couché) et 120 kg (soulevé de terre)</figcaption>
+      </figure>
       <div class="prog-more reveal">
         <ol class="prog-steps"><li><b>1</b><span>Tu achètes le programme : paiement unique de 29 €</span></li><li><b>2</b><span>Tu le reçois sur l'appli Athlyse</span></li><li><b>3</b><span>Tu t'entraînes seul, à ton rythme</span></li></ol>
         <ul class="prog-inc">
@@ -62,6 +71,7 @@ SECTION = f"""<section id="programmes">
       </div>
     </div>
     <p class="prog-note reveal">Envie d'aller plus loin avec un suivi personnalisé ? <a href="#appel">On en parle →</a></p>
+    <script>(function(){{var S={SHOTS_JS},v='3',d=0,f=document.getElementById('progShot'),im=document.getElementById('progImg'),dd=document.getElementById('progDays');function draw(){{im.src=S[v][d];im.alt="Le programme Fondations dans l'appli Athlyse : version "+v+" jours, jour "+(d+1)+" de la semaine 1";dd.innerHTML='';S[v].forEach(function(_,i){{var b=document.createElement('button');b.type='button';b.textContent='Jour '+(i+1);if(i===d)b.className='on';b.onclick=function(){{d=i;draw()}};dd.appendChild(b)}});f.querySelectorAll('[data-v]').forEach(function(b){{b.classList.toggle('on',b.dataset.v===v)}})}}f.querySelectorAll('[data-v]').forEach(function(b){{b.onclick=function(){{v=b.dataset.v;d=0;draw()}}}});draw()}})();</script>
   </div>
 </section>
 
@@ -84,6 +94,10 @@ CSS = """
 .prog-buy .price small{display:block;font-family:var(--f-body);font-size:.7rem;font-weight:600;opacity:.7;text-align:center}
 .prog-buy .price{display:grid;justify-items:center}
 @media (max-width:600px){.prog-steps{grid-template-columns:1fr;gap:8px}.prog-steps li{padding:10px 12px}}
+.prog-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.prog-tabs button{font:inherit;font-size:.82rem;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
+.prog-tabs button.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.prog-tabs.days button{font-size:.76rem;padding:6px 11px}
 .prog-inc{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:12px}.prog-inc li{display:grid;gap:2px;padding-left:16px;border-left:3px solid var(--accent)}.prog-inc span{color:var(--muted);font-size:.92rem}
 .prog-shot{margin:0;display:grid;gap:10px;justify-items:center;min-width:0}
 .prog-shot img{width:min(300px,100%);height:auto;display:block;border-radius:44px;border:10px solid #1C2B42;box-shadow:0 0 0 2px var(--line),0 50px 90px -30px rgba(0,0,0,.8),0 0 120px -20px color-mix(in srgb,var(--accent) 45%,transparent)}
@@ -102,6 +116,7 @@ CSS = """
 .prog-row h3{font-size:1.2rem;margin:2px 0}.prog-row .muted{font-size:.76rem;line-height:1.35}
 .prog-buy{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .prog-buy{display:grid;justify-items:stretch;gap:6px}.prog-buy .price{font-size:1.6rem;white-space:nowrap;justify-items:start}.prog-buy .price small{text-align:left}.prog-buy .btn{padding:8px 12px;font-size:.82rem;justify-content:center;width:100%}
+.prog-tabs{gap:4px}.prog-tabs button{font-size:.66rem;padding:5px 8px}.prog-tabs.days button{font-size:.6rem;padding:4px 6px}
 @media (max-width:360px){.prog-buy .btn{flex:1 1 100%;justify-content:center}}
 .prog-shot img{width:100%;border-radius:24px;border-width:5px}
 .prog-shot figcaption{font-size:.6rem;line-height:1.3}
