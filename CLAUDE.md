@@ -25,3 +25,6 @@ New skill needed? Use `find-skills`.
 - Load only the skills the current task needs.
 - Search with grep, read file excerpts, never whole files unless required.
 - Keep project state in `NOTES.md` (short). Read it on resume instead of rebuilding context; update it after each finished task.
+
+## Budget
+- 100% GRATUIT, toujours. Jamais d'outil/IA/abonnement payant (pas HeyGen payant, pas RunComfy, pas Pro). Seulement free tiers, local, libres de droits.
