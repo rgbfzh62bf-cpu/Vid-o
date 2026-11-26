@@ -15,54 +15,54 @@ LEFT=Alignment(horizontal='left',vertical='center',wrap_text=True)
 
 # ---------- PROGRAMMES ----------
 # (type, exercice, séries, reps, %1RM S1, RPE cible, repos, consigne)
-# type S/B/D = mouvement compté dans le bilan ; '' = renfo (charge libre, RIR 2)
+# type S/B/D = mouvement compté dans le bilan ; '' = renfo (charge libre, RPE 8)
 P4={
  'JOUR 1 · SQUAT & DÉVELOPPÉ COUCHÉ':[
   ('S','Squat pause 2 temps',4,4,.65,'6','3-4 min','Pause 2 s en bas, gainage serré, sans te relâcher.'),
   ('B','Développé couché',4,6,.67,'6-7','3 min','Fesses posées, omoplates serrées, barre touche la poitrine.'),
-  ('','Tirage vertical poulie',3,'10-12',None,'RIR 2','2 min','Tire vers le haut de la poitrine, buste fixe.'),
-  ('','Élévations latérales haltères',3,'12-15',None,'RIR 2','1-2 min','Coudes légèrement fléchis, monte à hauteur d’épaules.')],
+  ('','Tirage vertical poulie',3,'10-12',None,'8','2 min','Tire vers le haut de la poitrine, buste fixe.'),
+  ('','Élévations latérales haltères',3,'12-15',None,'8','1-2 min','Coudes légèrement fléchis, monte à hauteur d’épaules.')],
  'JOUR 2 · SOULEVÉ DE TERRE':[
   ('D','Soulevé de terre',4,3,.70,'6','3-4 min','Remets-toi en place à chaque répétition. Dos neutre.'),
   ('B','Développé couché pause 3 temps',3,3,.65,'6','3 min','Pause 3 s sur la poitrine, barre immobile.'),
   ('D','Soulevé de terre jambes tendues (RDL)',3,8,.45,'6','2-3 min','Sans ceinture. Descends en reculant les hanches, dos plat.'),
-  ('','Leg curl assis ou allongé',3,'10-15',None,'RIR 2','1-2 min','Contrôle la descente.'),
+  ('','Leg curl assis ou allongé',3,'10-15',None,'8','1-2 min','Contrôle la descente.'),
   ('','Gainage planche',3,'30-45 s',None,'—','1 min','Bassin aligné, respire normalement.')],
  'JOUR 3 · VOLUME HAUT DU CORPS':[
   ('S','Squat',3,6,.65,'6','3 min','Même descente à chaque répétition.'),
   ('B','Développé couché pieds levés',3,6,.58,'6','2-3 min','Pieds en l’air : le buste travaille seul, trajectoire propre.'),
-  ('','Développé militaire barre debout',3,'6-8',None,'RIR 2','2 min','Fessiers serrés, ne cambre pas.'),
-  ('','Rowing haltère un bras',3,'10-12',None,'RIR 2','1-2 min','Tire le coude vers la hanche.'),
-  ('','Extension triceps poulie au-dessus de la tête',3,'12',None,'RIR 2','1-2 min','Coudes fixes.'),
-  ('','Curl biceps au choix',2,'12',None,'RIR 2','1 min','')],
+  ('','Développé militaire barre debout',3,'6-8',None,'8','2 min','Fessiers serrés, ne cambre pas.'),
+  ('','Rowing haltère un bras',3,'10-12',None,'8','1-2 min','Tire le coude vers la hanche.'),
+  ('','Extension triceps poulie au-dessus de la tête',3,'12',None,'8','1-2 min','Coudes fixes.'),
+  ('','Curl biceps au choix',2,'12',None,'8','1 min','')],
  'JOUR 4 · SÉRIE PRINCIPALE + SÉRIES ALLÉGÉES':[
   ('S','Squat · série principale',1,3,.75,'7','4 min','Monte en charge jusqu’à cette série.'),
   ('S','Squat · séries allégées',3,3,.70,'6','3 min','Même technique que la série principale.'),
   ('B','Développé couché · série principale',1,3,.77,'7','4 min','Monte en charge jusqu’à cette série.'),
   ('B','Développé couché · séries allégées',3,5,.68,'6','3 min',''),
   ('D','Soulevé de terre arrêt mi-tibia',3,3,.62,'6','3 min','Arrêt 1 s sous les genoux, puis termine le mouvement.'),
-  ('','Extension lombaire au banc',3,'12',None,'RIR 2','1-2 min','Mouvement lent et contrôlé.')],
+  ('','Extension lombaire au banc',3,'12',None,'8','1-2 min','Mouvement lent et contrôlé.')],
 }
 P3={
  'JOUR 1 · SQUAT & DÉVELOPPÉ COUCHÉ':[
   ('S','Squat',4,5,.67,'6','3-4 min','Même descente à chaque répétition.'),
   ('B','Développé couché',4,6,.67,'6-7','3 min','Fesses posées, omoplates serrées, barre touche la poitrine.'),
   ('D','Soulevé de terre jambes tendues (RDL)',3,8,.45,'6','2-3 min','Sans ceinture. Descends en reculant les hanches, dos plat.'),
-  ('','Tirage vertical poulie',3,'10-12',None,'RIR 2','2 min','Tire vers le haut de la poitrine, buste fixe.')],
+  ('','Tirage vertical poulie',3,'10-12',None,'8','2 min','Tire vers le haut de la poitrine, buste fixe.')],
  'JOUR 2 · SOULEVÉ DE TERRE':[
   ('D','Soulevé de terre',4,3,.70,'6','3-4 min','Remets-toi en place à chaque répétition. Dos neutre.'),
   ('B','Développé couché pause 3 temps',4,3,.65,'6','3 min','Pause 3 s sur la poitrine, barre immobile.'),
   ('S','Squat pause 2 temps',3,3,.62,'6','3 min','Pause 2 s en bas, gainage serré.'),
-  ('','Leg curl assis ou allongé',3,'10-15',None,'RIR 2','1-2 min','Contrôle la descente.'),
+  ('','Leg curl assis ou allongé',3,'10-15',None,'8','1-2 min','Contrôle la descente.'),
   ('','Gainage planche',3,'30-45 s',None,'—','1 min','Bassin aligné, respire normalement.')],
  'JOUR 3 · SÉRIE PRINCIPALE + SÉRIES ALLÉGÉES':[
   ('S','Squat · série principale',1,3,.75,'7','4 min','Monte en charge jusqu’à cette série.'),
   ('S','Squat · séries allégées',3,3,.70,'6','3 min','Même technique que la série principale.'),
   ('B','Développé couché · série principale',1,3,.77,'7','4 min','Monte en charge jusqu’à cette série.'),
   ('B','Développé couché · séries allégées',3,5,.68,'6','3 min',''),
-  ('','Développé militaire barre debout',3,'6-8',None,'RIR 2','2 min','Fessiers serrés, ne cambre pas.'),
-  ('','Rowing haltère un bras',3,'10-12',None,'RIR 2','1-2 min','Tire le coude vers la hanche.'),
-  ('','Extension triceps poulie au-dessus de la tête',3,'12',None,'RIR 2','1-2 min','Coudes fixes.')],
+  ('','Développé militaire barre debout',3,'6-8',None,'8','2 min','Fessiers serrés, ne cambre pas.'),
+  ('','Rowing haltère un bras',3,'10-12',None,'8','1-2 min','Tire le coude vers la hanche.'),
+  ('','Extension triceps poulie au-dessus de la tête',3,'12',None,'8','1-2 min','Coudes fixes.')],
 }
 WEEKS=[('SEMAINE 1','Prise en main',0.0,0),('SEMAINE 2','Progression',.025,0),('SEMAINE 3','Montée en charge',.05,0),('SEMAINE 4','Semaine la plus lourde',.075,0)]
 RPE_UP={0:None,1:None,2:'+1',3:'-1'}
@@ -94,7 +94,7 @@ def build(days,label,out,logo):
      ('RPE 10','Impossible de faire une répétition de plus.'),
      ('RPE 8','Il te reste 2 répétitions en réserve.'),
      ('RPE 6-7','Il te reste 3 à 4 répétitions : charge maîtrisée, technique propre.'),
-     ('RIR 2','Sur les exercices de renfo : arrête-toi quand il te reste 2 répétitions.'),
+     ('8','Sur les exercices de renfo : arrête-toi quand il te reste 2 répétitions.'),
      ('TITRE','Les règles du programme'),
      ('Technique d’abord','Si la technique se dégrade, baisse la charge. La charge conseillée est un repère, pas une obligation.'),
      ('Échauffement','Avant le premier exercice, monte progressivement : barre à vide, puis 3 à 4 séries de plus en plus lourdes.'),

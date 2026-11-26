@@ -110,11 +110,12 @@ def build(days,label,out,logo):
       ('4','Toujours 4 semaines','Le programme est construit pour 4 semaines : l’intensité monte de la semaine 1 à la semaine 4. Ne continue jamais sur une semaine 5 ou 6.'),
       ('↺','Pourquoi repartir en semaine 1','Quand on débute, on ne connaît pas encore bien sa récupération ni le volume qu’on encaisse. Repartir en semaine 1 te laisse récupérer avant de remonter.'),
       ('+2,5','Un point de départ plus haut','À chaque nouveau bloc, tu repars un peu plus lourd. Exemple : squat à 100 kg au bloc 1, 102,5 kg au bloc 2, 105 kg au bloc 3. C’est comme ça que tu progresses de bloc en bloc.')]),
-     ('LE RPE EN BREF',[
-      ('10','Échec','Impossible de faire une répétition de plus.'),
-      ('8','Difficile','Il te reste 2 répétitions en réserve.'),
-      ('6-7','Maîtrisé','Il te reste 3 à 4 répétitions. Technique propre.'),
-      ('RIR 2','Renfo','Arrête la série quand il te reste 2 répétitions.')]),
+     ('LE RPE : TON RESSENTI SUR 10',[
+      ('1 → 10','C’est quoi ?','Le RPE, c’est la difficulté que tu ressens sur la série, notée de 1 à 10. 1 = très facile, 10 = le plus dur possible pour toi.'),
+      ('6-7','Maîtrisé','Ça demande un vrai effort, mais tu restes en contrôle. Technique propre du début à la fin.'),
+      ('8','Difficile','C’est dur, tu dois te concentrer, mais la technique reste propre.'),
+      ('9-10','Très dur','Effort maximal ou presque. Pas besoin d’aller jusque-là dans ce programme.'),
+      ('✓','Comment l’utiliser','Le RPE CIBLE te dit à quelle difficulté tu dois être. Après ta série, note dans RPE FAIT ce que tu as ressenti.')]),
      ('TONNAGE',[
       ('kg','C’est quoi ?','Séries × répétitions × charge. C’est ton volume de travail : il augmente de semaine en semaine, c’est la surcharge progressive.'),
       ('S·B·D','Par mouvement','À la fin de chaque séance : ton tonnage au squat, au développé couché et au soulevé de terre (variantes comprises). Les exercices de renfo ne comptent pas : on suit leur charge, pas leur tonnage.'),
