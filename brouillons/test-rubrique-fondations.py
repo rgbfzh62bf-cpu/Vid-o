@@ -36,26 +36,25 @@ SECTION = f"""<section id="programmes">
   <div class="wrap">
     <div class="head reveal">
       <div><p class="eyebrow ath-eb"><img src="athlyse-logo-blanc.png" alt="Logo Athlyse" width="57" height="47"><span>Programmes à acheter · force athlétique · sur l'appli Athlyse</span></p><h2 style="margin-top:10px">Fondations :<br>ton programme de force athlétique.</h2></div>
-      <p>Deux programmes de 4 semaines construits autour des trois mouvements de la force athlétique : le squat, le développé couché et le soulevé de terre. La programmation est pensée selon ton nombre d'entraînements : 3 ou 4 séances par semaine. Tu choisis la version qui correspond à ton rythme et tu la suis seul sur l'appli Athlyse.</p>
+      <p>Deux programmes de 4 semaines sur le squat, le développé couché et le soulevé de terre. Tu choisis selon ton rythme et tu le suis seul sur l'appli Athlyse.</p>
     </div>
     <div class="prog-grid">
       <div class="prog-cards reveal">
         <article class="prog-row">
-          <div><p class="eyebrow">Programme Fondations</p><h3>3 séances / semaine</h3><p class="muted">Pour toi qui t'entraînes 3 fois par semaine.</p></div>
+          <div><p class="eyebrow">Programme Fondations</p><h3>3 séances / semaine</h3></div>
           <div class="prog-buy"><div class="price">29 €<small>paiement unique</small></div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
         <article class="prog-row">
-          <div><p class="eyebrow">Programme Fondations</p><h3>4 séances / semaine</h3><p class="muted">Pour toi qui t'entraînes 4 fois par semaine.</p></div>
+          <div><p class="eyebrow">Programme Fondations</p><h3>4 séances / semaine</h3></div>
           <div class="prog-buy"><div class="price">29 €<small>paiement unique</small></div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
       </div>
       <div class="prog-more reveal">
         <ul class="prog-inc">
-          <li><b>Tout se passe sur l'appli Athlyse</b><span>Tu télécharges l'appli et tu retrouves tes séances jour par jour, avec les consignes de chaque exercice et de chaque variante.</span></li>
-          <li><b>Tes charges calculées à partir de tes 1RM</b><span>Et la charge monte chaque semaine, sans que tu aies à calculer.</span></li>
+          <li><b>Tout se passe sur l'appli Athlyse</b><span>Tes séances jour par jour, avec les consignes de chaque exercice.</span></li>
+          <li><b>Tes charges calculées selon tes 1RM</b><span>Elles montent chaque semaine, sans calcul de ta part.</span></li>
         </ul>
-        <p class="prog-auto">{INFO}<span>En autonomie, sans suivi : après l'achat, il n'y a ni retour sur ta technique, ni échange avec moi. Tout est expliqué dans l'appli.</span></p>
-        <p class="prog-pay">Une fois acheté, le programme reste accessible sans limite de durée</p>
+        <p class="prog-auto">{INFO}<span>En autonomie : ni suivi, ni retour sur ta technique, ni échange avec moi. Accès sans limite de durée.</span></p>
       </div>
     </div>
     <p class="prog-note reveal">Envie d'aller plus loin avec un suivi personnalisé ? <a href="#appel">On en parle →</a></p>
@@ -147,7 +146,7 @@ CSS = """
 .prog-more{margin-top:12px}
 .prog-row{padding:14px;gap:10px}
 }
-@media (max-width:600px){.prog-more .prog-inc{grid-template-columns:1fr;gap:12px}.prog-buy{display:grid}.prog-buy .btn{width:100%;justify-content:center}}
+@media (max-width:600px){.prog-more .prog-inc{grid-template-columns:1fr;gap:12px}.prog-buy{display:grid;grid-template-columns:minmax(0,1fr);grid-auto-flow:row;justify-items:stretch}.prog-buy .btn{width:100%;justify-content:center}}
 .prog-inc li{align-content:start}
 @media (min-width:600px) and (max-width:820px){.prog-grid,.prog-cards{gap:14px}.prog-row{padding:20px}}
 """
