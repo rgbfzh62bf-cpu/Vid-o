@@ -28,3 +28,9 @@ New skill needed? Use `find-skills`.
 
 ## Budget
 - 100% GRATUIT, toujours. Jamais d'outil/IA/abonnement payant (pas HeyGen payant, pas RunComfy, pas Pro). Seulement free tiers, local, libres de droits.
+
+## Légal
+- Tout doit être 100% en règle : droits d'auteur, licences, droit à l'image, règles plateformes.
+- Médias uniquement libres de droits avec licence vérifiée (CC0/domaine public de préférence ; CC BY = créditer). Jamais de vidéos/musiques d'autres créateurs, jamais de CC NC/ND pour usage pro.
+- Garder la source + licence de chaque média dans `CREDITS.md` du projet.
+- Contenu IA réaliste : activer l'étiquette "contenu IA" à la publication. Pas de promesses santé trompeuses.
