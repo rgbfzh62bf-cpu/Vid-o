@@ -20,6 +20,7 @@
 @font-face{font-family:'Big Shoulders Display';font-style:normal;font-weight:600 900;font-display:swap;src:url(fonts/big-shoulders-display.woff2) format('woff2')}
 @font-face{font-family:'Manrope';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/manrope.woff2) format('woff2')}
 @font-face{font-family:'JetBrains Mono';font-style:normal;font-weight:400 600;font-display:swap;src:url(fonts/jetbrains-mono.woff2) format('woff2')}
+
 </style>
 <link rel="preload" href="fonts/manrope.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin>
@@ -381,6 +382,7 @@ section{padding-block:40px}
 .pnav{gap:12px}.parr{width:38px;height:38px}.dots i{width:6px;height:6px}.phone-wrap.js .dots i.on{width:16px}
 .stores{max-width:520px}
 }
+@media (max-width:600px){.ba{gap:8px}.balbl{left:6px;right:6px;bottom:6px;padding:5px 8px;font-size:9px;letter-spacing:.04em;white-space:nowrap}.balbl b{font-size:19px}.ba-mid{font-size:1rem;padding:6px 10px;top:38%}}
 </style>
 </head>
 <body>
@@ -437,8 +439,11 @@ section{padding-block:40px}
 
 <section id="parcours">
   <div class="wrap pgrid">
-    <!-- AVANT/APRÈS : remettre quand la photo 2026 (73 kg, torse nu) sera reçue -->
-    <figure class="photo bap solo reveal"><img src="parcours.jpg" alt="Alexis en 2018, à ses débuts en musculation"><figcaption class="balbl">Mes débuts · 2018<b>52 kg</b><span>Là où tout a commencé.</span></figcaption></figure>
+    <div class="ba reveal">
+      <figure class="photo bap"><img src="parcours.jpg" alt="Alexis en 2018, à ses débuts en musculation, 52 kg" style="object-position:55% 22%"><figcaption class="balbl">Avant · 2018<b>52 kg</b></figcaption></figure>
+      <span class="ba-mid" aria-hidden="true">+21 kg</span>
+      <figure class="photo bap now"><img src="maintenant.jpg" alt="Alexis aujourd'hui, 73 kg" style="object-position:50% 10%"><figcaption class="balbl">Maintenant · 2026<b>73 kg</b></figcaption></figure>
+    </div>
     <div class="pc reveal">
       <p class="eyebrow">Qui suis-je</p>
       <h2 class="ptitle">Je suis passé par là avant toi.</h2>

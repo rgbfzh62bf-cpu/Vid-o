@@ -19,7 +19,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - CQP Instructeur Fitness. Carte pro 07825ED0287 (préf. Yvelines, exp. 18/09/2030).
 - Parcours sportif : golf 7 ans, foot 5-6 ans, volley 1 an, tennis 1 an, aïkido 1 an, puis musculation 8 ans (depuis 2018), force athlétique 3 ans. Disponible 6/7. Recontact sous 24 h.
 - Photo d’accueil : coach.jpg (en salle, casque, t-shirt SPC ; crédit photographe en filigrane coupé).
-- Avant / après MASQUÉ pour l’instant (seule la photo 2018 « Mes débuts » est affichée, bloc à remettre dans index.html via le commentaire AVANT/APRÈS). photo miroir (parcours.jpg) = 2018, 52 kg. Maintenant = 73 kg ; photo actuelle à recevoir.
+- Avant / après RÉACTIVÉ (26/11) : parcours.jpg = 2018, 52 kg ; maintenant.jpg = 2026, 73 kg (miroir, recadrée 600×800 depuis la photo d’Alexis, métadonnées retirées) ; pastille +21 kg.
 - Formule 1 Programmation sur mesure : 160 €/mois. Formule 2 Programmation + Nutrition : 200 €/mois.
 - Suivi sur l'appli Athlyse (App Store : https://apps.apple.com/fr/app/athlyse/id6759957694 ; Google Play : https://play.google.com/store/apps/details?id=com.athlyseapp).
 - Appel découverte gratuit, 30 min, visio Google Meet via Calendly : https://calendly.com/alexisbloquecoaching/30min
@@ -52,7 +52,7 @@ Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-
 
 ## État en cours (pour une nouvelle discussion)
 - 26/11 (soir, PAS en ligne) : relecture juridique faite par Claude à la demande d’Alexis (« je te fais confiance ») : mentions légales (EI, adresse Netlify d’après ses contrats : 101 2nd Street Suite 575 SF CA 94105 ; Netlify ne publie pas de téléphone ; RGPD complet prospects/clients, données santé = consentement explicite, prestataires + transferts US, droits) ; CGV (nutrition ≠ médecin/diététicien, majeurs, facture, Athlyse tiers, photos/vidéos confidentielles). Polices auto-hébergées (site/fonts, copiées par build.py) : plus aucun appel à Google. RC Pro : oui (confirmé par Alexis), mentionnée dans les CGV art. 7 sans nom d’assureur.
-- 26/11/2026 : TOUT EN LIGNE (commit 035f23a), vérifié par Alexis sur son téléphone. Reste côté Alexis : relecture mentions légales (paragraphe données réécrit : Calendly + mails), lien bio Instagram, photo 73 kg, 2FA.
+- 26/11/2026 : TOUT EN LIGNE (commit 035f23a), vérifié par Alexis sur son téléphone. Reste côté Alexis : relecture mentions légales (paragraphe données réécrit : Calendly + mails), lien bio Instagram, 2FA.
 - Modifs NON en ligne sauvegardées sur la branche `claude/sauvegarde-alexis` (Netlify ne la déploie pas). Nouvelle discussion : `git fetch origin claude/sauvegarde-alexis && git merge FETCH_HEAD` sur `claude/exciting-newton-swewu8`, puis push UNIQUEMENT au feu vert d'Alexis.
 - Contenu : maquettes téléphone Athlyse dans les formules, boutons App Store + Google Play, gras harmonisé, sports en étiquettes, règles /compact. Page liens : vrais logos (Apple, Google Play, Athlyse, Instagram, Mail, appel), formules sans prix (« 2 formules · sans engagement »), photo avatar.jpg = tête entière découpée dans coach.jpg.
 - Lien Google Play d'Athlyse ajouté (https://play.google.com/store/apps/details?id=com.athlyseapp). Attendre les autres retours du créateur d'Athlyse (call avec son pote), puis tout envoyer en UN push au « go ».
