@@ -22,3 +22,4 @@ New skill needed? Use `find-skills`.
 
 ## Photos (règle d’Alexis)
 - Recadrage photos : à chaque photo reçue (site, vidéo, autre), toujours la recadrer et vérifier le rendu sur téléphone ET ordinateur.
+- Proposer « /compact » à Alexis dès que la conversation s’allonge (il veut économiser un maximum de tokens).
