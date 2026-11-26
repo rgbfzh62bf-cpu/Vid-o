@@ -46,7 +46,7 @@ def build(days,label,out,logo):
     header(ws,'BIENVENUE',f'Version {label.lower()} · 4 semaines · paiement unique, accès illimité',logo)
     blocks=[
      ('COMMENT ÇA MARCHE',[
-      ('1','Entre tes 1RM','Onglet MES 1RM : ton 1RM au squat, au développé couché et au soulevé de terre. Tu ne le connais pas ? Entre une charge et un nombre de répétitions : le fichier estime ton 1RM.'),
+      ('1','Entre tes 1RM','Onglet MES 1RM : entre ton 1RM au squat, au développé couché et au soulevé de terre. Tout le reste se calcule tout seul.'),
       ('2','Lis ta séance','Chaque exercice a un % de ton 1RM. La CHARGE CONSEILLÉE se calcule toute seule, arrondie à 2,5 kg.'),
       ('3','Note ce que tu fais','Remplis les cases blanches à bord bleu : charge faite, RPE fait, observations. Le reste est verrouillé.'),
       ('4','Suis ta progression','Chaque séance et chaque semaine affichent ton tonnage et tes répétitions. L’onglet BILAN montre l’évolution sur le bloc.'),
@@ -84,40 +84,36 @@ def build(days,label,out,logo):
     mx=wb.create_sheet('MES 1RM'); mx.sheet_view.showGridLines=False
     for c,w in zip('ABCDEFGHIJKLM',[2,13,30,8,8,8,12,8,9,34,12,8,30]): mx.column_dimensions[c].width=w
     header(mx,'MES 1RM','Cases à bord bleu = à remplir',logo)
-    hd=['MOUVEMENT','MON 1RM (kg)','OU CHARGE (kg)','× RÉPS','1RM UTILISÉ']
-    pos=[(2,3),(4,5),(6,7),(8,9),(10,10)]
-    for h,(a,b) in zip(hd,pos):
-        if a!=b: mx.merge_cells(start_row=6,start_column=a,end_row=6,end_column=b)
+    for h,(a,b) in [('MOUVEMENT',(2,3)),('MON 1RM (kg)',(4,10))]:
+        mx.merge_cells(start_row=6,start_column=a,end_row=6,end_column=b)
         mx.cell(6,a,h).font=fn(9,True,WHITE); mx.cell(6,a).alignment=C
     paint(mx,6,6,2,10,BLACK); mx.row_dimensions[6].height=28
     for i,name in enumerate(['SQUAT','DÉVELOPPÉ COUCHÉ','SOULEVÉ DE TERRE']):
         rr=7+i; mx.row_dimensions[rr].height=34
         mx.merge_cells(start_row=rr,start_column=2,end_row=rr,end_column=3); mx.cell(rr,2,name).font=fn(12,True,BLACK); mx.cell(rr,2).alignment=LFT; paint(mx,rr,rr,2,3,LIGHT)
-        for a,b in pos[1:4]:
-            if a!=b: mx.merge_cells(start_row=rr,start_column=a,end_row=rr,end_column=b)
-            for cc in range(a,b+1): mx.cell(rr,cc).border=INBOX; mx.cell(rr,cc).protection=UNL
-            mx.cell(rr,a).font=fn(12,True); mx.cell(rr,a).alignment=C
-        f=mx.cell(rr,10,f'=IF(ISNUMBER(D{rr}),D{rr},IF(AND(ISNUMBER(F{rr}),ISNUMBER(H{rr}),H{rr}>=1,H{rr}<=10),ROUND(F{rr}*(1+H{rr}/30)/2.5,0)*2.5,""))')
-        f.font=Font(name=F,size=16,bold=True,color=WHITE); f.fill=fl(BLUE); f.alignment=C; f.number_format='0.0" kg"'
-    mx.merge_cells('B11:M11'); mx['B11']='Estimation = charge × (1 + répétitions ÷ 30), de 1 à 10 répétitions. C’est une estimation, pas un test : reste prudent.'
+        mx.merge_cells(start_row=rr,start_column=4,end_row=rr,end_column=10)
+        for cc in range(4,11): mx.cell(rr,cc).border=INBOX; mx.cell(rr,cc).protection=UNL
+        mx.cell(rr,4).font=fn(16,True,BLUE); mx.cell(rr,4).alignment=C; mx.cell(rr,4).number_format='0.0" kg"'
+    mx.merge_cells('B11:M11'); mx['B11']='Ton 1RM = la charge maximale que tu soulèves sur 1 répétition, avec une technique propre.'
     mx['B11'].font=fn(9,c=MUTED,i=True); mx['B11'].alignment=LFT
-    dv=DataValidation(type='whole',operator='between',formula1='1',formula2='10',allow_blank=True,showErrorMessage=True,error='Entre 1 et 10 répétitions.'); mx.add_data_validation(dv); dv.add('H7:H9')
     mx.row_dimensions[13].height=34
-    mx.merge_cells('B13:I13'); mx['B13']='NUMÉRO DU BLOC (1 la première fois, puis 2, 3…)'; mx['B13'].font=fn(11,True,BLACK); mx['B13'].alignment=LFT; paint(mx,13,13,2,9,LIGHT)
-    bc=mx['J13']; bc.value=1; bc.border=INBOX; bc.protection=UNL; bc.font=fn(14,True); bc.alignment=C
-    mx.merge_cells('B14:M14'); mx['B14']='Garde les mêmes 1RM : change seulement le numéro du bloc. Chaque bloc ajoute 2,5 kg aux charges conseillées.'
+    mx.merge_cells('B13:C13'); mx['B13']='NUMÉRO DU BLOC'; mx['B13'].font=fn(12,True,BLACK); mx['B13'].alignment=LFT; paint(mx,13,13,2,3,LIGHT)
+    mx.merge_cells('D13:J13')
+    for cc in range(4,11): mx.cell(13,cc).border=INBOX
+    bc=mx['D13']; bc.value=1; bc.border=INBOX; bc.protection=UNL; bc.font=fn(14,True); bc.alignment=C
+    mx.merge_cells('B14:M14'); mx['B14']='1 la première fois, puis 2, 3… Garde les mêmes 1RM : change seulement le numéro du bloc. Chaque bloc ajoute 2,5 kg aux charges conseillées.'
     mx['B14'].font=fn(9,c=MUTED,i=True); mx['B14'].alignment=LFT
-    dvb=DataValidation(type='whole',operator='between',formula1='1',formula2='50',allow_blank=False,showErrorMessage=True,error='Entre un numéro de bloc (1, 2, 3…).'); mx.add_data_validation(dvb); dvb.add('J13')
+    dvb=DataValidation(type='whole',operator='between',formula1='1',formula2='50',allow_blank=False,showErrorMessage=True,error='Entre un numéro de bloc (1, 2, 3…).'); mx.add_data_validation(dvb); dvb.add('D13')
     mx.protection.sheet=True
-    BLOC="'MES 1RM'!$J$13"
-    REF={'S':"'MES 1RM'!$J$7",'B':"'MES 1RM'!$J$8",'D':"'MES 1RM'!$J$9"}
+    BLOC="'MES 1RM'!$D$13"
+    REF={'S':"'MES 1RM'!$D$7",'B':"'MES 1RM'!$D$8",'D':"'MES 1RM'!$D$9"}
 
     week_tot={}
     for wi,(wname,wsub,inc,dset) in enumerate(WEEKS):
         s=wb.create_sheet(wname); s.sheet_view.showGridLines=False
         for i,(h,w) in enumerate(COLS,start=1): s.column_dimensions[L(i)].width=w
         s.column_dimensions['O'].hidden=True
-        header(s,wname,f'Version {label.lower()} · {wsub}',logo)
+        header(s,wname,f'Version {label.lower()}',logo)
         # tableau de bord semaine (rempli après)
         dash=6; s.row_dimensions[dash].height=18; s.row_dimensions[dash+1].height=34; s.row_dimensions[dash+2].height=10
         r=dash+3; day_rows=[]
@@ -173,7 +169,7 @@ def build(days,label,out,logo):
         # tableau de bord
         tp='+'.join(f'G{x}' for x in day_rows); tr='+'.join(f'K{x}' for x in day_rows); rp='+'.join(f'D{x}' for x in day_rows)
         cards=[(2,3,'TONNAGE PRÉVU',f'={tp}','# ##0" kg"'),(4,6,'RÉPÉTITIONS',f'={rp}','0'),(7,9,'TONNAGE RÉALISÉ',f'={tr}','# ##0" kg"'),
-               (10,10,'VS SEMAINE PRÉCÉDENTE',None,'+0%;-0%;0%'),(11,13,'SÉANCES',f'{len(days)} séances · {wsub.lower()}',None)]
+               (10,10,'VS SEMAINE PRÉCÉDENTE',None,'+0%;-0%;0%'),(11,13,'SÉANCES',f'{len(days)} séances',None)]
         week_tot[wname]=(f"'{wname}'!B{dash+1}",f"'{wname}'!G{dash+1}",f"'{wname}'!D{dash+1}")
         for a,b,t,v,nf in cards:
             if a!=b:
@@ -200,7 +196,7 @@ def build(days,label,out,logo):
     for j,(wname,wsub,*_) in enumerate(WEEKS):
         rr=7+j; b.row_dimensions[rr].height=26
         tp,tr,rp=week_tot[wname]
-        for a,c2,v,nf in [(2,3,f'{wname} · {wsub}',None),(4,6,'='+rp,'0'),(7,9,'='+tp,'# ##0'),(10,10,'='+tr,'# ##0')]:
+        for a,c2,v,nf in [(2,3,wname,None),(4,6,'='+rp,'0'),(7,9,'='+tp,'# ##0'),(10,10,'='+tr,'# ##0')]:
             if a!=c2: b.merge_cells(start_row=rr,start_column=a,end_row=rr,end_column=c2)
             c=b.cell(rr,a,v); c.alignment=C if a>2 else LFT; c.font=fn(10,a==2,BLACK)
             if nf: c.number_format=nf
