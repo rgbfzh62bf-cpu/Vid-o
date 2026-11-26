@@ -42,4 +42,5 @@ open(os.path.join(out,'_headers'),'w').write('''/*
   Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=()
   Strict-Transport-Security: max-age=31536000; includeSubDomains
 ''')
+shutil.copytree(os.path.join(here,'fonts'),os.path.join(out,'fonts'),dirs_exist_ok=True)
 print(sorted(os.listdir(out)))
