@@ -140,28 +140,35 @@ def build(days,label,out,logo):
     mx=wb.create_sheet('MES 1RM'); mx.sheet_view.showGridLines=False
     for c,w in zip('ABCDEFG',[2,17,24,24,13,13,2]): mx.column_dimensions[c].width=w
     header(mx,'MES 1RM','Cases à bord bleu = à remplir',logo,tc=(5,6))
-    for h,(a,b) in [('MOUVEMENT',(2,3)),('MON 1RM (kg)',(4,6))]:
-        mx.merge_cells(start_row=6,start_column=a,end_row=6,end_column=b)
-        mx.cell(6,a,h).font=fn(9,True,WHITE); mx.cell(6,a).alignment=C
-    paint(mx,6,6,2,6,BLACK); mx.row_dimensions[6].height=28
-    for i,name in enumerate(['SQUAT','DÉVELOPPÉ COUCHÉ','SOULEVÉ DE TERRE']):
-        rr=7+i; mx.row_dimensions[rr].height=34
-        mx.merge_cells(start_row=rr,start_column=2,end_row=rr,end_column=3); mx.cell(rr,2,name).font=fn(12,True,BLACK); mx.cell(rr,2).alignment=LFT; paint(mx,rr,rr,2,3,LIGHT)
-        mx.merge_cells(start_row=rr,start_column=4,end_row=rr,end_column=6)
-        for cc in range(4,7): mx.cell(rr,cc).border=INBOX; mx.cell(rr,cc).protection=UNL
-        mx.cell(rr,4).font=fn(16,True,BLUE); mx.cell(rr,4).alignment=C; mx.cell(rr,4).number_format='0.0" kg"'
-    mx.merge_cells('B11:F11'); mx.row_dimensions[11].height=28; mx['B11']='Ton 1RM = la charge maximale que tu soulèves sur 1 répétition, avec une technique propre.'
-    mx['B11'].font=fn(9,c=MUTED,i=True); mx['B11'].alignment=Alignment(vertical='center',wrap_text=True)
-    mx.row_dimensions[13].height=34
-    mx.merge_cells('B13:C13'); mx['B13']='NUMÉRO DU BLOC'; mx['B13'].font=fn(12,True,BLACK); mx['B13'].alignment=LFT; paint(mx,13,13,2,3,LIGHT)
-    mx.merge_cells('D13:F13')
-    for cc in range(4,7): mx.cell(13,cc).border=INBOX
-    bc=mx['D13']; bc.value=1; bc.border=INBOX; bc.protection=UNL; bc.font=fn(14,True); bc.alignment=C
-    mx.merge_cells('B14:F14'); mx.row_dimensions[14].height=40; mx['B14']='1 la première fois, puis 2, 3… Garde les mêmes 1RM : change seulement le numéro du bloc. Chaque bloc ajoute 2,5 kg aux charges conseillées.'
-    mx['B14'].font=fn(9,c=MUTED,i=True); mx['B14'].alignment=Alignment(vertical='top',wrap_text=True)
-    dvb=DataValidation(type='whole',operator='between',formula1='1',formula2='50',allow_blank=False,showErrorMessage=True,error='Entre un numéro de bloc (1, 2, 3…).'); mx.add_data_validation(dvb); dvb.add('D13')
+    mx.row_dimensions[5].height=14; mx.row_dimensions[12].height=18
+    def cardhead(r,txt,sub):
+        mx.row_dimensions[r].height=28; paint(mx,r,r,2,6,BLUE)
+        mx.merge_cells(start_row=r,start_column=2,end_row=r,end_column=4); mx.cell(r,2,txt).font=fn(11,True,BLACK); mx.cell(r,2).alignment=LFT
+        mx.merge_cells(start_row=r,start_column=5,end_row=r,end_column=6); mx.cell(r,5,sub).font=fn(9,c=BLACK); mx.cell(r,5).alignment=Alignment(horizontal='right',vertical='center',indent=1)
+    def line(r,label,val,big=True):
+        mx.row_dimensions[r].height=40
+        mx.merge_cells(start_row=r,start_column=2,end_row=r,end_column=3); mx.cell(r,2,label).font=fn(12,True,BLACK); mx.cell(r,2).alignment=LFT; paint(mx,r,r,2,3,PALE)
+        for cc in (2,3): mx.cell(r,cc).border=Border(bottom=Side(style='thin',color=LIGHT))
+        mx.merge_cells(start_row=r,start_column=4,end_row=r,end_column=6)
+        for cc in range(4,7): mx.cell(r,cc).border=INBOX; mx.cell(r,cc).protection=UNL
+        c=mx.cell(r,4,val); c.font=fn(18,True,BLUE); c.alignment=C
+        return c
+    def note(r,txt,h):
+        mx.row_dimensions[r].height=h; paint(mx,r,r,2,6,PALE)
+        mx.merge_cells(start_row=r,start_column=2,end_row=r,end_column=6); mx.cell(r,2,txt).font=fn(9,c=MUTED,i=True); mx.cell(r,2).alignment=LFT
+    cardhead(6,'TES 1RM','en kg · 1 répétition')
+    for i,name in enumerate(['SQUAT','DÉVELOPPÉ COUCHÉ','SOULEVÉ DE TERRE']): line(7+i,name,None).number_format='0.0" kg"'
+    mx.row_dimensions[10].height=34
+    mx.merge_cells('B10:C10'); mx['B10']='TOTAL S·B·D'; mx['B10'].font=fn(11,True,BLACK); mx['B10'].alignment=LFT
+    mx.merge_cells('D10:F10'); mx['D10']='=IF(COUNT(D7:D9)=3,SUM(D7:D9),"—")'; mx['D10'].font=fn(14,True,BLUE); mx['D10'].alignment=C; mx['D10'].number_format='0.0" kg"'
+    paint(mx,10,10,2,6,LIGHT)
+    note(11,'Ton 1RM = la charge maximale que tu soulèves sur 1 répétition, avec une technique propre.',30)
+    cardhead(13,'BLOC EN COURS','+2,5 kg par bloc')
+    bc=line(14,'NUMÉRO DU BLOC',1); bc.font=fn(18,True,BLACK)
+    note(15,'1 la première fois, puis 2, 3… Garde les mêmes 1RM : change seulement le numéro du bloc. Chaque bloc ajoute 2,5 kg aux charges conseillées.',40)
+    dvb=DataValidation(type='whole',operator='between',formula1='1',formula2='50',allow_blank=False,showErrorMessage=True,error='Entre un numéro de bloc (1, 2, 3…).'); mx.add_data_validation(dvb); dvb.add('D14')
     mx.protection.sheet=True
-    BLOC="'MES 1RM'!$D$13"
+    BLOC="'MES 1RM'!$D$14"
     REF={'S':"'MES 1RM'!$D$7",'B':"'MES 1RM'!$D$8",'D':"'MES 1RM'!$D$9"}
 
     week_tot={}
