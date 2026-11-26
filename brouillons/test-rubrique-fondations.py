@@ -46,11 +46,11 @@ SECTION = f"""<section id="programmes">
     <div class="prog-grid">
       <div class="prog-cards reveal">
         <article class="prog-row">
-          <div><p class="eyebrow">Programme Fondations</p><h3>3 séances / semaine</h3><p class="muted">Pour toi qui t'entraînes 3 fois par semaine : une séance squat et développé couché, une légère, une lourde.</p></div>
+          <div><p class="eyebrow">Programme Fondations</p><h3>3 séances / semaine</h3><p class="muted">Pour toi qui t'entraînes 3 fois par semaine : une séance squat et développé couché, une séance SBD légère et une séance SBD lourde (squat, bench, deadlift).</p></div>
           <div class="prog-buy"><div class="price">29 €<small>paiement unique</small></div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
         <article class="prog-row">
-          <div><p class="eyebrow">Programme Fondations</p><h3>4 séances / semaine</h3><p class="muted">Pour toi qui t'entraînes 4 fois par semaine : chaque mouvement travaillé plus souvent.</p></div>
+          <div><p class="eyebrow">Programme Fondations</p><h3>4 séances / semaine</h3><p class="muted">Pour toi qui t'entraînes 4 fois par semaine : deux séances squat et développé couché, une séance développé couché et soulevé de terre, une séance SBD lourde (squat, bench, deadlift).</p></div>
           <div class="prog-buy"><div class="price">29 €<small>paiement unique</small></div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
       </div>
