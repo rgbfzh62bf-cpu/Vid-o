@@ -53,4 +53,5 @@ Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-
 - Modifs NON en ligne sauvegardées sur la branche `claude/sauvegarde-alexis` (Netlify ne la déploie pas). Nouvelle discussion : `git fetch origin claude/sauvegarde-alexis && git merge FETCH_HEAD` sur `claude/exciting-newton-swewu8`, puis push UNIQUEMENT au feu vert d'Alexis.
 - Contenu : maquettes téléphone Athlyse dans les formules, boutons App Store + Google Play, gras harmonisé, règles /compact.
 - À faire avant envoi : remplacer `PLAYSTORE_URL` (index.html + liens.html) par le lien Google Play d'Athlyse. Attendre les autres retours du créateur d'Athlyse.
+- Rappel 26/11 à 19h (heure de Paris) : Alexis doit demander le lien Google Play à son ami d'Athlyse pendant leur appel. Le lui rappeler dès qu'il ouvre Claude Code.
 - Netlify : environ 925 crédits au dernier relevé ; passage à l'offre gratuite le 24/12/2026.
