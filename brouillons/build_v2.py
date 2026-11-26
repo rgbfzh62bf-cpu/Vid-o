@@ -28,11 +28,44 @@ COLS=[('',2),('JOUR',13),('EXERCICE',30),('SÉRIES',8),('RÉPS',8),('% 1RM',8),(
 NC=13
 REPS_NUM='IFERROR(VALUE(LEFT(E{r},FIND("-",E{r}&"-")-1)),0)'
 
+
+# ===== ADN alexis-coaching.fr =====
+NAVY='0B1628'; SURF='12223A'; SURF2='16305A'; ROW2='0F1E35'; ACC='5B9BEF'; ACC2='8EC0FF'; MUT='A9B6C9'; LINE='22385A'; INK='FFFFFF'
+FB='Manrope'; FD='Big Shoulders Display'
+FILLMAP={BLACK:SURF2,BLUE:ACC,LIGHT:SURF,PALE:ROW2,GREY:ROW2,WHITE:NAVY}
+def _rgb(c):
+    try: return c.rgb[-6:].upper() if c is not None and isinstance(c.rgb,str) else None
+    except Exception: return None
+def _side(sd):
+    if sd is None or sd.style is None: return sd
+    col=_rgb(sd.color); col={'D5DEEB':LINE,BLUE:ACC}.get(col,col)
+    return Side(style=sd.style,color=col)
+def apply_theme(wb):
+    for ws in wb.worksheets:
+        mr=ws.max_row+40
+        for r in range(1,mr+1):
+            for c in range(1,27):
+                cell=ws.cell(r,c)
+                old=_rgb(cell.fill.fgColor) if cell.fill and cell.fill.fill_type=='solid' else None
+                new=FILLMAP.get(old,NAVY)
+                if cell.protection.locked is False and hasattr(cell,'value'): new=NAVY
+                cell.fill=fl(new)
+                f=cell.font; fc=_rgb(f.color) if f and f.color is not None else None
+                if new==ACC: col=NAVY
+                elif old==BLACK and fc in(WHITE,None) and (f.sz or 10)<20: col=ACC2
+                else: col={BLUE:ACC,MUTED:MUT,CYAN:ACC2}.get(fc,INK)
+                sz=f.sz or 10; big=f.b and sz>=14
+                cell.font=Font(name=FD if big else FB,size=round(sz*1.3) if big else sz,bold=f.b,italic=f.i,color=col)
+                b=cell.border
+                if b and any(s is not None and s.style for s in (b.left,b.right,b.top,b.bottom)):
+                    cell.border=Border(left=_side(b.left),right=_side(b.right),top=_side(b.top),bottom=_side(b.bottom))
+        ws.sheet_properties.tabColor=SURF2 if ws.title in('COMMENCER ICI','MES 1RM','BILAN') else ACC
+
 def header(ws,title,sub,logo):
     for r in range(1,5): paint(ws,r,r,1,NC+1,WHITE)
     ws.row_dimensions[1].height=10; ws.row_dimensions[2].height=42; ws.row_dimensions[3].height=26; ws.row_dimensions[4].height=10
-    im=Image(logo); im.width,im.height=84,56; ws.add_image(im,'B2')
-    ws.merge_cells('C2:I2'); ws['C2']='PROGRAMME DÉBUTANT · FORCE ATHLÉTIQUE'; ws['C2'].font=Font(name=F,size=16,bold=True,color=BLACK); ws['C2'].alignment=Alignment(vertical='bottom',indent=1)
+    im=Image(logo); im.width,im.height=110,52; ws.add_image(im,'B2')
+    ws.merge_cells('C2:I2'); ws['C2']='PROGRAMME DÉBUTANT · FORCE ATHLÉTIQUE'; ws.column_dimensions['B'].width=max(ws.column_dimensions['B'].width or 0,17); ws['C2'].font=Font(name=F,size=13,bold=True,color=BLACK); ws['C2'].alignment=Alignment(vertical='bottom',indent=1)
     ws.merge_cells('C3:I3'); ws['C3']=sub; ws['C3'].font=fn(10,c=MUTED); ws['C3'].alignment=Alignment(vertical='top',indent=1)
     ws.merge_cells('J2:M3'); ws['J2']=title; ws['J2'].font=Font(name=F,size=22,bold=True,color=WHITE); ws['J2'].alignment=C
     paint(ws,2,3,10,13,BLACK)
@@ -208,12 +241,23 @@ def build(days,label,out,logo):
     for c in 'OPQ': b.column_dimensions[c].hidden=True
     ch=BarChart(); ch.type='col'; ch.title='Tonnage par semaine (kg)'; ch.height=8; ch.width=22; ch.legend.position='b'
     ch.add_data(Reference(b,min_col=16,max_col=17,min_row=6,max_row=10),titles_from_data=True); ch.set_categories(Reference(b,min_col=15,min_row=7,max_row=10))
-    for sr,col in zip(ch.series,[BLUE,BLACK]): sr.graphicalProperties.solidFill=col; sr.graphicalProperties.line.solidFill=col
+    for sr,col in zip(ch.series,['5B9BEF','8EC0FF']): sr.graphicalProperties.solidFill=col; sr.graphicalProperties.line.solidFill=col
+    from openpyxl.chart.shapes import GraphicalProperties
+    from openpyxl.chart.text import RichText
+    from openpyxl.drawing.text import Paragraph,ParagraphProperties,CharacterProperties,Font as DF
+    def tx(col,sz=900,bold=False): return RichText(p=[Paragraph(pPr=ParagraphProperties(defRPr=CharacterProperties(sz=sz,b=bold,solidFill=col,latin=DF(typeface='Manrope'))),endParaRPr=CharacterProperties())])
+    ch.graphical_properties=GraphicalProperties(solidFill='12223A'); ch.graphical_properties.line.solidFill='22385A'
+    ch.plot_area.graphicalProperties=GraphicalProperties(solidFill='12223A')
+    for ax in (ch.x_axis,ch.y_axis): ax.txPr=tx('A9B6C9'); ax.delete=False
+    ch.y_axis.majorGridlines.spPr=GraphicalProperties(); ch.y_axis.majorGridlines.spPr.line.solidFill='22385A'
+    ch.legend.txPr=tx('FFFFFF')
+    ch.title.tx.rich.p[0].pPr=ParagraphProperties(defRPr=CharacterProperties(sz=1400,b=True,solidFill='FFFFFF',latin=DF(typeface='Manrope')))
     ch.visible_cells_only=False; b.add_chart(ch,'B13')
     b.protection.sheet=True
     for w in wb.worksheets:
         w.page_setup.orientation='landscape'; w.sheet_properties.pageSetUpPr.fitToPage=True; w.page_setup.fitToWidth=1; w.page_setup.fitToHeight=0
         w.sheet_properties.tabColor=BLACK if w.title in('COMMENCER ICI','MES 1RM','BILAN') else BLUE
+    apply_theme(wb)
     wb.save(out)
 
 logo,od=sys.argv[1],sys.argv[2]
