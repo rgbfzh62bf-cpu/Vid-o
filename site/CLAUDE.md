@@ -30,6 +30,8 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - E-mail pro : alexis.bloquecoaching@gmail.com (formulaire Netlify à envoyer ici).
 
 ## Design
+- Gras : uniquement pour les titres (ex. intitulés de la liste « L’appli », noms de sports). Jamais une ligne isolée en gras au milieu d’une liste ou d’un texte.
+- PHOTOS : à CHAQUE photo reçue (site, vidéo, autre), la recadrer soi-même et vérifier le rendu sur téléphone ET ordinateur avant de proposer.
 - TOUJOURS vérifier le rendu téléphone (320, 375, 390, 430 px) en plus de l’ordinateur : aucun débordement horizontal, boutons faciles à toucher.
 - Logo : logo.png (transparent, NON utilisé dans l’en-tête : Alexis préfère le nom en texte) / logo.jpg (haltère bleue + ALEXIS COACHING). Favicon « AC » au centre de l’haltère (disques bleus de chaque côté) favicon*.png / apple-touch-icon.png, partage réseaux partage.jpg.
 - Bleu nuit #0B1628, blanc, accent bleu #5B9BEF. Polices : Big Shoulders Display / Manrope / JetBrains Mono.

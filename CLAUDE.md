@@ -19,3 +19,6 @@ New skill needed? Use `find-skills`.
 - Reuse registry blocks over custom code.
 - Read only needed file parts. No full-file dumps in chat.
 - Report results in 1-3 lines.
+
+## Photos (règle d’Alexis)
+- Recadrage photos : à chaque photo reçue (site, vidéo, autre), toujours la recadrer et vérifier le rendu sur téléphone ET ordinateur.
