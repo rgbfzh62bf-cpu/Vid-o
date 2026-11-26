@@ -18,12 +18,12 @@ LEFT=Alignment(horizontal='left',vertical='center',wrap_text=True)
 # type S/B/D = mouvement compté dans le bilan ; '' = renfo (charge libre, RPE 8)
 P4={
  'JOUR 1 · SQUAT & DÉVELOPPÉ COUCHÉ':[
-  ('S','Squat pause 2 ct',5,4,.65,'6','3-4 min','Pause 2 s en bas, gainage serré, sans te relâcher.'),
+  ('S','Squat pause 2 CT',5,4,.65,'6','3-4 min','Pause 2 s en bas, gainage serré, sans te relâcher.'),
   ('B','Développé couché',5,5,.67,'6-7','3 min','Fesses posées, omoplates serrées, barre touche la poitrine.'),
   ('','Tirage vertical poulie',3,'10-12',None,'8','2 min','Tire vers le haut de la poitrine, buste fixe.'),
   ('','Élévations latérales haltères',3,'12-15',None,'8','1-2 min','Coudes légèrement fléchis, monte à hauteur d’épaules.')],
  'JOUR 2 · SOULEVÉ DE TERRE':[
-  ('B','Développé couché pause 3 ct',5,3,.65,'6','3 min','Pause 3 s barre sur la poitrine, puis pousse.'),
+  ('B','Développé couché pause 3 CT',5,3,.65,'6','3 min','Pause 3 s barre sur la poitrine, puis pousse.'),
   ('D','Soulevé de terre',5,3,.67,'6','3-4 min','Remets-toi en place à chaque répétition. Dos neutre.'),
   ('D','RDL',3,8,.45,'6','2-3 min','Sans ceinture. Descends en reculant les hanches, dos plat.'),
   ('','Leg curl assis ou allongé',3,'10-15',None,'8','1-2 min','Contrôle la descente.'),
@@ -50,8 +50,8 @@ P3={
   ('','Tirage vertical poulie',3,'10-12',None,'8','2 min','Tire vers le haut de la poitrine, buste fixe.'),
   ('','Leg curl assis ou allongé',3,'10-15',None,'8','1-2 min','Contrôle la descente.')],
  'JOUR 2 · SBD LÉGER':[
-  ('S','Squat pause 2 ct',5,3,.60,'6','3 min','Pause 2 s en bas, gainage serré, sans te relâcher.'),
-  ('B','Développé couché pause 3 ct',5,3,.62,'6','3 min','Pause 3 s barre sur la poitrine, puis pousse.'),
+  ('S','Squat pause 2 CT',5,3,.60,'6','3 min','Pause 2 s en bas, gainage serré, sans te relâcher.'),
+  ('B','Développé couché pause 3 CT',5,3,.62,'6','3 min','Pause 3 s barre sur la poitrine, puis pousse.'),
   ('D','RDL',4,6,.50,'6','2-3 min','Sans ceinture. Descends en reculant les hanches, dos plat.'),
   ('','Rowing haltère un bras',3,'10-12',None,'8','1-2 min','Tire le coude vers la hanche.'),
   ('','Gainage planche',3,'30-45 s',None,'—','1 min','Bassin aligné, respire normalement.')],

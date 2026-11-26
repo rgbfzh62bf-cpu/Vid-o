@@ -94,12 +94,12 @@ def header(ws,title,sub,logo,tc=(10,13),t0=3,bw=17):
     for c in range(2,b+1): ws.cell(4,c).border=Border(bottom=Side(style='thick',color=BLUE))
 
 VARIANTES={
- 'Squat pause 2 ct':[
-  ('C’est quoi ?','Un squat avec une pause de 2 secondes en bas. « ct » = count, « compte » en anglais : 2 ct = tu comptes 2 secondes.'),
+ 'Squat pause 2 CT':[
+  ('C’est quoi ?','Un squat avec une pause de 2 secondes en bas. « CT » = count, « compte » en anglais : 2 CT = tu comptes 2 secondes.'),
   ('Comment faire','Descends comme d’habitude, sous contrôle. Arrivé en bas, fais une pause de 2 secondes sans bouger, en restant gainé. Puis remonte.'),
   ('Pourquoi','Sans rebond en bas, tu dois tenir ta position et repartir avec tes jambes. Tu gagnes en contrôle et en force au moment le plus dur de la remontée.'),
   ('À éviter','Te relâcher pendant la pause. Repartir avant la fin des 2 secondes.')],
- 'Développé couché pause 3 ct':[
+ 'Développé couché pause 3 CT':[
   ('C’est quoi ?','Un développé couché avec une pause de 3 secondes, barre sur la poitrine.'),
   ('Comment faire','Mets-toi en place comme d’habitude. Descends la barre jusqu’à la poitrine, fais une pause de 3 secondes, barre immobile. Puis pousse.'),
   ('Pourquoi','Plus de rebond : la poussée part uniquement de ta force. Tu renforces le départ de la barre.'),
@@ -171,7 +171,7 @@ def build(days,label,out,logo):
       ('RÉPS','Répétitions','Le nombre de fois où tu fais le mouvement dans une série. 10-12 = entre 10 et 12.'),
       ('% 1RM','Pourcentage du 1RM','La charge de la série par rapport à ton 1RM. 70 % d’un 1RM de 100 kg = 70 kg.'),
       ('RPE','Ressenti sur 10','La difficulté que tu ressens sur la série, de 1 à 10 (voir plus haut).'),
-      ('ct','Count','« Compte » en anglais. Pause 2 ct = pause de 2 secondes.'),
+      ('CT','Count','« Compte » en anglais. Pause 2 CT = pause de 2 secondes.'),
       ('S·B·D','Squat · Bench · Deadlift','Les trois mouvements de la force athlétique : squat, développé couché, soulevé de terre.'),
       ('RENFO','Renforcement','Les exercices qui complètent les trois mouvements : dos, jambes, épaules, bras, gainage.'),
       ('VAR.','Variante','Une version modifiée d’un mouvement (avec pause, sans les pieds…). Toutes sont expliquées dans l’onglet VARIANTES.')]),
