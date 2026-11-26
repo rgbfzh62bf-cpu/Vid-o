@@ -51,6 +51,7 @@ Hébergeur définitif : Netlify (choix d’Alexis : sécurité avant tout, badge
 Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-newton-swewu8`. Après CHAQUE modif du site : `python3 site/build.py`, commit, push.
 
 ## État en cours (pour une nouvelle discussion)
+- 26/11/2026 : TOUT EN LIGNE (commit 035f23a), vérifié par Alexis sur son téléphone. Reste côté Alexis : relecture mentions légales (paragraphe données réécrit : Calendly + mails), lien bio Instagram, photo 73 kg, 2FA.
 - Modifs NON en ligne sauvegardées sur la branche `claude/sauvegarde-alexis` (Netlify ne la déploie pas). Nouvelle discussion : `git fetch origin claude/sauvegarde-alexis && git merge FETCH_HEAD` sur `claude/exciting-newton-swewu8`, puis push UNIQUEMENT au feu vert d'Alexis.
 - Contenu : maquettes téléphone Athlyse dans les formules, boutons App Store + Google Play, gras harmonisé, sports en étiquettes, règles /compact. Page liens : vrais logos (Apple, Google Play, Athlyse, Instagram, Mail, appel), formules sans prix (« 2 formules · sans engagement »), photo avatar.jpg = tête entière découpée dans coach.jpg.
 - Lien Google Play d'Athlyse ajouté (https://play.google.com/store/apps/details?id=com.athlyseapp). Attendre les autres retours du créateur d'Athlyse (call avec son pote), puis tout envoyer en UN push au « go ».
