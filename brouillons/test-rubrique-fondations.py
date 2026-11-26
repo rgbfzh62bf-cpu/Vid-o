@@ -23,11 +23,6 @@ def inline(h):
     return re.sub(r'<link rel="preload"[^>]*>\n?', '', h)
 
 
-def _b64(p): return 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(HERE, 'athlyse', p), 'rb').read()).decode()
-SHOTS = {v: [_b64(f'fondations-{v}j-jour{n}.jpg') for n in range(1, int(v) + 1)] for v in ('3', '4')}
-IMG = SHOTS['3'][0]
-import json as _json
-SHOTS_JS = _json.dumps(SHOTS)
 
 LISTE = """          <li>Tes séances prêtes sur l'appli Athlyse, jour par jour</li>
           <li>Tes charges calculées à partir de tes 1RM</li>
@@ -54,12 +49,6 @@ SECTION = f"""<section id="programmes">
           <div class="prog-buy"><div class="price">29 €<small>paiement unique</small></div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
       </div>
-      <figure class="prog-shot reveal" id="progShot">
-        <div class="prog-tabs" role="tablist" aria-label="Version"><button type="button" class="on" data-v="3">3 jours</button><button type="button" data-v="4">4 jours</button></div>
-        <img id="progImg" src="{IMG}" alt="Le programme Fondations dans l'appli Athlyse : version 3 jours, jour 1 de la semaine 1">
-        <div class="prog-tabs days" role="tablist" aria-label="Jour" id="progDays"></div>
-        <figcaption>Semaine 1, exemple avec des 1RM de 100 kg (squat), 70 kg (développé couché) et 120 kg (soulevé de terre)</figcaption>
-      </figure>
       <div class="prog-more reveal">
         <ul class="prog-inc">
           <li><b>Tout se passe sur l'appli Athlyse</b><span>Tu télécharges l'appli et tu retrouves tes séances jour par jour, avec les consignes de chaque exercice et de chaque variante.</span></li>
@@ -70,7 +59,6 @@ SECTION = f"""<section id="programmes">
       </div>
     </div>
     <p class="prog-note reveal">Envie d'aller plus loin avec un suivi personnalisé ? <a href="#appel">On en parle →</a></p>
-    <script>(function(){{var S={SHOTS_JS},v='3',d=0,f=document.getElementById('progShot'),im=document.getElementById('progImg'),dd=document.getElementById('progDays');function draw(){{im.src=S[v][d];im.alt="Le programme Fondations dans l'appli Athlyse : version "+v+" jours, jour "+(d+1)+" de la semaine 1";dd.innerHTML='';S[v].forEach(function(_,i){{var b=document.createElement('button');b.type='button';b.textContent='Jour '+(i+1);if(i===d)b.className='on';b.onclick=function(){{d=i;draw()}};dd.appendChild(b)}});f.querySelectorAll('[data-v]').forEach(function(b){{b.classList.toggle('on',b.dataset.v===v)}})}}f.querySelectorAll('[data-v]').forEach(function(b){{b.onclick=function(){{v=b.dataset.v;d=0;draw()}}}});draw()}})();</script>
   </div>
 </section>
 
@@ -147,6 +135,21 @@ CSS = """
 .prog-buy{display:grid;justify-items:stretch;gap:6px}.prog-buy .price{font-size:1.6rem}.prog-buy .btn{width:100%;padding:8px 12px}
 }
 @media (min-width:600px) and (max-width:820px){.prog-grid{grid-template-columns:minmax(0,1fr) 240px;gap:0 24px}.prog-shot img{width:240px;border-width:8px;border-radius:36px}.prog-row{padding:20px;gap:10px}.prog-row h3{font-size:1.6rem}.prog-row .muted{font-size:.9rem}.prog-buy{display:flex;align-items:flex-end;justify-content:space-between}.prog-buy .price{font-size:2.4rem}.prog-buy .btn{width:auto;padding:10px 22px;font-size:.9rem}.prog-tabs.days{grid-template-columns:repeat(4,auto);width:auto;gap:4px}.prog-tabs.days button{font-size:.7rem;padding:5px 8px}.prog-tabs button{font-size:.78rem;padding:6px 12px}.prog-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.prog-shot figcaption{font-size:.72rem}}
+/* Sans visuel : les deux programmes côte à côte, détails dessous */
+.prog-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto auto;gap:16px}
+.prog-cards{grid-column:1/-1;grid-row:1;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:none;gap:16px}
+.prog-more{grid-column:1/-1;grid-row:2;margin-top:8px;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;align-content:start}
+.prog-more .prog-inc{grid-column:1/-1;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0}
+.prog-more .prog-auto,.prog-more .prog-pay{grid-column:1/-1}
+.prog-row{padding:24px;gap:18px}
+@media (max-width:820px){
+.prog-grid,.prog-cards{gap:10px}
+.prog-more{margin-top:12px}
+.prog-row{padding:14px;gap:10px}
+}
+@media (max-width:600px){.prog-more .prog-inc{grid-template-columns:1fr;gap:12px}.prog-buy{display:grid}.prog-buy .btn{width:100%;justify-content:center}}
+.prog-inc li{align-content:start}
+@media (min-width:600px) and (max-width:820px){.prog-grid,.prog-cards{gap:14px}.prog-row{padding:20px}}
 """
 
 h = open('index.html').read()
