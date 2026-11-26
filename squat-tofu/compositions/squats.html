@@ -1,0 +1,234 @@
+<template>
+  <style>
+    #squats { position: absolute; inset: 0; overflow: hidden; font-family: "Archivo Black", sans-serif; color: #fff;
+      background: radial-gradient(ellipse 80% 55% at 50% 52%, #1d1f24 0%, #0b0b0d 70%); }
+    #squats .full { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+    .ttl { position: absolute; left: 150px; width: 720px; text-align: center; line-height: 0.95; text-transform: uppercase; }
+    .ttl .a { color: #c8ff2e; }
+    .big { font-size: 88px; letter-spacing: -0.02em; }
+    .mid { font-size: 76px; }
+    .num { display: block; font-size: 44px; color: #c8ff2e; letter-spacing: 0.12em; margin-bottom: 14px; }
+    .chips { position: absolute; left: 150px; width: 720px; top: 505px; display: flex; justify-content: center; gap: 18px; }
+    .chip { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; padding: 12px 26px; border-radius: 999px;
+      background: rgba(200,255,46,0.14); border: 3px solid #c8ff2e; color: #c8ff2e; letter-spacing: 0.04em; }
+    .inset-lbl { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; fill: #c4c4cc; letter-spacing: 2px; }
+    .grid5 { position: absolute; left: 170px; width: 680px; top: 590px; display: grid; grid-template-columns: 1fr; gap: 12px; }
+    .row { display: flex; align-items: center; gap: 24px; font-size: 40px; padding: 8px 22px; border-radius: 22px; background: #17181c; border: 3px solid #2a2c33; }
+    .row b { color: #0b0b0d; background: #c8ff2e; border-radius: 14px; width: 52px; height: 52px; display: flex; align-items: center; justify-content: center; font-size: 38px; }
+    .dots { position: absolute; left: 160px; width: 700px; top: 760px; display: flex; justify-content: space-between; }
+    .dot { width: 116px; height: 116px; border-radius: 50%; border: 5px solid #c8ff2e; display: flex; align-items: center; justify-content: center; font-size: 70px; color: #c8ff2e; }
+    #flash { background: #fff; opacity: 0; }
+  </style>
+  <div id="squats" data-composition-id="squats" data-width="1080" data-height="1920" data-layout-allow-overlap>
+
+    <!-- figure, always mounted; its group fades between scenes -->
+    <svg id="fig-svg" class="clip full" data-start="0" data-duration="32.7" data-track-index="0" viewBox="0 0 1080 1920">
+      <defs>
+        <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
+      </defs>
+      <g id="fig">
+        <line x1="150" y1="1090" x2="930" y2="1090" stroke="#2d2f36" stroke-width="4" />
+        <ellipse id="shadow" cx="540" cy="1094" rx="120" ry="12" fill="#000" opacity="0.5" />
+        <rect id="bench" x="300" y="995" width="170" height="26" rx="8" fill="#3a3d46" opacity="0" />
+        <rect id="bench-l" x="318" y="1021" width="16" height="69" fill="#3a3d46" opacity="0" />
+        <rect id="bench-r" x="436" y="1021" width="16" height="69" fill="#3a3d46" opacity="0" />
+        <g id="body" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <polyline id="leg-far" stroke="#6d6f78" stroke-width="24" />
+          <polyline id="arm-far" stroke="#6d6f78" stroke-width="17" />
+          <ellipse id="glute" rx="34" ry="30" fill="#c8ff2e" stroke="none" opacity="0" filter="url(#glow)" />
+          <line id="torso" stroke="#fff" stroke-width="32" />
+          <polyline id="leg-near" stroke="#fff" stroke-width="26" />
+          <line id="thigh-hl" stroke="#c8ff2e" stroke-width="26" opacity="0" filter="url(#glow)" />
+          <line id="shin-hl" stroke="#c8ff2e" stroke-width="24" opacity="0" filter="url(#glow)" />
+          <polyline id="arm-near" stroke="#fff" stroke-width="18" />
+          <circle id="head" r="31" fill="#fff" stroke="none" />
+        </g>
+      </g>
+    </svg>
+
+    <!-- 0 · hook -->
+    <div id="t-hook" class="clip ttl big" data-start="0" data-duration="3.6" data-track-index="1" style="top:292px;font-size:70px">TU FAIS TOUJOURS<br />LE MÊME <span class="a">SQUAT</span> ?</div>
+    <svg id="x-stamp" class="clip full" data-start="1.9" data-duration="1.7" data-track-index="2" viewBox="0 0 1080 1920">
+      <g id="x-g" style="transform-origin:540px 860px">
+        <circle cx="540" cy="860" r="190" fill="none" stroke="#ff3b3b" stroke-width="22" />
+        <path d="M430 750 L650 970 M650 750 L430 970" stroke="#ff3b3b" stroke-width="28" stroke-linecap="round" />
+      </g>
+    </svg>
+
+    <!-- 1 · intro -->
+    <div id="t-intro" class="clip ttl" data-start="3.6" data-duration="4.1" data-track-index="1" style="top:420px">
+      <div id="i-a" class="big" style="font-size:118px"><span class="a">5</span> SQUATS</div>
+      <div id="i-b" class="mid" style="margin-top:20px">5 RÉSULTATS</div>
+    </div>
+    <div id="dots" class="clip dots" data-start="3.6" data-duration="4.1" data-track-index="2">
+      <div class="dot" id="d1">1</div><div class="dot" id="d2">2</div><div class="dot" id="d3">3</div><div class="dot" id="d4">4</div><div class="dot" id="d5">5</div>
+    </div>
+
+    <!-- 2..6 · variants -->
+    <div id="t-1" class="clip ttl big" data-start="7.7" data-duration="3.55" data-track-index="1" style="top:300px"><span class="num">01</span>CLASSIQUE</div>
+    <div id="c-1" class="clip chips" data-start="7.7" data-duration="3.55" data-track-index="2"><span class="chip">CUISSES</span><span class="chip">FESSIERS</span></div>
+    <div id="t-2" class="clip ttl big" data-start="11.25" data-duration="4.8" data-track-index="1" style="top:300px"><span class="num">02</span>SUMO</div>
+    <div id="c-2" class="clip chips" data-start="11.25" data-duration="4.8" data-track-index="2"><span class="chip">ADDUCTEURS</span><span class="chip">FESSIERS</span></div>
+    <div id="t-3" class="clip ttl big" data-start="16.05" data-duration="2.8" data-track-index="1" style="top:300px"><span class="num">03</span>PIEDS SERRÉS</div>
+    <div id="c-3" class="clip chips" data-start="16.05" data-duration="2.8" data-track-index="2"><span class="chip">QUADRICEPS</span></div>
+    <div id="t-4" class="clip ttl big" data-start="18.85" data-duration="4.85" data-track-index="1" style="top:300px"><span class="num">04</span>BULGARE</div>
+    <div id="c-4" class="clip chips" data-start="18.85" data-duration="4.85" data-track-index="2"><span class="chip">FESSIERS</span><span class="chip">ÉQUILIBRE</span></div>
+    <div id="t-5" class="clip ttl big" data-start="23.7" data-duration="4.95" data-track-index="1" style="top:300px"><span class="num">05</span>SAUTÉ</div>
+    <div id="c-5" class="clip chips" data-start="23.7" data-duration="4.95" data-track-index="2"><span class="chip">CARDIO</span><span class="chip">EXPLOSIVITÉ</span></div>
+
+    <!-- stance inset: feet seen from above -->
+    <svg id="inset" class="clip full" data-start="7.7" data-duration="11.15" data-track-index="3" viewBox="0 0 1080 1920">
+      <g id="inset-g">
+        <rect x="110" y="650" width="220" height="190" rx="22" fill="#15161a" stroke="#2a2c33" stroke-width="3" />
+        <text x="220" y="822" text-anchor="middle" class="inset-lbl">ÉCART PIEDS</text>
+        <rect id="foot-l" x="0" y="0" width="34" height="76" rx="17" fill="#c8ff2e" />
+        <rect id="foot-r" x="0" y="0" width="34" height="76" rx="17" fill="#c8ff2e" />
+      </g>
+    </svg>
+    <svg id="heart" class="clip full" data-start="23.7" data-duration="4.95" data-track-index="3" viewBox="0 0 1080 1920">
+      <g id="heart-g" style="transform-origin:220px 730px">
+        <path d="M220 800 C120 730 140 650 190 650 C210 650 220 665 220 675 C220 665 230 650 250 650 C300 650 320 730 220 800 Z" fill="#ff3b3b" />
+      </g>
+    </svg>
+
+    <!-- 7 · outro -->
+    <div id="t-outro" class="clip ttl big" data-start="28.65" data-duration="4.05" data-track-index="1" style="top:300px">ALORS,<br /><span class="a">LEQUEL</span> TU FAIS ?</div>
+    <div id="grid" class="clip grid5" data-start="28.65" data-duration="4.05" data-track-index="2">
+      <div class="row" id="r1"><b>1</b>CLASSIQUE</div>
+      <div class="row" id="r2"><b>2</b>SUMO</div>
+      <div class="row" id="r3"><b>3</b>PIEDS SERRÉS</div>
+      <div class="row" id="r4"><b>4</b>BULGARE</div>
+      <div class="row" id="r5"><b>5</b>SAUTÉ</div>
+    </div>
+
+    <div id="flash" class="clip full" data-start="0" data-duration="32.7" data-track-index="4"></div>
+  </div>
+  <script>
+    (function () {
+      var G = 1090, SHIN = 120, THIGH = 125, TORSO = 150, NECK = 16, HEAD = 31, UA = 82, FA = 78;
+      var P = { d: 0, lift: 0, mode: "classic", show: 1, arm: 0 };
+      var MODES = {
+        classic: { ax: 560, hip: [-95, 140], lean: 38, arm: 82, hl: ["thigh", "glute"] },
+        bad:     { ax: 560, hip: [-60, 120], lean: 55, arm: 30, hl: [], heel: 1 },
+        sumo:    { ax: 560, hip: [-55, 148], lean: 16, arm: 70, hl: ["thigh", "glute"] },
+        narrow:  { ax: 560, hip: [-60, 120], lean: 26, arm: 85, hl: ["thigh", "shin"] },
+        bulgare: { ax: 615, hip: [-10, 115], lean: 12, arm: 65, hl: ["glute", "thigh"], rear: [425, 992], stand: [525, 862] },
+        jump:    { ax: 560, hip: [-95, 140], lean: 38, arm: 82, hl: ["thigh", "glute"] }
+      };
+      function $(id) { return document.getElementById(id); }
+      function ik(h, a, l1, l2, dir) {
+        var dx = a[0] - h[0], dy = a[1] - h[1], dd = Math.min(Math.hypot(dx, dy), l1 + l2 - 0.01);
+        var base = Math.atan2(dy, dx), c = (l1 * l1 + dd * dd - l2 * l2) / (2 * l1 * dd);
+        var ang = Math.acos(Math.max(-1, Math.min(1, c)));
+        return [h[0] + l1 * Math.cos(base - dir * ang), h[1] + l1 * Math.sin(base - dir * ang)];
+      }
+      function pts(a) { return a.map(function (p) { return p[0].toFixed(1) + "," + p[1].toFixed(1); }).join(" "); }
+      function setLine(el, p, q) { el.setAttribute("x1", p[0]); el.setAttribute("y1", p[1]); el.setAttribute("x2", q[0]); el.setAttribute("y2", q[1]); }
+      function render() {
+        var m = MODES[P.mode], d = P.d, up = -P.lift;
+        var ank = [m.ax, G - 6 + up];
+        var hip = m.stand ? [m.stand[0] + m.hip[0] * d, m.stand[1] + m.hip[1] * d + up]
+                          : [m.ax - 5 + m.hip[0] * d, G - SHIN - THIGH + 6 + m.hip[1] * d + up];
+        if (m.heel) ank = [m.ax + 10 * d, G - 6 - 26 * d];
+        var knee = ik(hip, ank, THIGH, SHIN, 1);
+        var heel = m.heel ? [ank[0] - 10, ank[1] + 2] : [ank[0] - 14, ank[1] + 4];
+        var toe = [m.ax + 46 + (m.heel ? 4 * d : 0), G - 2 + up];
+        var leg = [hip, knee, ank, heel, toe];
+        var far;
+        if (m.rear) { var rf = [m.rear[0], m.rear[1] + up]; var rk = ik(hip, rf, THIGH, SHIN, 1); far = [hip, rk, rf, [rf[0] - 40, rf[1] - 6]]; }
+        else far = [[hip[0] - 6, hip[1]], [knee[0] - 8, knee[1] + 2], [ank[0] - 10, ank[1]], [heel[0] - 10, heel[1]], [toe[0] - 10, toe[1]]];
+        var lean = m.lean * d * Math.PI / 180;
+        var sh = [hip[0] + TORSO * Math.sin(lean), hip[1] - TORSO * Math.cos(lean)];
+        var hd = [hip[0] + (TORSO + NECK + HEAD) * Math.sin(lean), hip[1] - (TORSO + NECK + HEAD) * Math.cos(lean)];
+        var aa = ((P.mode === "jump" ? P.arm : m.arm * d) + 8) * Math.PI / 180;
+        var el = [sh[0] + UA * Math.sin(aa), sh[1] + UA * Math.cos(aa)];
+        var bend = 0.25;
+        var hn = [el[0] + FA * Math.sin(aa + bend), el[1] + FA * Math.cos(aa + bend)];
+        $("leg-near").setAttribute("points", pts(leg));
+        $("leg-far").setAttribute("points", pts(far));
+        setLine($("torso"), hip, sh);
+        $("head").setAttribute("cx", hd[0]); $("head").setAttribute("cy", hd[1]);
+        $("arm-near").setAttribute("points", pts([sh, el, hn]));
+        $("arm-far").setAttribute("points", pts([[sh[0] - 6, sh[1] + 2], [el[0] - 8, el[1] + 2], [hn[0] - 8, hn[1] + 2]]));
+        setLine($("thigh-hl"), hip, knee); setLine($("shin-hl"), knee, ank);
+        var g = $("glute"); g.setAttribute("cx", hip[0] - 22); g.setAttribute("cy", hip[1] + 4);
+        var k = 0.25 + 0.75 * d;
+        $("thigh-hl").setAttribute("opacity", m.hl.indexOf("thigh") > -1 ? k : 0);
+        $("shin-hl").setAttribute("opacity", m.hl.indexOf("shin") > -1 ? k : 0);
+        g.setAttribute("opacity", m.hl.indexOf("glute") > -1 ? 0.9 * k : 0);
+        var sw = Math.max(0.35, 1 - P.lift / 220);
+        $("shadow").setAttribute("rx", 120 * sw); $("shadow").setAttribute("cx", m.ax - 10);
+        $("fig").setAttribute("opacity", P.show);
+        var b = P.mode === "bulgare" ? 1 : 0;
+        ["bench", "bench-l", "bench-r"].forEach(function (id) { $(id).setAttribute("opacity", b); });
+      }
+      var tl = gsap.timeline({ paused: true, onUpdate: render });
+      function reps(t0, t1, mode) {
+        tl.set(P, { mode: mode, d: 0, lift: 0 }, t0);
+        for (var t = t0 + 0.3; t + 1.15 < t1; t += 1.3) {
+          tl.to(P, { d: 1, duration: 0.55, ease: "power2.inOut" }, t);
+          tl.to(P, { d: 0, duration: 0.5, ease: "power2.inOut" }, t + 0.7);
+        }
+      }
+      function jumps(t0, t1) {
+        tl.set(P, { mode: "jump", d: 0, lift: 0, arm: 0 }, t0);
+        for (var t = t0 + 0.3; t + 1.3 < t1; t += 1.45) {
+          tl.to(P, { d: 1, arm: -35, duration: 0.45, ease: "power2.inOut" }, t);
+          tl.to(P, { d: 0, arm: 165, duration: 0.2, ease: "power2.out" }, t + 0.45);
+          tl.to(P, { lift: 150, duration: 0.3, ease: "power2.out" }, t + 0.5);
+          tl.to(P, { lift: 0, arm: 20, duration: 0.3, ease: "power2.in" }, t + 0.8);
+          tl.to(P, { d: 0.45, arm: 60, duration: 0.14, ease: "power2.out" }, t + 1.1);
+          tl.to(P, { d: 0, arm: 0, duration: 0.2, ease: "power2.inOut" }, t + 1.24);
+        }
+      }
+      // figure choreography
+      reps(0, 3.6, "bad");
+      tl.to(P, { show: 0, duration: 0.15 }, 3.6);
+      tl.set(P, { show: 1 }, 7.7);
+      reps(7.7, 11.25, "classic");
+      reps(11.25, 16.05, "sumo");
+      reps(16.05, 18.85, "narrow");
+      reps(18.85, 23.7, "bulgare");
+      jumps(23.7, 28.65);
+      tl.to(P, { show: 0, duration: 0.15 }, 28.6);
+
+      // hook
+      tl.from("#t-hook", { scale: 1.25, opacity: 0, duration: 0.25, ease: "back.out(2)" }, 0);
+      tl.fromTo("#x-g", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: "back.out(2.4)" }, 1.9);
+      tl.to("#x-g", { rotation: 8, duration: 0.08, yoyo: true, repeat: 3 }, 2.12);
+      // intro
+      tl.from("#i-a", { scale: 0.4, opacity: 0, duration: 0.3, ease: "back.out(2)" }, 3.65);
+      tl.from("#i-b", { y: 60, opacity: 0, duration: 0.25, ease: "power3.out" }, 4.1);
+      ["#d1", "#d2", "#d3", "#d4", "#d5"].forEach(function (id, i) {
+        tl.from(id, { scale: 0, opacity: 0, duration: 0.22, ease: "back.out(2.5)" }, 4.6 + i * 0.16);
+      });
+      tl.to("#dots .dot", { backgroundColor: "#c8ff2e", color: "#0b0b0d", duration: 0.1, stagger: 0.12 }, 6.2);
+      // variant titles + chips
+      [[1, 7.7], [2, 11.25], [3, 16.05], [4, 18.85], [5, 23.7]].forEach(function (v) {
+        tl.from("#t-" + v[0], { x: -120, opacity: 0, duration: 0.25, ease: "power3.out" }, v[1] + 0.02);
+        tl.from("#c-" + v[0] + " .chip", { y: 40, opacity: 0, duration: 0.22, stagger: 0.1, ease: "back.out(2)" }, v[1] + 0.25);
+      });
+      // stance inset: centre 220,725 ; [gap, toe-out deg]
+      function feet(t, gap, ang, first) {
+        var o = { duration: first ? 0 : 0.3, ease: "power3.inOut" };
+        tl.to("#foot-l", Object.assign({ x: 220 - gap / 2 - 17, y: 687, rotation: -ang, transformOrigin: "50% 50%" }, o), t);
+        tl.to("#foot-r", Object.assign({ x: 220 + gap / 2 - 17, y: 687, rotation: ang, transformOrigin: "50% 50%" }, o), t);
+      }
+      feet(7.7, 100, 8, true); feet(11.25, 170, 32); feet(16.05, 42, 0);
+      tl.from("#inset-g", { opacity: 0, x: -40, duration: 0.25 }, 7.75);
+      // heart
+      for (var h = 23.8; h < 28.5; h += 0.55) tl.fromTo("#heart-g", { scale: 1 }, { scale: 1.22, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out" }, h);
+      // outro
+      tl.from("#t-outro", { scale: 1.3, opacity: 0, duration: 0.25, ease: "back.out(2)" }, 28.67);
+      tl.from("#grid .row", { x: 160, opacity: 0, duration: 0.25, stagger: 0.12, ease: "power3.out" }, 29.0);
+      tl.to("#grid .row", { borderColor: "#c8ff2e", duration: 0.12, stagger: 0.25, yoyo: true, repeat: 1 }, 30.6);
+      // flashes on cuts
+      [3.6, 7.7, 11.25, 16.05, 18.85, 23.7, 28.65].forEach(function (c) {
+        tl.fromTo("#flash", { opacity: 0.35 }, { opacity: 0, duration: 0.18, ease: "power2.out", immediateRender: false }, c);
+      });
+      tl.set({}, {}, 32.7);
+      render();
+      window.__timelines["squats"] = tl;
+    })();
+  </script>
+</template>

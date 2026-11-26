@@ -1,61 +1,39 @@
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=1920, height=1080" />
+    <meta name="viewport" content="width=1080, height=1920" />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
     <style>
-      /* Placeholders: replace all three with the film's own palette and display face. */
-      :root {
-        --ground: #000;
-        --ink: #ffffff;
-        --font-display: sans-serif;
-      }
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html,
-      body {
-        margin: 0;
-        width: 1920px;
-        height: 1080px;
-        overflow: hidden;
-        background: var(--ground);
-      }
-      #root {
-        width: 100%;
-        height: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-family: var(--font-display);
-      }
-      #title {
-        color: var(--ink);
-        font-size: 72px;
-        font-weight: 600;
-        letter-spacing: -0.03em;
-      }
+      :root { --ground: #0b0b0d; --ink: #ffffff; --accent: #c8ff2e; --font-display: "Archivo Black"; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--ground); }
+      #root { position: relative; width: 100%; height: 100%; }
     </style>
   </head>
   <body>
-    <div
-      id="root"
-      data-composition-id="main"
-      data-start="0"
-      data-duration="10"
-      data-width="1920"
-      data-height="1080"
-    >
-      <h1 id="title" class="clip" data-start="0" data-duration="10" data-track-index="0">Title</h1>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="32.7" data-width="1080" data-height="1920">
+      <div id="squats" data-composition-id="squats" data-composition-src="compositions/squats.html" data-start="0" data-duration="32.7" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="32.7" data-track-index="1" data-track-kind="captions" data-width="1080" data-height="1920"></div>
+      <audio id="vo-l1" class="clip" src="assets/voice/l1.wav" data-start="0.15" data-duration="3.32" data-track-index="2" data-volume="1.6"></audio>
+      <audio id="vo-l2" class="clip" src="assets/voice/l2.wav" data-start="3.67" data-duration="3.93" data-track-index="2" data-volume="1.6"></audio>
+      <audio id="vo-l3" class="clip" src="assets/voice/l3.wav" data-start="7.79" data-duration="3.35" data-track-index="2" data-volume="1.6"></audio>
+      <audio id="vo-l4" class="clip" src="assets/voice/l4.wav" data-start="11.34" data-duration="4.58" data-track-index="2" data-volume="1.6"></audio>
+      <audio id="vo-l5" class="clip" src="assets/voice/l5.wav" data-start="16.13" data-duration="2.58" data-track-index="2" data-volume="1.6"></audio>
+      <audio id="vo-l6" class="clip" src="assets/voice/l6.wav" data-start="18.91" data-duration="4.68" data-track-index="2" data-volume="1.6"></audio>
+      <audio id="vo-l7" class="clip" src="assets/voice/l7.wav" data-start="23.79" data-duration="4.76" data-track-index="2" data-volume="1.6"></audio>
+      <audio id="vo-l8" class="clip" src="assets/voice/l8.wav" data-start="28.74" data-duration="3.13" data-track-index="2" data-volume="1.6"></audio>
+      <audio id="music" class="clip" src="assets/music/beat.mp3" data-start="0" data-duration="32.7" data-track-index="3" data-volume="0.16" data-fade-out="1.2"></audio>
+      <audio id="sfx-0" class="clip" src="assets/sfx/whoosh.mp3" data-start="3.45" data-duration="0.45" data-track-index="4" data-volume="0.35"></audio>
+      <audio id="sfx-1" class="clip" src="assets/sfx/whoosh.mp3" data-start="7.55" data-duration="0.45" data-track-index="5" data-volume="0.35"></audio>
+      <audio id="sfx-2" class="clip" src="assets/sfx/whoosh.mp3" data-start="11.10" data-duration="0.45" data-track-index="4" data-volume="0.35"></audio>
+      <audio id="sfx-3" class="clip" src="assets/sfx/whoosh.mp3" data-start="15.90" data-duration="0.45" data-track-index="5" data-volume="0.35"></audio>
+      <audio id="sfx-4" class="clip" src="assets/sfx/whoosh.mp3" data-start="18.70" data-duration="0.45" data-track-index="4" data-volume="0.35"></audio>
+      <audio id="sfx-5" class="clip" src="assets/sfx/whoosh.mp3" data-start="23.55" data-duration="0.45" data-track-index="5" data-volume="0.35"></audio>
+      <audio id="sfx-6" class="clip" src="assets/sfx/whoosh.mp3" data-start="28.50" data-duration="0.45" data-track-index="4" data-volume="0.35"></audio>
     </div>
     <script>
-      const tl = gsap.timeline({ paused: true });
-      // Example: tl.fromTo("#title", { opacity: 0, filter: "blur(8px)" }, { opacity: 1, filter: "blur(0px)", duration: 0.18, ease: "power4.out" }, 0);
-      window.__timelines["main"] = tl;
-      tl.seek(0);
+      window.__timelines["main"] = gsap.timeline({ paused: true });
     </script>
   </body>
 </html>
