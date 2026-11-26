@@ -8,6 +8,13 @@
       "skillPath": "skills/caveman/SKILL.md",
       "computedHash": "b51af74aacdadbc3c2d6bb79f05db58dc521854b87f7ffabd48faf286a81ed31"
     },
+    "caveman-compress": {
+      "source": "juliusbrussee/caveman",
+      "commit": "e74a11ccdb38b98d15c9f9545787c907dd15f0ab",
+      "sourceType": "github",
+      "skillPath": "skills/caveman-compress/SKILL.md",
+      "computedHash": "fe66a5fe14b80da85b027dcefccf5618aa5cf84ec2c21b7b1e454c489618c259"
+    },
     "find-skills": {
       "source": "vercel-labs/skills",
       "commit": "57217cf86ba38148a57af9e90d14a4c049558330",
@@ -49,6 +56,13 @@
       "sourceType": "github",
       "skillPath": "skills/reverse-any-video/SKILL.md",
       "computedHash": "ff697348c4f2b0590f156b939fcf7e550c7a17bc40bf210d07e71ccbd42db753"
+    },
+    "ultracave": {
+      "source": "juliusbrussee/caveman",
+      "commit": "e74a11ccdb38b98d15c9f9545787c907dd15f0ab",
+      "sourceType": "github",
+      "skillPath": "skills/ultracave/SKILL.md",
+      "computedHash": "b9814ef35fbc9f4359f682c7f2e4944b30428f8c8d79463efa070f99fffaa453"
     }
   }
 }
