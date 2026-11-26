@@ -285,23 +285,15 @@ html{scroll-behavior:smooth}
 .name-tag{display:grid;gap:2px;left:16px;top:16px;bottom:auto}
 .name-tag b{font-family:var(--f-display);font-weight:900;text-transform:uppercase;letter-spacing:.08em;font-size:1.4rem;color:var(--ink);line-height:1}
 .name-tag span{color:var(--accent);font-size:.72rem;letter-spacing:.06em}
-.tl{list-style:none;margin:0;padding:0;display:grid;gap:12px;width:100%}
-.tl li{display:grid;grid-template-columns:118px minmax(0,1fr) 150px;grid-template-areas:"n b y";column-gap:14px;align-items:center}
-.tl b{grid-area:n;font-size:.92rem;font-weight:700}
-.tl .bar{grid-area:b;height:12px;border-radius:99px;background:var(--surface);border:1px solid var(--line);overflow:hidden}
-.tl .bar i{position:relative;overflow:hidden;display:block;height:100%;width:var(--w);border-radius:99px;background:color-mix(in srgb,var(--accent) 45%,var(--surface));transform-origin:left;transform:scaleX(1)}
-.tl .bar i::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.35),transparent);transform:translateX(-100%)}
-.tl.in .bar i::after{animation:shine 1.6s 1.2s ease-out}
-@keyframes shine{to{transform:translateX(100%)}}
-.tl.in .bar i{animation:grow 1.1s cubic-bezier(.2,.8,.2,1) both}
-.tl li:nth-child(2) .bar i{animation-delay:.08s}.tl li:nth-child(3) .bar i{animation-delay:.16s}.tl li:nth-child(4) .bar i{animation-delay:.24s}.tl li:nth-child(5) .bar i{animation-delay:.32s}.tl li:nth-child(6) .bar i{animation-delay:.4s}.tl li:nth-child(7) .bar i{animation-delay:.48s}
-@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-.tl .yr{grid-area:y;font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
-.tl li.hi b{color:var(--accent)}
-.tl li.hi .bar{border-color:color-mix(in srgb,var(--accent) 50%,transparent)}
-.tl li.hi .bar i{background:var(--accent)}
-.tl li.hi .yr{color:var(--accent)}
-@media (max-width:520px){.tl li{grid-template-columns:96px minmax(0,1fr);grid-template-areas:"n b" ". y";row-gap:2px}}
+.tl{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;width:100%}
+.tl li{display:inline-flex;align-items:baseline;gap:7px;padding:7px 12px;border:1px solid var(--line);border-radius:99px;background:var(--surface);opacity:0;transform:translateY(6px);transition:opacity .5s,transform .5s}
+.tl.in li{opacity:1;transform:none}
+.tl li:nth-child(2){transition-delay:.06s}.tl li:nth-child(3){transition-delay:.12s}.tl li:nth-child(4){transition-delay:.18s}.tl li:nth-child(5){transition-delay:.24s}.tl li:nth-child(6){transition-delay:.3s}.tl li:nth-child(7){transition-delay:.36s}
+.tl b{font-size:.86rem;font-weight:700}
+.tl .yr{font-family:var(--f-mono);font-size:.7rem;color:var(--muted);white-space:nowrap}
+.tl li.hi{border-color:color-mix(in srgb,var(--accent) 60%,transparent);background:color-mix(in srgb,var(--accent) 12%,var(--surface))}
+.tl li.hi b,.tl li.hi .yr{color:var(--accent)}
+@media (prefers-reduced-motion:reduce){.tl li{opacity:1;transform:none;transition:none}}
 .hero .photo.hero-photo{margin:0;aspect-ratio:4/5;min-height:0;border-color:var(--accent);box-shadow:0 30px 70px -30px rgba(0,0,0,.8);animation:fade 1s .3s both}
 .hero-photo img{object-position:50% 20%}
 @media (max-width:860px){.hero .wrap{grid-template-columns:1fr}.hero .photo.hero-photo{aspect-ratio:4/5;max-width:460px;width:100%;justify-self:center}}
@@ -397,13 +389,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
       <p class="ptext">Le sport fait partie de ma vie depuis tout petit. J'ai touché à plusieurs disciplines avant de trouver la mienne : la salle. Les doutes, les plateaux, la motivation qui baisse, je connais. C'est toute cette expérience que je mets dans chaque programme.</p>
       <p class="pquote">Ce que j'ai appris en 8 ans, je te le transmets pour que tu progresses plus vite, sans refaire mes erreurs.</p>
       <ol class="tl" aria-label="Mon parcours sportif, du plus ancien au plus récent">
-        <li class="" style="--w:87.5%"><b>Golf</b><span class="bar"><i></i></span><span class="yr">7 ans</span></li>
-        <li class="" style="--w:68.8%"><b>Football</b><span class="bar"><i></i></span><span class="yr">5-6 ans</span></li>
-        <li class="" style="--w:12.5%"><b>Volley-ball</b><span class="bar"><i></i></span><span class="yr">1 an</span></li>
-        <li class="" style="--w:12.5%"><b>Tennis</b><span class="bar"><i></i></span><span class="yr">1 an</span></li>
-        <li class="" style="--w:12.5%"><b>Aïkido</b><span class="bar"><i></i></span><span class="yr">1 an</span></li>
-        <li class="hi" style="--w:100.0%"><b>Musculation</b><span class="bar"><i></i></span><span class="yr">8 ans · depuis 2018</span></li>
-        <li class="hi" style="--w:37.5%"><b>Force athlétique</b><span class="bar"><i></i></span><span class="yr">3 ans · aujourd'hui</span></li>
+        <li><b>Golf</b><span class="yr">7 ans</span></li>
+        <li><b>Football</b><span class="yr">5-6 ans</span></li>
+        <li><b>Volley-ball</b><span class="yr">1 an</span></li>
+        <li><b>Tennis</b><span class="yr">1 an</span></li>
+        <li><b>Aïkido</b><span class="yr">1 an</span></li>
+        <li class="hi"><b>Musculation</b><span class="yr">8 ans · depuis 2018</span></li>
+        <li class="hi"><b>Force athlétique</b><span class="yr">3 ans · aujourd'hui</span></li>
       </ol>
       <a class="cert" href="https://recherche-educateur.sports.gouv.fr" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg><span><b>Éducateur sportif diplômé · CQP Instructeur Fitness</b><small>Carte pro n° 07825ED0287 · Vérifier sur sports.gouv.fr ↗</small></span></a>
       <a class="btn" href="#methode">Découvrir mon approche <span class="arr">→</span></a>
@@ -630,7 +622,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
   addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden)setMenu(false)});
 
-  // Barres du parcours : rejouées à chaque passage
+  // Étiquettes du parcours : rejouées à chaque passage
   const tl=document.querySelector('.tl');
   if(tl) new IntersectionObserver(es=>es.forEach(e=>tl.classList.toggle('in',e.isIntersecting)),{threshold:.35}).observe(tl);
 
