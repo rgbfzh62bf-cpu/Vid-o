@@ -64,12 +64,12 @@ P3={
   ('','Rowing haltère un bras',3,'10-12',None,'RIR 2','1-2 min','Tire le coude vers la hanche.'),
   ('','Extension triceps poulie au-dessus de la tête',3,'12',None,'RIR 2','1-2 min','Coudes fixes.')],
 }
-WEEKS=[('SEMAINE 1','Prise en main',0.0,0),('SEMAINE 2','Progression',.025,0),('SEMAINE 3','Semaine la plus dure',.05,0),('SEMAINE 4','Semaine allégée',-.05,-1)]
+WEEKS=[('SEMAINE 1','Prise en main',0.0,0),('SEMAINE 2','Progression',.025,0),('SEMAINE 3','Montée en charge',.05,0),('SEMAINE 4','Semaine la plus lourde',.075,0)]
 RPE_UP={0:None,1:None,2:'+1',3:'-1'}
 def rpe_for(r,wi):
     if r in('—',) or r.startswith('RIR'): return r
     if wi==2: return {'6':'7','6-7':'7-8','7':'8'}.get(r,r)
-    if wi==3: return {'6':'5','6-7':'5-6','7':'6'}.get(r,r)
+    if wi==3: return {'6':'7-8','6-7':'8','7':'8'}.get(r,r)
     return r
 
 def build(days,label,out,logo):

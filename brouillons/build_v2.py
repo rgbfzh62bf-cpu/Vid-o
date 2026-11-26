@@ -50,14 +50,18 @@ def build(days,label,out,logo):
       ('2','Lis ta séance','Chaque exercice a un % de ton 1RM. La CHARGE CONSEILLÉE se calcule toute seule, arrondie à 2,5 kg.'),
       ('3','Note ce que tu fais','Remplis les cases blanches à bord bleu : charge faite, RPE fait, observations. Le reste est verrouillé.'),
       ('4','Suis ta progression','Chaque séance et chaque semaine affichent ton tonnage et tes répétitions. L’onglet BILAN montre l’évolution sur le bloc.'),
-      ('5','Recommence','Après la semaine 4, mets à jour MES 1RM et refais le bloc avec tes nouvelles charges.')]),
+      ('5','Recommence','Après la semaine 4, tu repars en semaine 1. Dans MES 1RM, passe le NUMÉRO DU BLOC à 2, puis 3… : chaque charge conseillée prend +2,5 kg par bloc.')]),
+     ('APRÈS LA SEMAINE 4',[
+      ('4','Toujours 4 semaines','Le programme est construit pour 4 semaines : l’intensité monte de la semaine 1 à la semaine 4. Ne continue jamais sur une semaine 5 ou 6.'),
+      ('↺','Pourquoi repartir en semaine 1','Quand on débute, on ne connaît pas encore bien sa récupération ni le volume qu’on encaisse. Repartir en semaine 1 te laisse récupérer avant de remonter.'),
+      ('+2,5','Un point de départ plus haut','À chaque nouveau bloc, tu repars un peu plus lourd. Exemple : squat 4×4 à 100 kg au bloc 1, 102,5 kg au bloc 2, 105 kg au bloc 3. C’est comme ça que tu progresses de bloc en bloc.')]),
      ('LE RPE EN BREF',[
       ('10','Échec','Impossible de faire une répétition de plus.'),
       ('8','Difficile','Il te reste 2 répétitions en réserve.'),
       ('6-7','Maîtrisé','Il te reste 3 à 4 répétitions. Technique propre.'),
       ('RIR 2','Renfo','Arrête la série quand il te reste 2 répétitions.')]),
      ('TONNAGE',[
-      ('kg','C’est quoi ?','Séries × répétitions × charge. C’est le volume de travail total : il augmente des semaines 1 à 3, puis baisse en semaine 4 pour récupérer.'),
+      ('kg','C’est quoi ?','Séries × répétitions × charge. C’est le volume de travail total : il augmente de semaine en semaine : c’est la surcharge progressive.'),
       ('prévu','Tonnage prévu','Calculé avec tes charges conseillées.'),
       ('réalisé','Tonnage réalisé','Calculé avec les charges que tu notes.')]),
      ('À LIRE AVANT DE COMMENCER',[
@@ -98,7 +102,14 @@ def build(days,label,out,logo):
     mx.merge_cells('B11:M11'); mx['B11']='Estimation = charge × (1 + répétitions ÷ 30), de 1 à 10 répétitions. C’est une estimation, pas un test : reste prudent.'
     mx['B11'].font=fn(9,c=MUTED,i=True); mx['B11'].alignment=LFT
     dv=DataValidation(type='whole',operator='between',formula1='1',formula2='10',allow_blank=True,showErrorMessage=True,error='Entre 1 et 10 répétitions.'); mx.add_data_validation(dv); dv.add('H7:H9')
+    mx.row_dimensions[13].height=34
+    mx.merge_cells('B13:I13'); mx['B13']='NUMÉRO DU BLOC (1 la première fois, puis 2, 3…)'; mx['B13'].font=fn(11,True,BLACK); mx['B13'].alignment=LFT; paint(mx,13,13,2,9,LIGHT)
+    bc=mx['J13']; bc.value=1; bc.border=INBOX; bc.protection=UNL; bc.font=fn(14,True); bc.alignment=C
+    mx.merge_cells('B14:M14'); mx['B14']='Garde les mêmes 1RM : change seulement le numéro du bloc. Chaque bloc ajoute 2,5 kg aux charges conseillées.'
+    mx['B14'].font=fn(9,c=MUTED,i=True); mx['B14'].alignment=LFT
+    dvb=DataValidation(type='whole',operator='between',formula1='1',formula2='50',allow_blank=False,showErrorMessage=True,error='Entre un numéro de bloc (1, 2, 3…).'); mx.add_data_validation(dvb); dvb.add('J13')
     mx.protection.sheet=True
+    BLOC="'MES 1RM'!$J$13"
     REF={'S':"'MES 1RM'!$J$7",'B':"'MES 1RM'!$J$8",'D':"'MES 1RM'!$J$9"}
 
     week_tot={}
@@ -119,7 +130,7 @@ def build(days,label,out,logo):
             d=s.cell(r,NC,'OBSERVATIONS'); 
             hr=r; r+=1; first=r; rows=[]
             for k,(typ,ex,sets,reps,pct,rpe,rest,tip) in enumerate(exs):
-                n=(sets+1 if (wi in(1,2) and typ and sets>=3) else sets) if wi<3 or sets==1 else max(1,sets+dset)
+                n=sets+1 if (wi>=1 and typ and sets>=3) else sets
                 p=round(pct+inc,3) if pct else None
                 vals={3:ex,4:n,5:reps,6:p if p else '—',8:rpe_for(rpe,wi),9:rest,10:tip}
                 bg=LIGHT if typ else GREY
@@ -131,7 +142,7 @@ def build(days,label,out,logo):
                 s.cell(r,10).font=fn(8,c=MUTED,i=True); s.cell(r,10).alignment=LFT
                 if p:
                     s.cell(r,6).number_format='0%'; s.cell(r,6).font=fn(10,True,BLUE)
-                    g=s.cell(r,7,f'=IF(ISNUMBER({REF[typ]}),ROUND({REF[typ]}*F{r}/2.5,0)*2.5,"")'); g.number_format='0.0" kg"'; g.font=fn(11,True,BLACK)
+                    g=s.cell(r,7,f'=IF(ISNUMBER({REF[typ]}),ROUND({REF[typ]}*F{r}/2.5,0)*2.5+(MAX(1,{BLOC})-1)*2.5,"")'); g.number_format='0.0" kg"'; g.font=fn(11,True,BLACK)
                 else:
                     s.cell(r,7,'au ressenti').font=fn(8,c=MUTED,i=True)
                 for col in (11,12,13):
