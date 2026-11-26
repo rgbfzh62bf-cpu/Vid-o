@@ -1,0 +1,131 @@
+<title>Programme Débutant Force</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Manrope:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Charte du site alexis-coaching.fr : une seule colonne, bandes sombres, accent bleu */
+:root{--bg:#0B1628;--surface:#12223A;--surface-2:#16305A;--ink:#FFFFFF;--muted:#A9B6C9;--line:#22385A;--accent:#5B9BEF;--accent-2:#8EC0FF;--on-accent:#0B1628;--warn:#F2C26B;
+--f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;--f-body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;--f-mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--f-body);margin:0}
+.wrap{max-width:860px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+section{padding-block:48px;border-bottom:1px solid var(--line)}
+h1,h2,h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;letter-spacing:.01em;line-height:1.05;text-wrap:balance;margin:0}
+h1{font-size:clamp(2.6rem,9vw,4.4rem);font-weight:900}
+h2{font-size:clamp(1.8rem,5vw,2.4rem);margin-bottom:20px}
+h3{font-size:1.35rem}
+p{margin:0;color:var(--muted);max-width:62ch}
+.note{font:400 .78rem/1.4 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--warn);border:1px dashed var(--warn);padding:8px 12px;border-radius:6px;margin-block:16px 0}
+.eyebrow{font:600 .8rem var(--f-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent-2)}
+.hero{display:grid;gap:18px;padding-block:56px 48px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font:400 .8rem var(--f-mono);border:1px solid var(--line);background:var(--surface);padding:6px 10px;border-radius:999px;color:var(--ink)}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);font-weight:700;text-decoration:none;padding:14px 22px;border-radius:10px}
+.btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--accent)}
+.row{display:flex;flex-wrap:wrap;gap:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px;display:grid;gap:8px;min-width:0}
+.scroll{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.92rem}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line)}
+th{font:600 .75rem var(--f-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--accent-2);background:var(--surface-2)}
+td.n{font-family:var(--f-mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+ol.steps{list-style:none;padding:0;margin:0;display:grid;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;color:var(--muted)}
+ol.steps li::before{content:counter(s);font:800 1.6rem var(--f-display);color:var(--accent)}
+.offer{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.offer .card.main{border-color:var(--accent)}
+.price{font:800 1.8rem var(--f-display);color:var(--ink)}
+.safe{background:var(--surface);border-left:3px solid var(--warn);padding:16px 18px;border-radius:0 10px 10px 0}
+footer{padding-block:32px;color:var(--muted);font-size:.85rem}
+a:focus-visible{outline:2px solid var(--accent-2);outline-offset:3px}
+</style>
+
+<div class="wrap">
+  <p class="note">Aperçu, rien n'est en ligne. Contenu du programme à remplacer par ton Excel.</p>
+
+  <section class="hero">
+    <span class="eyebrow">Programme prêt à suivre · force athlétique</span>
+    <h1>Débuter la force athlétique</h1>
+    <p>Un programme pour apprendre le squat, le développé couché et le soulevé de terre, et progresser sans te blesser. Tu le suis dans l'appli Athlyse, séance par séance.</p>
+    <div class="tags"><span>Niveau débutant</span><span>[X] semaines</span><span>Version 3 jours ou 4 jours</span><span>Paiement unique · accès illimité</span></div>
+    <div class="row"><a class="btn" href="#offre">Je veux le programme</a><a class="btn ghost" href="#contenu">Voir le contenu</a></div>
+  </section>
+
+  <section>
+    <h2>Pour qui</h2>
+    <div class="grid">
+      <div class="card"><h3>Tu débutes</h3><p>Tu n'as jamais suivi de vraie programmation, ou tu t'entraînes sans plan.</p></div>
+      <div class="card"><h3>Tu veux une base</h3><p>Apprendre les trois mouvements avec une technique propre avant de charger lourd.</p></div>
+      <div class="card"><h3>Tu veux démarrer simplement</h3><p>Tu veux une vraie programmation pour progresser, sans t'engager tout de suite dans un coaching.</p></div>
+    </div>
+  </section>
+
+  <section id="contenu">
+    <h2>Une semaine type</h2>
+    <p style="margin-bottom:16px">Exemple de présentation. Les vrais exercices, séries et charges viendront de ton fichier.</p>
+    <div class="scroll">
+      <table>
+        <thead><tr><th>Séance</th><th>Exercice</th><th>Séries × reps</th><th>Intensité</th><th>Repos</th></tr></thead>
+        <tbody>
+          <tr><td>Jour 1</td><td>Squat</td><td class="n">[X] × [X]</td><td class="n">RPE [X]</td><td class="n">[X] min</td></tr>
+          <tr><td></td><td>Développé couché</td><td class="n">[X] × [X]</td><td class="n">RPE [X]</td><td class="n">[X] min</td></tr>
+          <tr><td>Jour 2</td><td>Soulevé de terre</td><td class="n">[X] × [X]</td><td class="n">RPE [X]</td><td class="n">[X] min</td></tr>
+          <tr><td></td><td>Accessoires</td><td class="n">[X] × [X]</td><td class="n">—</td><td class="n">[X] min</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section>
+    <h2>Comment ça marche</h2>
+    <ol class="steps">
+      <li><span>Tu choisis le programme et tu reçois ton accès Athlyse.</span></li>
+      <li><span>Tu ouvres l'appli : chaque séance est prête, avec les séries, les répétitions et les temps de repos.</span></li>
+      <li><span>Tu notes tes charges à chaque séance pour suivre ta progression.</span></li>
+    </ol>
+  </section>
+
+  <section id="offre">
+    <h2>Choisis ta version</h2>
+    <p>Choisis selon le nombre de jours où tu peux t'entraîner chaque semaine.</p>
+    <div class="offer" style="margin-top:16px">
+      <div class="card">
+        <span class="eyebrow">3 séances / semaine</span>
+        <h3>Programme 3 jours</h3>
+        <div class="price">39 €</div>
+        <p>Paiement unique · accès illimité. Tu refais le programme autant de fois que tu veux.</p>
+        <a class="btn" href="#offre">Choisir 3 jours</a>
+      </div>
+      <div class="card">
+        <span class="eyebrow">4 séances / semaine</span>
+        <h3>Programme 4 jours</h3>
+        <div class="price">39 €</div>
+        <p>Paiement unique · accès illimité. Tu refais le programme autant de fois que tu veux.</p>
+        <a class="btn" href="#offre">Choisir 4 jours</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Et après ?</h2>
+    <p style="margin-bottom:16px">Ce programme te donne une base solide pour démarrer. Avec le temps, tu progresses, puis tu peux commencer à stagner ou bloquer sur la technique. C'est souvent le bon moment pour passer à un suivi personnalisé.</p>
+    <div class="offer">
+      <div class="card">
+        <span class="eyebrow">Avec moi</span>
+        <h3>Coaching personnalisé</h3>
+        <p>Un programme construit pour toi, adapté à ton niveau, ton emploi du temps et ta santé, avec corrections de technique.</p>
+        <a class="btn ghost" href="#offre">Découvrir le coaching</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="safe">
+      <h3 style="margin-bottom:8px">À lire avant de commencer</h3>
+      <p>Ce programme est général : il n'est pas fait pour ta situation précise. Adapte les charges à ton niveau. En cas de douleur, de blessure ou de problème de santé, demande l'avis d'un professionnel de santé avant de commencer. Si tu as besoin d'un plan adapté, le coaching est fait pour ça.</p>
+    </div>
+  </section>
+
+  <footer>Alexis · coach sportif · alexis-coaching.fr</footer>
+</div>

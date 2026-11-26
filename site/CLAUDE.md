@@ -54,3 +54,9 @@ Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-
 - Contenu : maquettes téléphone Athlyse dans les formules, boutons App Store + Google Play, gras harmonisé, sports en étiquettes, règles /compact. Page liens : vrais logos (Apple, Google Play, Athlyse, Instagram, Mail, appel), formules sans prix (« 2 formules · sans engagement »), photo avatar.jpg = tête entière découpée dans coach.jpg.
 - Lien Google Play d'Athlyse ajouté (https://play.google.com/store/apps/details?id=com.athlyseapp). Attendre les autres retours du créateur d'Athlyse (call avec son pote), puis tout envoyer en UN push au « go ».
 - Netlify : environ 925 crédits au dernier relevé ; passage à l'offre gratuite le 24/12/2026.
+
+### Projet « Programme débutant force athlétique » (brouillon, pas sur le site)
+- Aperçu : brouillons/apercu-programme.html → https://claude.ai/artifact/XedtcFqK8iEr3tjkrsaN8t
+- 2 versions 3 jours / 4 jours, 39 € chacune, pas de pack. Afficher « Paiement unique · accès illimité », ne jamais parler d'abonnement ni de « à vie ».
+- Public : débuter sans s'engager dans un coaching (ne jamais parler d'argent), puis coaching quand on stagne.
+- À faire : contenu depuis le programme d'Alexis (base perso, pas une copie), format d'import Athlyse, CGV (renonciation rétractation contenu numérique).
