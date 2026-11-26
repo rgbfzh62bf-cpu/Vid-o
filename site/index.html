@@ -349,12 +349,17 @@ section{padding-block:40px}
 .steps{gap:14px}
 }
 
+/* Photo du hero réduite (demande d'Alexis) */
+@media (min-width:861px){.hero .photo.hero-photo{max-width:400px;width:100%;justify-self:end}}
+@media (max-width:360px){.hero .ctas .btn{font-size:.8rem;padding-inline:6px}.hero .ctas .btn .arr{margin-left:2px}}
+@media (max-width:860px){.hero .wrap{grid-template-columns:minmax(0,1fr)}.hero .photo.hero-photo{max-width:420px}.hero-photo img{object-position:50% 6%}}
+
 /* Retouches finales : moins de scroll, même contenu */
 .stats .wrap{padding-block:40px;gap:20px}.stat b{font-size:clamp(2.6rem,5.5vw,4rem)}
 @media (max-width:820px){
 .trust{gap:6px;margin-top:16px}.trust li{font-size:.74rem;padding:6px 11px}
 .hero .ctas{flex-wrap:nowrap;gap:10px;margin-top:22px}.hero .ctas .btn{flex:1 1 0;justify-content:center;padding-inline:10px;font-size:.88rem;white-space:nowrap}
-.hero .photo.hero-photo{aspect-ratio:1/1}
+.hero .photo.hero-photo{aspect-ratio:5/4}
 
 }
 
