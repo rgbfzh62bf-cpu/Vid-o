@@ -61,7 +61,7 @@ Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-
 ### Projet « Fondations · force athlétique » (brouillon, pas sur le site)
 - RÈGLE : on travaille dessus, RIEN sur le site. Quand Alexis dit que tout est bon, LUI DEMANDER s’il veut le mettre en ligne ou non.
 - Nom validé : « Fondations » (jamais le mot « débutant »). Aperçu : brouillons/apercu-programme.html → https://claude.ai/artifact/XedtcFqK8iEr3tjkrsaN8t
-- 2 versions 3 jours / 4 jours, 39 € chacune, pas de pack. Afficher « Paiement unique · accès illimité », ne jamais parler d'abonnement ni de « à vie ».
+- 2 versions 3 jours / 4 jours, 29 € chacune (prix changé par Alexis le 26/11, avant 39 €), pas de pack. Alexis veut une rubrique de vente sur le site. Afficher « Paiement unique · accès illimité », ne jamais parler d'abonnement ni de « à vie ».
 - Public : débuter sans s'engager dans un coaching (ne jamais parler d'argent), puis coaching quand on stagne.
 - Livraison : fichier Google Sheets / .xlsx (pas Athlyse). Build : brouillons/build_v2.py + build_prog.py → Fondations-force-athletique-{3,4}-jours.xlsx. 1RM saisi une fois, 4 semaines, puis retour S1 avec +2,5 kg par bloc.
 - Ne jamais dire publiquement que le programme s'inspire d'autres coachs. Ne jamais modifier les fichiers Drive partagés par d'autres.
