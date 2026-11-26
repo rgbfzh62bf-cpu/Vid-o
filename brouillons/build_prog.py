@@ -23,8 +23,8 @@ P4={
   ('','Tirage vertical poulie',3,'10-12',None,'8','2 min','Tire vers le haut de la poitrine, buste fixe.'),
   ('','Élévations latérales haltères',3,'12-15',None,'8','1-2 min','Coudes légèrement fléchis, monte à hauteur d’épaules.')],
  'JOUR 2 · SOULEVÉ DE TERRE':[
-  ('D','Soulevé de terre',4,3,.70,'6','3-4 min','Remets-toi en place à chaque répétition. Dos neutre.'),
   ('B','Développé couché pause 3 temps',3,3,.65,'6','3 min','Pause 3 s sur la poitrine, barre immobile.'),
+  ('D','Soulevé de terre',4,3,.70,'6','3-4 min','Remets-toi en place à chaque répétition. Dos neutre.'),
   ('D','Soulevé de terre jambes tendues (RDL)',3,8,.45,'6','2-3 min','Sans ceinture. Descends en reculant les hanches, dos plat.'),
   ('','Leg curl assis ou allongé',3,'10-15',None,'8','1-2 min','Contrôle la descente.'),
   ('','Gainage planche',3,'30-45 s',None,'—','1 min','Bassin aligné, respire normalement.')],
@@ -47,21 +47,20 @@ P3={
  'JOUR 1 · SQUAT & DÉVELOPPÉ COUCHÉ':[
   ('S','Squat',4,5,.67,'6','3-4 min','Même descente à chaque répétition.'),
   ('B','Développé couché',4,6,.67,'6-7','3 min','Fesses posées, omoplates serrées, barre touche la poitrine.'),
+  ('','Tirage vertical poulie',3,'10-12',None,'8','2 min','Tire vers le haut de la poitrine, buste fixe.'),
+  ('','Leg curl assis ou allongé',3,'10-15',None,'8','1-2 min','Contrôle la descente.')],
+ 'JOUR 2 · SBD LÉGER':[
+  ('S','Squat pause 2 temps',3,4,.60,'6','3 min','Pause 2 s en bas, gainage serré, sans te relâcher.'),
+  ('B','Développé couché pause 3 temps',4,4,.62,'6','3 min','Pause 3 s sur la poitrine, barre immobile.'),
   ('D','Soulevé de terre jambes tendues (RDL)',3,8,.45,'6','2-3 min','Sans ceinture. Descends en reculant les hanches, dos plat.'),
-  ('','Tirage vertical poulie',3,'10-12',None,'8','2 min','Tire vers le haut de la poitrine, buste fixe.')],
- 'JOUR 2 · SOULEVÉ DE TERRE':[
-  ('D','Soulevé de terre',4,3,.70,'6','3-4 min','Remets-toi en place à chaque répétition. Dos neutre.'),
-  ('B','Développé couché pause 3 temps',4,3,.65,'6','3 min','Pause 3 s sur la poitrine, barre immobile.'),
-  ('S','Squat pause 2 temps',3,3,.62,'6','3 min','Pause 2 s en bas, gainage serré.'),
-  ('','Leg curl assis ou allongé',3,'10-15',None,'8','1-2 min','Contrôle la descente.'),
-  ('','Gainage planche',3,'30-45 s',None,'—','1 min','Bassin aligné, respire normalement.')],
- 'JOUR 3 · SÉRIE PRINCIPALE + SÉRIES ALLÉGÉES':[
-  ('S','Squat · série principale',1,3,.75,'7','4 min','Monte en charge jusqu’à cette série.'),
-  ('S','Squat · séries allégées',3,3,.70,'6','3 min','Même technique que la série principale.'),
-  ('B','Développé couché · série principale',1,3,.77,'7','4 min','Monte en charge jusqu’à cette série.'),
-  ('B','Développé couché · séries allégées',3,5,.68,'6','3 min',''),
-  ('','Développé militaire barre debout',3,'6-8',None,'8','2 min','Fessiers serrés, ne cambre pas.'),
   ('','Rowing haltère un bras',3,'10-12',None,'8','1-2 min','Tire le coude vers la hanche.'),
+  ('','Gainage planche',3,'30-45 s',None,'—','1 min','Bassin aligné, respire normalement.')],
+ 'JOUR 3 · SBD LOURD':[
+  ('S','Squat · série principale',1,3,.75,'7','4 min','Monte en charge jusqu’à cette série.'),
+  ('S','Squat · séries allégées',2,3,.70,'6','3 min','Même technique que la série principale.'),
+  ('B','Développé couché · série principale',1,3,.77,'7','4 min','Monte en charge jusqu’à cette série.'),
+  ('B','Développé couché · séries allégées',3,4,.70,'6','3 min','Même trajectoire, même pause sur la poitrine.'),
+  ('D','Soulevé de terre',4,3,.67,'7','3-4 min','Remets-toi en place à chaque répétition. Dos neutre.'),
   ('','Extension triceps poulie au-dessus de la tête',3,'12',None,'8','1-2 min','Coudes fixes.')],
 }
 WEEKS=[('SEMAINE 1','Prise en main',0.0,0),('SEMAINE 2','Progression',.025,0),('SEMAINE 3','Montée en charge',.05,0),('SEMAINE 4','Semaine la plus lourde',.075,0)]
