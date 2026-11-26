@@ -24,7 +24,7 @@ def paint(ws,r1,r2,c1,c2,color):
         for c in range(c1,c2+1): ws.cell(r,c).fill=fl(color)
 
 # colonnes semaine
-COLS=[('',2),('JOUR',5),('EXERCICE',26),('SÉRIES',8),('RÉPS',8),('% 1RM',8),('CHARGE\nCONSEILLÉE',12),('RPE\nCIBLE',8),('REPOS',9),('CONSIGNE',34),('CHARGE\nFAITE (kg)',12),('RPE\nFAIT',8),('OBSERVATIONS',30),('',2),('t',1)]
+COLS=[('',2),('JOUR',5),('EXERCICE',29),('SÉRIES',8),('RÉPS',8),('% 1RM',8),('CHARGE\nCONSEILLÉE',12),('RPE\nCIBLE',8),('REPOS',9),('CONSIGNE',34),('CHARGE\nFAITE (kg)',12),('RPE\nFAIT',8),('OBSERVATIONS',30),('',2),('t',1)]
 NC=13
 REPS_NUM='IFERROR(VALUE(LEFT(E{r},FIND("-",E{r}&"-")-1)),0)'
 
@@ -155,6 +155,33 @@ def build(days,label,out,logo):
       ('S·B·D','Par mouvement','À la fin de chaque séance : ton tonnage au squat, au développé couché et au soulevé de terre (variantes comprises). Les exercices de renfo ne comptent pas : on suit leur charge, pas leur tonnage.'),
       ('prévu','Tonnage prévu','Calculé avec tes charges conseillées.'),
       ('réalisé','Tonnage réalisé','Calculé avec les charges que tu notes.')]),
+     ('TA SÉANCE, ÉTAPE PAR ÉTAPE',[
+      ('1','Échauffement général','5 à 10 minutes pour monter en température : vélo, rameur ou marche rapide, puis quelques mouvements de mobilité (hanches, épaules, chevilles).'),
+      ('2','Montée en charge','Avant chaque mouvement principal, monte par paliers : barre à vide, puis 4 ou 5 paliers où tu ajoutes du poids et fais de moins en moins de répétitions. Exemple pour 80 kg : barre ×10, 40 kg ×5, 55 kg ×3, 65 kg ×2, 75 kg ×1. Ces séries ne comptent pas dans le tableau.'),
+      ('3','Séries de travail','Fais les séries et les répétitions écrites, à la charge conseillée. Respecte le temps de repos : il fait partie du programme.'),
+      ('4','Renforcement','Les exercices sans % 1RM se font au ressenti : choisis une charge qui te met au RPE 8 sur les répétitions demandées.'),
+      ('5','Note ta séance','Remplis CHARGE FAITE et RPE FAIT après chaque exercice. Une remarque (douleur, fatigue, technique) ? Écris-la dans OBSERVATIONS.')]),
+     ('ORGANISER TA SEMAINE',[
+      ('3 j','Programme 3 jours','Exemple : lundi, mercredi, vendredi. Garde au moins un jour de repos entre deux séances.'),
+      ('4 j','Programme 4 jours','Exemple : lundi, mardi, jeudi, vendredi. Évite d’enchaîner plus de deux jours d’affilée.'),
+      ('↻','Toujours dans l’ordre','Fais les séances dans l’ordre : jour 1, jour 2, jour 3… Tu as raté une séance ? Reprends là où tu t’es arrêté, sans en faire deux le même jour.')]),
+     ('LEXIQUE',[
+      ('1RM','Charge maximale','La charge la plus lourde que tu soulèves sur 1 seule répétition, avec une technique propre.'),
+      ('SÉRIE','Série','Un bloc de répétitions enchaînées sans pause. 5 × 5 = 5 séries de 5 répétitions.'),
+      ('RÉPS','Répétitions','Le nombre de fois où tu fais le mouvement dans une série. 10-12 = entre 10 et 12.'),
+      ('% 1RM','Pourcentage du 1RM','La charge de la série par rapport à ton 1RM. 70 % d’un 1RM de 100 kg = 70 kg.'),
+      ('RPE','Ressenti sur 10','La difficulté que tu ressens sur la série, de 1 à 10 (voir plus haut).'),
+      ('ct','Count','« Compte » en anglais. Pause 2 ct = pause de 2 secondes.'),
+      ('S·B·D','Squat · Bench · Deadlift','Les trois mouvements de la force athlétique : squat, développé couché, soulevé de terre.'),
+      ('RENFO','Renforcement','Les exercices qui complètent les trois mouvements : dos, jambes, épaules, bras, gainage.'),
+      ('VAR.','Variante','Une version modifiée d’un mouvement (avec pause, sans les pieds…). Toutes sont expliquées dans l’onglet VARIANTES.')]),
+     ('QUESTIONS FRÉQUENTES',[
+      ('?','La charge est trop lourde','Ton RPE fait dépasse le RPE cible de 2 points ou plus, ou ta technique se dégrade ? Baisse de 2,5 à 5 kg sur les séries suivantes et note-le dans OBSERVATIONS.'),
+      ('?','La charge est trop légère','Garde la charge conseillée. La progression est déjà prévue de semaine en semaine : pas besoin d’en rajouter.'),
+      ('?','Je ne connais pas mon 1RM','Entre une estimation prudente : mieux vaut commencer un peu trop léger que trop lourd. Tu ajusteras au bloc suivant.'),
+      ('?','Il me manque une machine','Pour le renfo, prends un exercice qui travaille la même zone (ex. : rowing haltère au lieu de rowing poulie). Les trois mouvements S·B·D, eux, ne se remplacent pas.'),
+      ('?','Les charges tombent sur 2,5 kg','Normal : elles sont arrondies au 2,5 kg le plus proche pour correspondre aux disques de la salle.'),
+      ('?','J’ai mal pendant un exercice','Arrête l’exercice. Ne force pas sur une douleur. Si elle persiste, demande l’avis d’un professionnel de santé avant de reprendre, et adapte les charges.')]),
      ('À LIRE AVANT DE COMMENCER',[
       ('!','Santé','Ce programme est général : il n’est pas fait pour ta situation précise. En cas de douleur, de blessure ou de problème de santé, demande l’avis d’un professionnel de santé avant de commencer, et adapte les charges.'),
       ('→','Aller plus loin','Tu stagnes ou tu bloques sur la technique ? Un suivi personnalisé peut t’aider : alexis-coaching.fr')]),
@@ -167,7 +194,7 @@ def build(days,label,out,logo):
             ws.cell(r,2,a).font=Font(name=F,size=14,bold=True,color=BLUE); ws.cell(r,2).alignment=C
             ws.cell(r,3,b).font=fn(10,True,BLACK); ws.cell(r,3).alignment=LFT
             ws.merge_cells(start_row=r,start_column=4,end_row=r,end_column=13); ws.cell(r,4,c).font=fn(10); ws.cell(r,4).alignment=LFT
-            paint(ws,r,r,2,13,PALE if k%2==0 else WHITE); ws.row_dimensions[r].height=max(26,14*(-(-len(c)//150))+12); r+=1
+            paint(ws,r,r,2,13,PALE if k%2==0 else WHITE); ws.row_dimensions[r].height=max(26,14*max(-(-len(c)//150),-(-len(b)//28))+12); r+=1
         r+=1
     ws.protection.sheet=True
 
@@ -268,8 +295,6 @@ def build(days,label,out,logo):
                 s.cell(r,15,f'=D{r}*{REPS_NUM.format(r=r)}' if 'Gainage' not in ex else 0)
                 s.row_dimensions[r].height=32; rows.append((r,typ,ex)); r+=1
             last=r-1
-            s.merge_cells(start_row=hr,start_column=2,end_row=last,end_column=2)
-            jc=s.cell(hr,2,jour); jc.font=fn(11,True,WHITE); jc.alignment=Alignment(horizontal='center',vertical='center',text_rotation=90); paint(s,hr,last,2,2,BLACK)
             # pied de séance
             main=[x for x,t,_ in rows if t]
             prev='+'.join(f'IF(ISNUMBER(G{x}),D{x}*E{x}*G{x},0)' for x in main) or '0'
@@ -279,26 +304,28 @@ def build(days,label,out,logo):
                 lr=[x for x,t,_ in rows if t==lt]
                 if not lr: continue
                 s.row_dimensions[r].height=22
-                s.merge_cells(start_row=r,start_column=2,end_row=r,end_column=3); s.cell(r,2,f'TONNAGE {lname}').font=fn(9,True,BLACK); s.cell(r,2).alignment=LFT
-                s.merge_cells(start_row=r,start_column=4,end_row=r,end_column=6); s.cell(r,4,'Prévu').alignment=Alignment(horizontal='right',vertical='center')
+                s.cell(r,3,lname).font=fn(9,True,BLACK); s.cell(r,3).alignment=LFT
+                s.merge_cells(start_row=r,start_column=4,end_row=r,end_column=6); s.cell(r,4,'Tonnage prévu').alignment=Alignment(horizontal='right',vertical='center')
                 s.cell(r,7,'='+'+'.join(f'IF(ISNUMBER(G{x}),D{x}*E{x}*G{x},0)' for x in lr)).number_format='# ##0" kg"'
-                s.merge_cells(start_row=r,start_column=8,end_row=r,end_column=10); s.cell(r,8,'Réalisé').alignment=Alignment(horizontal='right',vertical='center')
+                s.merge_cells(start_row=r,start_column=8,end_row=r,end_column=10); s.cell(r,8,'Tonnage réalisé').alignment=Alignment(horizontal='right',vertical='center')
                 s.cell(r,11,'='+'+'.join(f'IF(ISNUMBER(K{x}),O{x}*K{x},0)' for x in lr)).number_format='# ##0" kg"'
-                for col in range(2,NC+1):
+                for col in range(3,NC+1):
                     c=s.cell(r,col); c.fill=fl(LIGHT); c.border=BOX
-                    if col!=2: c.font=fn(10 if col in(7,11) else 8,col in(7,11),BLACK if col in(7,11) else MUTED)
+                    if col!=3: c.font=fn(10 if col in(7,11) else 8,col in(7,11),BLACK if col in(7,11) else MUTED)
                     if col in(7,11): c.alignment=C
                 r+=1
             s.row_dimensions[r].height=24
-            s.merge_cells(start_row=r,start_column=2,end_row=r,end_column=3); s.cell(r,2,'TOTAL SÉANCE').font=fn(9,True,WHITE); s.cell(r,2).alignment=LFT
+            s.cell(r,3,'TOTAL SÉANCE').font=fn(9,True,WHITE); s.cell(r,3).alignment=LFT
             s.merge_cells(start_row=r,start_column=4,end_row=r,end_column=6); s.cell(r,4,'Tonnage prévu').alignment=Alignment(horizontal='right',vertical='center')
             s.cell(r,7,'='+prev).number_format='# ##0" kg"'
             s.merge_cells(start_row=r,start_column=8,end_row=r,end_column=10); s.cell(r,8,'Tonnage réalisé').alignment=Alignment(horizontal='right',vertical='center')
             s.cell(r,11,'='+real).number_format='# ##0" kg"'
-            for col in range(2,NC+1):
+            for col in range(3,NC+1):
                 c=s.cell(r,col); c.fill=fl(BLUE); 
-                if col!=2: c.font=fn(10 if col in(7,11) else 8,col in(7,11),WHITE)
+                if col!=3: c.font=fn(10 if col in(7,11) else 8,col in(7,11),WHITE)
                 if col in(7,11): c.alignment=C
+            s.merge_cells(start_row=hr,start_column=2,end_row=r,end_column=2)
+            jc=s.cell(hr,2,jour); jc.font=fn(11,True,WHITE); jc.alignment=Alignment(horizontal='center',vertical='center',text_rotation=90); paint(s,hr,r,2,2,BLACK)
             day_rows.append(r); r+=2
         # tableau de bord
         tp='+'.join(f'G{x}' for x in day_rows); tr='+'.join(f'K{x}' for x in day_rows)
@@ -359,6 +386,9 @@ def build(days,label,out,logo):
         w.page_setup.orientation='landscape'; w.sheet_properties.pageSetUpPr.fitToPage=True; w.page_setup.fitToWidth=1; w.page_setup.fitToHeight=0
         w.sheet_properties.tabColor=BLACK if w.title in('COMMENCER ICI','MES 1RM','VARIANTES','BILAN') else BLUE
     apply_theme(wb)
+    for w in wb.worksheets:
+        if w.title.startswith('SEMAINE'):
+            for rr in range(1,w.max_row+41): w.cell(rr,15).fill=fl(NAVY); w.cell(rr,15).font=Font(color=NAVY)
     wb.save(out)
 
 logo,od=sys.argv[1],sys.argv[2]
