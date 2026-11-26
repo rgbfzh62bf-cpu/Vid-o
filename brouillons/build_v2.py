@@ -69,7 +69,8 @@ def apply_theme(wb):
                 for c in range(1,NC+2):
                     cell=ws.cell(r,c); cell.fill=fl(NAVY); f=cell.font
                     cell.font=Font(name=f.name,size=f.sz,bold=f.b,italic=f.i,color=MUT if r==3 else WHITE)
-            for c in range(10,14): ws.cell(2,c).fill=fl(SURF2); ws.cell(3,c).fill=fl(SURF2)
+            ta,tb=(5,6) if ws.title=='MES 1RM' else (10,13)
+            for c in range(ta,tb+1): ws.cell(2,c).fill=fl(SURF2); ws.cell(3,c).fill=fl(SURF2)
             if ws.title.startswith('SEMAINE'):
                 for r in (6,7):
                     for c in range(2,NC+1):
@@ -81,15 +82,16 @@ def apply_theme(wb):
                     cell=ws.cell(r,c)
                     if _rgb(cell.fill.fgColor)==WHITE and cell.value is None and cell.protection.locked is not False and not (cell.border and cell.border.left and cell.border.left.style): cell.fill=fl(NAVY)
 
-def header(ws,title,sub,logo):
+def header(ws,title,sub,logo,tc=(10,13)):
+    a,b=tc
     for r in range(1,5): paint(ws,r,r,1,NC+1,WHITE)
     ws.row_dimensions[1].height=10; ws.row_dimensions[2].height=42; ws.row_dimensions[3].height=26; ws.row_dimensions[4].height=10
     im=Image(logo); im.width,im.height=110,52; ws.add_image(im,'B2')
-    ws.merge_cells('C2:I2'); ws['C2']='FONDATIONS · FORCE ATHLÉTIQUE'; ws.column_dimensions['B'].width=max(ws.column_dimensions['B'].width or 0,17); ws['C2'].font=Font(name=F,size=13,bold=True,color=BLACK); ws['C2'].alignment=Alignment(vertical='bottom',indent=1)
-    ws.merge_cells('C3:I3'); ws['C3']=sub; ws['C3'].font=fn(10,c=MUTED); ws['C3'].alignment=Alignment(vertical='top',indent=1)
-    ws.merge_cells('J2:M3'); ws['J2']=title; ws['J2'].font=Font(name=F,size=22,bold=True,color=WHITE); ws['J2'].alignment=C
-    paint(ws,2,3,10,13,BLACK)
-    for c in range(2,NC+1): ws.cell(4,c).border=Border(bottom=Side(style='thick',color=BLUE))
+    ws.merge_cells(start_row=2,start_column=3,end_row=2,end_column=a-1); ws['C2']='FONDATIONS · FORCE ATHLÉTIQUE'; ws.column_dimensions['B'].width=max(ws.column_dimensions['B'].width or 0,17); ws['C2'].font=Font(name=F,size=13,bold=True,color=BLACK); ws['C2'].alignment=Alignment(vertical='bottom',indent=1)
+    ws.merge_cells(start_row=3,start_column=3,end_row=3,end_column=a-1); ws['C3']=sub; ws['C3'].font=fn(10,c=MUTED); ws['C3'].alignment=Alignment(vertical='top',indent=1)
+    ws.merge_cells(start_row=2,start_column=a,end_row=3,end_column=b); ws.cell(2,a,title).font=Font(name=F,size=22,bold=True,color=WHITE); ws.cell(2,a).alignment=C
+    paint(ws,2,3,a,b,BLACK)
+    for c in range(2,b+1): ws.cell(4,c).border=Border(bottom=Side(style='thick',color=BLUE))
 
 def build(days,label,out,logo):
     wb=openpyxl.Workbook()
@@ -136,27 +138,27 @@ def build(days,label,out,logo):
 
     # ===== MES 1RM =====
     mx=wb.create_sheet('MES 1RM'); mx.sheet_view.showGridLines=False
-    for c,w in zip('ABCDEFGHIJKLM',[2,13,30,8,8,8,12,8,9,34,12,8,30]): mx.column_dimensions[c].width=w
-    header(mx,'MES 1RM','Cases à bord bleu = à remplir',logo)
-    for h,(a,b) in [('MOUVEMENT',(2,3)),('MON 1RM (kg)',(4,10))]:
+    for c,w in zip('ABCDEFG',[2,17,24,24,13,13,2]): mx.column_dimensions[c].width=w
+    header(mx,'MES 1RM','Cases à bord bleu = à remplir',logo,tc=(5,6))
+    for h,(a,b) in [('MOUVEMENT',(2,3)),('MON 1RM (kg)',(4,6))]:
         mx.merge_cells(start_row=6,start_column=a,end_row=6,end_column=b)
         mx.cell(6,a,h).font=fn(9,True,WHITE); mx.cell(6,a).alignment=C
-    paint(mx,6,6,2,10,BLACK); mx.row_dimensions[6].height=28
+    paint(mx,6,6,2,6,BLACK); mx.row_dimensions[6].height=28
     for i,name in enumerate(['SQUAT','DÉVELOPPÉ COUCHÉ','SOULEVÉ DE TERRE']):
         rr=7+i; mx.row_dimensions[rr].height=34
         mx.merge_cells(start_row=rr,start_column=2,end_row=rr,end_column=3); mx.cell(rr,2,name).font=fn(12,True,BLACK); mx.cell(rr,2).alignment=LFT; paint(mx,rr,rr,2,3,LIGHT)
-        mx.merge_cells(start_row=rr,start_column=4,end_row=rr,end_column=10)
-        for cc in range(4,11): mx.cell(rr,cc).border=INBOX; mx.cell(rr,cc).protection=UNL
+        mx.merge_cells(start_row=rr,start_column=4,end_row=rr,end_column=6)
+        for cc in range(4,7): mx.cell(rr,cc).border=INBOX; mx.cell(rr,cc).protection=UNL
         mx.cell(rr,4).font=fn(16,True,BLUE); mx.cell(rr,4).alignment=C; mx.cell(rr,4).number_format='0.0" kg"'
-    mx.merge_cells('B11:M11'); mx['B11']='Ton 1RM = la charge maximale que tu soulèves sur 1 répétition, avec une technique propre.'
-    mx['B11'].font=fn(9,c=MUTED,i=True); mx['B11'].alignment=LFT
+    mx.merge_cells('B11:F11'); mx.row_dimensions[11].height=28; mx['B11']='Ton 1RM = la charge maximale que tu soulèves sur 1 répétition, avec une technique propre.'
+    mx['B11'].font=fn(9,c=MUTED,i=True); mx['B11'].alignment=Alignment(vertical='center',wrap_text=True)
     mx.row_dimensions[13].height=34
     mx.merge_cells('B13:C13'); mx['B13']='NUMÉRO DU BLOC'; mx['B13'].font=fn(12,True,BLACK); mx['B13'].alignment=LFT; paint(mx,13,13,2,3,LIGHT)
-    mx.merge_cells('D13:J13')
-    for cc in range(4,11): mx.cell(13,cc).border=INBOX
+    mx.merge_cells('D13:F13')
+    for cc in range(4,7): mx.cell(13,cc).border=INBOX
     bc=mx['D13']; bc.value=1; bc.border=INBOX; bc.protection=UNL; bc.font=fn(14,True); bc.alignment=C
-    mx.merge_cells('B14:M14'); mx['B14']='1 la première fois, puis 2, 3… Garde les mêmes 1RM : change seulement le numéro du bloc. Chaque bloc ajoute 2,5 kg aux charges conseillées.'
-    mx['B14'].font=fn(9,c=MUTED,i=True); mx['B14'].alignment=LFT
+    mx.merge_cells('B14:F14'); mx.row_dimensions[14].height=40; mx['B14']='1 la première fois, puis 2, 3… Garde les mêmes 1RM : change seulement le numéro du bloc. Chaque bloc ajoute 2,5 kg aux charges conseillées.'
+    mx['B14'].font=fn(9,c=MUTED,i=True); mx['B14'].alignment=Alignment(vertical='top',wrap_text=True)
     dvb=DataValidation(type='whole',operator='between',formula1='1',formula2='50',allow_blank=False,showErrorMessage=True,error='Entre un numéro de bloc (1, 2, 3…).'); mx.add_data_validation(dvb); dvb.add('D13')
     mx.protection.sheet=True
     BLOC="'MES 1RM'!$D$13"

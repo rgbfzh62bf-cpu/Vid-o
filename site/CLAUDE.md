@@ -62,9 +62,9 @@ Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-
 - Public : débuter sans s'engager dans un coaching (ne jamais parler d'argent), puis coaching quand on stagne.
 - Livraison : fichier Google Sheets / .xlsx (pas Athlyse). Build : brouillons/build_v2.py + build_prog.py → Fondations-force-athletique-{3,4}-jours.xlsx. 1RM saisi une fois, 4 semaines, puis retour S1 avec +2,5 kg par bloc.
 - Ne jamais dire publiquement que le programme s'inspire d'autres coachs. Ne jamais modifier les fichiers Drive partagés par d'autres.
-- Google Sheets natifs (Drive d’Alexis, privés) : 3 j https://docs.google.com/spreadsheets/d/1k6UtVsSYO3ejT9EA1_qv2XBna4VxZWCRjKQdrZUtudA/edit · 4 j https://docs.google.com/spreadsheets/d/13JWOwt1ChJ0PurevqwBnqnvDBYATJgH7YgKKDlFujLY/edit (créés depuis les xlsx ; lien client = remplacer /edit par /copy).
+- Google Sheets natifs (Drive d’Alexis, privés) : 3 j https://docs.google.com/spreadsheets/d/1bHN3ErxE5vob-VWiveqreDhQpAc2ociYLpjiXIyLgYY/edit · 4 j https://docs.google.com/spreadsheets/d/1Gf2h-FYvHAwESW2aoztySyFyjY5TMWjQB9rftgYTQN8/edit (créés depuis les xlsx ; lien client = remplacer /edit par /copy).
 - RÈGLE Drive : à chaque nouvelle version d’un Sheets Fondations, mettre soi-même l’ancienne à la corbeille (accord d’Alexis). Ne jamais toucher aux fichiers partagés par d’autres.
 - Tonnage : récap par mouvement (S/B/D, variantes comprises) en fin de séance ; renfo hors tonnage. Pas de compteur de répétitions (seul le tonnage compte).
-- Tableur : thème C (fond bleu nuit autour, tableaux clairs, en-tête et résumé bleu nuit, accent bleu). THEME=B = fond blanc, en-tête bleu nuit.
+- Tableur : MES 1RM resserré (colonnes A:G, plus étroit). Thème C (fond bleu nuit autour, tableaux clairs, en-tête et résumé bleu nuit, accent bleu). THEME=B = fond blanc, en-tête bleu nuit.
 - CGV programme : brouillon brouillons/cgv-programme.html (à intégrer au lancement, [PLATEFORME] à remplacer).
 - À faire : choix Payhip ou Gumroad, série en plus en semaine 4 (garder ou non), vérifier URSSAF (activité vente de contenu numérique) et CM2C.
