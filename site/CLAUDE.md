@@ -30,6 +30,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - E-mail pro : alexis.bloquecoaching@gmail.com .
 
 ## Design
+- DA D’ALEXIS (26/11, il se dit « très maniaque ») : TOUT doit être carré, rangé, aligné au pixel. Blocs côte à côte = même hauteur, bords haut et bas alignés (ex. onglets/légende du téléphone alignés sur le haut de la 1re carte et le bas de la dernière). Changer d’onglet ou de version ne doit jamais faire bouger la page (hauteurs fixes). Vérifier par mesure (getBoundingClientRect) sur 320/375/390/430/600/768/1024/1440 avant de montrer. Agrandir un bloc est autorisé pour aligner.
 - RÈGLE D’ALEXIS (26/11) : le site doit être fait pour ordinateur, tablette ET téléphone, avec RIEN qui change d’une version à l’autre : même contenu, mêmes textes, mêmes boutons, mêmes infos partout (jamais de contenu caché ou raccourci sur une taille d’écran). Seule la disposition s’adapte à la largeur. Toujours vérifier les 3 (téléphone 320-430 px, tablette 768 et 1024 px, ordinateur 1440 px).
 - Gras : uniquement pour les titres (ex. intitulés de la liste « L’appli », noms de sports). Jamais une ligne isolée en gras au milieu d’une liste ou d’un texte.
 - PHOTOS : à CHAQUE photo reçue (site, vidéo, autre), la recadrer soi-même et vérifier le rendu sur téléphone ET ordinateur avant de proposer.

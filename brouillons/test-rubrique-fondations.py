@@ -123,6 +123,31 @@ CSS = """
 .prog-shot figcaption{font-size:.6rem;line-height:1.3}
 }
 @media (min-width:600px) and (max-width:820px){.prog-grid{grid-template-columns:minmax(0,1fr) 250px;gap:0 32px}.prog-row{padding:16px}.prog-row h3{font-size:1.5rem}.prog-row .muted{font-size:.88rem}.prog-buy .price{font-size:2rem}.prog-buy .btn{padding:9px 18px;font-size:.9rem}.prog-shot img{border-width:8px;border-radius:36px}.prog-shot figcaption{font-size:.72rem}}
+
+/* Alignement strict : cartes et téléphone partagent exactement la même hauteur */
+.prog-grid{grid-template-columns:minmax(0,1fr) auto;align-items:stretch;gap:28px 40px}
+.prog-cards{grid-row:1;grid-column:1;display:grid;grid-template-rows:1fr 1fr;gap:16px}
+.prog-shot{grid-row:1;grid-column:2;align-content:space-between;justify-items:center;gap:12px}
+.prog-shot img{width:270px}
+
+.prog-row{flex-direction:column;align-items:stretch;justify-content:space-between;gap:16px;padding:24px}
+.prog-row h3{font-size:2rem}
+.prog-buy{display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.prog-buy .price{display:grid;justify-items:start;font-size:2.8rem}.prog-buy .price small{text-align:left}
+.prog-buy .btn{width:auto;padding:12px 28px}
+.prog-grid{grid-template-rows:1fr auto}
+.prog-shot{grid-row:1/3}
+.prog-more{grid-row:2;grid-column:1;display:grid;grid-template-columns:1fr;gap:14px;align-content:end}
+.prog-row{padding:22px 24px}
+@media (max-width:820px){
+.prog-grid{grid-template-columns:minmax(0,1fr) minmax(0,40%);gap:0 14px}
+.prog-cards{gap:10px}
+.prog-shot img{width:100%}
+.prog-grid{grid-template-rows:auto auto}.prog-shot{grid-row:1}.prog-more{grid-column:1/-1;margin-top:22px;gap:14px}
+.prog-row{padding:12px;gap:8px}.prog-row h3{font-size:1.2rem}
+.prog-buy{display:grid;justify-items:stretch;gap:6px}.prog-buy .price{font-size:1.6rem}.prog-buy .btn{width:100%;padding:8px 12px}
+}
+@media (min-width:600px) and (max-width:820px){.prog-grid{grid-template-columns:minmax(0,1fr) 240px;gap:0 24px}.prog-shot img{width:240px;border-width:8px;border-radius:36px}.prog-row{padding:20px;gap:10px}.prog-row h3{font-size:1.6rem}.prog-row .muted{font-size:.9rem}.prog-buy{display:flex;align-items:flex-end;justify-content:space-between}.prog-buy .price{font-size:2.4rem}.prog-buy .btn{width:auto;padding:10px 22px;font-size:.9rem}.prog-tabs.days{grid-template-columns:repeat(4,auto);width:auto;gap:4px}.prog-tabs.days button{font-size:.7rem;padding:5px 8px}.prog-tabs button{font-size:.78rem;padding:6px 12px}.prog-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}.prog-shot figcaption{font-size:.72rem}}
 """
 
 h = open('index.html').read()
