@@ -40,7 +40,7 @@ P4={
   ('S','Squat · séries allégées',4,3,.70,'6','3 min','Même technique que la série principale.'),
   ('B','Développé couché · série principale',1,3,.77,'7','4 min','Monte en charge jusqu’à cette série.'),
   ('B','Développé couché · séries allégées',4,4,.70,'6','3 min','Même trajectoire, même pause sur la poitrine.'),
-  ('D','Soulevé de terre arrêt mi-tibia',4,3,.62,'6','3 min','Arrêt 1 s sous les genoux, puis termine le mouvement.'),
+  ('D','Soulevé de terre pause sous genou',4,3,.62,'6','3 min','Pause 1 s juste sous les genoux, puis termine le mouvement.'),
   ('','Extension lombaire au banc',3,'12',None,'8','1-2 min','Mouvement lent et contrôlé.')],
 }
 P3={
