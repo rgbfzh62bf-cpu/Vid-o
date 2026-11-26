@@ -54,7 +54,7 @@ SECTION = f"""<section id="programmes">
         <p class="prog-pay">Paiement unique · accès illimité · tableur reçu par e-mail juste après l'achat</p>
       </div>
     </article>
-    <p class="prog-note reveal">Besoin d'un programme fait pour toi et d'un suivi chaque semaine ? <a href="#formules">Découvre le coaching →</a></p>
+    <p class="prog-note reveal">Envie d'aller plus loin avec un suivi personnalisé ? <a href="#appel">On en parle →</a></p>
   </div>
 </section>
 
