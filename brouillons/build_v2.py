@@ -46,11 +46,11 @@ def build(days,label,out,logo):
     header(ws,'BIENVENUE',f'Version {label.lower()} · 4 semaines · paiement unique, accès illimité',logo)
     blocks=[
      ('COMMENT ÇA MARCHE',[
-      ('1','Entre tes maxis','Onglet MES MAXIS : ton 1RM au squat, au développé couché et au soulevé de terre. Tu ne le connais pas ? Entre une charge et un nombre de répétitions : le fichier estime ton 1RM.'),
+      ('1','Entre tes 1RM','Onglet MES 1RM : ton 1RM au squat, au développé couché et au soulevé de terre. Tu ne le connais pas ? Entre une charge et un nombre de répétitions : le fichier estime ton 1RM.'),
       ('2','Lis ta séance','Chaque exercice a un % de ton 1RM. La CHARGE CONSEILLÉE se calcule toute seule, arrondie à 2,5 kg.'),
       ('3','Note ce que tu fais','Remplis les cases blanches à bord bleu : charge faite, RPE fait, observations. Le reste est verrouillé.'),
       ('4','Suis ta progression','Chaque séance et chaque semaine affichent ton tonnage et tes répétitions. L’onglet BILAN montre l’évolution sur le bloc.'),
-      ('5','Recommence','Après la semaine 4, mets à jour MES MAXIS et refais le bloc avec tes nouvelles charges.')]),
+      ('5','Recommence','Après la semaine 4, mets à jour MES 1RM et refais le bloc avec tes nouvelles charges.')]),
      ('LE RPE EN BREF',[
       ('10','Échec','Impossible de faire une répétition de plus.'),
       ('8','Difficile','Il te reste 2 répétitions en réserve.'),
@@ -76,10 +76,10 @@ def build(days,label,out,logo):
         r+=1
     ws.protection.sheet=True
 
-    # ===== MES MAXIS =====
-    mx=wb.create_sheet('MES MAXIS'); mx.sheet_view.showGridLines=False
+    # ===== MES 1RM =====
+    mx=wb.create_sheet('MES 1RM'); mx.sheet_view.showGridLines=False
     for c,w in zip('ABCDEFGHIJKLM',[2,13,30,8,8,8,12,8,9,34,12,8,30]): mx.column_dimensions[c].width=w
-    header(mx,'MES MAXIS','Cases à bord bleu = à remplir',logo)
+    header(mx,'MES 1RM','Cases à bord bleu = à remplir',logo)
     hd=['MOUVEMENT','MON 1RM (kg)','OU CHARGE (kg)','× RÉPS','1RM UTILISÉ']
     pos=[(2,3),(4,5),(6,7),(8,9),(10,10)]
     for h,(a,b) in zip(hd,pos):
@@ -99,7 +99,7 @@ def build(days,label,out,logo):
     mx['B11'].font=fn(9,c=MUTED,i=True); mx['B11'].alignment=LFT
     dv=DataValidation(type='whole',operator='between',formula1='1',formula2='10',allow_blank=True,showErrorMessage=True,error='Entre 1 et 10 répétitions.'); mx.add_data_validation(dv); dv.add('H7:H9')
     mx.protection.sheet=True
-    REF={'S':"'MES MAXIS'!$J$7",'B':"'MES MAXIS'!$J$8",'D':"'MES MAXIS'!$J$9"}
+    REF={'S':"'MES 1RM'!$J$7",'B':"'MES 1RM'!$J$8",'D':"'MES 1RM'!$J$9"}
 
     week_tot={}
     for wi,(wname,wsub,inc,dset) in enumerate(WEEKS):
@@ -206,7 +206,7 @@ def build(days,label,out,logo):
     b.protection.sheet=True
     for w in wb.worksheets:
         w.page_setup.orientation='landscape'; w.sheet_properties.pageSetUpPr.fitToPage=True; w.page_setup.fitToWidth=1; w.page_setup.fitToHeight=0
-        w.sheet_properties.tabColor=BLACK if w.title in('COMMENCER ICI','MES MAXIS','BILAN') else BLUE
+        w.sheet_properties.tabColor=BLACK if w.title in('COMMENCER ICI','MES 1RM','BILAN') else BLUE
     wb.save(out)
 
 logo,od=sys.argv[1],sys.argv[2]

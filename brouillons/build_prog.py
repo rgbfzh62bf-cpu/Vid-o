@@ -85,11 +85,11 @@ def build(days,label,out,logo):
     ws['C2']=f'PROGRAMME DÉBUTANT\nFORCE ATHLÉTIQUE · {label}'; ws['C2'].font=Font(name=F,size=20,bold=True,color=NAVY); ws['C2'].alignment=LEFT
     rows=[
      ('TITRE','Comment ça marche'),
-     ('1. Tes maxis','Va dans l’onglet MES MAXIS et entre ton maximum sur 1 répétition (1RM) au squat, au développé couché et au soulevé de terre. Tu ne le connais pas ? Entre une charge que tu fais proprement pour quelques répétitions : le fichier estime ton 1RM.'),
-     ('2. Tes charges','Dans chaque semaine, la colonne CHARGE CONSEILLÉE se calcule toute seule à partir de tes maxis et du % indiqué. Elle est arrondie à 2,5 kg.'),
+     ('1. Tes 1RM','Va dans l’onglet MES 1RM et entre ton maximum sur 1 répétition (1RM) au squat, au développé couché et au soulevé de terre. Tu ne le connais pas ? Entre une charge que tu fais proprement pour quelques répétitions : le fichier estime ton 1RM.'),
+     ('2. Tes charges','Dans chaque semaine, la colonne CHARGE CONSEILLÉE se calcule toute seule à partir de tes 1RM et du % indiqué. Elle est arrondie à 2,5 kg.'),
      ('3. Tes séances','Remplis les cases bleues : la charge que tu as vraiment faite, le RPE ressenti et tes notes. Le reste est verrouillé.'),
      ('4. Ton bilan','L’onglet BILAN additionne ton volume de la semaine pour chaque mouvement.'),
-     ('5. Et ensuite','Après la semaine 4, refais le test (ou garde tes nouvelles charges), mets à jour MES MAXIS et recommence le bloc.'),
+     ('5. Et ensuite','Après la semaine 4, refais le test (ou garde tes nouvelles charges), mets à jour MES 1RM et recommence le bloc.'),
      ('TITRE','Le RPE en deux minutes'),
      ('RPE 10','Impossible de faire une répétition de plus.'),
      ('RPE 8','Il te reste 2 répétitions en réserve.'),
@@ -117,10 +117,10 @@ def build(days,label,out,logo):
         r+=1
     ws.protection.sheet=True
 
-    # ---- MES MAXIS ----
-    mx=wb.create_sheet('MES MAXIS'); mx.sheet_view.showGridLines=False
+    # ---- MES 1RM ----
+    mx=wb.create_sheet('MES 1RM'); mx.sheet_view.showGridLines=False
     for col,w in zip('ABCDEFG',[3,26,16,16,16,18,40]): mx.column_dimensions[col].width=w
-    mx['B2']='MES MAXIS'; mx['B2'].font=Font(name=F,size=20,bold=True,color=NAVY)
+    mx['B2']='MES 1RM'; mx['B2'].font=Font(name=F,size=20,bold=True,color=NAVY)
     mx['B3']='Remplis les cases bleues. Si tu connais ton 1RM, la colonne C suffit.'; mx['B3'].font=font(10,c=MUTED,i=True)
     hdr=['MOUVEMENT','MON 1RM (kg)','OU : CHARGE (kg)','× RÉPÉTITIONS','1RM UTILISÉ (kg)','']
     for i,h in enumerate(hdr):
@@ -141,7 +141,7 @@ def build(days,label,out,logo):
     dv=DataValidation(type='decimal',operator='between',formula1='0',formula2='500',allow_blank=True); mx.add_data_validation(dv); dv.add('C6:D8')
     dv2=DataValidation(type='whole',operator='between',formula1='1',formula2='10',allow_blank=True,error='Entre 1 et 10 répétitions.',showErrorMessage=True); mx.add_data_validation(dv2); dv2.add('E6:E8')
     mx.protection.sheet=True
-    REF={'S':"'MES MAXIS'!$F$6",'B':"'MES MAXIS'!$F$7",'D':"'MES MAXIS'!$F$8"}
+    REF={'S':"'MES 1RM'!$F$6",'B':"'MES 1RM'!$F$7",'D':"'MES 1RM'!$F$8"}
 
     # ---- SEMAINES ----
     cols=['','TYPE','EXERCICE','SÉRIES','RÉPS','% 1RM','CHARGE CONSEILLÉE','RPE CIBLE','REPOS','CONSIGNES','CHARGE FAITE (kg)','RPE RESSENTI','MES NOTES']
@@ -219,7 +219,7 @@ def build(days,label,out,logo):
     b.add_chart(ch,'B12'); b.protection.sheet=True
     for w in wb.worksheets:
         w.sheet_properties.pageSetUpPr.fitToPage=True; w.page_setup.fitToWidth=1; w.page_setup.fitToHeight=0
-    for w in wb.worksheets: w.sheet_properties.tabColor=NAVY if w.title in('COMMENCER ICI','MES MAXIS','BILAN') else ACC
+    for w in wb.worksheets: w.sheet_properties.tabColor=NAVY if w.title in('COMMENCER ICI','MES 1RM','BILAN') else ACC
     wb.save(out)
 
 logo=sys.argv[1]; od=sys.argv[2]
