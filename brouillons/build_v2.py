@@ -69,7 +69,7 @@ def apply_theme(wb):
                 for c in range(1,NC+2):
                     cell=ws.cell(r,c); cell.fill=fl(NAVY); f=cell.font
                     cell.font=Font(name=f.name,size=f.sz,bold=f.b,italic=f.i,color=MUT if r==3 else WHITE)
-            ta,tb=(5,6) if ws.title=='MES 1RM' else (10,13)
+            ta,tb=(5,6) if ws.title in('MES 1RM','BILAN') else (10,13)
             for c in range(ta,tb+1): ws.cell(2,c).fill=fl(SURF2); ws.cell(3,c).fill=fl(SURF2)
             if ws.title.startswith('SEMAINE'):
                 for r in (6,7):
@@ -263,17 +263,17 @@ def build(days,label,out,logo):
 
     # ===== BILAN =====
     b=wb.create_sheet('BILAN'); b.sheet_view.showGridLines=False
-    for c,w in zip('ABCDEFGHIJKLM',[2,13,30,8,8,8,12,8,9,34,12,8,30]): b.column_dimensions[c].width=w
-    header(b,'BILAN','Se remplit tout seul · tonnage = séries × réps × charge',logo)
-    hd=[(2,3,'SEMAINE'),(4,6,'TONNAGE PRÉVU (kg)'),(7,10,'TONNAGE RÉALISÉ (kg)')]
+    for c,w in zip('ABCDEFG',[2,17,24,24,13,13,2]): b.column_dimensions[c].width=w
+    header(b,'BILAN','Se remplit tout seul · tonnage = séries × réps × charge',logo,tc=(5,6))
+    hd=[(2,3,'SEMAINE'),(4,4,'TONNAGE PRÉVU (kg)'),(5,6,'TONNAGE RÉALISÉ (kg)')]
     for a,c2,h in hd:
         if a!=c2: b.merge_cells(start_row=6,start_column=a,end_row=6,end_column=c2)
         b.cell(6,a,h).font=fn(9,True,WHITE); b.cell(6,a).alignment=C
-    paint(b,6,6,2,10,BLACK); b.row_dimensions[6].height=28
+    paint(b,6,6,2,6,BLACK); b.row_dimensions[6].height=28
     for j,(wname,wsub,*_) in enumerate(WEEKS):
         rr=7+j; b.row_dimensions[rr].height=26
         tp,tr=week_tot[wname]
-        for a,c2,v,nf in [(2,3,wname,None),(4,6,'='+tp,'# ##0'),(7,10,'='+tr,'# ##0')]:
+        for a,c2,v,nf in [(2,3,wname,None),(4,4,'='+tp,'# ##0'),(5,6,'='+tr,'# ##0')]:
             if a!=c2: b.merge_cells(start_row=rr,start_column=a,end_row=rr,end_column=c2)
             c=b.cell(rr,a,v); c.alignment=C if a>2 else LFT; c.font=fn(10,a==2,BLACK)
             if nf: c.number_format=nf
@@ -281,9 +281,9 @@ def build(days,label,out,logo):
     # données graphiques (colonnes cachées O:Q)
     b['O6'],b['P6'],b['Q6']='Semaine','Tonnage prévu','Tonnage réalisé'
     for j,(wname,*_) in enumerate(WEEKS):
-        b.cell(7+j,15,f'S{j+1}'); b.cell(7+j,16,f'=D{7+j}'); b.cell(7+j,17,f'=G{7+j}')
+        b.cell(7+j,15,f'S{j+1}'); b.cell(7+j,16,f'=D{7+j}'); b.cell(7+j,17,f'=E{7+j}')
     for c in 'OPQ': b.column_dimensions[c].hidden=True
-    ch=BarChart(); ch.type='col'; ch.title='Tonnage par semaine (kg)'; ch.height=8; ch.width=22; ch.legend.position='b'
+    ch=BarChart(); ch.type='col'; ch.title='Tonnage par semaine (kg)'; ch.height=8; ch.width=17.8; ch.legend.position='b'
     ch.add_data(Reference(b,min_col=16,max_col=17,min_row=6,max_row=10),titles_from_data=True); ch.set_categories(Reference(b,min_col=15,min_row=7,max_row=10))
     for sr,col in zip(ch.series,['5B9BEF','8EC0FF']): sr.graphicalProperties.solidFill=col; sr.graphicalProperties.line.solidFill=col
     from openpyxl.chart.shapes import GraphicalProperties

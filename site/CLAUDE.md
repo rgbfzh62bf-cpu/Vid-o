@@ -62,9 +62,9 @@ Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-
 - Public : débuter sans s'engager dans un coaching (ne jamais parler d'argent), puis coaching quand on stagne.
 - Livraison : fichier Google Sheets / .xlsx (pas Athlyse). Build : brouillons/build_v2.py + build_prog.py → Fondations-force-athletique-{3,4}-jours.xlsx. 1RM saisi une fois, 4 semaines, puis retour S1 avec +2,5 kg par bloc.
 - Ne jamais dire publiquement que le programme s'inspire d'autres coachs. Ne jamais modifier les fichiers Drive partagés par d'autres.
-- Google Sheets natifs (Drive d’Alexis, privés) : 3 j https://docs.google.com/spreadsheets/d/1oTR0915xNEijraJ3sXlK07ZIK88uyLNaMupsdWlnPSw/edit · 4 j https://docs.google.com/spreadsheets/d/1uBIX6MWT099ggCaVRtKI2EAbpSc6T9w-pe9R9khVP18/edit (créés depuis les xlsx ; lien client = remplacer /edit par /copy).
+- Google Sheets natifs (Drive d’Alexis, privés) : 3 j https://docs.google.com/spreadsheets/d/10FaLVqHjZME7eT-3dCl8XKLCpnHUYWmgdmh4nP9L3X4/edit · 4 j https://docs.google.com/spreadsheets/d/1Lfst0siiSZyHULO9JKY59GWwk2XZ4c7rzbVTGlpW0hI/edit (créés depuis les xlsx ; lien client = remplacer /edit par /copy).
 - RÈGLE Drive : à chaque nouvelle version d’un Sheets Fondations, mettre soi-même l’ancienne à la corbeille (accord d’Alexis). Ne jamais toucher aux fichiers partagés par d’autres.
 - Tonnage : récap par mouvement (S/B/D, variantes comprises) en fin de séance ; renfo hors tonnage. Pas de compteur de répétitions (seul le tonnage compte).
-- Tableur : MES 1RM resserré (A:G) en 2 cartes : TES 1RM + total S·B·D, BLOC EN COURS (bloc = D14). Thème C (fond bleu nuit autour, tableaux clairs, en-tête et résumé bleu nuit, accent bleu). THEME=B = fond blanc, en-tête bleu nuit.
+- Tableur : MES 1RM resserré (A:G) en 2 cartes : TES 1RM + total S·B·D, BLOC EN COURS (bloc = D14). BILAN resserré pareil (B:F, titre au bout du tableau). Thème C (fond bleu nuit autour, tableaux clairs, en-tête et résumé bleu nuit, accent bleu). THEME=B = fond blanc, en-tête bleu nuit.
 - CGV programme : brouillon brouillons/cgv-programme.html (à intégrer au lancement, [PLATEFORME] à remplacer).
 - À faire : choix Payhip ou Gumroad, série en plus en semaine 4 (garder ou non), vérifier URSSAF (activité vente de contenu numérique) et CM2C.
