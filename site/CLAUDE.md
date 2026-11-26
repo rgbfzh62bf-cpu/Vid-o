@@ -61,4 +61,6 @@ Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-
 - Public : débuter sans s'engager dans un coaching (ne jamais parler d'argent), puis coaching quand on stagne.
 - Livraison : fichier Google Sheets / .xlsx (pas Athlyse). Build : brouillons/build_v2.py + build_prog.py → Fondations-force-athletique-{3,4}-jours.xlsx. 1RM saisi une fois, 4 semaines, puis retour S1 avec +2,5 kg par bloc.
 - Ne jamais dire publiquement que le programme s'inspire d'autres coachs. Ne jamais modifier les fichiers Drive partagés par d'autres.
-- À faire : CGV (renonciation rétractation contenu numérique), choix Payhip ou Gumroad, série en plus en semaine 4 (garder ou non).
+- Tableur en version claire (fond blanc, bandeaux bleu nuit, accent bleu par touches).
+- CGV programme : brouillon brouillons/cgv-programme.html (à intégrer au lancement, [PLATEFORME] à remplacer).
+- À faire : choix Payhip ou Gumroad, série en plus en semaine 4 (garder ou non), vérifier URSSAF (activité vente de contenu numérique) et CM2C.

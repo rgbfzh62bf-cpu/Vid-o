@@ -32,34 +32,36 @@ REPS_NUM='IFERROR(VALUE(LEFT(E{r},FIND("-",E{r}&"-")-1)),0)'
 # ===== ADN alexis-coaching.fr =====
 NAVY='0B1628'; SURF='12223A'; SURF2='16305A'; ROW2='0F1E35'; ACC='5B9BEF'; ACC2='8EC0FF'; MUT='A9B6C9'; LINE='22385A'; INK='FFFFFF'
 FB='Manrope'; FD='Big Shoulders Display'
-FILLMAP={BLACK:SURF2,BLUE:ACC,LIGHT:SURF,PALE:ROW2,GREY:ROW2,WHITE:NAVY}
+INKD='0B1628'; MUTD='5F6E85'; ACCD='2F6BC4'; PALE2='F4F7FC'; LIGHT2='E3ECFA'
+FILLMAP={BLACK:NAVY,BLUE:ACC,LIGHT:LIGHT2,PALE:PALE2,GREY:PALE2,WHITE:WHITE}
 def _rgb(c):
     try: return c.rgb[-6:].upper() if c is not None and isinstance(c.rgb,str) else None
     except Exception: return None
 def _side(sd):
     if sd is None or sd.style is None: return sd
-    col=_rgb(sd.color); col={'D5DEEB':LINE,BLUE:ACC}.get(col,col)
+    col=_rgb(sd.color); col={BLUE:ACC}.get(col,col)
     return Side(style=sd.style,color=col)
 def apply_theme(wb):
+    # version claire : fond blanc, bleu nuit pour les bandeaux, accent bleu par touches
     for ws in wb.worksheets:
         mr=ws.max_row+40
         for r in range(1,mr+1):
             for c in range(1,27):
                 cell=ws.cell(r,c)
                 old=_rgb(cell.fill.fgColor) if cell.fill and cell.fill.fill_type=='solid' else None
-                new=FILLMAP.get(old,NAVY)
-                if cell.protection.locked is False and hasattr(cell,'value'): new=NAVY
+                new=FILLMAP.get(old,WHITE)
+                if cell.protection.locked is False and hasattr(cell,'value'): new=WHITE
                 cell.fill=fl(new)
                 f=cell.font; fc=_rgb(f.color) if f and f.color is not None else None
-                if new==ACC: col=NAVY
-                elif old==BLACK and fc in(WHITE,None) and (f.sz or 10)<20: col=ACC2
-                else: col={BLUE:ACC,MUTED:MUT,CYAN:ACC2}.get(fc,INK)
+                if new==NAVY: col=ACC2 if fc in(BLUE,CYAN) else WHITE
+                elif new==ACC: col=NAVY
+                else: col={BLUE:ACCD,MUTED:MUTD,CYAN:ACCD,WHITE:INKD}.get(fc,INKD)
                 sz=f.sz or 10; big=f.b and sz>=14
                 cell.font=Font(name=FD if big else FB,size=round(sz*1.3) if big else sz,bold=f.b,italic=f.i,color=col)
                 b=cell.border
                 if b and any(s is not None and s.style for s in (b.left,b.right,b.top,b.bottom)):
                     cell.border=Border(left=_side(b.left),right=_side(b.right),top=_side(b.top),bottom=_side(b.bottom))
-        ws.sheet_properties.tabColor=SURF2 if ws.title in('COMMENCER ICI','MES 1RM','BILAN') else ACC
+        ws.sheet_properties.tabColor=NAVY if ws.title in('COMMENCER ICI','MES 1RM','BILAN') else ACC
 
 def header(ws,title,sub,logo):
     for r in range(1,5): paint(ws,r,r,1,NC+1,WHITE)
