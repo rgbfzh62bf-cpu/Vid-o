@@ -36,21 +36,21 @@ INFO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width=
 SECTION = f"""<section id="programmes">
   <div class="wrap">
     <div class="head reveal">
-      <div><p class="eyebrow">Programme de force athlétique · en autonomie</p><h2 style="margin-top:10px">Fondations :<br>la force athlétique en autonomie.</h2></div>
+      <div><p class="eyebrow ath-eb"><img src="athlyse-logo-blanc.png" alt="Logo Athlyse" width="57" height="47"><span>Programme de force athlétique · sur l'appli Athlyse</span></p><h2 style="margin-top:10px">Fondations :<br>la force athlétique en autonomie.</h2></div>
       <p>Un programme de 4 semaines sur squat, développé couché et soulevé de terre, à suivre seul et à ton rythme, directement sur l'appli Athlyse.</p>
     </div>
     <div class="prog-grid">
       <div class="prog-left reveal">
         <article class="prog-row">
-          <div><p class="eyebrow">Programmation</p><h3>3 jours / semaine</h3><p class="muted">Squat et développé couché, une séance légère, une séance lourde.</p></div>
+          <div><p class="eyebrow">Sur l'appli Athlyse</p><h3>3 jours / semaine</h3><p class="muted">Squat et développé couché, une séance légère, une séance lourde.</p></div>
           <div class="prog-buy"><div class="price">29 €</div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
         <article class="prog-row">
-          <div><p class="eyebrow">Programmation</p><h3>4 jours / semaine</h3><p class="muted">Plus de séances pour travailler chaque mouvement plus souvent.</p></div>
+          <div><p class="eyebrow">Sur l'appli Athlyse</p><h3>4 jours / semaine</h3><p class="muted">Plus de séances pour travailler chaque mouvement plus souvent.</p></div>
           <div class="prog-buy"><div class="price">29 €</div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
         <ul class="prog-inc">
-          <li><b>Tes séances prêtes sur Athlyse</b><span>Jour par jour, avec les consignes de chaque exercice et de chaque variante.</span></li>
+          <li><b>Tout se passe sur l'appli Athlyse</b><span>Tu télécharges l'appli et tu retrouves tes séances jour par jour, avec les consignes de chaque exercice et de chaque variante.</span></li>
           <li><b>Tes charges calculées à partir de tes 1RM</b><span>Et la charge monte chaque semaine, sans que tu aies à calculer.</span></li>
         </ul>
         <p class="prog-auto">{INFO}<span>En autonomie, sans suivi : après l'achat, il n'y a ni retour sur ta technique, ni échange avec moi. Tout est expliqué dans l'appli.</span></p>
