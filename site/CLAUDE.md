@@ -56,6 +56,7 @@ Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-
 - Netlify : environ 925 crédits au dernier relevé ; passage à l'offre gratuite le 24/12/2026.
 
 ### Projet « Fondations · force athlétique » (brouillon, pas sur le site)
+- RÈGLE : on travaille dessus, RIEN sur le site. Quand Alexis dit que tout est bon, LUI DEMANDER s’il veut le mettre en ligne ou non.
 - Nom validé : « Fondations » (jamais le mot « débutant »). Aperçu : brouillons/apercu-programme.html → https://claude.ai/artifact/XedtcFqK8iEr3tjkrsaN8t
 - 2 versions 3 jours / 4 jours, 39 € chacune, pas de pack. Afficher « Paiement unique · accès illimité », ne jamais parler d'abonnement ni de « à vie ».
 - Public : débuter sans s'engager dans un coaching (ne jamais parler d'argent), puis coaching quand on stagne.
