@@ -19,3 +19,9 @@ New skill needed? Use `find-skills`.
 - Reuse registry blocks over custom code.
 - Read only needed file parts. No full-file dumps in chat.
 - Report results in 1-3 lines.
+- First reply of every session (new or resumed): end with one line suggesting the user type `/compact` (resumed chat) or `/clear` before a new topic.
+- When the chat grows long or changes topic: suggest `/compact` again, in one line.
+- Resumed chat: trust the summary. Do not re-read files already seen unless they changed.
+- Load only the skills the current task needs.
+- Search with grep, read file excerpts, never whole files unless required.
+- Keep project state in `NOTES.md` (short). Read it on resume instead of rebuilding context; update it after each finished task.
