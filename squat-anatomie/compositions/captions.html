@@ -1,0 +1,172 @@
+<template>
+  <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      
+      #hl-container {
+        position: absolute;
+        inset: 0;
+        z-index: 10;
+        pointer-events: none;
+      }
+      .hl-group {
+        position: absolute;
+        top: 1120px;
+        left: 0;
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 8px;
+        padding: 0 160px;
+        opacity: 0;
+        visibility: hidden;
+      }
+      .hl-word {
+        font-family: "Montserrat", sans-serif;
+        font-weight: 800;
+        font-size: 80px;
+        text-transform: uppercase;
+        color: #1b1b1b;
+        display: inline-block;
+        letter-spacing: 0.02em;
+        line-height: 1;
+        position: relative;
+        padding: 6px 12px 8px;
+        text-shadow: none;
+        transform-origin: 50% 58%;
+        isolation: isolate;
+        will-change: transform, filter;
+      }
+      .hl-word-bg {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(135deg, #b8352a 0%, #a52d23 100%);
+        border-radius: 10px;
+        box-shadow: 0 12px 30px rgba(184, 53, 42, 0.25);
+        opacity: 0;
+        transform: scaleX(0);
+        transform-origin: 0% 50%;
+        z-index: -1;
+      }
+      .hl-word-text {
+        position: relative;
+        z-index: 1;
+      }
+    
+    #captions { position: absolute; inset: 0; }
+  </style>
+  <div id="captions" data-composition-id="captions" data-width="1080" data-height="1920" data-layout-allow-overlap>
+    <div id="hl-container"></div>
+  </div>
+  <script>
+(function () {
+        window.__timelines = window.__timelines || {};
+
+        var _fitCanvas = document.createElement("canvas");
+        var _fitCtx = _fitCanvas.getContext("2d");
+        function fitFontSize(text, baseFontSize, fontWeight, fontFamily, maxWidth) {
+          var size = baseFontSize;
+          var minSize = Math.floor(baseFontSize * 0.45);
+          while (size > minSize) {
+            _fitCtx.font = fontWeight + " " + size + "px " + fontFamily;
+            if (_fitCtx.measureText(text).width <= maxWidth) return size;
+            size -= 2;
+          }
+          return minSize;
+        }
+
+        var WORDS = [{"text": "Tu", "start": 0.12, "end": 0.3}, {"text": "fais", "start": 0.3, "end": 0.57}, {"text": "toujours", "start": 0.57, "end": 1.03}, {"text": "le", "start": 1.03, "end": 1.21}, {"text": "même", "start": 1.21, "end": 1.48}, {"text": "squat", "start": 1.48, "end": 1.8}, {"text": "?", "start": 1.8, "end": 1.94}, {"text": "Grosse", "start": 1.94, "end": 2.3}, {"text": "erreur", "start": 2.3, "end": 2.67}, {"text": "!", "start": 2.67, "end": 2.8}, {"text": "Il", "start": 3.11, "end": 3.32}, {"text": "en", "start": 3.32, "end": 3.52}, {"text": "existe", "start": 3.52, "end": 3.93}, {"text": "5.", "start": 3.93, "end": 4.13}, {"text": "Et", "start": 4.13, "end": 4.34}, {"text": "chacun", "start": 4.34, "end": 4.74}, {"text": "travaille", "start": 4.74, "end": 5.3}, {"text": "un", "start": 5.3, "end": 5.51}, {"text": "muscle", "start": 5.51, "end": 5.92}, {"text": "différent.", "start": 5.92, "end": 6.53}, {"text": "Numéro", "start": 6.85, "end": 7.23}, {"text": "1", "start": 7.23, "end": 7.37}, {"text": ":", "start": 7.37, "end": 7.51}, {"text": "le", "start": 7.51, "end": 7.7}, {"text": "classique.", "start": 7.7, "end": 8.27}, {"text": "Les", "start": 8.27, "end": 8.51}, {"text": "cuisses", "start": 8.51, "end": 8.93}, {"text": "et", "start": 8.93, "end": 9.12}, {"text": "les", "start": 9.12, "end": 9.36}, {"text": "fessiers.", "start": 9.36, "end": 9.88}, {"text": "Numéro", "start": 10.2, "end": 10.63}, {"text": "2", "start": 10.63, "end": 10.79}, {"text": ":", "start": 10.79, "end": 10.95}, {"text": "le", "start": 10.95, "end": 11.16}, {"text": "sumo.", "start": 11.16, "end": 11.54}, {"text": "Pieds", "start": 11.54, "end": 11.91}, {"text": "écartés,", "start": 11.91, "end": 12.45}, {"text": "pour", "start": 12.45, "end": 12.77}, {"text": "l'intérieur", "start": 12.77, "end": 13.47}, {"text": "des", "start": 13.47, "end": 13.74}, {"text": "cuisses.", "start": 13.74, "end": 14.27}, {"text": "Numéro", "start": 14.58, "end": 15.08}, {"text": "3", "start": 15.08, "end": 15.26}, {"text": ":", "start": 15.26, "end": 15.45}, {"text": "pieds", "start": 15.45, "end": 15.89}, {"text": "serrés.", "start": 15.89, "end": 16.44}, {"text": "L'avant", "start": 16.44, "end": 17.0}, {"text": "des", "start": 17.0, "end": 17.31}, {"text": "cuisses", "start": 17.31, "end": 17.87}, {"text": "brûle", "start": 17.87, "end": 18.31}, {"text": "!", "start": 18.31, "end": 18.49}, {"text": "Numéro", "start": 18.82, "end": 19.31}, {"text": "4", "start": 19.31, "end": 19.5}, {"text": ":", "start": 19.5, "end": 19.69}, {"text": "le", "start": 19.69, "end": 19.94}, {"text": "bulgare.", "start": 19.94, "end": 20.56}, {"text": "Tout", "start": 20.56, "end": 20.93}, {"text": "le", "start": 20.93, "end": 21.18}, {"text": "monde", "start": 21.18, "end": 21.62}, {"text": "le", "start": 21.62, "end": 21.87}, {"text": "déteste…", "start": 21.87, "end": 22.49}, {"text": "mais", "start": 22.49, "end": 22.86}, {"text": "il", "start": 22.86, "end": 23.11}, {"text": "marche", "start": 23.11, "end": 23.61}, {"text": "vraiment.", "start": 23.61, "end": 24.3}, {"text": "Numéro", "start": 24.62, "end": 25.13}, {"text": "5", "start": 25.13, "end": 25.33}, {"text": ":", "start": 25.33, "end": 25.52}, {"text": "le", "start": 25.52, "end": 25.77}, {"text": "sauté.", "start": 25.77, "end": 26.28}, {"text": "Parfait", "start": 26.28, "end": 26.86}, {"text": "pour", "start": 26.86, "end": 27.24}, {"text": "le", "start": 27.24, "end": 27.5}, {"text": "cardio", "start": 27.5, "end": 28.01}, {"text": "!", "start": 28.01, "end": 28.2}, {"text": "Alors,", "start": 28.5, "end": 28.88}, {"text": "tu", "start": 28.88, "end": 29.07}, {"text": "fais", "start": 29.07, "end": 29.35}, {"text": "lequel", "start": 29.35, "end": 29.73}, {"text": "?", "start": 29.73, "end": 29.88}, {"text": "Dis-le", "start": 29.88, "end": 30.25}, {"text": "en", "start": 30.25, "end": 30.44}, {"text": "commentaire", "start": 30.44, "end": 31.06}, {"text": "!", "start": 31.06, "end": 31.2}];
+
+        var RAW_GROUPS = [[0, 2], [3, 5], [6, 6], [7, 9], [10, 12], [13, 13], [14, 16], [17, 19], [20, 22], [23, 24], [25, 27], [28, 29], [30, 32], [33, 34], [35, 36], [37, 39], [40, 40], [41, 43], [44, 45], [46, 48], [49, 50], [51, 53], [54, 55], [56, 58], [59, 60], [61, 63], [64, 64], [65, 67], [68, 69], [70, 72], [73, 74], [75, 75], [76, 78], [79, 79], [80, 82], [83, 83]];
+        var GROUPS = RAW_GROUPS.map(function (pair, gi) {
+          var ws = pair[0],
+            we = pair[1];
+          var nextStart =
+            gi + 1 < RAW_GROUPS.length ? WORDS[RAW_GROUPS[gi + 1][0]].start : Infinity;
+          var gEnd = Math.min(WORDS[we].end + 0.5, nextStart - 0.05);
+          return { wordStart: ws, wordEnd: we, start: WORDS[ws].start, end: gEnd };
+        });
+
+        var container = document.getElementById("hl-container");
+        var tl = gsap.timeline({ paused: true });
+
+        GROUPS.forEach(function (g, gi) {
+          var groupWords = WORDS.slice(g.wordStart, g.wordEnd + 1);
+          var grp = document.createElement("div");
+          grp.className = "hl-group";
+          grp.id = "hl-grp-" + gi;
+
+          var groupText = groupWords
+            .map(function (w) {
+              return w.text.toUpperCase();
+            })
+            .join(" ");
+          var computedSize = fitFontSize(groupText, 72, "800", "Montserrat", 740);
+
+          groupWords.forEach(function (w, i) {
+            var wi = g.wordStart + i;
+            var wordEl = document.createElement("span");
+            wordEl.className = "hl-word";
+            wordEl.id = "hl-w-" + wi;
+            wordEl.style.fontSize = computedSize + "px";
+
+            var bgEl = document.createElement("span");
+            bgEl.className = "hl-word-bg";
+            bgEl.id = "hl-bg-" + wi;
+
+            var textEl = document.createElement("span");
+            textEl.className = "hl-word-text";
+            textEl.textContent = w.text.toUpperCase();
+
+            wordEl.appendChild(bgEl);
+            wordEl.appendChild(textEl);
+            grp.appendChild(wordEl);
+          });
+
+          container.appendChild(grp);
+
+          tl.set(grp, { visibility: "visible" }, g.start);
+          tl.fromTo(
+            grp,
+            { opacity: 0 },
+            { opacity: 1, duration: 0.12, ease: "power2.out" },
+            g.start,
+          );
+
+          groupWords.forEach(function (w, i) {
+            var wi = g.wordStart + i;
+            var bgEl = document.getElementById("hl-bg-" + wi);
+            var wordEl = document.getElementById("hl-w-" + wi);
+
+            var fadeIn = Math.min(0.15, w.end - w.start);
+            tl.to(bgEl, { opacity: 1, scaleX: 1, duration: fadeIn, ease: "power2.out" }, w.start);
+            tl.to(
+              wordEl,
+              { filter: "brightness(1.05)", duration: 0.08, ease: "power2.out" },
+              w.start,
+            );
+            tl.to(
+              wordEl,
+              { filter: "brightness(1)", duration: 0.16, ease: "power2.out" },
+              w.start + 0.08,
+            );
+            tl.to(bgEl, { opacity: 0, scaleX: 1.02, duration: 0.1, ease: "power2.in" }, w.end);
+            tl.to(wordEl.lastChild, { color: "#ffffff", duration: 0.06 }, w.start + Math.min(0.15, w.end - w.start));
+            tl.to(wordEl.lastChild, { color: "#1b1b1b", duration: 0.06 }, w.end - 0.02);
+            tl.set(bgEl, { scaleX: 0 }, w.end + 0.1);
+          });
+
+          tl.to(grp, { opacity: 0, duration: 0.1, ease: "power2.in" }, g.end - 0.1);
+          tl.set(grp, { opacity: 0, visibility: "hidden" }, g.end);
+        });
+
+        tl.seek(0);
+        window.__timelines["captions"] = tl;
+      })();
+      </script>
+</template>
