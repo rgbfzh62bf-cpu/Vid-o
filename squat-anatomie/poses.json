@@ -1,6 +1,44 @@
-[["stand","standing upright facing the camera, arms relaxed at his sides, front view",[3,8]],
-["classic","performing a deep bodyweight squat, thighs parallel to the floor, arms extended straight forward at shoulder height, strict profile side view, facing right",[3,8]],
-["sumo","performing a wide-stance sumo squat, feet much wider than shoulder width, toes pointed outward, thighs parallel to the floor, hands clasped in front of chest, front view facing the camera",[3,8]],
-["bulgare","performing a Bulgarian split squat, top of his rear foot resting on a flat gym bench behind him, front knee bent at 90 degrees, torso upright, hands on hips, strict profile side view, facing right",[3,8]],
-["goblet","performing a goblet squat, holding one black kettlebell close against his chest with both hands, deep squat, upright torso, front view facing the camera",[3,8]],
-["narrow","performing a narrow-stance squat with feet touching together, knees bent forward, arms extended straight forward, strict profile side view, facing right",[3,8]]]
+[
+[
+"stand",
+"standing upright facing the camera, arms relaxed at his sides, front view",
+[
+5
+]
+],
+[
+"classic",
+"performing a deep bodyweight squat, thighs parallel to the floor, arms extended straight forward at shoulder height, strict profile side view, facing right",
+[
+5
+]
+],
+[
+"sumo",
+"performing a wide-stance sumo squat, feet much wider than shoulder width, toes pointed outward, thighs parallel to the floor, hands clasped in front of chest, front view facing the camera",
+[
+5
+]
+],
+[
+"bulgare",
+"performing a Bulgarian split squat, top of his rear foot resting on a flat gym bench behind him, front knee bent at 90 degrees, torso upright, hands on hips, strict profile side view, facing right",
+[
+5
+]
+],
+[
+"goblet",
+"performing a goblet squat, holding one black kettlebell close against his chest with both hands, deep squat, upright torso, front view facing the camera",
+[
+5
+]
+],
+[
+"narrow",
+"performing a narrow-stance squat with feet touching together, knees bent forward, arms extended straight forward, strict profile side view, facing right",
+[
+5
+]
+]
+]
