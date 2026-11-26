@@ -63,7 +63,7 @@ Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-
 - Nom validé : « Fondations » (jamais le mot « débutant »). Aperçu : brouillons/apercu-programme.html → https://claude.ai/artifact/XedtcFqK8iEr3tjkrsaN8t
 - 2 versions 3 jours / 4 jours, 29 € chacune (prix changé par Alexis le 26/11, avant 39 €), pas de pack. Alexis veut une rubrique de vente sur le site. Afficher « Paiement unique · accès illimité », ne jamais parler d'abonnement ni de « à vie ».
 - Public : débuter sans s'engager dans un coaching (ne jamais parler d'argent), puis coaching quand on stagne.
-- Livraison : fichier Google Sheets / .xlsx (pas Athlyse). Build : brouillons/build_v2.py + build_prog.py → Fondations-force-athletique-{3,4}-jours.xlsx. 1RM saisi une fois, 4 semaines, puis retour S1 avec +2,5 kg par bloc.
+- Livraison : CHANGÉ le 26/11 → via l’appli Athlyse (choix d’Alexis). Ancien : fichier Google Sheets / .xlsx (sert de base). Build : brouillons/build_v2.py + build_prog.py → Fondations-force-athletique-{3,4}-jours.xlsx. 1RM saisi une fois, 4 semaines, puis retour S1 avec +2,5 kg par bloc.
 - Ne jamais dire publiquement que le programme s'inspire d'autres coachs. Ne jamais modifier les fichiers Drive partagés par d'autres.
 - Google Sheets natifs (Drive d’Alexis, privés) : 3 j https://docs.google.com/spreadsheets/d/1E0UkcjXFiR4KBE55Hm_lQpc2iQAFIuLuRmTiAITR1_M/edit · 4 j https://docs.google.com/spreadsheets/d/1asLSPusmlUe-kSLbifOTyEoNqGRvt38thjciWOrOkKE/edit (créés depuis les xlsx ; lien client = remplacer /edit par /copy).
 - RÈGLE Drive : à chaque nouvelle version d’un Sheets Fondations, mettre soi-même l’ancienne à la corbeille (accord d’Alexis). Ne jamais toucher aux fichiers partagés par d’autres.
