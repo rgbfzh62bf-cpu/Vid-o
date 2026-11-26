@@ -12,7 +12,8 @@ def inline(h):
   h=re.sub(r'''((?:src|href|content)=["'])([^"']+)(["'])''',rep,h)
   h=re.sub(r'''(url\(["']?)([^"')]+)(["']?\))''',rep,h)
   return re.sub(r'<link rel="preload"[^>]*>\n?','',h)
-common='''          <li>Tes charges calculées automatiquement à partir de tes maxi</li>
+common='''          <li>Programme de force athlétique : squat, développé couché, soulevé de terre</li>
+          <li>Tes charges calculées automatiquement à partir de tes maxi</li>
           <li>4 semaines de progression : la charge monte chaque semaine</li>
           <li>Chaque exercice et chaque variante expliqués pas à pas</li>
           <li>Guide de séance, lexique et questions fréquentes</li>
@@ -20,9 +21,10 @@ common='''          <li>Tes charges calculées automatiquement à partir de tes 
 sec=f'''<section id="programmes">
   <div class="wrap">
     <div class="head reveal">
-      <div><p class="eyebrow">Programmes en autonomie · Force athlétique</p><h2 style="margin-top:10px">Fondations :<br>ton programme, prêt à suivre.</h2></div>
-      <p>Tu veux découvrir la force athlétique à ton rythme, sans t'engager dans un coaching ? Fondations, c'est un programme complet de 4 semaines sur squat, développé couché et soulevé de terre, dans un tableur qui fait les calculs pour toi.</p>
+      <div><p class="eyebrow">Programme de force athlétique · en autonomie</p><h2 style="margin-top:10px">Fondations :<br>la force athlétique en autonomie.</h2></div>
+      <p>Fondations est un programme de force athlétique de 4 semaines sur les trois mouvements : squat, développé couché et soulevé de terre. Tu le suis seul, à ton rythme, dans un tableur qui calcule tes charges pour toi.</p>
     </div>
+    <div class="auto-box reveal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg><p><b>Programme en autonomie, sans suivi.</b> Après l'achat, tu reçois ton fichier et tu t'entraînes seul : il n'y a ni retour sur ta technique, ni échange avec moi, ni ajustement personnalisé. Tout est expliqué dans le tableur.</p></div>
     <div class="plans">
       <article class="plan reveal">
         <div><p class="eyebrow">Fondations</p><h3>3 jours<br>par semaine</h3></div>
@@ -43,7 +45,7 @@ sec=f'''<section id="programmes">
         <a class="btn" href="#programmes">Acheter le programme <span class="arr">→</span></a>
       </article>
     </div>
-    <p class="prog-note reveal">Paiement unique · accès illimité · tu reçois ton tableur par e-mail juste après l'achat. Envie d'un programme 100 % sur mesure et d'un suivi chaque semaine ? <a href="#formules">Découvre le coaching</a>.</p>
+    <p class="prog-note reveal">Paiement unique · accès illimité · tu reçois ton tableur par e-mail juste après l'achat. Tu veux un programme fait pour toi, des retours sur ta technique et des échanges avec moi ? C'est le <a href="#formules">coaching</a>.</p>
   </div>
 </section>
 
@@ -52,6 +54,9 @@ css='''
 /* TEST rubrique programmes */
 .prog-note{margin-top:20px;color:var(--muted);font-size:.92rem;text-align:center;max-width:62ch;margin-inline:auto}
 .prog-note a{color:var(--accent)}
+.auto-box{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);border-radius:16px;padding:14px 18px;margin-bottom:20px;max-width:820px}
+.auto-box svg{width:22px;height:22px;color:var(--accent);flex:none;margin-top:2px}
+.auto-box p{margin:0;color:var(--muted);font-size:.95rem}.auto-box b{display:block;color:var(--ink);margin-bottom:2px}
 #programmes .price small{margin-left:8px}
 '''
 h=open('index.html').read()
@@ -61,7 +66,7 @@ h=h.replace('<a href="#formules"><small>04</small>Tarifs</a>','<a href="#formule
 open(os.path.join(out,'index.html'),'w').write(inline(h))
 l=open('liens.html').read()
 ic='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>'
-btn=f'    <a class="l" href="index.html#programmes"><span class="i">{ic}</span><span>Programmes Fondations<small>3 ou 4 jours · 29 € · paiement unique</small></span><span class="go">→</span></a>\n'
+btn=f'    <a class="l" href="index.html#programmes"><span class="i">{ic}</span><span>Programme force athlétique<small>En autonomie · sans suivi · 29 €</small></span><span class="go">→</span></a>\n'
 j=l.index('    <a class="l" href="https://calendly.com');l=l[:j]+btn+l[j:]
 open(os.path.join(out,'liens.html'),'w').write(inline(l))
 # version non inlinée pour tests
