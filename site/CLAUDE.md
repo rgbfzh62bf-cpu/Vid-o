@@ -27,7 +27,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - Médiateur de la consommation : CM2C (www.cm2c.net), adhésion payée.
 - Paiement : virement bancaire uniquement, mensuel à l’avance. Sans engagement, chaque mois commencé dû, pas de remboursement. Rétractation 14 j (prorata si démarrage anticipé). CGV : cgv.html.
 - Domaine : alexis-coaching.fr (Hostinger, payé 3 ans, jusqu’en 2029).
-- E-mail pro : alexis.bloquecoaching@gmail.com (formulaire Netlify à envoyer ici).
+- E-mail pro : alexis.bloquecoaching@gmail.com .
 
 ## Design
 - Gras : uniquement pour les titres (ex. intitulés de la liste « L’appli », noms de sports). Jamais une ligne isolée en gras au milieu d’une liste ou d’un texte.
@@ -35,7 +35,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - TOUJOURS vérifier le rendu téléphone (320, 375, 390, 430 px) en plus de l’ordinateur : aucun débordement horizontal, boutons faciles à toucher.
 - Logo : logo.png (transparent, NON utilisé dans l’en-tête : Alexis préfère le nom en texte) / logo.jpg (haltère bleue + ALEXIS COACHING). Favicon « AC » au centre de l’haltère (disques bleus de chaque côté) favicon*.png / apple-touch-icon.png, partage réseaux partage.jpg.
 - Bleu nuit #0B1628, blanc, accent bleu #5B9BEF. Polices : Big Shoulders Display / Manrope / JetBrains Mono.
-- Ordre de page : Qui suis-je → Approche → Appli → Tarifs → Appel → FAQ → Commencer.
+- Ordre de page : Qui suis-je → Approche → Appli → Tarifs → FAQ → Appel (= « Commencer », fin de page). Formulaire de contact SUPPRIMÉ (26/11, choix d’Alexis : doublon avec le bloc appel) ; boutons « Choisir cette formule » → #appel. FAQ réduite à 6 questions.
 
 ## Avant mise en ligne
 Voir `MISE-EN-LIGNE.md` (médiateur de la consommation obligatoire, hébergeur, formulaire Netlify, Calendly, adresse mail coaching).
