@@ -165,8 +165,9 @@ open(os.path.join(out, 'index.html'), 'w').write(inline(h))
 
 l = open('liens.html').read()
 ic = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>'
-btn = f'    <a class="l" href="index.html#programmes"><span class="i">{ic}</span><span>Programme force athlétique<small>Sur Athlyse · en autonomie · 29 €</small></span><span class="go">→</span></a>\n'
+btn = f'    <a class="l" href="index.html#programmes"><span class="i ath"><img src="athlyse-logo-blanc.png" alt="" width="26" height="21"></span><span>Programme force athlétique<small>Sur Athlyse · en autonomie · 29 €</small></span><span class="go">→</span></a>\n'
 j = l.index('    <a class="l" href="https://calendly.com')
 l = l[:j] + btn + l[j:]
+l = l.replace('</style>', '.l .i.ath img{width:26px;height:auto;display:block}\n</style>', 1)
 open(os.path.join(out, 'liens.html'), 'w').write(inline(l))
 print('ok')
