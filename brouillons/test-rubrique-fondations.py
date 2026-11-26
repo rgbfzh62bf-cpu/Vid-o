@@ -97,6 +97,7 @@ CSS = """
 .prog-tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
 .prog-tabs button{font:inherit;font-size:.82rem;font-weight:700;padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--muted);cursor:pointer}
 .prog-tabs button.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.prog-tabs.days{display:grid;grid-template-columns:repeat(4,auto);justify-content:center}
 .prog-tabs.days button{font-size:.76rem;padding:6px 11px}
 .prog-inc{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:12px}.prog-inc li{display:grid;gap:2px;padding-left:16px;border-left:3px solid var(--accent)}.prog-inc span{color:var(--muted);font-size:.92rem}
 .prog-shot{margin:0;display:grid;gap:10px;justify-items:center;min-width:0}
@@ -116,7 +117,7 @@ CSS = """
 .prog-row h3{font-size:1.2rem;margin:2px 0}.prog-row .muted{font-size:.76rem;line-height:1.35}
 .prog-buy{display:flex;align-items:center;justify-content:space-between;gap:8px}
 .prog-buy{display:grid;justify-items:stretch;gap:6px}.prog-buy .price{font-size:1.6rem;white-space:nowrap;justify-items:start}.prog-buy .price small{text-align:left}.prog-buy .btn{padding:8px 12px;font-size:.82rem;justify-content:center;width:100%}
-.prog-tabs{gap:4px}.prog-tabs button{font-size:.66rem;padding:5px 8px}.prog-tabs.days button{font-size:.6rem;padding:4px 6px}
+.prog-tabs{gap:4px}.prog-tabs button{font-size:.66rem;padding:5px 8px}.prog-tabs.days{grid-template-columns:repeat(2,minmax(0,1fr));width:100%}.prog-tabs.days button{font-size:.62rem;padding:4px 6px}
 @media (max-width:360px){.prog-buy .btn{flex:1 1 100%;justify-content:center}}
 .prog-shot img{width:100%;border-radius:24px;border-width:5px}
 .prog-shot figcaption{font-size:.6rem;line-height:1.3}
