@@ -21,7 +21,7 @@ S'applique à TOUTE demande sur le site, la page de liens, les textes, les visue
 - Photo d’accueil : coach.jpg (en salle, casque, t-shirt SPC ; crédit photographe en filigrane coupé).
 - Avant / après MASQUÉ pour l’instant (seule la photo 2018 « Mes débuts » est affichée, bloc à remettre dans index.html via le commentaire AVANT/APRÈS). photo miroir (parcours.jpg) = 2018, 52 kg. Maintenant = 73 kg ; photo actuelle à recevoir.
 - Formule 1 Programmation sur mesure : 160 €/mois. Formule 2 Programmation + Nutrition : 200 €/mois.
-- Suivi sur l'appli Athlyse (App Store : https://apps.apple.com/fr/app/athlyse/id6759957694).
+- Suivi sur l'appli Athlyse (App Store : https://apps.apple.com/fr/app/athlyse/id6759957694 ; Google Play : https://play.google.com/store/apps/details?id=com.athlyseapp).
 - Appel découverte gratuit, 30 min, visio Google Meet via Calendly : https://calendly.com/alexisbloquecoaching/30min
 - Instagram : @alexisblq_coaching.
 - Médiateur de la consommation : CM2C (www.cm2c.net), adhésion payée.
@@ -51,7 +51,6 @@ Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-
 
 ## État en cours (pour une nouvelle discussion)
 - Modifs NON en ligne sauvegardées sur la branche `claude/sauvegarde-alexis` (Netlify ne la déploie pas). Nouvelle discussion : `git fetch origin claude/sauvegarde-alexis && git merge FETCH_HEAD` sur `claude/exciting-newton-swewu8`, puis push UNIQUEMENT au feu vert d'Alexis.
-- Contenu : maquettes téléphone Athlyse dans les formules, boutons App Store + Google Play, gras harmonisé, règles /compact.
-- À faire avant envoi : remplacer `PLAYSTORE_URL` (index.html + liens.html) par le lien Google Play d'Athlyse. Attendre les autres retours du créateur d'Athlyse.
-- Rappel 26/11 à 19h (heure de Paris) : Alexis doit demander le lien Google Play à son ami d'Athlyse pendant leur appel. Le lui rappeler dès qu'il ouvre Claude Code.
+- Contenu : maquettes téléphone Athlyse dans les formules, boutons App Store + Google Play, gras harmonisé, sports en étiquettes, règles /compact.
+- Lien Google Play d'Athlyse ajouté (https://play.google.com/store/apps/details?id=com.athlyseapp). Attendre les autres retours du créateur d'Athlyse.
 - Netlify : environ 925 crédits au dernier relevé ; passage à l'offre gratuite le 24/12/2026.
