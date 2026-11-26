@@ -41,16 +41,16 @@ SECTION = f"""<section id="programmes">
   <div class="wrap">
     <div class="head reveal">
       <div><p class="eyebrow ath-eb"><img src="athlyse-logo-blanc.png" alt="Logo Athlyse" width="57" height="47"><span>Programmes à acheter · force athlétique · sur l'appli Athlyse</span></p><h2 style="margin-top:10px">Fondations :<br>ton programme de force athlétique.</h2></div>
-      <p>Deux programmes de 4 semaines, prêts à suivre seul sur l'appli Athlyse, sur squat, développé couché et soulevé de terre. Tu t'entraînes 3 fois par semaine ? Choisis la version 3 jours. 4 fois ? La version 4 jours. Chaque programme s'achète une seule fois, 29 €.</p>
+      <p>Deux programmes de 4 semaines construits autour des trois mouvements de la force athlétique : le squat, le développé couché et le soulevé de terre. La programmation est pensée selon ton nombre d'entraînements : 3 ou 4 séances par semaine. Tu choisis la version qui correspond à ton rythme et tu la suis seul sur l'appli Athlyse.</p>
     </div>
     <div class="prog-grid">
       <div class="prog-cards reveal">
         <article class="prog-row">
-          <div><p class="eyebrow">Programme Fondations</p><h3>3 séances / semaine</h3><p class="muted">Pour toi qui t'entraînes 3 fois par semaine : une séance squat et développé couché, une séance SBD légère et une séance SBD lourde (squat, bench, deadlift).</p></div>
+          <div><p class="eyebrow">Programme Fondations</p><h3>3 séances / semaine</h3><p class="muted">Pour toi qui t'entraînes 3 fois par semaine.</p></div>
           <div class="prog-buy"><div class="price">29 €<small>paiement unique</small></div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
         <article class="prog-row">
-          <div><p class="eyebrow">Programme Fondations</p><h3>4 séances / semaine</h3><p class="muted">Pour toi qui t'entraînes 4 fois par semaine : deux séances squat et développé couché, une séance développé couché et soulevé de terre, une séance SBD lourde (squat, bench, deadlift).</p></div>
+          <div><p class="eyebrow">Programme Fondations</p><h3>4 séances / semaine</h3><p class="muted">Pour toi qui t'entraînes 4 fois par semaine.</p></div>
           <div class="prog-buy"><div class="price">29 €<small>paiement unique</small></div><a class="btn" href="#programmes">Acheter</a></div>
         </article>
       </div>
