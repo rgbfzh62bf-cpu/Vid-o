@@ -15,4 +15,4 @@
 
 # Texte de référence voix (mémo user)
 
-Salut, c'est moi. Aujourd'hui, on parle du squat. C'est un exercice que tout le monde connaît, mais la façon de le faire change les muscles qui travaillent le plus. Le squat classique, c'est surtout les quadriceps et les fessiers. Le sumo, pieds écartés, travaille les fessiers et cible davantage l'intérieur des cuisses. Le bulgare, avec le pied arrière sur un banc, fait travailler une jambe à la fois, surtout les fessiers et les quadriceps. Et le goblet, avec une charge contre la poitrine, t'aide à garder le buste droit et renforce ton gainage. Alors, tu fais lequel ? Dis-le-moi en commentaire.
+Le squat ne travaille pas que tes cuisses. Selon la façon dont tu le fais, ce ne sont pas les mêmes muscles qui bossent le plus. Le squat classique, c'est surtout les quadriceps et les fessiers. Le sumo, pieds écartés, travaille les fessiers et cible davantage l'intérieur des cuisses. Le bulgare, avec le pied arrière sur un banc, fait travailler une jambe à la fois. Et le goblet, avec une charge contre la poitrine, t'aide à garder le buste droit. Alors, tu fais lequel ? Dis-le-moi en commentaire.
