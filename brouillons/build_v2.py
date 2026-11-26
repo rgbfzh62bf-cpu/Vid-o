@@ -62,6 +62,24 @@ def apply_theme(wb):
                 if b and any(s is not None and s.style for s in (b.left,b.right,b.top,b.bottom)):
                     cell.border=Border(left=_side(b.left),right=_side(b.right),top=_side(b.top),bottom=_side(b.bottom))
         ws.sheet_properties.tabColor=NAVY if ws.title in('COMMENCER ICI','MES 1RM','BILAN') else ACC
+        import os; TH=os.environ.get('THEME','C')
+        if TH in('B','C'):
+            # bandeau d'en-tête bleu nuit, comme le site
+            for r in range(1,5):
+                for c in range(1,NC+2):
+                    cell=ws.cell(r,c); cell.fill=fl(NAVY); f=cell.font
+                    cell.font=Font(name=f.name,size=f.sz,bold=f.b,italic=f.i,color=MUT if r==3 else WHITE)
+            for c in range(10,14): ws.cell(2,c).fill=fl(SURF2); ws.cell(3,c).fill=fl(SURF2)
+            if ws.title.startswith('SEMAINE'):
+                for r in (6,7):
+                    for c in range(2,NC+1):
+                        cell=ws.cell(r,c); cell.fill=fl(SURF); f=cell.font
+                        cell.font=Font(name=f.name,size=f.sz,bold=f.b,italic=f.i,color=ACC2 if r==6 else WHITE)
+        if TH=='C':
+            for r in range(1,ws.max_row+41):
+                for c in range(1,27):
+                    cell=ws.cell(r,c)
+                    if _rgb(cell.fill.fgColor)==WHITE and cell.value is None and cell.protection.locked is not False and not (cell.border and cell.border.left and cell.border.left.style): cell.fill=fl(NAVY)
 
 def header(ws,title,sub,logo):
     for r in range(1,5): paint(ws,r,r,1,NC+1,WHITE)
