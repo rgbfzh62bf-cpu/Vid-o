@@ -23,13 +23,13 @@ def inline(h):
     return re.sub(r'<link rel="preload"[^>]*>\n?', '', h)
 
 
-IMG = 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(HERE, 'apercu-tableur.jpg'), 'rb').read()).decode()
+IMG = 'data:image/jpeg;base64,' + base64.b64encode(open(os.path.join(HERE, 'fondations-athlyse.jpg'), 'rb').read()).decode()
 
-LISTE = """          <li>Tes charges calculées automatiquement à partir de tes 1RM</li>
+LISTE = """          <li>Tes séances prêtes sur l'appli Athlyse, jour par jour</li>
+          <li>Tes charges calculées à partir de tes 1RM</li>
           <li>La charge monte chaque semaine, sans que tu aies à calculer</li>
-          <li>Chaque exercice et chaque variante expliqués pas à pas</li>
-          <li>Guide de séance, lexique et questions fréquentes</li>
-          <li>Sur Google Sheets : téléphone, tablette ou ordinateur</li>"""
+          <li>Les consignes de chaque exercice et de chaque variante</li>
+          <li>Tu notes tes charges et ton ressenti à chaque séance</li>"""
 
 INFO = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg>'
 
@@ -37,21 +37,21 @@ SECTION = f"""<section id="programmes">
   <div class="wrap">
     <div class="head reveal">
       <div><p class="eyebrow">Programme de force athlétique · en autonomie</p><h2 style="margin-top:10px">Fondations :<br>la force athlétique en autonomie.</h2></div>
-      <p>Un programme de 4 semaines sur squat, développé couché et soulevé de terre, à suivre seul et à ton rythme. Le tableur calcule tes charges pour toi.</p>
+      <p>Un programme de 4 semaines sur squat, développé couché et soulevé de terre, à suivre seul et à ton rythme, directement sur l'appli Athlyse.</p>
     </div>
     <article class="plan prog-card reveal">
-      <figure class="prog-shot"><img src="{IMG}" alt="Aperçu du tableur Fondations : semaine 1 de la version 3 jours, avec les charges calculées"><figcaption>Aperçu : semaine 1, version 3 jours (exemple avec des 1RM de 100, 70 et 120 kg)</figcaption></figure>
+      <figure class="prog-shot"><img src="{IMG}" alt="Le programme Fondations dans l'appli Athlyse : jour 1 de la semaine 1"><figcaption>Exemple : jour 1, semaine 1 (1RM squat 100 kg, développé couché 70 kg)</figcaption></figure>
       <div class="prog-side">
         <p class="eyebrow">Ce que tu reçois</p>
         <ul>
 {LISTE}
         </ul>
-        <p class="prog-auto">{INFO}<span>En autonomie, sans suivi : après l'achat, il n'y a ni retour sur ta technique, ni échange avec moi. Tout est expliqué dans le fichier.</span></p>
+        <p class="prog-auto">{INFO}<span>En autonomie, sans suivi : après l'achat, il n'y a ni retour sur ta technique, ni échange avec moi. Tout est expliqué dans l'appli.</span></p>
         <div class="prog-opts">
           <div class="prog-opt"><p class="eyebrow">3 jours / semaine</p><div class="price">29 €</div><p class="muted">Squat et développé couché, une séance légère, une séance lourde.</p><a class="btn" href="#programmes">Acheter</a></div>
           <div class="prog-opt"><p class="eyebrow">4 jours / semaine</p><div class="price">29 €</div><p class="muted">Plus de séances pour travailler chaque mouvement plus souvent.</p><a class="btn" href="#programmes">Acheter</a></div>
         </div>
-        <p class="prog-pay">Paiement unique · accès illimité · tableur reçu par e-mail juste après l'achat</p>
+        <p class="prog-pay">Paiement unique · accès illimité · programme sur l'appli Athlyse</p>
       </div>
     </article>
     <p class="prog-note reveal">Envie d'aller plus loin avec un suivi personnalisé ? <a href="#appel">On en parle →</a></p>
@@ -62,10 +62,10 @@ SECTION = f"""<section id="programmes">
 
 CSS = """
 /* TEST rubrique programmes */
-#programmes .prog-card{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;align-items:center}
-.prog-shot{margin:0;display:grid;gap:8px;min-width:0}
-.prog-shot img{width:100%;height:auto;display:block;border-radius:12px;border:1px solid var(--line);box-shadow:0 20px 40px -20px rgba(0,0,0,.7)}
-.prog-shot figcaption{font-size:.78rem;color:var(--muted)}
+#programmes .prog-card{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:28px;align-items:center}
+.prog-shot{margin:0;display:grid;gap:10px;min-width:0;justify-items:center}
+.prog-shot img{width:min(280px,100%);height:auto;display:block;border-radius:40px;border:8px solid #1C2B42;box-shadow:0 0 0 2px var(--line),0 30px 60px -25px rgba(0,0,0,.8)}
+.prog-shot figcaption{font-size:.78rem;color:var(--muted);text-align:center}
 .prog-side{display:grid;gap:14px;min-width:0}
 .prog-side ul{margin:0}
 .prog-auto{display:flex;gap:10px;align-items:flex-start;margin:0;padding:12px 14px;border:1px solid var(--accent);border-radius:12px;background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--ink);font-size:.88rem;line-height:1.45}
@@ -78,7 +78,7 @@ CSS = """
 .prog-note{margin-top:18px;text-align:center;color:var(--muted);font-size:.95rem}
 .prog-note a{color:var(--accent);font-weight:700;text-decoration:none;white-space:nowrap}
 @media (max-width:900px){#programmes .prog-card{grid-template-columns:1fr}}
-@media (max-width:600px){.prog-opts{gap:8px}.prog-opt{padding:12px 10px}.prog-opt .price{font-size:2rem}.prog-opt .eyebrow{font-size:.6rem;letter-spacing:.06em}.prog-opt .muted{font-size:.78rem}}
+@media (max-width:600px){.prog-shot img{width:220px;border-radius:32px;border-width:6px}.prog-opts{gap:8px}.prog-opt{padding:12px 10px}.prog-opt .price{font-size:2rem}.prog-opt .eyebrow{font-size:.6rem;letter-spacing:.06em}.prog-opt .muted{font-size:.78rem}}
 """
 
 h = open('index.html').read()
@@ -94,7 +94,7 @@ open(os.path.join(out, 'index.html'), 'w').write(inline(h))
 
 l = open('liens.html').read()
 ic = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>'
-btn = f'    <a class="l" href="index.html#programmes"><span class="i">{ic}</span><span>Programme force athlétique<small>En autonomie · sans suivi · 29 €</small></span><span class="go">→</span></a>\n'
+btn = f'    <a class="l" href="index.html#programmes"><span class="i">{ic}</span><span>Programme force athlétique<small>Sur Athlyse · en autonomie · 29 €</small></span><span class="go">→</span></a>\n'
 j = l.index('    <a class="l" href="https://calendly.com')
 l = l[:j] + btn + l[j:]
 open(os.path.join(out, 'liens.html'), 'w').write(inline(l))
