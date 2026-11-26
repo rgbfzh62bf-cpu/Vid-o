@@ -189,7 +189,7 @@ def build(days,label,out,logo):
             d=s.cell(r,NC,'OBSERVATIONS'); 
             hr=r; r+=1; first=r; rows=[]
             for k,(typ,ex,sets,reps,pct,rpe,rest,tip) in enumerate(exs):
-                n=sets+1 if (wi>=1 and typ and sets>=3) else sets
+                n=sets
                 p=round(pct+inc,3) if pct else None
                 vals={3:ex,4:n,5:reps,6:p if p else '—',8:rpe_for(rpe,wi),9:rest,10:tip}
                 bg=LIGHT if typ else GREY
