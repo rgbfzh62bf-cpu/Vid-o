@@ -15,6 +15,12 @@ Any video task (make, edit, cut, animate, caption, render, convert): load skills
 5. `reverse-any-video` when user gives a video to copy or recreate.
 New skill needed? Use `find-skills`.
 
+## Règles de contenu (toutes les vidéos)
+- Niche : coach fitness, cible perte de poids. Parler à un débutant complet : zéro jargon, sujet qui donne envie de rester.
+- But n°1 : rétention maximale (la personne reste le plus longtemps possible).
+- Au moins 3 call to action par vidéo, répartis (début / milieu / fin), ex. : « reste jusqu'à la fin », « enregistre la vidéo », « commente MOT pour recevoir… ».
+- Format de référence : voir `NOTES.md` (split face cam + tableau blanc qui se construit case par case et mène à un résultat).
+
 ## Token rules
 - Reuse registry blocks over custom code.
 - Read only needed file parts. No full-file dumps in chat.
