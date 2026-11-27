@@ -41,4 +41,4 @@ New skill needed? Use `find-skills`.
 
 ## DA (2 identités distinctes)
 - Vidéos faites par Claude sans footage du coach (silhouettes, série « 5 X ») : DA vert #c8ff2e, Archivo Black, dings/taps, beat CC0.
-- Vidéos où on voit le coach (face caméra) : DA « STUDIO » = dégradé marque rose #ff4f8b → orange #ff9a3c, Montserrat + Playfair italique, sous-titres phrase (pas majuscules), apparitions flou→net, pas de ding/flash, musique lo-fi maison. Gabarit : mofu-erreurs/build.py. Voix : débruiter DeepFilterNet3.
+- Vidéos où on voit le coach (face caméra) : DA « ÉDITO » = cartes papier crème #F4EFE6 (erreur/hook) qui basculent en encre #141414 (solution/CTA), accent doré #E0A458 (foncé #B8742E), Inter 900 + EB Garamond italique pour les mots forts, sous-titres phrase Inter blanc + mot-clé Garamond doré. Cartes en haut sans toucher la tête, pas de ding/flash, musique lo-fi maison. Gabarit : mofu-erreurs/build.py. Voix : débruiter DeepFilterNet3. Pas basé sur le t-shirt ni sur le site (user n'aime pas sa charte).

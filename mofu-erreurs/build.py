@@ -1,12 +1,11 @@
 """mofu-erreurs — DA « STUDIO » (vidéos face caméra du coach).
-Palette marque LA FIT STUDIO : rose → orange. Typo : Montserrat + Playfair Display italique.
+DA « ÉDITO » : cartes papier crème / encre, accent doré, Inter 900 + EB Garamond italique.
 Pas de ding, pas de flash, musique lo-fi originale. Génère index.html + compositions/*.html depuis raw/edl.json."""
 import json, re, subprocess
 
 E = json.load(open("raw/edl.json"))
 D = 38.68
-GA, GB = "#ff4f8b", "#ff9a3c"
-GRAD = f"linear-gradient(90deg, {GA}, {GB})"
+CREAM, INK, SOFT, ACC, ACCD = "#F4EFE6", "#141414", "#8A8174", "#E0A458", "#B8742E"  # DA ÉDITO
 
 # ---- words (fix tokens) ----
 W = []
@@ -62,11 +61,10 @@ caps = f"""<template>
   <style>
     #caps {{ position:absolute; inset:0; }}
     .cg {{ position:absolute; left:0; width:1080px; top:1150px; text-align:center; opacity:0; visibility:hidden; overflow:visible; padding:0 190px;
-      font-family:"Montserrat",sans-serif; font-weight:700; font-size:54px; line-height:1.1; color:#fff; letter-spacing:-0.01em;
+      font-family:"Inter",sans-serif; font-weight:700; font-size:54px; line-height:1.1; color:#fff; letter-spacing:-0.01em;
       text-shadow:0 2px 14px rgba(0,0,0,0.65), 0 1px 2px rgba(0,0,0,0.6); }}
     .cg .w {{ display:inline-block; }}
-    .cg .k span {{ font-family:"Playfair Display",serif; font-style:italic; font-weight:800; font-size:62px;
-      background:{GRAD}; -webkit-background-clip:text; background-clip:text; color:transparent; text-shadow:none; padding:0 4px; }}
+    .cg .k span {{ font-family:"EB Garamond",serif; font-style:italic; font-weight:600; font-size:64px; color:{ACC}; }}
   </style>
   <div id="caps" data-composition-id="caps" data-width="1080" data-height="1920" data-layout-allow-overlap>
     {chr(10).join(cap_html)}
@@ -82,8 +80,8 @@ open("compositions/caps.html", "w").write(caps)
 # ---- camera: gentle punch-ins (1.0 / 1.07), slow drift ----
 cam_js = []
 for i, t in enumerate(seg):
-    sc = 1.0 if i % 2 == 0 else 1.07
-    if t in (T_E1, T_E2, T_E3): sc = 1.12
+    sc = 1.0 if i % 2 == 0 else 1.05
+    if t in (T_E1, T_E2, T_E3): sc = 1.06
     if i == 7: sc = 1.0
     nxt = seg[i + 1] if i + 1 < len(seg) else D
     cam_js.append(f'tl.fromTo("#camw", {{scale:{sc}}}, {{scale:{sc + 0.03:.2f}, duration:{nxt - t - 0.02:.2f}, ease:"none"}}, {t:.2f});')
@@ -112,7 +110,7 @@ chap = [(1, T_E1, T_S1, T_E2, "Que du cardio", "2 à 3 séances", "de muscu par 
         (2, T_E2, T_S2, T_E3, "Trop peu, puis le craquage", "Un petit déficit", "tenu 7 jours sur 7"),
         (3, T_E3, T_S3, T_CTA, "Assis toute la journée", "8 000 pas", "minimum par jour")]
 H, J = [], []
-H.append('''<div id="hook" class="blk"><div class="hk1">La balance</div><div class="hk2"><em>ne bouge pas</em> ?</div>
+H.append('''<div id="hook" class="blk"><span class="kick">Perte de poids</span><div class="hk1 t">La balance</div><div class="hk2 t"><span class="it">ne bouge pas</span> ?</div>
       <div id="hsub" class="sub"><i></i>3 erreurs qui te bloquent</div></div>''')
 J.append(f'''tl.fromTo("#hook .hk1", {{y:30, opacity:0, filter:"blur(8px)"}}, {{y:0, opacity:1, filter:"blur(0px)", duration:0.5, ease:"power3.out"}}, 0.0);
     tl.fromTo("#hook .hk2", {{y:30, opacity:0, filter:"blur(8px)"}}, {{y:0, opacity:1, filter:"blur(0px)", duration:0.5, ease:"power3.out"}}, 0.15);
@@ -122,16 +120,17 @@ J.append(f'''tl.fromTo("#hook .hk1", {{y:30, opacity:0, filter:"blur(8px)"}}, {{
 for n, t0, ts, t1, lab, s1, s2 in chap:
     H.append(f'''<div id="ch{n}" class="blk">
       <div class="num">0{n}</div>
-      <div id="lab{n}" class="lab"><span class="kick">Erreur</span>{lab}</div>
-      <div id="fix{n}" class="fix"><span class="kick">La solution</span><div class="s1">{s1}</div><div class="s2">{s2}</div></div>
+      <div class="stack"><div id="lab{n}" class="lab"><span class="kick">Erreur</span><span class="t">{lab}</span></div>
+      <div id="fix{n}" class="fix"><span class="kick">La solution</span><div class="s1">{s1}</div><div class="s2">{s2}</div></div></div>
     </div>''')
     J.append(f'''tl.set("#ch{n}", {{opacity:1}}, {t0:.2f});
     tl.fromTo("#ch{n} .num", {{opacity:0, y:40, filter:"blur(10px)"}}, {{opacity:1, y:0, filter:"blur(0px)", duration:0.55, ease:"power3.out"}}, {t0:.2f});
     tl.fromTo("#lab{n}", {{opacity:0, y:20}}, {{opacity:1, y:0, duration:0.4, ease:"power3.out"}}, {t0 + 0.25:.2f});
     tl.to("#lab{n}", {{opacity:0, y:-14, duration:0.25, ease:"power2.in"}}, {ts - 0.25:.2f});
+    tl.fromTo("#ch{n}", {{backgroundColor:"{CREAM}"}}, {{backgroundColor:"{INK}", duration:0.35, ease:"power2.inOut"}}, {ts - 0.15:.2f});
     tl.fromTo("#fix{n}", {{opacity:0, y:20, filter:"blur(8px)"}}, {{opacity:1, y:0, filter:"blur(0px)", duration:0.45, ease:"power3.out"}}, {ts:.2f});
     tl.to("#ch{n}", {{opacity:0, filter:"blur(8px)", duration:0.3, ease:"power2.in"}}, {t1 - 0.3:.2f});''')
-H.append('''<div id="cta" class="blk"><div class="c1">Commente</div><div id="ctaw" class="c2">CHANGEMENT</div>
+H.append('''<div id="cta" class="blk"><div class="c1 t">Commente</div><div id="ctaw" class="c2">CHANGEMENT</div>
       <div class="sub" id="c3"><i></i>je t'écris en privé</div></div>''')
 J.append(f'''tl.set("#cta", {{opacity:1}}, {T_CTA:.2f});
     tl.fromTo("#cta .c1", {{opacity:0, y:24, filter:"blur(8px)"}}, {{opacity:1, y:0, filter:"blur(0px)", duration:0.45, ease:"power3.out"}}, {T_CTA:.2f});
@@ -145,31 +144,32 @@ J.append(f'tl.fromTo("#bar i", {{scaleX:0}}, {{scaleX:1, duration:{D:.2f}, ease:
 shadow = "text-shadow:0 2px 18px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.5);"
 ov = f"""<template>
   <style>
-    #ov {{ position:absolute; inset:0; color:#fff; font-family:"Montserrat",sans-serif; }}
-    .blk {{ position:absolute; left:150px; width:780px; top:330px; text-align:center; opacity:0; }}
+    #ov {{ position:absolute; inset:0; font-family:"Inter",sans-serif; color:{INK}; }}
+    .blk {{ position:absolute; left:170px; width:740px; top:300px; text-align:center; opacity:0; padding:26px 34px 30px; border-radius:30px;
+      background:{CREAM}; color:{INK}; box-shadow:0 24px 60px rgba(0,0,0,0.28), 0 2px 0 rgba(255,255,255,0.4) inset; }}
     #hook {{ opacity:1; }}
-    .hk1 {{ font-weight:800; font-size:64px; line-height:1; letter-spacing:-0.02em; {shadow} }}
-    .hk2 {{ font-weight:800; font-size:64px; line-height:1.1; letter-spacing:-0.02em; {shadow} }}
-    em, .c2 {{ font-family:"Playfair Display",serif; font-style:italic; font-weight:800; }}
-    .hk2 em {{ font-size:80px; background:{GRAD}; -webkit-background-clip:text; background-clip:text; color:transparent; padding:0 6px; text-shadow:none; }}
-    .sub {{ margin-top:22px; font-weight:700; font-size:38px; letter-spacing:0.02em; {shadow} }}
-    .sub i {{ display:block; width:120px; height:4px; margin:0 auto 18px; border-radius:2px; background:{GRAD}; transform-origin:50% 50%; }}
-    .num {{ font-family:"Playfair Display",serif; font-style:italic; font-weight:800; font-size:150px; line-height:0.9;
-      background:{GRAD}; -webkit-background-clip:text; background-clip:text; color:transparent; }}
-    .lab, .fix {{ position:absolute; left:0; width:780px; top:150px; }}
-    .kick {{ display:block; font-weight:800; font-size:30px; letter-spacing:0.24em; text-transform:uppercase; color:#fff; margin-bottom:10px; {shadow} }}
-    .lab {{ font-weight:800; font-size:54px; line-height:1.05; letter-spacing:-0.02em; {shadow} }}
-    .fix {{ opacity:0; }}
-    .fix .kick {{ color:{GB}; }}
-    .fix .s1 {{ font-family:"Playfair Display",serif; font-style:italic; font-weight:800; font-size:76px; line-height:1; {shadow} }}
-    .fix .s2 {{ margin-top:8px; font-weight:700; font-size:38px; {shadow} }}
-    #cta {{ top:304px; }}
-    .c1 {{ font-weight:800; font-size:60px; letter-spacing:-0.02em; {shadow} }}
-    .c2 {{ display:inline-block; margin-top:14px; font-size:76px; font-style:normal; font-family:"Montserrat",sans-serif; font-weight:900; letter-spacing:0.02em;
-      color:#fff; padding:14px 38px 18px; border-radius:22px; background:linear-gradient(90deg, {GA}, {GB}, {GA}); background-size:200% 100%;
-      box-shadow:0 12px 40px rgba(255,79,139,0.35); }}
-    #bar {{ position:absolute; left:150px; width:780px; top:296px; height:4px; border-radius:2px; background:rgba(255,255,255,0.22); overflow:hidden; }}
-    #bar i {{ display:block; width:100%; height:100%; background:{GRAD}; transform-origin:0 50%; }}
+    .kick {{ display:block; font-weight:700; font-size:28px; letter-spacing:0.22em; text-transform:uppercase; color:{SOFT}; margin-bottom:8px; }}
+    .t {{ font-weight:900; letter-spacing:-0.035em; line-height:0.98; }}
+    .it {{ font-family:"EB Garamond",serif; font-style:italic; font-weight:500; letter-spacing:-0.01em; }}
+    .hk1 {{ font-size:72px; }}
+    .hk2 {{ font-size:72px; }}
+    .hk2 .it {{ font-size:86px; color:{ACCD}; }}
+    .sub {{ margin-top:16px; font-weight:600; font-size:32px; color:{SOFT}; }}
+    .sub i {{ display:block; width:90px; height:4px; margin:0 auto 14px; border-radius:2px; background:{ACC}; transform-origin:50% 50%; }}
+    .num {{ font-family:"EB Garamond",serif; font-style:italic; font-weight:500; font-size:110px; line-height:0.85; color:{ACCD}; }}
+    .stack {{ display:grid; margin-top:6px; }}
+    .lab, .fix {{ grid-area:1/1; }}
+    .lab {{ font-size:62px; }}
+    .fix {{ opacity:0; color:{CREAM}; }}
+    .fix .kick {{ color:{ACC}; }}
+    .fix .s1 {{ font-family:"EB Garamond",serif; font-style:italic; font-weight:500; font-size:84px; line-height:0.95; color:{ACC}; }}
+    .fix .s2 {{ margin-top:8px; font-weight:700; font-size:34px; color:{CREAM}; }}
+    #cta {{ background:{INK}; color:{CREAM}; }}
+    .c1 {{ font-size:64px; }}
+    .c2 {{ display:inline-block; margin-top:12px; font-weight:900; font-size:80px; letter-spacing:-0.02em; color:{INK}; padding:8px 36px 14px; border-radius:20px; background:{ACC}; }}
+    #cta .sub {{ color:rgba(244,239,230,0.75); }}
+    #bar {{ position:absolute; left:170px; width:740px; top:282px; height:4px; border-radius:2px; background:rgba(255,255,255,0.3); overflow:hidden; }}
+    #bar i {{ display:block; width:100%; height:100%; background:{CREAM}; transform-origin:0 50%; }}
   </style>
   <div id="ov" data-composition-id="ov" data-width="1080" data-height="1920" data-layout-allow-overlap>
     {chr(10).join(H)}
