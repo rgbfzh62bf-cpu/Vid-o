@@ -37,4 +37,4 @@ New skill needed? Use `find-skills`.
 
 ## Légendes Instagram (tous les reels)
 - Toujours fournir une légende avec le mot-clé **CHANGEMENT** (ex. « Commente CHANGEMENT … »).
-- Courte : 1-2 lignes max + 3-5 hashtags.
+- Courte : 1-2 lignes max + 5 hashtags ciblés sur le sujet de la vidéo (mix large + niche FR, ex. #legday #musculationfrance).
