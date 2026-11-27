@@ -1,5 +1,5 @@
 <template>
-  <div id="carte" data-composition-id="carte" data-start="0" data-duration="32.07"
+  <div id="carte" data-composition-id="carte" data-start="0" data-duration="35.27"
        data-width="1080" data-height="1920" data-layout-allow-overflow>
     <!-- Tableau blanc (moitié basse) -->
     <div id="c-board">
@@ -134,7 +134,7 @@
 
       // Accroche 0-3 s : texte plein écran sur la carte
       tl.fromTo(S + "#c-hook", { opacity: 0, scale: 0.92 }, { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" }, 0.00);
-      tl.to(S + "#c-hook", { opacity: 0, duration: 0.15 }, 2.6);
+      tl.to(S + "#c-hook", { opacity: 0, duration: 0.15 }, 2.87);
 
       // Case de départ + titre 0
       const pop = (id, t) => tl.fromTo(S + id, { opacity: 0, scale: 0.6, xPercent: -50, yPercent: -50 },
@@ -147,7 +147,7 @@
         tl.to(S + id + "h", { opacity: 1, duration: 0.12 }, t + 0.82); };
       const go = (x, y, z, t, d) => tl.to(S + "#c-cam", { ...cam(x, y, z), duration: d || 1.1, ease: "power3.inOut" }, t);
 
-      pop("#c-n0", 0.05); title("#c-t0", 0.00, 5.32);
+      pop("#c-n0", 0.05); title("#c-t0", 0.00, 5.90);
 
       // CTA 1 (3-6 s)
       const cta = (id, t0, t1) => {
@@ -155,29 +155,29 @@
         tl.to(S + id, { scale: 1.05, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, t0 + 0.6);
         tl.to(S + id, { opacity: 0, y: -20, duration: 0.25 }, t1);
       };
-      cta("#c-cta1", 2.63, 5.33);
+      cta("#c-cta1", 2.90, 5.90);
 
       // Erreur 1 (6-14 s)
-      link("#c-l1", 5.32); go(1300, 600, Z, 5.33); pop("#c-n1", 5.70); title("#c-t1", 5.33, 10.08);
+      link("#c-l1", 5.90); go(1300, 600, Z, 5.90); pop("#c-n1", 6.30); title("#c-t1", 5.90, 11.15);
       // Erreur 2 (14-22 s)
-      link("#c-l2", 10.07); go(500, 960, Z, 10.08); pop("#c-n2", 10.40); title("#c-t2", 10.13, 15.45);
+      link("#c-l2", 11.14); go(500, 960, Z, 11.15); pop("#c-n2", 11.50); title("#c-t2", 11.20, 16.99);
       // CTA 2 (22-25 s)
-      cta("#c-cta2", 14.07, 15.50);
+      cta("#c-cta2", 15.48, 17.07);
       // Erreur 3 (25-33 s)
-      link("#c-l3", 15.45); go(1300, 1320, Z, 15.50); pop("#c-n3", 15.80); title("#c-t3", 15.53, 19.07);
+      link("#c-l3", 16.99); go(1300, 1320, Z, 17.07); pop("#c-n3", 17.40); title("#c-t3", 17.10, 21.02);
       // Erreur 4 (33-41 s)
-      link("#c-l4", 19.07); go(500, 1680, Z, 19.17); pop("#c-n4", 19.49); title("#c-t4", 19.22, 22.77);
+      link("#c-l4", 21.02); go(500, 1680, Z, 21.10); pop("#c-n4", 21.46); title("#c-t4", 21.16, 25.10);
 
       // Dézoom : toute la carte (41-46 s)
-      go(900, 1100, 0.42, 22.77, 1.8); title("#c-t5", 22.77, 24.11);
+      go(900, 1100, 0.42, 25.10, 1.8); title("#c-t5", 25.10, 26.59);
       // Case finale (46-54 s)
-      link("#c-l5", 23.83); pop("#c-n5", 24.26);
-      go(1000, 2080, 0.95, 24.90, 1.3); title("#c-t6", 24.99, 29.63);
-      tl.fromTo(S + ".c-res", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 26.49);
+      link("#c-l5", 26.29); pop("#c-n5", 26.76);
+      go(1000, 2080, 0.95, 27.47, 1.3); title("#c-t6", 27.57, 32.60);
+      tl.fromTo(S + ".c-res", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 29.19);
 
       // CTA 3 (54-60 s)
-      tl.fromTo(S + "#c-cta3", { opacity: 0, y: 40, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 29.70);
-      tl.to(S + "#c-cta3", { scale: 1.04, duration: 0.3, yoyo: true, repeat: 3, ease: "sine.inOut" }, 30.30);
+      tl.fromTo(S + "#c-cta3", { opacity: 0, y: 40, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 32.67);
+      tl.to(S + "#c-cta3", { scale: 1.04, duration: 0.3, yoyo: true, repeat: 3, ease: "sine.inOut" }, 33.33);
 
       // Cartes mot-clé (cut net, petit punch du texte)
       const kw = (id, t0, t1) => {
@@ -185,9 +185,9 @@
         tl.fromTo(S + id, { scale: 1.06 }, { scale: 1, duration: 0.35, ease: "power3.out" }, t0);
         tl.set(S + id, { opacity: 0 }, t1);
       };
-      kw("#c-k0", 6.34, 6.83); kw("#c-k1", 9.17, 10.08); kw("#c-k2", 12.04, 12.91); kw("#c-k3", 23.27, 24.40);
-      kw("#c-k4", 24.40, 25.48); kw("#c-k5", 26.66, 27.44);
-      kw("#c-k6", 10.6, 11.05); kw("#c-k7", 21.45, 21.95);
+      kw("#c-k0", 7.01, 7.57); kw("#c-k1", 10.14, 11.15); kw("#c-k2", 13.29, 14.24); kw("#c-k3", 25.67, 26.92);
+      kw("#c-k4", 26.92, 28.08); kw("#c-k5", 29.38, 30.24);
+      kw("#c-k6", 11.71, 12.21); kw("#c-k7", 23.64, 24.19);
 
       window.__timelines["carte"] = tl;
     })();
