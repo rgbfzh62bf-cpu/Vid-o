@@ -7,8 +7,9 @@ Coach business (Brian Mark). "Full blueprint 1M business 2026". Format :
 - Fin : preuve sociale ($50M, 53 coachs) + CTA « follow + commente un mot » → lead magnet + DM.
 Statut : analysé. Niche user (autres branches) = coach fitness, cible perte de poids ; vend « Fondations » (prog force athlétique 4 sem, 29-39 €) + site avec avis. Verdict : format adapté (vidéo épinglée « plan complet perte de poids » + CTA commentaire → lead magnet).
 
-## Vidéo « balance » (en cours)
-- Script : `balance/script.md` (3 CTA). Montage : `balance/montage` (HyperFrames 1080x1920, 60 s).
-- `compositions/carte.html` = tableau blanc (cases, flèches, caméra, dézoom, case finale) + accroche + 3 CTA. Timings provisoires.
-- Démo sans face cam : `balance/montage/renders/demo-carte.mp4`.
-- Reste : rush face cam user (Drive) → coupe silences, transcription, caler timings sur la voix, sous-titres, musique/SFX.
+## Vidéo « balance » (v1 livrée)
+- Script : `balance/script.md` (3 CTA). Montage : `balance/montage` (HyperFrames 1080x1920, 42,8 s).
+- Rush Drive `IMG_1469.MOV` (126 s, 4K) coupé en 17 segments → `assets/facecam.mp4` (coupe silences + ratés, punch-in 1 plan sur 2, loudnorm -14).
+- `compositions/carte.html` = tableau blanc calé sur la voix ; `compositions/sous-titres.html` = sous-titres mot à mot (bloc registry caption-highlight).
+- Rendu : `balance/montage/renders/balance-v1.mp4`.
+- Pas encore : musique / SFX (à proposer).
