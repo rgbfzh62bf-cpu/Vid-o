@@ -77,3 +77,4 @@ Netlify déploie le dossier `site-en-ligne/` depuis la branche `claude/exciting-
 
 - 26/11 (suite) : hero = photo réduite (400 px ordi) et, sur tél/tablette, à côté du titre (alignés haut/bas). Rubrique Avis (test, avant Tarifs) : attendre accord écrit du client + prénom + date. Fondations (test) : visuel Athlyse retiré (capture = programme gratuit), 2 cartes côte à côte, textes allégés ; lien programmes sur page liens = logo Athlyse.
 - 27/11 : TEST page à part programmes.html (générée par test-rubrique-fondations.py) + bandeau « Tu préfères t'entraîner seul ? » sur l'accueil avant la FAQ + « Programmes » dans le menu. Au lancement : créer site/programmes.html et l'ajouter à build.py (wrap).
+- 27/11 : page Programmes (test) : 3 étapes + quiz + calculateur 1RM (Epley). Règle du quiz VALIDÉE par Alexis (4 séances si 4 jours dispo ET 1 an ou plus de muscu, sinon 3). Aperçu Fondations seul : https://claude.ai/artifact/WJqvmAuecZi3gNYpYbh2Xv
