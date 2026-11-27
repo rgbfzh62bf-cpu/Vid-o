@@ -211,9 +211,96 @@ main + section.call{padding-top:clamp(16px,3vw,32px)}
 .head h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:900}
 """
 
+OUTILS = """<section id="pg-plus">
+  <div class="wrap">
+    <p class="eyebrow">Comment ça marche</p>
+    <ol class="pp-steps reveal">
+      <li><b>1</b><div><strong>Tu choisis ton programme</strong><span>3 ou 4 séances par semaine, 29 € en paiement unique.</span></div></li>
+      <li><b>2</b><div><strong>Tu entres tes 1RM sur Athlyse</strong><span>Squat, développé couché, soulevé de terre. Tu ne les connais pas ? Estime-les avec le calculateur de la page.</span></div></li>
+      <li><b>3</b><div><strong>Tu t'entraînes</strong><span>Tes séances et tes charges sont prêtes, semaine après semaine.</span></div></li>
+    </ol>
+    <div class="pp-tools">
+      <div class="pp-box reveal" id="quiz"><div class="pp-top">
+        <p class="eyebrow">Quiz · 3 questions</p>
+        <h2 class="pp-h">Quel programme pour toi ?</h2>
+        <fieldset class="pp-q" data-q="j"><legend>Combien de jours peux-tu t'entraîner par semaine ?</legend><div class="pp-opt"><button type="button" data-v="3">3 jours</button><button type="button" data-v="4">4 jours ou plus</button></div></fieldset>
+        <fieldset class="pp-q" data-q="x"><legend>Depuis combien de temps tu fais de la musculation ?</legend><div class="pp-opt"><button type="button" data-v="0">Moins d'1 an</button><button type="button" data-v="1">1 an ou plus</button></div></fieldset>
+        <fieldset class="pp-q" data-q="r"><legend>Tu connais tes 1RM ?</legend><div class="pp-opt"><button type="button" data-v="1">Oui</button><button type="button" data-v="0">Pas vraiment</button></div></fieldset></div>
+        <div class="pp-res" id="quizRes" aria-live="polite"><div class="pp-v on" data-k="0"><p>Réponds aux 3 questions pour voir le programme conseillé.</p></div><div class="pp-v" data-k="4"><p class="eyebrow">Programme conseillé</p><strong>4 séances / semaine</strong><p>Tu as le temps et l'habitude de t'entraîner : 4 séances te permettent d'en faire plus chaque semaine.<span class="pp-r"> Commence par estimer tes 1RM avec l'outil de calcul.</span></p><a class="btn" href="#programmes">Voir le programme →</a></div><div class="pp-v" data-k="3d"><p class="eyebrow">Programme conseillé</p><strong>3 séances / semaine</strong><p>Tu débutes : 3 séances te laissent le temps de récupérer et de bien apprendre les mouvements.<span class="pp-r"> Commence par estimer tes 1RM avec l'outil de calcul.</span></p><a class="btn" href="#programmes">Voir le programme →</a></div><div class="pp-v" data-k="3"><p class="eyebrow">Programme conseillé</p><strong>3 séances / semaine</strong><p>Le programme 3 séances est fait pour ton rythme.<span class="pp-r"> Commence par estimer tes 1RM avec l'outil de calcul.</span></p><a class="btn" href="#programmes">Voir le programme →</a></div></div>
+      </div>
+      <div class="pp-box reveal" id="calcul"><div class="pp-top">
+        <p class="eyebrow">Outil gratuit</p>
+        <h2 class="pp-h">Estime ton 1RM</h2>
+        <p class="pp-lead">Entre une charge que tu as soulevée et le nombre de répétitions faites avec une bonne technique.</p>
+        <div class="pp-in">
+          <label>Charge (kg)<input id="rmW" type="number" inputmode="decimal" min="1" max="500" step="0.5" placeholder="ex. 80"></label>
+          <label>Répétitions<input id="rmR" type="number" inputmode="numeric" min="1" max="10" step="1" placeholder="1 à 10"></label>
+        </div>
+        <p class="pp-note">Estimation (formule d'Epley), fiable surtout entre 1 et 10 répétitions. Fais le calcul pour chacun des 3 mouvements.</p></div>
+        <div class="pp-res pp-rm" aria-live="polite"><span>Ton 1RM estimé</span><output id="rmOut">— kg</output></div>
+      </div>
+    </div>
+  </div>
+</section>
+<script>
+(function(){
+var a={},res=document.getElementById('quizRes');
+document.querySelectorAll('.pp-q').forEach(function(f){f.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;
+f.querySelectorAll('button').forEach(function(x){x.classList.toggle('on',x===b);x.setAttribute('aria-pressed',x===b)});a[f.dataset.q]=b.dataset.v;show()})});
+function show(){if(!('j'in a&&'x'in a&&'r'in a))return;
+var k=a.j==='4'&&a.x==='1'?'4':(a.j==='4'?'3d':'3');
+res.querySelectorAll('.pp-v').forEach(function(v){v.classList.toggle('on',v.dataset.k===k)});res.classList.toggle('no1rm',a.r==='0')}
+var W=document.getElementById('rmW'),R=document.getElementById('rmR'),O=document.getElementById('rmOut');
+function rm(){var w=parseFloat(W.value.replace(',','.')),r=parseInt(R.value,10);
+if(!(w>0&&w<=500&&r>=1&&r<=10)){O.textContent='— kg';return}
+var v=r===1?w:w*(1+r/30);O.textContent=(Math.round(v*2)/2).toString().replace('.',',')+' kg'}
+W.addEventListener('input',rm);R.addEventListener('input',rm);
+})();
+</script>
+"""
+OUTILS_CSS = """
+/* TEST outils page programmes */
+#pg-plus{padding-top:0}
+.pp-steps{list-style:none;margin:10px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.pp-steps li{display:flex;gap:14px;align-items:flex-start;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px}
+.pp-steps li>b{flex:none;width:36px;height:36px;border-radius:50%;background:var(--accent);color:var(--on-accent);display:grid;place-items:center;font-family:var(--f-display);font-size:1.2rem}
+.pp-steps strong{display:block;margin-bottom:4px}.pp-steps span{color:var(--muted);font-size:.9rem;line-height:1.4}
+.pp-tools{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:16px;align-items:stretch}
+.pp-box{display:flex;flex-direction:column;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px;min-width:0}
+.pp-box .eyebrow{margin:0}
+.pp-top{display:flex;flex-direction:column;gap:14px;min-width:0}
+.pp-tools{grid-template-rows:auto auto;row-gap:0}.pp-box{display:grid;grid-row:span 2;grid-template-rows:subgrid;row-gap:14px}.pp-box .pp-res{margin-top:0}
+.pp-h{font-size:clamp(1.6rem,3vw,2.2rem);margin:0}
+.pp-q{border:0;margin:0;padding:0;min-width:0}
+.pp-q legend{padding:0;margin-bottom:8px;font-weight:700;font-size:.95rem}
+.pp-opt{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.pp-opt button{font:inherit;font-size:.9rem;font-weight:700;padding:11px 10px;border-radius:12px;border:1px solid var(--line);background:var(--bg);color:var(--ink);cursor:pointer}
+.pp-opt button.on{background:var(--accent);border-color:var(--accent);color:var(--on-accent)}
+.pp-res{margin-top:auto;border:1px solid var(--accent);border-radius:12px;background:color-mix(in srgb,var(--accent) 10%,transparent);padding:14px 16px;display:grid;align-content:center}
+.pp-res{grid-template-areas:"v"}.pp-v{grid-area:v;display:grid;gap:6px;align-content:center;visibility:hidden}.pp-v.on{visibility:visible}.pp-r{display:inline}.pp-res:not(.no1rm) .pp-v.on .pp-r{visibility:hidden}
+.pp-res p{margin:0;font-size:.9rem;color:var(--muted)}
+.pp-res .eyebrow{margin:0}
+.pp-res strong{font-family:var(--f-display);font-size:1.5rem}
+.pp-res .btn{justify-self:start;margin-top:4px;padding:10px 18px;font-size:.88rem}
+.pp-lead{margin:0;color:var(--muted);font-size:.92rem}
+.pp-in{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.pp-in label{display:grid;gap:6px;font-weight:700;font-size:.9rem;min-width:0}
+.pp-rm{justify-items:center;text-align:center}
+.pp-rm span{color:var(--muted);font-size:.9rem}
+.pp-rm output{font-family:var(--f-display);font-size:clamp(2.6rem,6vw,3.6rem);font-weight:900;line-height:1}
+.pp-note{margin:0;font-size:.78rem;color:var(--muted)}
+@media (max-width:820px){
+.pp-steps{grid-template-columns:minmax(0,1fr);gap:10px}.pp-steps li{padding:14px}
+.pp-tools{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:10px}
+.pp-box{padding:16px;gap:12px;grid-row:auto;grid-template-rows:auto auto;row-gap:12px}.pp-tools{row-gap:10px}.pp-top{gap:12px}
+.pp-res{min-height:0}
+.pp-res .btn{justify-self:stretch;justify-content:center}
+}
+"""
+
 h = open('index.html').read()
 k = h.index('</style>', h.index('/* Tablette'))
-h = h[:k] + CSS + AVIS_CSS + TEASER_CSS + h[k:]
+h = h[:k] + CSS + AVIS_CSS + TEASER_CSS + OUTILS_CSS + h[k:]
 base = h  # page commune avant les ajouts propres à l'accueil
 
 # ---- Accueil : avis + bandeau, sans la rubrique complète
@@ -234,7 +321,7 @@ top = g[:g.index('<header class="hero"')]
 end = g[g.index('<section class="call" id="appel">'):]
 body = SECTION.replace('<section id="programmes">', '<section id="programmes" class="pg-top">', 1)
 body = re.sub(r'<h2 style="margin-top:10px">(.*?)</h2>', r'<h1 style="margin-top:10px">\1</h1>', body, count=1)
-g = top + '<main>\n' + body + '</main>\n' + end
+g = top + '<main>\n' + body + OUTILS + '</main>\n' + end
 g = menu(g)
 for sid in ('top', 'parcours', 'methode', 'appli', 'avis', 'formules', 'faq'):
     g = g.replace(f'href="#{sid}"', f'href="index.html#{sid}"')
