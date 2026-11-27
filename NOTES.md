@@ -5,4 +5,4 @@ Coach business (Brian Mark). "Full blueprint 1M business 2026". Format :
 - Split vertical : face cam en haut, tableau blanc animé en bas (cartes, flèches vertes, titre d'étape en majuscules).
 - 1 seule prise, débit rapide, sous-titres mot à mot, ~25 étapes en 6 « levels ».
 - Fin : preuve sociale ($50M, 53 coachs) + CTA « follow + commente un mot » → lead magnet + DM.
-Statut : analysé, niche de l'utilisateur pas encore connue.
+Statut : analysé. Niche user (autres branches) = coach fitness, cible perte de poids ; vend « Fondations » (prog force athlétique 4 sem, 29-39 €) + site avec avis. Verdict : format adapté (vidéo épinglée « plan complet perte de poids » + CTA commentaire → lead magnet).
