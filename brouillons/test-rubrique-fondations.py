@@ -298,9 +298,30 @@ OUTILS_CSS = """
 }
 """
 
+QUESTION = """<section id="question" class="pq-sec">
+  <div class="wrap">
+    <div class="pq reveal">
+      <div class="pq-txt"><p class="eyebrow">Une question avant d'acheter ?</p><h2 class="pp-h">Écris-moi.</h2><p>Ton niveau, ton matériel, le choix entre 3 et 4 séances : je te réponds avant que tu achètes.</p></div>
+      <div class="pq-acts"><a class="btn" href="mailto:alexis.bloquecoaching@gmail.com?subject=Question%20sur%20les%20programmes%20Fondations">Écrire un mail</a><a class="btn ghost" href="https://www.instagram.com/alexisblq_coaching/" target="_blank" rel="noopener">Instagram</a></div>
+    </div>
+  </div>
+</section>
+"""
+QUESTION_CSS = """
+/* TEST petit contact page programmes */
+.pq-sec{padding-top:0}
+.pq{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:20px 40px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:24px}
+.pq-txt{display:grid;gap:8px;min-width:0}.pq-txt .eyebrow{margin:0}.pq-txt p:last-child{margin:0;color:var(--muted);font-size:.92rem}
+.pq-acts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.pq-acts .btn{margin:0;justify-content:center;align-self:stretch}
+@media (max-width:820px){.pq{grid-template-columns:minmax(0,1fr);padding:16px;gap:14px}}
+@media (max-width:429px){.pq-acts{grid-template-columns:minmax(0,1fr)}}
+.pq-acts .btn{white-space:nowrap}
+"""
+
 h = open('index.html').read()
 k = h.index('</style>', h.index('/* Tablette'))
-h = h[:k] + CSS + AVIS_CSS + TEASER_CSS + OUTILS_CSS + h[k:]
+h = h[:k] + CSS + AVIS_CSS + TEASER_CSS + OUTILS_CSS + QUESTION_CSS + h[k:]
 base = h  # page commune avant les ajouts propres à l'accueil
 
 # ---- Accueil : avis + bandeau, sans la rubrique complète
@@ -319,11 +340,13 @@ open(os.path.join(out, 'index.html'), 'w').write(inline(h))
 g = base
 top = g[:g.index('<header class="hero"')]
 end = g[g.index('<section class="call" id="appel">'):]
+end = QUESTION + end[end.index('<footer'):]
 body = SECTION.replace('<section id="programmes">', '<section id="programmes" class="pg-top">', 1)
 body = re.sub(r'<h2 style="margin-top:10px">(.*?)</h2>', r'<h1 style="margin-top:10px">\1</h1>', body, count=1)
 g = top + '<main>\n' + body + OUTILS + '</main>\n' + end
 g = menu(g)
-for sid in ('top', 'parcours', 'methode', 'appli', 'avis', 'formules', 'faq'):
+g = g.replace('<a class="bubble" href="#appel" aria-label="Passer un appel"', '<a class="bubble" href="#question" aria-label="Poser une question"', 1)
+for sid in ('top', 'parcours', 'methode', 'appli', 'avis', 'formules', 'faq', 'appel'):
     g = g.replace(f'href="#{sid}"', f'href="index.html#{sid}"')
 g = g.replace('href="programmes.html"', 'href="#programmes"')
 g = g.replace('<li><a href="index.html#formules">Tarifs</a></li>', '<li><a href="index.html#formules">Tarifs</a></li>\n      <li><a href="#programmes">Programmes</a></li>', 1)
