@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #111; }
+      #root { position: relative; width: 100%; height: 100%; }
+      /* Emplacement face cam (remplacé par la vidéo du coach) */
+      #facecam-ph { position: absolute; left: 0; top: 0; width: 1080px; height: 860px;
+        background: linear-gradient(160deg, #3a3a3a, #1c1c1c); display: flex;
+        align-items: center; justify-content: center; color: #777;
+        font: 700 44px Inter, sans-serif; letter-spacing: 0.04em; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="60"
+         data-width="1080" data-height="1920">
+      <div id="facecam-ph" class="clip" data-start="0" data-duration="60" data-track-index="0">TA FACE CAM ICI</div>
+      <div id="carte" data-composition-id="carte" data-composition-src="compositions/carte.html"
+           data-start="0" data-duration="60" data-track-index="1" data-track-kind="graphics"
+           data-width="1080" data-height="1920"></div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>

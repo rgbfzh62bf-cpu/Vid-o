@@ -1,0 +1,150 @@
+<template>
+  <div id="carte" data-composition-id="carte" data-start="0" data-duration="60"
+       data-width="1080" data-height="1920" data-layout-allow-overflow>
+    <!-- Tableau blanc (moitié basse) -->
+    <div id="c-board">
+      <div id="c-cam">
+        <svg id="c-links" width="2000" height="2300" viewBox="0 0 2000 2300">
+          <path id="c-l1" class="c-link" d="M 640 300 C 1000 300, 1300 380, 1300 520" />
+          <path id="c-l2" class="c-link" d="M 1300 680 C 1300 820, 700 760, 560 880" />
+          <path id="c-l3" class="c-link" d="M 640 1040 C 1000 1040, 1300 1120, 1300 1240" />
+          <path id="c-l4" class="c-link" d="M 1300 1400 C 1300 1540, 700 1480, 560 1600" />
+          <path id="c-l5" class="c-link" d="M 640 1760 C 900 1800, 1000 1850, 1000 1960" />
+        </svg>
+        <div id="c-n0" class="c-node c-start" style="left:500px;top:300px">
+          <span class="c-num">?</span>TA BALANCE<br />NE BOUGE PAS
+        </div>
+        <div id="c-n1" class="c-node c-yellow" style="left:1300px;top:600px">
+          <span class="c-num">1</span>TU MANGES «&nbsp;SAIN&nbsp;»<br />…&nbsp;MAIS TROP
+        </div>
+        <div id="c-n2" class="c-node c-peach" style="left:500px;top:960px">
+          <span class="c-num">2</span>PAS ASSEZ<br />DE PROTÉINES
+        </div>
+        <div id="c-n3" class="c-node c-blue" style="left:1300px;top:1320px">
+          <span class="c-num">3</span>QUE DU<br />CARDIO
+        </div>
+        <div id="c-n4" class="c-node c-lav" style="left:500px;top:1680px">
+          <span class="c-num">4</span>TU BOUGES PEU<br />LE RESTE DU TEMPS
+        </div>
+        <div id="c-n5" class="c-node c-final" style="left:1000px;top:2080px">
+          <span class="c-num">5</span>L'EAU CACHE<br />TA PERTE DE GRAS
+          <div class="c-res">RÉSULTAT : LA BALANCE REDESCEND</div>
+        </div>
+      </div>
+      <!-- Titre d'étape -->
+      <div id="c-titles">
+        <div id="c-t0" class="c-title">POURQUOI ÇA BLOQUE</div>
+        <div id="c-t1" class="c-title">ERREUR 1 · LES CALORIES</div>
+        <div id="c-t2" class="c-title">ERREUR 2 · LES PROTÉINES</div>
+        <div id="c-t3" class="c-title">ERREUR 3 · LE SPORT</div>
+        <div id="c-t4" class="c-title">ERREUR 4 · LE QUOTIDIEN</div>
+        <div id="c-t5" class="c-title">LA VUE D'ENSEMBLE</div>
+        <div id="c-t6" class="c-title">LA RAISON N°1</div>
+      </div>
+    </div>
+
+    <!-- Accroche -->
+    <div id="c-hook"><span>Tu fais tout bien…</span><br />et ta balance<br /><em>ne bouge pas ?</em></div>
+
+    <!-- Call to action -->
+    <div id="c-cta1" class="c-cta">RESTE JUSQU'À LA FIN · LA RAISON N°5 VA TE SURPRENDRE</div>
+    <div id="c-cta2" class="c-cta">ENREGISTRE LA VIDÉO · TU VAS EN AVOIR BESOIN</div>
+    <div id="c-cta3" class="c-cta c-cta-big">COMMENTE « BALANCE »<small>et je t'envoie le plan complet</small></div>
+  </div>
+
+  <style>
+    #carte { position: absolute; inset: 0; font-family: Inter, sans-serif; }
+    #c-board { position: absolute; left: 0; top: 860px; width: 1080px; height: 1060px; overflow: hidden;
+      background: #fbfaf7; background-image: radial-gradient(#dedbd3 2px, transparent 2px);
+      background-size: 36px 36px; border-top: 6px solid #111; }
+    #c-cam { position: absolute; left: 0; top: 0; width: 2000px; height: 2300px; transform-origin: 0 0; }
+    #c-links { position: absolute; left: 0; top: 0; }
+    .c-link { fill: none; stroke: #2bb673; stroke-width: 10; stroke-linecap: round;
+      stroke-dasharray: 1400; stroke-dashoffset: 1400; }
+    .c-node { position: absolute; width: 560px; padding: 34px 30px 34px 110px; border-radius: 22px;
+      font-weight: 900; font-size: 44px; line-height: 1.1; color: #1d1d1d; text-align: left;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.12); opacity: 0; }
+    .c-node .c-num { position: absolute; left: 26px; top: 50%; margin-top: -32px; width: 64px; height: 64px;
+      border-radius: 50%; background: #1d1d1d; color: #fff; font-size: 38px; line-height: 64px; text-align: center; }
+    .c-start { background: #fff; border: 5px solid #1d1d1d; }
+    .c-yellow { background: #f4dc5a; } .c-peach { background: #f7c4a1; }
+    .c-blue { background: #a9d9f2; } .c-lav { background: #d6c8fa; }
+    .c-final { width: 680px; background: #2bb673; color: #fff; font-size: 52px; }
+    .c-final .c-num { background: #fff; color: #2bb673; }
+    .c-res { margin-top: 18px; padding: 14px 18px; border-radius: 12px; background: #fff; color: #1d1d1d;
+      font-size: 30px; letter-spacing: 0.02em; opacity: 0; }
+    #c-titles { position: absolute; left: 0; top: 34px; width: 1080px; height: 80px; }
+    .c-title { position: absolute; left: 0; right: 0; text-align: center; font-weight: 900; font-size: 46px;
+      letter-spacing: 0.04em; color: #1d1d1d; opacity: 0; }
+    #c-hook { position: absolute; left: 90px; right: 90px; top: 1140px; text-align: center; color: #1d1d1d;
+      font: 900 84px/1.05 Inter, sans-serif; opacity: 0; }
+    #c-hook span { font-weight: 700; font-size: 60px; }
+    #c-hook em { font-style: normal; color: #e24b3b; }
+    .c-cta { position: absolute; left: 120px; right: 120px; top: 760px; padding: 22px 28px; border-radius: 999px;
+      background: #e24b3b; color: #fff; text-align: center; font: 900 34px/1.15 Inter, sans-serif;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.3); opacity: 0; }
+    .c-cta-big { top: 700px; border-radius: 28px; font-size: 54px; background: #2bb673; }
+    .c-cta-big small { display: block; font-size: 32px; font-weight: 700; margin-top: 6px; }
+  </style>
+
+  <script>
+    (function () {
+      const S = "#carte ";
+      const tl = gsap.timeline({ paused: true });
+      // Centre la caméra sur (x, y) du canevas, zoom z. Fenêtre : 1080 x 1060.
+      const cam = (x, y, z) => ({ x: 540 - x * z, y: 560 - y * z, scale: z });
+      const Z = 1.05;
+
+      // Positions de départ
+      tl.set(S + "#c-cam", cam(500, 300, Z), 0);
+
+      // Accroche 0-3 s : texte plein écran sur la carte
+      tl.fromTo(S + "#c-hook", { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.35, ease: "power3.out" }, 0);
+      tl.to(S + "#c-hook", { opacity: 0, duration: 0.25 }, 2.7);
+
+      // Case de départ + titre 0
+      const pop = (id, t) => tl.fromTo(S + id, { opacity: 0, scale: 0.6, xPercent: -50, yPercent: -50 },
+        { opacity: 1, scale: 1, xPercent: -50, yPercent: -50, duration: 0.45, ease: "back.out(1.8)", transformOrigin: "50% 50%" }, t);
+      const title = (id, t0, t1) => {
+        tl.fromTo(S + id, { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.3, ease: "power2.out" }, t0);
+        tl.to(S + id, { opacity: 0, duration: 0.2 }, t1);
+      };
+      const link = (id, t) => tl.to(S + id, { strokeDashoffset: 0, duration: 0.9, ease: "power2.inOut" }, t);
+      const go = (x, y, z, t, d) => tl.to(S + "#c-cam", { ...cam(x, y, z), duration: d || 1.1, ease: "power3.inOut" }, t);
+
+      pop("#c-n0", 3.0); title("#c-t0", 3.0, 5.8);
+
+      // CTA 1 (3-6 s)
+      const cta = (id, t0, t1) => {
+        tl.fromTo(S + id, { opacity: 0, y: 30, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.4, ease: "back.out(2)" }, t0);
+        tl.to(S + id, { scale: 1.05, duration: 0.25, yoyo: true, repeat: 3, ease: "sine.inOut" }, t0 + 0.6);
+        tl.to(S + id, { opacity: 0, y: -20, duration: 0.25 }, t1);
+      };
+      cta("#c-cta1", 3.3, 6.0);
+
+      // Erreur 1 (6-14 s)
+      link("#c-l1", 6.0); go(1300, 600, Z, 6.2); pop("#c-n1", 7.0); title("#c-t1", 6.4, 13.8);
+      // Erreur 2 (14-22 s)
+      link("#c-l2", 14.0); go(500, 960, Z, 14.2); pop("#c-n2", 15.0); title("#c-t2", 14.4, 24.8);
+      // CTA 2 (22-25 s)
+      cta("#c-cta2", 22.0, 25.0);
+      // Erreur 3 (25-33 s)
+      link("#c-l3", 25.0); go(1300, 1320, Z, 25.2); pop("#c-n3", 26.0); title("#c-t3", 25.4, 32.8);
+      // Erreur 4 (33-41 s)
+      link("#c-l4", 33.0); go(500, 1680, Z, 33.2); pop("#c-n4", 34.0); title("#c-t4", 33.4, 40.8);
+
+      // Dézoom : toute la carte (41-46 s)
+      go(920, 1150, 0.46, 41.0, 2.2); title("#c-t5", 41.3, 45.8);
+      // Case finale (46-54 s)
+      link("#c-l5", 45.6); pop("#c-n5", 46.4);
+      go(1000, 2080, 0.95, 47.6, 1.4); title("#c-t6", 47.8, 59.8);
+      tl.fromTo(S + ".c-res", { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: 0.4, ease: "power2.out" }, 50.5);
+
+      // CTA 3 (54-60 s)
+      tl.fromTo(S + "#c-cta3", { opacity: 0, y: 40, scale: 0.85 }, { opacity: 1, y: 0, scale: 1, duration: 0.5, ease: "back.out(2)" }, 54.0);
+      tl.to(S + "#c-cta3", { scale: 1.04, duration: 0.3, yoyo: true, repeat: 7, ease: "sine.inOut" }, 54.8);
+
+      window.__timelines["carte"] = tl;
+    })();
+  </script>
+</template>
