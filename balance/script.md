@@ -10,4 +10,4 @@ Texte à dire face caméra, une prise. Les [CASE] sont pour le montage, ne pas l
 6. [CASE 3 — QUE DU CARDIO] Trois, tu fais que du cardio. Le cardio brûle, mais c'est la musculation qui change ta silhouette.
 7. [CASE 4 — TU BOUGES PEU] Quatre, tu bouges peu le reste de la journée. Une heure de sport ne rattrape pas dix heures assis.
 8. [DÉZOOM + CASE FINALE — L'EAU CACHE TA PERTE DE GRAS] Et cinq, la plus importante : ton corps retient de l'eau. Tu perds du gras, mais la balance ne le montre pas encore. Regarde ta moyenne de la semaine, pas le chiffre du jour.
-9. Commente BALANCE et je t'envoie le plan complet pour la débloquer.
+9. Commente BALANCE et je regarde avec toi ce qui bloque dans ton cas.
