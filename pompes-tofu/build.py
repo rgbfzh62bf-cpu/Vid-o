@@ -78,7 +78,7 @@ rows = "".join(f'<div class="row"><b>{i}</b>{t}</div>' for i, t in enumerate(["C
 clip("grid", a, round(D - LOOP - TEASE, 2), rows, "grid5", 2)
 clip("save", a, round(D - LOOP - TEASE, 2), '<span>ENREGISTRE-LA POUR TA SÉANCE</span>', "save", 3)
 TS = round(D - LOOP - TEASE, 2)
-clip("tease", TS, round(D - LOOP, 2), '<div class="tk">PROCHAIN ÉPISODE</div><div class="tt"><span class="a">5</span> ABDOS<br />5 RÉSULTATS</div>', "tease", 4)
+clip("tease", TS, round(D - LOOP, 2), '<div class="tk">PROCHAIN ÉPISODE</div><div class="tt"><span class="a">5</span> TRACTIONS<br />5 RÉSULTATS</div>', "tease", 4)
 js.append(f'tl.from("#tease .tk, #tease .tt", {{ y: 50, opacity: 0, duration: 0.3, stagger: 0.12, ease: "power3.out" }}, {TS});')
 clip("t-hook2", round(D - LOOP, 2), D, hook_html, "ttl big", 1, "top:306px;font-size:64px")
 js.append(f'tl.to(P, {{ show: 0, duration: 0.15 }}, {a});')
