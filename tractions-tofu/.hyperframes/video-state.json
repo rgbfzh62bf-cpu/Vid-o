@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "95d5e1e3-936f-40bd-814f-fcec3b07b199",
-  "currentRevision": "84749340-4e6f-422c-a1ed-b648cb496866",
+  "currentRevision": "a583f066-2c34-4bfb-9461-ba7ab0a97820",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -69,8 +69,8 @@
       "content": "/root/.cache/hyperframes/history/95d5e1e3-936f-40bd-814f-fcec3b07b199/blobs/7d/7d7065bb7088d0ca61624f9cdb8a310e21a2c927b9d0c7486189dbbdfdb14426"
     },
     "compositions/tractions.html": {
-      "hash": "d5412d22cc5b42189d3d2a7c3bdb89d6947a15fb03a1ea305313ed287a07b25c",
-      "content": "/root/.cache/hyperframes/history/95d5e1e3-936f-40bd-814f-fcec3b07b199/blobs/d5/d5412d22cc5b42189d3d2a7c3bdb89d6947a15fb03a1ea305313ed287a07b25c"
+      "hash": "0254f7a49667f38670e0cf3b56b76663fe982e98aad5c2be9689b54bf3a14b43",
+      "content": "/root/.cache/hyperframes/history/95d5e1e3-936f-40bd-814f-fcec3b07b199/blobs/02/0254f7a49667f38670e0cf3b56b76663fe982e98aad5c2be9689b54bf3a14b43"
     },
     "hyperframes.json": {
       "hash": "3ce7be09e36d2a48a8b8133e3248689f452a1e06eb2bb9afb0dc1d333e53ad18",
@@ -89,8 +89,8 @@
       "content": "/root/.cache/hyperframes/history/95d5e1e3-936f-40bd-814f-fcec3b07b199/blobs/1e/1e2ec8bd74c2bc3a92b6acb04d78d5152473e15640711f7a0a5c61530cfb3148"
     },
     "tractions.tpl": {
-      "hash": "4d606b52005537af5d46514032e3a2c73f58ea6dfbd5a4ca94d1aaf7933d0e01",
-      "content": "/root/.cache/hyperframes/history/95d5e1e3-936f-40bd-814f-fcec3b07b199/blobs/4d/4d606b52005537af5d46514032e3a2c73f58ea6dfbd5a4ca94d1aaf7933d0e01"
+      "hash": "6f91d8d5f282e911bb7e3b16745d8136f328bd4e39aa40960b76d03878e839f5",
+      "content": "/root/.cache/hyperframes/history/95d5e1e3-936f-40bd-814f-fcec3b07b199/blobs/6f/6f91d8d5f282e911bb7e3b16745d8136f328bd4e39aa40960b76d03878e839f5"
     },
     "assets/music/beat.mp3": {
       "hash": "f7905af0b7f4bb1968ff98effa921dea8930e253df8c695356ad19e37b9e57ad",
@@ -264,12 +264,31 @@
           "after": "/root/.cache/hyperframes/history/95d5e1e3-936f-40bd-814f-fcec3b07b199/blobs/4d/4d606b52005537af5d46514032e3a2c73f58ea6dfbd5a4ca94d1aaf7933d0e01"
         }
       }
+    },
+    "a583f066-2c34-4bfb-9461-ba7ab0a97820": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795787437805,
+      "endedAt": 1795787437813,
+      "files": {
+        "compositions/tractions.html": {
+          "before": "/root/.cache/hyperframes/history/95d5e1e3-936f-40bd-814f-fcec3b07b199/blobs/d5/d5412d22cc5b42189d3d2a7c3bdb89d6947a15fb03a1ea305313ed287a07b25c",
+          "after": "/root/.cache/hyperframes/history/95d5e1e3-936f-40bd-814f-fcec3b07b199/blobs/02/0254f7a49667f38670e0cf3b56b76663fe982e98aad5c2be9689b54bf3a14b43"
+        },
+        "tractions.tpl": {
+          "before": "/root/.cache/hyperframes/history/95d5e1e3-936f-40bd-814f-fcec3b07b199/blobs/4d/4d606b52005537af5d46514032e3a2c73f58ea6dfbd5a4ca94d1aaf7933d0e01",
+          "after": "/root/.cache/hyperframes/history/95d5e1e3-936f-40bd-814f-fcec3b07b199/blobs/6f/6f91d8d5f282e911bb7e3b16745d8136f328bd4e39aa40960b76d03878e839f5"
+        }
+      }
     }
   },
   "checks": {
     "latest": {
-      "revision": "84749340-4e6f-422c-a1ed-b648cb496866",
-      "id": "9f047913-d45e-4e54-8e10-fe8e0f63b829"
+      "revision": "a583f066-2c34-4bfb-9461-ba7ab0a97820",
+      "id": "dd17e400-f0b8-479d-aa5c-ccc9bf7be7d6"
     },
     "revisions": {
       "31aab4d8-e722-4711-8afd-78b7f1179701": [
@@ -390,7 +409,6 @@
         {
           "id": "a8121064-07b4-43ac-a381-7d3a2ebf85ec",
           "scope": "project",
-          "report": "/home/user/Vid-o/tractions-tofu/.hyperframes/artifacts/checks/a8121064-07b4-43ac-a381-7d3a2ebf85ec.json",
           "metadata": {
             "ok": true,
             "browserSkipped": false,
@@ -420,7 +438,9 @@
           "revision": "2aa96fd9-1ac0-4f88-963b-cca198a53c4c",
           "inputFingerprint": "de55f4b2ac3fdc0c3711d59f85a49ad46c6d6414eaff2c589b7f4d9d949b3e2e",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "aeb0cb47-d63d-441b-b453-bda1a3b6d2c3"
         }
       ],
       "84749340-4e6f-422c-a1ed-b648cb496866": [
@@ -456,6 +476,43 @@
           "contentHash": "16306e5eca747125f0ce59219fa326521b0a9072f2257e193c0ffdacefccd13f",
           "revision": "84749340-4e6f-422c-a1ed-b648cb496866",
           "inputFingerprint": "7b11a104546d70675e78c4bc6fc0199b3e3e2b14c9adf9a683535be263b0fa8f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "a583f066-2c34-4bfb-9461-ba7ab0a97820": [
+        {
+          "id": "dd17e400-f0b8-479d-aa5c-ccc9bf7be7d6",
+          "scope": "project",
+          "report": "/home/user/Vid-o/tractions-tofu/.hyperframes/artifacts/checks/dd17e400-f0b8-479d-aa5c-ccc9bf7be7d6.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795787444932,
+          "contentHash": "b04297c867aa2c44eb42b735584382e57455ad2165ded61cd46952bb498cf25a",
+          "revision": "a583f066-2c34-4bfb-9461-ba7ab0a97820",
+          "inputFingerprint": "2db938d3a4ac78f35a1e5588ab451f39d8344f4060c590b02ef22ac31391a215",
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
@@ -501,8 +558,8 @@
   },
   "snapshots": {
     "latest": {
-      "revision": "84749340-4e6f-422c-a1ed-b648cb496866",
-      "id": "07fcc0a5-f5e5-4366-9cf3-6657d562824f-4"
+      "revision": "a583f066-2c34-4bfb-9461-ba7ab0a97820",
+      "id": "5b44819b-28d4-47a1-a03c-5742ec98e289-3"
     },
     "revisions": {
       "31aab4d8-e722-4711-8afd-78b7f1179701": [
@@ -1061,7 +1118,6 @@
         {
           "scope": "full",
           "id": "06cee52e-c805-4545-8222-149956410bc6-0",
-          "image": "/home/user/Vid-o/tractions-tofu/.hyperframes/artifacts/snapshots/8b4cc4eb-5778-46c9-911c-598c3292d387/frame-00-at-8.2s.png",
           "time": 8.2,
           "metadata": {
             "width": 1080,
@@ -1076,12 +1132,13 @@
           "revision": "2aa96fd9-1ac0-4f88-963b-cca198a53c4c",
           "inputFingerprint": "de55f4b2ac3fdc0c3711d59f85a49ad46c6d6414eaff2c589b7f4d9d949b3e2e",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "aeb0cb47-d63d-441b-b453-bda1a3b6d2c3"
         },
         {
           "scope": "full",
           "id": "06cee52e-c805-4545-8222-149956410bc6-1",
-          "image": "/home/user/Vid-o/tractions-tofu/.hyperframes/artifacts/snapshots/8b4cc4eb-5778-46c9-911c-598c3292d387/frame-01-at-8.75s.png",
           "time": 8.75,
           "metadata": {
             "width": 1080,
@@ -1096,12 +1153,13 @@
           "revision": "2aa96fd9-1ac0-4f88-963b-cca198a53c4c",
           "inputFingerprint": "de55f4b2ac3fdc0c3711d59f85a49ad46c6d6414eaff2c589b7f4d9d949b3e2e",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "aeb0cb47-d63d-441b-b453-bda1a3b6d2c3"
         },
         {
           "scope": "full",
           "id": "06cee52e-c805-4545-8222-149956410bc6-2",
-          "image": "/home/user/Vid-o/tractions-tofu/.hyperframes/artifacts/snapshots/8b4cc4eb-5778-46c9-911c-598c3292d387/frame-02-at-44.31s.png",
           "time": 44.31,
           "metadata": {
             "width": 1080,
@@ -1116,7 +1174,9 @@
           "revision": "2aa96fd9-1ac0-4f88-963b-cca198a53c4c",
           "inputFingerprint": "de55f4b2ac3fdc0c3711d59f85a49ad46c6d6414eaff2c589b7f4d9d949b3e2e",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "aeb0cb47-d63d-441b-b453-bda1a3b6d2c3"
         }
       ],
       "84749340-4e6f-422c-a1ed-b648cb496866": [
@@ -1217,6 +1277,88 @@
           "contentHash": "b1dff645f1b2ca6ff7e688514143f8c9b6dcf72ca3bdc5428735816fecc4f40f",
           "revision": "84749340-4e6f-422c-a1ed-b648cb496866",
           "inputFingerprint": "7b11a104546d70675e78c4bc6fc0199b3e3e2b14c9adf9a683535be263b0fa8f",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "a583f066-2c34-4bfb-9461-ba7ab0a97820": [
+        {
+          "scope": "full",
+          "id": "5b44819b-28d4-47a1-a03c-5742ec98e289-0",
+          "image": "/home/user/Vid-o/tractions-tofu/.hyperframes/artifacts/snapshots/6ea5a9ff-6741-4ef3-add2-9998b6578196/frame-00-at-24.5s.png",
+          "time": 24.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795787448911,
+          "contentHash": "387d0cc61c38c78aa6dea1af14cfab9a44df19153811e0cb0a52e9fef141f0ed",
+          "revision": "a583f066-2c34-4bfb-9461-ba7ab0a97820",
+          "inputFingerprint": "2db938d3a4ac78f35a1e5588ab451f39d8344f4060c590b02ef22ac31391a215",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5b44819b-28d4-47a1-a03c-5742ec98e289-1",
+          "image": "/home/user/Vid-o/tractions-tofu/.hyperframes/artifacts/snapshots/6ea5a9ff-6741-4ef3-add2-9998b6578196/frame-01-at-25.1s.png",
+          "time": 25.1,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795787448912,
+          "contentHash": "1e923b66bec99ad04c1b29ab07138ae866056ebf72f2f5e7087118579469d43e",
+          "revision": "a583f066-2c34-4bfb-9461-ba7ab0a97820",
+          "inputFingerprint": "2db938d3a4ac78f35a1e5588ab451f39d8344f4060c590b02ef22ac31391a215",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5b44819b-28d4-47a1-a03c-5742ec98e289-2",
+          "image": "/home/user/Vid-o/tractions-tofu/.hyperframes/artifacts/snapshots/6ea5a9ff-6741-4ef3-add2-9998b6578196/frame-02-at-8.4s.png",
+          "time": 8.4,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795787448912,
+          "contentHash": "b1d47d05fc4a1809b73c0e80e0983a0fb3d470ddae755f60b6eee8318e55181d",
+          "revision": "a583f066-2c34-4bfb-9461-ba7ab0a97820",
+          "inputFingerprint": "2db938d3a4ac78f35a1e5588ab451f39d8344f4060c590b02ef22ac31391a215",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "5b44819b-28d4-47a1-a03c-5742ec98e289-3",
+          "image": "/home/user/Vid-o/tractions-tofu/.hyperframes/artifacts/snapshots/6ea5a9ff-6741-4ef3-add2-9998b6578196/frame-03-at-44.31s.png",
+          "time": 44.31,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795787448912,
+          "contentHash": "b1dff645f1b2ca6ff7e688514143f8c9b6dcf72ca3bdc5428735816fecc4f40f",
+          "revision": "a583f066-2c34-4bfb-9461-ba7ab0a97820",
+          "inputFingerprint": "2db938d3a4ac78f35a1e5588ab451f39d8344f4060c590b02ef22ac31391a215",
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
@@ -1467,15 +1609,15 @@
   },
   "renders": {
     "latest": {
-      "id": "4e0ddfcd-701f-4ec1-99b2-a7ad6a6312e0",
-      "completedAt": 1795786507569,
+      "id": "aeb0cb47-d63d-441b-b453-bda1a3b6d2c3",
+      "completedAt": 1795787592625,
       "output": "/home/user/Vid-o/tractions-tofu/renders/raw.mp4",
       "status": "completed",
-      "revision": "84749340-4e6f-422c-a1ed-b648cb496866"
+      "revision": "a583f066-2c34-4bfb-9461-ba7ab0a97820"
     },
     "retainedRevisions": [
-      "84749340-4e6f-422c-a1ed-b648cb496866",
-      "2aa96fd9-1ac0-4f88-963b-cca198a53c4c"
+      "a583f066-2c34-4bfb-9461-ba7ab0a97820",
+      "84749340-4e6f-422c-a1ed-b648cb496866"
     ]
   },
   "pendingArtifactCleanup": []

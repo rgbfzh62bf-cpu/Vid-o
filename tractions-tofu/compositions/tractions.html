@@ -126,8 +126,9 @@
         $("head").setAttribute("cx", hd[0]); $("head").setAttribute("cy", hd[1]);
         var a0 = lerp(hip, sh, 0.25), a1 = lerp(hip, sh, 0.85), dx = sh[0] - hip[0], dy = sh[1] - hip[1], n = Math.hypot(dx, dy);
         var nx = -dy / n * 15, ny = dx / n * 15;
-        L2("m-lat", [a0[0] - nx, a0[1] - ny], [a1[0] - nx, a1[1] - ny]);
-        $("m-trap").setAttribute("cx", sh[0] - 12); $("m-trap").setAttribute("cy", sh[1] + 6);
+        var sd = m === "aus" ? -1 : 1;
+        L2("m-lat", [a0[0] - sd * nx, a0[1] - sd * ny], [a1[0] - sd * nx, a1[1] - sd * ny]);
+        var tp = lerp(hip, sh, 0.85); $("m-trap").setAttribute("cx", tp[0] - sd * nx * 0.9); $("m-trap").setAttribute("cy", tp[1] - sd * ny * 0.9);
         L2("m-bic", lerp(sh, el, 0.15), lerp(sh, el, 0.9));
         var k = 0.35 + 0.65 * d;
         ["lat", "bic", "trap"].forEach(function (x) { $("m-" + x).setAttribute("opacity", A[x] * k); });
