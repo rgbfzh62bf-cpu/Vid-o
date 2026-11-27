@@ -21,9 +21,9 @@
     .prog { position: absolute; left: 190px; width: 700px; top: 292px; height: 14px; display: flex; gap: 10px; }
     .prog .seg { flex: 1; height: 14px; border-radius: 7px; background: #2a2c33; overflow: hidden; }
     .prog .seg i { display: block; width: 100%; height: 100%; background: #c8ff2e; transform-origin: 0 50%; transform: scaleX(0); }
-    .poll { position: absolute; left: 150px; width: 780px; top: 640px; text-align: center; }
-    .poll .pq { font-size: 64px; color: #fff; }
-    .poll .pr { margin-top: 18px; display: flex; justify-content: center; gap: 28px; }
+    .poll { position: absolute; left: 70px; width: 330px; top: 700px; text-align: center; }
+    .poll .pq { font-size: 46px; line-height: 1.05; color: #fff; }
+    .poll .pr { margin-top: 18px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
     .poll .pr span { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 40px; padding: 12px 40px; border-radius: 999px; border: 4px solid #c8ff2e; color: #c8ff2e; }
     .poll .pr span:last-child { border-color: #ff3b3b; color: #ff3b3b; }
     .tease { position: absolute; left: 150px; width: 780px; top: 640px; text-align: center; }

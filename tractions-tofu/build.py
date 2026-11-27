@@ -7,7 +7,7 @@ CAP = ["Tu n'arrives pas à faire une seule traction ? Normal.",
        "Numéro 2 : en supination, paumes vers toi. Encore plus de biceps.",
        "Numéro 3 : prise neutre, paumes face à face. La plus douce pour les épaules.",
        "Numéro 4 : les australiennes, sous une barre basse. Le haut du dos. Parfait pour débuter.",
-       "Numéro 5 : les négatives. Tu descends lentement. Tout le monde les zappe… mais c'est la meilleure façon de débloquer ta première traction.",
+       "Numéro 5 : les tractions négatives. Tu descends lentement. Tout le monde les zappe… mais c'est la meilleure façon de débloquer ta première traction.",
        "Alors, tu fais laquelle ? Dis-le en commentaire, et enregistre la vidéo pour ta prochaine séance !"]
 BEAT = 0.6735; MOFF = 0.0
 t = 0.12; lines = []; words = []
@@ -101,7 +101,10 @@ aud = "".join(f'\n      <audio id="vo-{l["id"]}" class="clip" src="assets/voice/
 taps = []
 for n, md in [("hook", "bad"), ("intro", "pron"), ("pron", "pron"), ("sup", "sup"), ("neutral", "neutral"), ("aus", "aus"), ("neg", "neg")]:
     a0, b0 = W[n]; per = PER[md]; tt = a0 + 0.2
-    while tt + per * 0.9 < b0: taps.append(round(tt + per * 0.5, 2)); tt += per + 0.1
+    while tt + per * 0.9 < b0:
+        x = round(tt + per * 0.5, 2)
+        if n in ("hook", "intro") or x > a0 + 2.0: taps.append(x)
+        tt += per + 0.1
 tapx = "".join(f'\n      <audio id="tap-{k}" class="clip" src="assets/sfx/tap.mp3" data-start="{x}" data-duration="0.18" data-track-index="{7+k%2}" data-volume="0.35"></audio>' for k, x in enumerate(taps))
 dingx = "".join(f'\n      <audio id="ding-{k}" class="clip" src="assets/sfx/ding.mp3" data-start="{W[n][0]-0.3:.2f}" data-duration="0.5" data-track-index="9" data-volume="0.18"></audio>' for k, n in enumerate(["pron", "sup", "neutral", "aus", "neg"]))
 import subprocess
