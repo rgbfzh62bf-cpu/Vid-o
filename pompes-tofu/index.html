@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b0b0d; }
+      #root { position: relative; width: 100%; height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="39.47" data-width="1080" data-height="1920">
+      <div id="pompes" data-composition-id="pompes" data-composition-src="compositions/pompes.html" data-start="0" data-duration="39.47" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="39.47" data-track-index="1" data-track-kind="captions" data-width="1080" data-height="1920"></div>
+      <audio id="vo-l1" class="clip" src="assets/voice/l1.wav" data-start="0.12" data-duration="2.4" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo-l2" class="clip" src="assets/voice/l2.wav" data-start="2.77" data-duration="3.36" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo-l3" class="clip" src="assets/voice/l3.wav" data-start="6.37" data-duration="4.08" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo-l4" class="clip" src="assets/voice/l4.wav" data-start="10.7" data-duration="3.57" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo-l5" class="clip" src="assets/voice/l5.wav" data-start="14.52" data-duration="4.13" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo-l6" class="clip" src="assets/voice/l6.wav" data-start="18.9" data-duration="7.7" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo-l7" class="clip" src="assets/voice/l7.wav" data-start="26.85" data-duration="5.69" data-track-index="2" data-volume="1"></audio>
+      <audio id="vo-l8" class="clip" src="assets/voice/l8.wav" data-start="32.8" data-duration="5.52" data-track-index="2" data-volume="1"></audio>
+      <audio id="music" class="clip" src="assets/music/beat.mp3" data-start="0" data-duration="39.47" data-track-index="3" data-volume="0.12" data-fade-out="1.2"></audio>
+      <audio id="sfx-0" class="clip" src="assets/sfx/whoosh.mp3" data-start="2.52" data-duration="0.45" data-track-index="4" data-volume="0.3"></audio>
+      <audio id="sfx-1" class="clip" src="assets/sfx/whoosh.mp3" data-start="6.12" data-duration="0.45" data-track-index="5" data-volume="0.3"></audio>
+      <audio id="sfx-2" class="clip" src="assets/sfx/whoosh.mp3" data-start="10.45" data-duration="0.45" data-track-index="4" data-volume="0.3"></audio>
+      <audio id="sfx-3" class="clip" src="assets/sfx/whoosh.mp3" data-start="14.27" data-duration="0.45" data-track-index="5" data-volume="0.3"></audio>
+      <audio id="sfx-4" class="clip" src="assets/sfx/whoosh.mp3" data-start="18.65" data-duration="0.45" data-track-index="4" data-volume="0.3"></audio>
+      <audio id="sfx-5" class="clip" src="assets/sfx/whoosh.mp3" data-start="26.60" data-duration="0.45" data-track-index="5" data-volume="0.3"></audio>
+      <audio id="sfx-6" class="clip" src="assets/sfx/whoosh.mp3" data-start="32.55" data-duration="0.45" data-track-index="4" data-volume="0.3"></audio>
+    </div>
+    <script>
+      window.__timelines["main"] = gsap.timeline({ paused: true });
+    </script>
+  </body>
+</html>
