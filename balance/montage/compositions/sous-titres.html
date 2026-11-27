@@ -53,21 +53,22 @@
         visibility: hidden;
       }
       .hl-word {
-        font-family: "Montserrat", sans-serif;
-        font-weight: 800;
-        font-size: 64px;
-        text-transform: uppercase;
+        font-family: "Inter", sans-serif;
+        font-weight: 700;
+        font-size: 58px;
+        text-transform: none;
         color: #ffffff;
         display: inline-block;
-        letter-spacing: 0.02em;
+        letter-spacing: -0.01em;
         line-height: 1;
         position: relative;
-        padding: 6px 12px 8px;
-        text-shadow: 0 6px 18px rgba(0, 0, 0, 0.45);
+        padding: 4px 4px 6px;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.85), 0 0 18px rgba(0, 0, 0, 0.45);
         transform-origin: 50% 58%;
         will-change: transform, filter;
       }
       .hl-word-bg {
+        display: none;
         position: absolute;
         inset: 0;
         background: linear-gradient(135deg, #ff1745 0%, #df1238 100%);
@@ -87,7 +88,7 @@
     #sous-titres { position: absolute; inset: 0; pointer-events: none; }
     #st-root { position: absolute; left: 0; top: 0; width: 1080px; height: 720px; }
     #st-root #hl-container { position: absolute; left: 0; right: 0; bottom: 0; height: 160px; }
-    #st-root .hl-group { top: 600px !important; bottom: auto !important; align-items: flex-start !important; }
+    #st-root .hl-group { top: 690px !important; bottom: auto !important; align-items: flex-start !important; }
     #st-root .hl-overlay { display: none; }
   </style>
   <script>
@@ -122,6 +123,7 @@
         var tl = gsap.timeline({ paused: true });
 
         GROUPS.forEach(function (g, gi) {
+          if (g.start < 3.6) return; // titre d'accroche à l'écran
           var groupWords = WORDS.slice(g.wordStart, g.wordEnd + 1);
           var grp = document.createElement("div");
           grp.className = "hl-group";
@@ -129,10 +131,10 @@
 
           var groupText = groupWords
             .map(function (w) {
-              return w.text.toUpperCase();
+              return w.text;
             })
             .join(" ");
-          var computedSize = fitFontSize(groupText, 80, "800", "Montserrat", 940);
+          var computedSize = fitFontSize(groupText, 58, "700", "Inter", 960);
 
           groupWords.forEach(function (w, i) {
             var wi = g.wordStart + i;
@@ -147,7 +149,7 @@
 
             var textEl = document.createElement("span");
             textEl.className = "hl-word-text";
-            textEl.textContent = w.text.toUpperCase();
+            textEl.textContent = w.text;
 
             wordEl.appendChild(bgEl);
             wordEl.appendChild(textEl);
