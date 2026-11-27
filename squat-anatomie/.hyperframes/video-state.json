@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "770f831b-b6a0-4e4f-b666-fc3e5dadc473",
-  "currentRevision": "3a44c95a-551c-491a-ab46-66fdbf8e89d5",
+  "currentRevision": "042f08b8-86c7-4954-8056-10f59dacdf26",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -17,24 +17,20 @@
       "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/18/18bab6ab4fa3c399affe8bcc527cf37ce0392d6d2a9360fb02a0fc6cea2bd398"
     },
     "build.py": {
-      "hash": "7454443d1c19f1c992abe4abeb4e9b28bd781447365c1c5c4bf902c9411e837f",
-      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/74/7454443d1c19f1c992abe4abeb4e9b28bd781447365c1c5c4bf902c9411e837f"
-    },
-    "compositions/anat.html": {
-      "hash": "af3f3571121c57f34b12492d2ceb276a58aa86c082ff68f596ba09ab564776fa",
-      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/af/af3f3571121c57f34b12492d2ceb276a58aa86c082ff68f596ba09ab564776fa"
+      "hash": "dea3a06dbc2b15c3b319dbeaac319c96ae90bff10f37721d7f053217ebd09786",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/de/dea3a06dbc2b15c3b319dbeaac319c96ae90bff10f37721d7f053217ebd09786"
     },
     "compositions/captions.html": {
-      "hash": "bfc478ed5d732cc8f597bb22ffc3fa62dbd72e18c896b8d772f42e92dd776de5",
-      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/bf/bfc478ed5d732cc8f597bb22ffc3fa62dbd72e18c896b8d772f42e92dd776de5"
+      "hash": "edc21ea9e51af020a1c6e66fcc7858caa82f04c8dcb70045004aa8639d83ca9e",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/ed/edc21ea9e51af020a1c6e66fcc7858caa82f04c8dcb70045004aa8639d83ca9e"
     },
     "hyperframes.json": {
       "hash": "3ce7be09e36d2a48a8b8133e3248689f452a1e06eb2bb9afb0dc1d333e53ad18",
       "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/3c/3ce7be09e36d2a48a8b8133e3248689f452a1e06eb2bb9afb0dc1d333e53ad18"
     },
     "index.html": {
-      "hash": "1700a85b3051d93560f80c02634f9d95a8d07e64565cc3889b94af5ef74d671f",
-      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/17/1700a85b3051d93560f80c02634f9d95a8d07e64565cc3889b94af5ef74d671f"
+      "hash": "c88a9b569b36d312bbb142b7b6eb50ab161a021fbd17bd0cd84cdcb6662b28df",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/c8/c88a9b569b36d312bbb142b7b6eb50ab161a021fbd17bd0cd84cdcb6662b28df"
     },
     "meta.json": {
       "hash": "0ed958de2eeeafd2c41711f2cbd327ae8a733b0dbefd812da5646c48b6aa6e9d",
@@ -49,8 +45,76 @@
       "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/f7/f7905af0b7f4bb1968ff98effa921dea8930e253df8c695356ad19e37b9e57ad"
     },
     "anat.tpl": {
-      "hash": "2bd879cccff7980484a5e70ce81d1f767a4d9319a5a0a1c8863d96615d474fa2",
-      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/2b/2bd879cccff7980484a5e70ce81d1f767a4d9319a5a0a1c8863d96615d474fa2"
+      "hash": "63ec1f9ac913def7e695913581d2acce2a783c3d3f591411f5673d1190cdff76",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/63/63ec1f9ac913def7e695913581d2acce2a783c3d3f591411f5673d1190cdff76"
+    },
+    "assets/img/bulgare_3.png": {
+      "hash": "0deb166cfbc97a0b8ae46b8a94d4519a5ffd9996c8bf6995df1a5c4f0eaee141",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/0d/0deb166cfbc97a0b8ae46b8a94d4519a5ffd9996c8bf6995df1a5c4f0eaee141"
+    },
+    "assets/img/classic_3.png": {
+      "hash": "35e12deaa845891f1e111ae7299ad5c762501187106599d42a2fd7b2ace5386e",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/35/35e12deaa845891f1e111ae7299ad5c762501187106599d42a2fd7b2ace5386e"
+    },
+    "assets/img/classic_8.png": {
+      "hash": "77585b7dd66fca68c61d4ff0c7427d0c7caf324a51ea2c1c577a687aaf9121d2",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/77/77585b7dd66fca68c61d4ff0c7427d0c7caf324a51ea2c1c577a687aaf9121d2"
+    },
+    "assets/img/stand_3.png": {
+      "hash": "406c65d963f99ba6b1245d5be44e90b5d14c4db3730460ad47450cbe6c11e58c",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/40/406c65d963f99ba6b1245d5be44e90b5d14c4db3730460ad47450cbe6c11e58c"
+    },
+    "assets/img/stand_8.png": {
+      "hash": "cfbad0203094f8550e631def45c71c85a260c982e74394ba9e67a15d72e9fd8b",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/cf/cfbad0203094f8550e631def45c71c85a260c982e74394ba9e67a15d72e9fd8b"
+    },
+    "assets/img/sumo_3.png": {
+      "hash": "82c0acb8a358a2a7f2cc18fedf64aaf3844a945e24fa912e2975fc2e0d6c7e7d",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/82/82c0acb8a358a2a7f2cc18fedf64aaf3844a945e24fa912e2975fc2e0d6c7e7d"
+    },
+    "assets/img/sumo_8.png": {
+      "hash": "806fb7ccccc4ef32b029363a6abfe69a81482faa1b3613c7e05eb9b5991e46ee",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/80/806fb7ccccc4ef32b029363a6abfe69a81482faa1b3613c7e05eb9b5991e46ee"
+    },
+    "assets/music/bed.mp3": {
+      "hash": "4ad9dd467d703be7df2b1f1685475e708709aa08e5e48db8706848b635971e4c",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/4a/4ad9dd467d703be7df2b1f1685475e708709aa08e5e48db8706848b635971e4c"
+    },
+    "batch.py": {
+      "hash": "fe25c500987b7d63241a9ec493880f204e133c9a77562e491cbe0754f65d4d85",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/fe/fe25c500987b7d63241a9ec493880f204e133c9a77562e491cbe0754f65d4d85"
+    },
+    "build2.py": {
+      "hash": "63f0cbdf14b6134df0e9c2666d7356bb8a5ebcaad42681ccd187d638e9707a0c",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/63/63f0cbdf14b6134df0e9c2666d7356bb8a5ebcaad42681ccd187d638e9707a0c"
+    },
+    "cfg_fallback.json": {
+      "hash": "43eedaed57e5d58579c67baf4a07299af6369265ac648c454f42ded09f7e1c3a",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/43/43eedaed57e5d58579c67baf4a07299af6369265ac648c454f42ded09f7e1c3a"
+    },
+    "compositions/illus.html": {
+      "hash": "62d7ce9cda8d24b5be331c7652489f91f5e882a8cd971dfa9ed7f48dec99d1c3",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/62/62d7ce9cda8d24b5be331c7652489f91f5e882a8cd971dfa9ed7f48dec99d1c3"
+    },
+    "illus.tpl": {
+      "hash": "a80ea3340ce1c9bdfe2b77af5b4f1acb32327bdea2207261001980f0890447bf",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/a8/a80ea3340ce1c9bdfe2b77af5b4f1acb32327bdea2207261001980f0890447bf"
+    },
+    "poses.json": {
+      "hash": "a3d3f06d4b50349c9f94f299ee999eac6d3fc2c2c12b544f39c4c85842d61386",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/a3/a3d3f06d4b50349c9f94f299ee999eac6d3fc2c2c12b544f39c4c85842d61386"
+    },
+    "script.json": {
+      "hash": "676b40c2fd01d13394d61cb94496ad234109b75ef39eaa932656d68d74e08ff8",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/67/676b40c2fd01d13394d61cb94496ad234109b75ef39eaa932656d68d74e08ff8"
+    },
+    "SCRIPT.md": {
+      "hash": "1725d61fce5a87a2ce2168ecd3913940f48f0535f9a6b9777be0c12e4df20f68",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/17/1725d61fce5a87a2ce2168ecd3913940f48f0535f9a6b9777be0c12e4df20f68"
+    },
+    "test-voix-clonee.mp3": {
+      "hash": "e575a78d1f19baf8915ef5964c3b04e10d361433c7494c2d845acd63d22f9333",
+      "content": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/e5/e575a78d1f19baf8915ef5964c3b04e10d361433c7494c2d845acd63d22f9333"
     }
   },
   "revisions": {
@@ -78,6 +142,132 @@
         "compositions/anat.html": {
           "before": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/20/201b4271cf1a46b96bc7f31a0afd616607a82ea2df612a5b67fd3c2fd7296db3",
           "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/af/af3f3571121c57f34b12492d2ceb276a58aa86c082ff68f596ba09ab564776fa"
+        }
+      }
+    },
+    "1a947ff0-e509-4b20-8bde-0ff7da17b865": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795738554933,
+      "endedAt": 1795738555003,
+      "files": {
+        "anat.tpl": {
+          "before": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/2b/2bd879cccff7980484a5e70ce81d1f767a4d9319a5a0a1c8863d96615d474fa2",
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/63/63ec1f9ac913def7e695913581d2acce2a783c3d3f591411f5673d1190cdff76"
+        },
+        "assets/img/bulgare_3.png": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/0d/0deb166cfbc97a0b8ae46b8a94d4519a5ffd9996c8bf6995df1a5c4f0eaee141"
+        },
+        "assets/img/classic_3.png": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/35/35e12deaa845891f1e111ae7299ad5c762501187106599d42a2fd7b2ace5386e"
+        },
+        "assets/img/classic_8.png": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/77/77585b7dd66fca68c61d4ff0c7427d0c7caf324a51ea2c1c577a687aaf9121d2"
+        },
+        "assets/img/stand_3.png": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/40/406c65d963f99ba6b1245d5be44e90b5d14c4db3730460ad47450cbe6c11e58c"
+        },
+        "assets/img/stand_8.png": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/cf/cfbad0203094f8550e631def45c71c85a260c982e74394ba9e67a15d72e9fd8b"
+        },
+        "assets/img/sumo_3.png": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/82/82c0acb8a358a2a7f2cc18fedf64aaf3844a945e24fa912e2975fc2e0d6c7e7d"
+        },
+        "assets/img/sumo_8.png": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/80/806fb7ccccc4ef32b029363a6abfe69a81482faa1b3613c7e05eb9b5991e46ee"
+        },
+        "assets/music/bed.mp3": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/4a/4ad9dd467d703be7df2b1f1685475e708709aa08e5e48db8706848b635971e4c"
+        },
+        "batch.py": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/fe/fe25c500987b7d63241a9ec493880f204e133c9a77562e491cbe0754f65d4d85"
+        },
+        "build.py": {
+          "before": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/74/7454443d1c19f1c992abe4abeb4e9b28bd781447365c1c5c4bf902c9411e837f",
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/de/dea3a06dbc2b15c3b319dbeaac319c96ae90bff10f37721d7f053217ebd09786"
+        },
+        "build2.py": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/7b/7b20f77937d1e59fa012a467e62e0bb3f5496f8b710adf8ee4cb409248fa8fc9"
+        },
+        "cfg_fallback.json": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/ec/ec88c2c6a6a390b5447a0177e9fdd5274380dc3449852af1ab62d6d88e923516"
+        },
+        "compositions/anat.html": {
+          "before": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/af/af3f3571121c57f34b12492d2ceb276a58aa86c082ff68f596ba09ab564776fa",
+          "after": null
+        },
+        "compositions/captions.html": {
+          "before": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/bf/bfc478ed5d732cc8f597bb22ffc3fa62dbd72e18c896b8d772f42e92dd776de5",
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/ed/edc21ea9e51af020a1c6e66fcc7858caa82f04c8dcb70045004aa8639d83ca9e"
+        },
+        "compositions/illus.html": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/75/759056d6e83dee09ca08c28ff920ef207ed5842191df611eda48c3adf32dae39"
+        },
+        "illus.tpl": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/60/60f9fea2cd8818577ece17e97df01d3f871a217d92886a4748646cb89ec19fcc"
+        },
+        "index.html": {
+          "before": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/17/1700a85b3051d93560f80c02634f9d95a8d07e64565cc3889b94af5ef74d671f",
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/c8/c88a9b569b36d312bbb142b7b6eb50ab161a021fbd17bd0cd84cdcb6662b28df"
+        },
+        "poses.json": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/a3/a3d3f06d4b50349c9f94f299ee999eac6d3fc2c2c12b544f39c4c85842d61386"
+        },
+        "script.json": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/67/676b40c2fd01d13394d61cb94496ad234109b75ef39eaa932656d68d74e08ff8"
+        },
+        "SCRIPT.md": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/17/1725d61fce5a87a2ce2168ecd3913940f48f0535f9a6b9777be0c12e4df20f68"
+        },
+        "test-voix-clonee.mp3": {
+          "before": null,
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/e5/e575a78d1f19baf8915ef5964c3b04e10d361433c7494c2d845acd63d22f9333"
+        }
+      }
+    },
+    "042f08b8-86c7-4954-8056-10f59dacdf26": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795738606551,
+      "endedAt": 1795738606564,
+      "files": {
+        "build2.py": {
+          "before": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/7b/7b20f77937d1e59fa012a467e62e0bb3f5496f8b710adf8ee4cb409248fa8fc9",
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/63/63f0cbdf14b6134df0e9c2666d7356bb8a5ebcaad42681ccd187d638e9707a0c"
+        },
+        "cfg_fallback.json": {
+          "before": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/ec/ec88c2c6a6a390b5447a0177e9fdd5274380dc3449852af1ab62d6d88e923516",
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/43/43eedaed57e5d58579c67baf4a07299af6369265ac648c454f42ded09f7e1c3a"
+        },
+        "compositions/illus.html": {
+          "before": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/75/759056d6e83dee09ca08c28ff920ef207ed5842191df611eda48c3adf32dae39",
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/62/62d7ce9cda8d24b5be331c7652489f91f5e882a8cd971dfa9ed7f48dec99d1c3"
+        },
+        "illus.tpl": {
+          "before": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/60/60f9fea2cd8818577ece17e97df01d3f871a217d92886a4748646cb89ec19fcc",
+          "after": "/root/.cache/hyperframes/history/770f831b-b6a0-4e4f-b666-fc3e5dadc473/blobs/a8/a80ea3340ce1c9bdfe2b77af5b4f1acb32327bdea2207261001980f0890447bf"
         }
       }
     }
@@ -128,8 +318,8 @@
   },
   "snapshots": {
     "latest": {
-      "revision": "3a44c95a-551c-491a-ab46-66fdbf8e89d5",
-      "id": "b2fb3363-7b26-4cef-b7fd-8faf10426a8a-12"
+      "revision": "042f08b8-86c7-4954-8056-10f59dacdf26",
+      "id": "3c07f900-ee30-4447-855b-f0889abce23a-6"
     },
     "revisions": {
       "3a44c95a-551c-491a-ab46-66fdbf8e89d5": [
@@ -390,6 +580,450 @@
           "contentHash": "8fcb09fcd667478f791ef561100e20e423356ca8bcbc121a8606fc711b1fbbfa",
           "revision": "3a44c95a-551c-491a-ab46-66fdbf8e89d5",
           "inputFingerprint": "6e988aee9b4d98cf1d9954f4212b2b5eff8f7d111ddae7fa71bddccbb797922c",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "1a947ff0-e509-4b20-8bde-0ff7da17b865": [
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-0",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-00-at-0.6s.png",
+          "time": 0.6,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563575,
+          "contentHash": "ce4b4104ebb5b67c698c22f8497b271e6c1ccaf553a55130d1f28660524758a3",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-1",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-01-at-2.2s.png",
+          "time": 2.2,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563575,
+          "contentHash": "c24a596cfac3f5a4ca021c837d838a283ca960fe17a82009e4aa75917b0e63b1",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-2",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-02-at-7s.png",
+          "time": 7,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563576,
+          "contentHash": "a9ac4dfed67985221a382e4584e7082c176b4a2956a45edcf42b9e6aa2ec3a6e",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-3",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-03-at-10.5s.png",
+          "time": 10.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563576,
+          "contentHash": "db623fd558a8f3e321127de37caa9346fb54708608f496edef8b5278e9a6537a",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-4",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-04-at-13s.png",
+          "time": 13,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563576,
+          "contentHash": "efa5d1f9c9ddcd6c2b348154fbc013de920a4aeb35215bbc8566f92c38eef09c",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-5",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-05-at-18s.png",
+          "time": 18,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563576,
+          "contentHash": "e8d0af4e654919ef1bfdf06c84ed5cea3809b381aa54d235dcefdbef9135c624",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-6",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-06-at-21s.png",
+          "time": 21,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563576,
+          "contentHash": "628e81f8a7523e60982d4e2b489377f3839aae49dbd5cc670996fee9d26694e3",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-7",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-07-at-26s.png",
+          "time": 26,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563576,
+          "contentHash": "b981e5ff8132303bb2b6bc6263f4a1489bb4037eda2ff6c86422b88cee6f1dee",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-8",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-08-at-29.5s.png",
+          "time": 29.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563576,
+          "contentHash": "6b222c82ded5d9b6188e664afe7126ab951e5d7e967e591c370546187b8cf429",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-9",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-09-at-34s.png",
+          "time": 34,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563576,
+          "contentHash": "fcd7e851fc57f7b8277b94e07886574b7f8bfeb04f2fa0a3e103f106f2c1b71a",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-10",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-10-at-40s.png",
+          "time": 40,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563576,
+          "contentHash": "39579ed0f085170a5c61ec2ec2743c1e2ecc3002751b511260392fe7a34fa751",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-11",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-11-at-45s.png",
+          "time": 45,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563577,
+          "contentHash": "7c3b9a64de8bdad3eb8f30f8e992d182c61c1b51c55386deebffafbe2ccd07a2",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-12",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-12-at-50s.png",
+          "time": 50,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563577,
+          "contentHash": "c4c7789eba46a293b314c8c2c8accd5f05be63f22bb176ea58ebae0a8bca68e9",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-13",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-13-at-53s.png",
+          "time": 53,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563577,
+          "contentHash": "b4e6862d28e9cc9f50e021306ec51e425c5057494c321c44cf33b5552a867df3",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "2e02d628-9bf9-47cc-855d-1aa12c7f0143-14",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/ea8b617c-d872-4731-b807-b6f0732e7598/frame-14-at-55.07s.png",
+          "time": 55.07,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738563577,
+          "contentHash": "b4e6862d28e9cc9f50e021306ec51e425c5057494c321c44cf33b5552a867df3",
+          "revision": "1a947ff0-e509-4b20-8bde-0ff7da17b865",
+          "inputFingerprint": "ac7e7dee8db271a6678f47b6ada7a5191e2ceba0efc42e63733e5a431154c105",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "042f08b8-86c7-4954-8056-10f59dacdf26": [
+        {
+          "scope": "full",
+          "id": "3c07f900-ee30-4447-855b-f0889abce23a-0",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/e1b1b2a0-4dd1-4ced-88cd-b83e031ae4d5/frame-00-at-7.5s.png",
+          "time": 7.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738611484,
+          "contentHash": "f90ea643180dd80336da10ef5995b5ffb8977dc2b5acede7fa0bbaa51b0508fa",
+          "revision": "042f08b8-86c7-4954-8056-10f59dacdf26",
+          "inputFingerprint": "653093496be10752684cdbd738c05077002ec16df60c54320139c13117a5f92b",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "3c07f900-ee30-4447-855b-f0889abce23a-1",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/e1b1b2a0-4dd1-4ced-88cd-b83e031ae4d5/frame-01-at-19s.png",
+          "time": 19,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738611484,
+          "contentHash": "768f22c4f636e3fa3c5c6b71034f02da40015250aea96c753949a8d6c215f30c",
+          "revision": "042f08b8-86c7-4954-8056-10f59dacdf26",
+          "inputFingerprint": "653093496be10752684cdbd738c05077002ec16df60c54320139c13117a5f92b",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "3c07f900-ee30-4447-855b-f0889abce23a-2",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/e1b1b2a0-4dd1-4ced-88cd-b83e031ae4d5/frame-02-at-29.5s.png",
+          "time": 29.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738611484,
+          "contentHash": "88278eb50aa99f107123296fd1c311309d7267296402a45079af48cf71a2d0af",
+          "revision": "042f08b8-86c7-4954-8056-10f59dacdf26",
+          "inputFingerprint": "653093496be10752684cdbd738c05077002ec16df60c54320139c13117a5f92b",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "3c07f900-ee30-4447-855b-f0889abce23a-3",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/e1b1b2a0-4dd1-4ced-88cd-b83e031ae4d5/frame-03-at-38s.png",
+          "time": 38,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738611484,
+          "contentHash": "ce3a0a1effca8850819cc5e27d2706aca8b1c5798022564d449cf62ebae8f5cc",
+          "revision": "042f08b8-86c7-4954-8056-10f59dacdf26",
+          "inputFingerprint": "653093496be10752684cdbd738c05077002ec16df60c54320139c13117a5f92b",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "3c07f900-ee30-4447-855b-f0889abce23a-4",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/e1b1b2a0-4dd1-4ced-88cd-b83e031ae4d5/frame-04-at-43s.png",
+          "time": 43,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738611485,
+          "contentHash": "52012fc1730d0e9c8727f0195d9a71f5150f6d7ebbca27b7bb47af014a62cd9d",
+          "revision": "042f08b8-86c7-4954-8056-10f59dacdf26",
+          "inputFingerprint": "653093496be10752684cdbd738c05077002ec16df60c54320139c13117a5f92b",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "3c07f900-ee30-4447-855b-f0889abce23a-5",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/e1b1b2a0-4dd1-4ced-88cd-b83e031ae4d5/frame-05-at-49.5s.png",
+          "time": 49.5,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738611485,
+          "contentHash": "2e947ea0846d3ea8bcab89906f3fba4a763085958734665553dcc63f68686b80",
+          "revision": "042f08b8-86c7-4954-8056-10f59dacdf26",
+          "inputFingerprint": "653093496be10752684cdbd738c05077002ec16df60c54320139c13117a5f92b",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        },
+        {
+          "scope": "full",
+          "id": "3c07f900-ee30-4447-855b-f0889abce23a-6",
+          "image": "/home/user/Vid-o/squat-anatomie/.hyperframes/artifacts/snapshots/e1b1b2a0-4dd1-4ced-88cd-b83e031ae4d5/frame-06-at-55.07s.png",
+          "time": 55.07,
+          "metadata": {
+            "width": 1080,
+            "height": 1920,
+            "zoomScale": 1,
+            "browserGpuMode": "auto",
+            "warnings": [],
+            "partial": false
+          },
+          "createdAt": 1795738611485,
+          "contentHash": "b4e6862d28e9cc9f50e021306ec51e425c5057494c321c44cf33b5552a867df3",
+          "revision": "042f08b8-86c7-4954-8056-10f59dacdf26",
+          "inputFingerprint": "653093496be10752684cdbd738c05077002ec16df60c54320139c13117a5f92b",
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
