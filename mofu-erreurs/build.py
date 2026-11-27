@@ -103,6 +103,11 @@ cam = f"""<template>
     window.__timelines["cam"] = tl; }})();</script>
 </template>
 """
+# ---- B-rolls (Pexels) on each solution ----
+BR = [(T_S1, "b1"), (T_S2, "b2"), (T_S3, "b3")]
+br_html = "".join(f'<video id="{n}" class="clip br" src="assets/broll/{n}.mp4" data-start="{t + 0.1:.2f}" data-duration="2.2" data-track-index="{1 + i}" muted playsinline></video>' for i, (t, n) in enumerate(BR))
+br_js = "".join(f'tl.fromTo("#{n}", {{opacity:0, scale:1.08}}, {{opacity:1, scale:1.12, duration:0.25, ease:"power2.out"}}, {t + 0.1:.2f}); tl.to("#{n}", {{scale:1.16, duration:1.7, ease:"none"}}, {t + 0.35:.2f}); tl.to("#{n}", {{opacity:0, duration:0.25, ease:"power2.in"}}, {t + 2.05:.2f});' for t, n in BR)
+cam = cam.replace('<div id="vig"></div>', br_html + '<div id="vig"></div>').replace('tl.set({}, {}, ' + str(D) + ');', br_js + 'tl.set({}, {}, ' + str(D) + ');').replace('#vig {', '.br { position:absolute; left:0; top:0; width:1080px; height:1920px; object-fit:cover; opacity:0; }\n    #vig {')
 open("compositions/cam.html", "w").write(cam)
 
 # ---- overlays ----

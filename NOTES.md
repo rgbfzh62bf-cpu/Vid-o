@@ -22,3 +22,4 @@
 - mofu-erreurs: voix débruitée (noisereduce profil silence début de chaque prise, raw/*_dn.wav) → assets/voice.wav. OK sur vraie voix.
 - mofu-erreurs V2: DA « STUDIO » (voir CLAUDE.md), voix DeepFilterNet3 (modèle HF fal/DeepFilterNet3 converti → scratchpad/dfm, venv vc, init_df(dfm)), musique maison make_music.py. GitHub raw + freesound bloqués par proxy ici.
 - mofu-erreurs V3: DA « ÉDITO » validée par moi (crème/encre/doré, Inter+Garamond). User n'aime pas DA site ni rose/orange. Pexels/Pixabay: hôtes ouverts, clé API requise → user télécharge B-rolls dans Drive.
+- mofu-erreurs: B-rolls Pexels (dl direct videos.pexels.com/video-files/ID/ID-hd_1080_1920_25fps.mp4, IDs via WebSearch) sur chaque « La solution », 2.2 s, layer cam.html.
