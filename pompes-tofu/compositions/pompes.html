@@ -8,7 +8,7 @@
     .big { font-size: 72px; letter-spacing: -0.02em; }
     .mid { font-size: 76px; }
     .num { display: block; font-size: 44px; color: #c8ff2e; letter-spacing: 0.12em; margin-bottom: 14px; }
-    .chips { position: absolute; left: 150px; width: 780px; top: 520px; display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
+    .chips { position: absolute; left: 150px; width: 780px; top: 548px; display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
     .chip { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; padding: 12px 26px; border-radius: 999px;
       background: rgba(200,255,46,0.14); border: 3px solid #c8ff2e; color: #c8ff2e; letter-spacing: 0.04em; }
     .inset-lbl { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; fill: #c4c4cc; letter-spacing: 2px; }
@@ -18,18 +18,33 @@
     .save { position: absolute; left: 150px; width: 780px; top: 1040px; text-align: center; }
     .save span { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; color: #0b0b0d; background: #c8ff2e; border-radius: 999px; padding: 14px 30px; }
     #flash { background: #fff; opacity: 0; }
+    .prog { position: absolute; left: 190px; width: 700px; top: 292px; height: 14px; display: flex; gap: 10px; }
+    .prog .seg { flex: 1; height: 14px; border-radius: 7px; background: #2a2c33; overflow: hidden; }
+    .prog .seg i { display: block; width: 100%; height: 100%; background: #c8ff2e; transform-origin: 0 50%; transform: scaleX(0); }
+    .poll { position: absolute; left: 150px; width: 780px; top: 640px; text-align: center; }
+    .poll .pq { font-size: 64px; color: #fff; }
+    .poll .pr { margin-top: 18px; display: flex; justify-content: center; gap: 28px; }
+    .poll .pr span { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 40px; padding: 12px 40px; border-radius: 999px; border: 4px solid #c8ff2e; color: #c8ff2e; }
+    .poll .pr span:last-child { border-color: #ff3b3b; color: #ff3b3b; }
+    .tease { position: absolute; left: 150px; width: 780px; top: 640px; text-align: center; }
+    .tease .tk { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 36px; color: #c8ff2e; letter-spacing: 0.14em; }
+    .tease .tt { margin-top: 16px; font-size: 96px; line-height: 0.95; }
+    .tease .a { color: #c8ff2e; }
   </style>
   <div id="pompes" data-composition-id="pompes" data-width="1080" data-height="1920" data-layout-allow-overlap>
-    <svg id="fig-svg" class="clip full" data-start="0" data-duration="39.47" data-track-index="0" viewBox="0 0 1080 1920">
+    <div id="figclip" class="clip full" data-start="0" data-duration="42.52" data-track-index="0">
+    <svg id="fig-svg" class="full" viewBox="0 0 1080 1920">
       <defs>
+        <radialGradient id="sh"><stop offset="0" stop-color="#000" stop-opacity="0.75" /><stop offset="1" stop-color="#000" stop-opacity="0" /></radialGradient>
+        <filter id="bodyglow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur in="SourceAlpha" stdDeviation="7" result="b" /><feFlood flood-color="#c8ff2e" flood-opacity="0.28" /><feComposite in2="b" operator="in" result="g" /><feMerge><feMergeNode in="g" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
         <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
       </defs>
       <g id="figwrap" transform="matrix(1.45,0,0,1.45,-243,-430.5)">
         <g id="fig">
           <line x1="180" y1="1090" x2="900" y2="1090" stroke="#2d2f36" stroke-width="4" />
-          <ellipse id="shadow" cx="520" cy="1094" rx="220" ry="10" fill="#000" opacity="0.5" />
+          <ellipse id="shadow" cx="520" cy="1096" rx="260" ry="16" fill="url(#sh)" />
           <g id="bench" opacity="0"><rect x="230" y="990" width="190" height="22" rx="7" fill="#3a3d46" /><rect x="250" y="1012" width="14" height="78" fill="#3a3d46" /><rect x="386" y="1012" width="14" height="78" fill="#3a3d46" /></g>
-          <g id="body" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <g id="body" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#bodyglow)">
             <polyline id="arm-far" stroke="#6d6f78" stroke-width="16" />
             <polyline id="leg-far" stroke="#6d6f78" stroke-width="22" />
             <polyline id="leg" stroke="#fff" stroke-width="25" />
@@ -43,27 +58,31 @@
         </g>
       </g>
     </svg>
-    <div id="t-hook" class="clip ttl big" data-start="0" data-duration="2.67" data-track-index="1" style="top:306px;font-size:64px">TU FAIS TOUJOURS<br />LES MÊMES <span class="a">POMPES</span> ?</div>
-    <svg id="x-stamp" class="clip full" data-start="1.4" data-duration="1.27" data-track-index="2" viewBox="0 0 1080 1920"><g id="x-g" style="transform-origin:540px 960px"><circle cx="540" cy="960" r="200" fill="none" stroke="#ff3b3b" stroke-width="22" /><path d="M425 845 L655 1075 M655 845 L425 1075" stroke="#ff3b3b" stroke-width="28" stroke-linecap="round" /></g></svg>
-    <div id="t-intro" class="clip ttl" data-start="2.67" data-duration="3.6" data-track-index="1" style="top:300px"><div id="i-a" class="big" style="font-size:118px"><span class="a">5</span> POMPES</div><div id="i-b" class="mid" style="margin-top:20px">5 RÉSULTATS</div></div>
-    <div id="t-classic" class="clip ttl big" data-start="6.27" data-duration="4.33" data-track-index="1" style="top:300px"><span class="num">01</span>CLASSIQUE</div>
-    <div id="c-classic" class="clip chips" data-start="6.27" data-duration="4.33" data-track-index="2" style=""><span class="chip">PECS</span><span class="chip">ÉPAULES</span><span class="chip">TRICEPS</span></div>
-    <svg id="in-classic" class="clip full" data-start="6.27" data-duration="4.33" data-track-index="3" viewBox="0 0 1080 1920"><g id="ig-classic"><rect x="130" y="640" width="230" height="190" rx="20" fill="#15161a" stroke="#2a2c33" stroke-width="3" /><g transform="translate(190.0,718) rotate(0)"><rect x="-17" y="-34" width="34" height="68" rx="16" fill="#c8ff2e" /></g><g transform="translate(300.0,718) rotate(0)"><rect x="-17" y="-34" width="34" height="68" rx="16" fill="#c8ff2e" /></g><text x="245" y="812" text-anchor="middle" class="inset-lbl">ÉCART MAINS</text></g></svg>
-    <div id="t-wide" class="clip ttl big" data-start="10.6" data-duration="3.82" data-track-index="1" style="top:300px"><span class="num">02</span>MAINS ÉCARTÉES</div>
-    <div id="c-wide" class="clip chips" data-start="10.6" data-duration="3.82" data-track-index="2" style=""><span class="chip">PECTORAUX</span></div>
-    <svg id="in-wide" class="clip full" data-start="10.6" data-duration="3.82" data-track-index="3" viewBox="0 0 1080 1920"><g id="ig-wide"><rect x="130" y="640" width="230" height="190" rx="20" fill="#15161a" stroke="#2a2c33" stroke-width="3" /><g transform="translate(145.0,718) rotate(0)"><rect x="-17" y="-34" width="34" height="68" rx="16" fill="#c8ff2e" /></g><g transform="translate(345.0,718) rotate(0)"><rect x="-17" y="-34" width="34" height="68" rx="16" fill="#c8ff2e" /></g><text x="245" y="812" text-anchor="middle" class="inset-lbl">ÉCART MAINS</text></g></svg>
-    <div id="t-diamond" class="clip ttl big" data-start="14.42" data-duration="4.38" data-track-index="1" style="top:300px"><span class="num">03</span>DIAMANT</div>
-    <div id="c-diamond" class="clip chips" data-start="14.42" data-duration="4.38" data-track-index="2" style=""><span class="chip">TRICEPS</span></div>
-    <svg id="in-diamond" class="clip full" data-start="14.42" data-duration="4.38" data-track-index="3" viewBox="0 0 1080 1920"><g id="ig-diamond"><rect x="130" y="640" width="230" height="190" rx="20" fill="#15161a" stroke="#2a2c33" stroke-width="3" /><g transform="translate(234.0,718) rotate(38)"><rect x="-17" y="-34" width="34" height="68" rx="16" fill="#c8ff2e" /></g><g transform="translate(256.0,718) rotate(-38)"><rect x="-17" y="-34" width="34" height="68" rx="16" fill="#c8ff2e" /></g><text x="245" y="812" text-anchor="middle" class="inset-lbl">ÉCART MAINS</text></g></svg>
-    <div id="t-decline" class="clip ttl big" data-start="18.8" data-duration="7.95" data-track-index="1" style="top:300px"><span class="num">04</span>DÉCLINÉES</div>
-    <div id="c-decline" class="clip chips" data-start="18.8" data-duration="7.95" data-track-index="2" style=""><span class="chip">HAUT DES PECS</span><span class="chip">ÉPAULES</span></div>
-    <div id="t-knees" class="clip ttl big" data-start="26.75" data-duration="5.95" data-track-index="1" style="top:300px"><span class="num">05</span>SUR LES GENOUX</div>
-    <div id="c-knees" class="clip chips" data-start="26.75" data-duration="5.95" data-track-index="2" style=""><span class="chip">DÉBUTANT</span></div>
-    <div id="t-outro" class="clip ttl big" data-start="32.7" data-duration="6.37" data-track-index="1" style="top:300px">ALORS,<br /><span class="a">LAQUELLE</span><br />TU FAIS ?</div>
-    <div id="grid" class="clip grid5" data-start="32.7" data-duration="6.37" data-track-index="2" style=""><div class="row"><b>1</b>CLASSIQUE</div><div class="row"><b>2</b>MAINS ÉCARTÉES</div><div class="row"><b>3</b>DIAMANT</div><div class="row"><b>4</b>DÉCLINÉES</div><div class="row"><b>5</b>SUR LES GENOUX</div></div>
-    <div id="save" class="clip save" data-start="32.7" data-duration="6.37" data-track-index="3" style=""><span>ENREGISTRE-LA POUR TA SÉANCE</span></div>
-    <div id="t-hook2" class="clip ttl big" data-start="39.07" data-duration="0.4" data-track-index="1" style="top:306px;font-size:64px">TU FAIS TOUJOURS<br />LES MÊMES <span class="a">POMPES</span> ?</div>
-    <div id="flash" class="clip full" data-start="0" data-duration="39.47" data-track-index="9"></div>
+    </div>
+    <div id="t-hook" class="clip ttl big" data-start="0" data-duration="2.69" data-track-index="1" style="top:306px;font-size:64px">TU FAIS TOUJOURS<br />LES MÊMES <span class="a">POMPES</span> ?</div>
+    <svg id="x-stamp" class="clip full" data-start="1.4" data-duration="1.29" data-track-index="2" viewBox="0 0 1080 1920"><g id="x-g" style="transform-origin:540px 960px"><circle cx="540" cy="960" r="200" fill="none" stroke="#ff3b3b" stroke-width="22" /><path d="M425 845 L655 1075 M655 845 L425 1075" stroke="#ff3b3b" stroke-width="28" stroke-linecap="round" /></g></svg>
+    <div id="t-intro" class="clip ttl" data-start="2.69" data-duration="4.04" data-track-index="1" style="top:300px"><div id="i-a" class="big" style="font-size:118px"><span class="a">5</span> POMPES</div><div id="i-b" class="mid" style="margin-top:20px">5 RÉSULTATS</div></div>
+    <div id="prog" class="clip prog" data-start="6.73" data-duration="27.62" data-track-index="6" style=""><div class="seg"><i id="pf-0"></i></div><div class="seg"><i id="pf-1"></i></div><div class="seg"><i id="pf-2"></i></div><div class="seg"><i id="pf-3"></i></div><div class="seg"><i id="pf-4"></i></div></div>
+    <div id="t-classic" class="clip ttl big" data-start="6.73" data-duration="4.72" data-track-index="1" style="top:330px"><span class="num">01</span>CLASSIQUE</div>
+    <div id="c-classic" class="clip chips" data-start="6.73" data-duration="4.72" data-track-index="2" style=""><span class="chip">PECS</span><span class="chip">ÉPAULES</span><span class="chip">TRICEPS</span></div>
+    <svg id="in-classic" class="clip full" data-start="6.73" data-duration="4.72" data-track-index="3" viewBox="0 0 1080 1920"><g id="ig-classic"><rect x="130" y="660" width="230" height="190" rx="20" fill="#15161a" stroke="#2a2c33" stroke-width="3" /><g transform="translate(190.0,738) rotate(0)"><rect x="-17" y="-34" width="34" height="68" rx="16" fill="#c8ff2e" /></g><g transform="translate(300.0,738) rotate(0)"><rect x="-17" y="-34" width="34" height="68" rx="16" fill="#c8ff2e" /></g><text x="245" y="832" text-anchor="middle" class="inset-lbl">ÉCART MAINS</text></g></svg>
+    <div id="t-wide" class="clip ttl big" data-start="11.45" data-duration="4.04" data-track-index="1" style="top:330px"><span class="num">02</span>MAINS ÉCARTÉES</div>
+    <div id="c-wide" class="clip chips" data-start="11.45" data-duration="4.04" data-track-index="2" style=""><span class="chip">PECTORAUX</span></div>
+    <svg id="in-wide" class="clip full" data-start="11.45" data-duration="4.04" data-track-index="3" viewBox="0 0 1080 1920"><g id="ig-wide"><rect x="130" y="660" width="230" height="190" rx="20" fill="#15161a" stroke="#2a2c33" stroke-width="3" /><g transform="translate(145.0,738) rotate(0)"><rect x="-17" y="-34" width="34" height="68" rx="16" fill="#c8ff2e" /></g><g transform="translate(345.0,738) rotate(0)"><rect x="-17" y="-34" width="34" height="68" rx="16" fill="#c8ff2e" /></g><text x="245" y="832" text-anchor="middle" class="inset-lbl">ÉCART MAINS</text></g></svg>
+    <div id="t-diamond" class="clip ttl big" data-start="15.49" data-duration="4.71" data-track-index="1" style="top:330px"><span class="num">03</span>DIAMANT</div>
+    <div id="c-diamond" class="clip chips" data-start="15.49" data-duration="4.71" data-track-index="2" style=""><span class="chip">TRICEPS</span></div>
+    <svg id="in-diamond" class="clip full" data-start="15.49" data-duration="4.71" data-track-index="3" viewBox="0 0 1080 1920"><g id="ig-diamond"><rect x="130" y="660" width="230" height="190" rx="20" fill="#15161a" stroke="#2a2c33" stroke-width="3" /><rect x="380" y="660" width="230" height="190" rx="20" fill="#15161a" stroke="#c8ff2e" stroke-width="3" /><rect x="153" y="704" width="34" height="68" rx="16" fill="#4a4c55" /><rect x="303" y="704" width="34" height="68" rx="16" fill="#4a4c55" /><g transform="translate(484,738) rotate(38)"><rect x="-17" y="-34" width="34" height="68" rx="16" fill="#c8ff2e" /></g><g transform="translate(506,738) rotate(-38)"><rect x="-17" y="-34" width="34" height="68" rx="16" fill="#c8ff2e" /></g><text x="245" y="832" text-anchor="middle" class="inset-lbl">ÉCARTÉES</text><text x="495" y="832" text-anchor="middle" class="inset-lbl" style="fill:#c8ff2e">SERRÉES</text></g></svg>
+    <div id="t-decline" class="clip ttl big" data-start="20.2" data-duration="8.09" data-track-index="1" style="top:330px"><span class="num">04</span>DÉCLINÉES</div>
+    <div id="c-decline" class="clip chips" data-start="20.2" data-duration="8.09" data-track-index="2" style=""><span class="chip">HAUT DES PECS</span><span class="chip">ÉPAULES</span></div>
+    <div id="poll" class="clip poll" data-start="26.09" data-duration="2.2" data-track-index="3" style=""><div class="pq">SOUS-COTÉES ?</div><div class="pr"><span>OUI</span><span>NON</span></div></div>
+    <div id="t-knees" class="clip ttl big" data-start="28.29" data-duration="6.06" data-track-index="1" style="top:330px"><span class="num">05</span>SUR LES GENOUX</div>
+    <div id="c-knees" class="clip chips" data-start="28.29" data-duration="6.06" data-track-index="2" style=""><span class="chip">DÉBUTANT</span></div>
+    <div id="t-outro" class="clip ttl big" data-start="34.35" data-duration="6.27" data-track-index="1" style="top:300px">ALORS,<br /><span class="a">LAQUELLE</span><br />TU FAIS ?</div>
+    <div id="grid" class="clip grid5" data-start="34.35" data-duration="6.27" data-track-index="2" style=""><div class="row"><b>1</b>CLASSIQUE</div><div class="row"><b>2</b>MAINS ÉCARTÉES</div><div class="row"><b>3</b>DIAMANT</div><div class="row"><b>4</b>DÉCLINÉES</div><div class="row"><b>5</b>SUR LES GENOUX</div></div>
+    <div id="save" class="clip save" data-start="34.35" data-duration="6.27" data-track-index="3" style=""><span>ENREGISTRE-LA POUR TA SÉANCE</span></div>
+    <div id="tease" class="clip tease" data-start="40.62" data-duration="1.5" data-track-index="4" style=""><div class="tk">PROCHAIN ÉPISODE</div><div class="tt"><span class="a">5</span> ABDOS<br />5 RÉSULTATS</div></div>
+    <div id="t-hook2" class="clip ttl big" data-start="42.12" data-duration="0.4" data-track-index="1" style="top:306px;font-size:64px">TU FAIS TOUJOURS<br />LES MÊMES <span class="a">POMPES</span> ?</div>
+    <div id="flash" class="clip full" data-start="0" data-duration="42.52" data-track-index="9"></div>
   </div>
   <script>
     (function () {
@@ -128,40 +147,51 @@
       tl.from("#t-hook", { scale: 1.12, duration: 0.35, ease: "power3.out" }, 0);
       tl.fromTo("#x-g", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: "back.out(2.4)" }, 1.4);
       tl.to("#x-g", { rotation: 8, duration: 0.08, yoyo: true, repeat: 3 }, 1.62);
-      reps(0, 2.67, "bad", 0.95);
-      tl.from("#i-a", { scale: 0.4, opacity: 0, duration: 0.3, ease: "back.out(2)" }, 2.7199999999999998);
-      tl.from("#i-b", { y: 60, opacity: 0, duration: 0.25, ease: "power3.out" }, 3.17);
-      reps(2.67, 6.27, "classic", 1.0);
-      tl.from("#t-classic", { x: -120, opacity: 0, duration: 0.25, ease: "power3.out" }, 6.289999999999999);
-      tl.from("#c-classic .chip", { y: 40, opacity: 0, duration: 0.22, stagger: 0.1, ease: "back.out(2)" }, 6.52);
-      reps(6.27, 10.6, "classic", 1.05);
-      lights(6.27, ["chest", "delt", "tri"]);
-      tl.from("#ig-classic", { opacity: 0, x: -40, duration: 0.25 }, 6.369999999999999);
-      tl.from("#t-wide", { x: -120, opacity: 0, duration: 0.25, ease: "power3.out" }, 10.62);
-      tl.from("#c-wide .chip", { y: 40, opacity: 0, duration: 0.22, stagger: 0.1, ease: "back.out(2)" }, 10.85);
-      reps(10.6, 14.42, "wide", 1.05);
-      lights(10.6, ["chest"]);
-      tl.from("#ig-wide", { opacity: 0, x: -40, duration: 0.25 }, 10.7);
-      tl.from("#t-diamond", { x: -120, opacity: 0, duration: 0.25, ease: "power3.out" }, 14.44);
-      tl.from("#c-diamond .chip", { y: 40, opacity: 0, duration: 0.22, stagger: 0.1, ease: "back.out(2)" }, 14.67);
-      reps(14.42, 18.8, "diamond", 1.15);
-      lights(14.42, ["tri"]);
-      tl.from("#ig-diamond", { opacity: 0, x: -40, duration: 0.25 }, 14.52);
-      tl.from("#t-decline", { x: -120, opacity: 0, duration: 0.25, ease: "power3.out" }, 18.82);
-      tl.from("#c-decline .chip", { y: 40, opacity: 0, duration: 0.22, stagger: 0.1, ease: "back.out(2)" }, 19.05);
-      reps(18.8, 26.75, "decline", 1.05);
-      lights(18.8, ["chest", "delt"]);
-      tl.from("#t-knees", { x: -120, opacity: 0, duration: 0.25, ease: "power3.out" }, 26.77);
-      tl.from("#c-knees .chip", { y: 40, opacity: 0, duration: 0.22, stagger: 0.1, ease: "back.out(2)" }, 27.0);
-      reps(26.75, 32.7, "knees", 1.05);
-      lights(26.75, ["chest", "tri"]);
-      tl.to(P, { show: 0, duration: 0.15 }, 32.7);
-      tl.from("#grid .row", { x: 160, opacity: 0, duration: 0.25, stagger: 0.12, ease: "power3.out" }, 33.0);
-      tl.from("#save span", { scale: 0.6, opacity: 0, duration: 0.3, ease: "back.out(2)" }, 34.300000000000004);
-      tl.set(P, { show: 1, mode: "bad", d: 0 }, 39.07);
-      tl.set(A, { chest: 0, delt: 0, tri: 0 }, 39.07);
-      [2.67, 6.27, 10.6, 14.42, 18.8, 26.75, 32.7].forEach(function (c) { tl.fromTo("#flash", { opacity: 0.35 }, { opacity: 0, duration: 0.18, ease: "power2.out", immediateRender: false }, c); });
-      tl.set({}, {}, 39.47);
+      tl.fromTo("#fig-svg", { scale: 1.45 }, { scale: 1, duration: 0.45, ease: "power3.inOut", immediateRender: true }, 2.0);
+      tl.set("#fig-svg", { transformOrigin: "600px 1050px" }, 0);
+      tl.fromTo("#fig-svg", { x: 0 }, { x: 12, duration: 0.04, yoyo: true, repeat: 7, ease: "none" }, 1.4);
+      reps(0, 2.69, "bad", 0.95);
+      tl.from("#i-a", { scale: 0.4, opacity: 0, duration: 0.3, ease: "back.out(2)" }, 2.7399999999999998);
+      tl.from("#i-b", { y: 60, opacity: 0, duration: 0.25, ease: "power3.out" }, 3.19);
+      reps(2.69, 6.73, "classic", 1.0);
+      tl.fromTo("#pf-0", { scaleX: 0 }, { scaleX: 1, duration: 4.72, ease: "none" }, 6.73);
+      tl.from("#t-classic", { x: -120, opacity: 0, duration: 0.25, ease: "power3.out" }, 6.75);
+      tl.from("#c-classic .chip", { y: 40, opacity: 0, duration: 0.22, stagger: 0.1, ease: "back.out(2)" }, 6.98);
+      reps(6.73, 11.45, "classic", 1.05);
+      lights(6.73, ["chest", "delt", "tri"]);
+      tl.from("#ig-classic", { opacity: 0, x: -40, duration: 0.25 }, 6.83);
+      tl.fromTo("#pf-1", { scaleX: 0 }, { scaleX: 1, duration: 4.04, ease: "none" }, 11.45);
+      tl.from("#t-wide", { x: -120, opacity: 0, duration: 0.25, ease: "power3.out" }, 11.469999999999999);
+      tl.from("#c-wide .chip", { y: 40, opacity: 0, duration: 0.22, stagger: 0.1, ease: "back.out(2)" }, 11.7);
+      reps(11.45, 15.49, "wide", 1.05);
+      lights(11.45, ["chest"]);
+      tl.from("#ig-wide", { opacity: 0, x: -40, duration: 0.25 }, 11.549999999999999);
+      tl.fromTo("#pf-2", { scaleX: 0 }, { scaleX: 1, duration: 4.71, ease: "none" }, 15.49);
+      tl.from("#t-diamond", { x: -120, opacity: 0, duration: 0.25, ease: "power3.out" }, 15.51);
+      tl.from("#c-diamond .chip", { y: 40, opacity: 0, duration: 0.22, stagger: 0.1, ease: "back.out(2)" }, 15.74);
+      reps(15.49, 20.2, "diamond", 1.15);
+      lights(15.49, ["tri"]);
+      tl.from("#ig-diamond", { opacity: 0, x: -40, duration: 0.25 }, 15.59);
+      tl.fromTo("#pf-3", { scaleX: 0 }, { scaleX: 1, duration: 8.09, ease: "none" }, 20.2);
+      tl.from("#t-decline", { x: -120, opacity: 0, duration: 0.25, ease: "power3.out" }, 20.22);
+      tl.from("#c-decline .chip", { y: 40, opacity: 0, duration: 0.22, stagger: 0.1, ease: "back.out(2)" }, 20.45);
+      reps(20.2, 28.29, "decline", 1.05);
+      lights(20.2, ["chest", "delt"]);
+      tl.from("#poll .pq, #poll .pr span", { scale: 0.5, opacity: 0, duration: 0.25, stagger: 0.12, ease: "back.out(2.4)" }, 26.09);
+      tl.fromTo("#pf-4", { scaleX: 0 }, { scaleX: 1, duration: 6.06, ease: "none" }, 28.29);
+      tl.from("#t-knees", { x: -120, opacity: 0, duration: 0.25, ease: "power3.out" }, 28.31);
+      tl.from("#c-knees .chip", { y: 40, opacity: 0, duration: 0.22, stagger: 0.1, ease: "back.out(2)" }, 28.54);
+      reps(28.29, 34.35, "knees", 1.05);
+      lights(28.29, ["chest", "tri"]);
+      tl.from("#tease .tk, #tease .tt", { y: 50, opacity: 0, duration: 0.3, stagger: 0.12, ease: "power3.out" }, 40.62);
+      tl.to(P, { show: 0, duration: 0.15 }, 34.35);
+      tl.from("#grid .row", { x: 160, opacity: 0, duration: 0.25, stagger: 0.12, ease: "power3.out" }, 34.65);
+      tl.from("#save span", { scale: 0.6, opacity: 0, duration: 0.3, ease: "back.out(2)" }, 35.95);
+      tl.set(P, { show: 1, mode: "bad", d: 0 }, 42.12);
+      tl.set(A, { chest: 0, delt: 0, tri: 0 }, 42.12);
+      tl.set("#fig-svg", { scale: 1.45 }, 42.12);
+      [2.69, 6.73, 11.45, 15.49, 20.2, 28.29, 34.35].forEach(function (c) { tl.fromTo("#flash", { opacity: 0.35 }, { opacity: 0, duration: 0.18, ease: "power2.out", immediateRender: false }, c); });
+      tl.set({}, {}, 42.52);
       render();
       window.__timelines["pompes"] = tl;
     })();

@@ -8,7 +8,7 @@
     .big { font-size: 72px; letter-spacing: -0.02em; }
     .mid { font-size: 76px; }
     .num { display: block; font-size: 44px; color: #c8ff2e; letter-spacing: 0.12em; margin-bottom: 14px; }
-    .chips { position: absolute; left: 150px; width: 780px; top: 520px; display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
+    .chips { position: absolute; left: 150px; width: 780px; top: 548px; display: flex; justify-content: center; flex-wrap: wrap; gap: 16px; }
     .chip { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; padding: 12px 26px; border-radius: 999px;
       background: rgba(200,255,46,0.14); border: 3px solid #c8ff2e; color: #c8ff2e; letter-spacing: 0.04em; }
     .inset-lbl { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 28px; fill: #c4c4cc; letter-spacing: 2px; }
@@ -18,18 +18,33 @@
     .save { position: absolute; left: 150px; width: 780px; top: 1040px; text-align: center; }
     .save span { display: inline-block; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 34px; color: #0b0b0d; background: #c8ff2e; border-radius: 999px; padding: 14px 30px; }
     #flash { background: #fff; opacity: 0; }
+    .prog { position: absolute; left: 190px; width: 700px; top: 292px; height: 14px; display: flex; gap: 10px; }
+    .prog .seg { flex: 1; height: 14px; border-radius: 7px; background: #2a2c33; overflow: hidden; }
+    .prog .seg i { display: block; width: 100%; height: 100%; background: #c8ff2e; transform-origin: 0 50%; transform: scaleX(0); }
+    .poll { position: absolute; left: 150px; width: 780px; top: 640px; text-align: center; }
+    .poll .pq { font-size: 64px; color: #fff; }
+    .poll .pr { margin-top: 18px; display: flex; justify-content: center; gap: 28px; }
+    .poll .pr span { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 40px; padding: 12px 40px; border-radius: 999px; border: 4px solid #c8ff2e; color: #c8ff2e; }
+    .poll .pr span:last-child { border-color: #ff3b3b; color: #ff3b3b; }
+    .tease { position: absolute; left: 150px; width: 780px; top: 640px; text-align: center; }
+    .tease .tk { font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 36px; color: #c8ff2e; letter-spacing: 0.14em; }
+    .tease .tt { margin-top: 16px; font-size: 96px; line-height: 0.95; }
+    .tease .a { color: #c8ff2e; }
   </style>
   <div id="pompes" data-composition-id="pompes" data-width="1080" data-height="1920" data-layout-allow-overlap>
-    <svg id="fig-svg" class="clip full" data-start="0" data-duration="/*D*/" data-track-index="0" viewBox="0 0 1080 1920">
+    <div id="figclip" class="clip full" data-start="0" data-duration="/*D*/" data-track-index="0">
+    <svg id="fig-svg" class="full" viewBox="0 0 1080 1920">
       <defs>
+        <radialGradient id="sh"><stop offset="0" stop-color="#000" stop-opacity="0.75" /><stop offset="1" stop-color="#000" stop-opacity="0" /></radialGradient>
+        <filter id="bodyglow" x="-20%" y="-20%" width="140%" height="140%"><feGaussianBlur in="SourceAlpha" stdDeviation="7" result="b" /><feFlood flood-color="#c8ff2e" flood-opacity="0.28" /><feComposite in2="b" operator="in" result="g" /><feMerge><feMergeNode in="g" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
         <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
       </defs>
       <g id="figwrap" transform="matrix(1.45,0,0,1.45,-243,-430.5)">
         <g id="fig">
           <line x1="180" y1="1090" x2="900" y2="1090" stroke="#2d2f36" stroke-width="4" />
-          <ellipse id="shadow" cx="520" cy="1094" rx="220" ry="10" fill="#000" opacity="0.5" />
+          <ellipse id="shadow" cx="520" cy="1096" rx="260" ry="16" fill="url(#sh)" />
           <g id="bench" opacity="0"><rect x="230" y="990" width="190" height="22" rx="7" fill="#3a3d46" /><rect x="250" y="1012" width="14" height="78" fill="#3a3d46" /><rect x="386" y="1012" width="14" height="78" fill="#3a3d46" /></g>
-          <g id="body" stroke-linecap="round" stroke-linejoin="round" fill="none">
+          <g id="body" stroke-linecap="round" stroke-linejoin="round" fill="none" filter="url(#bodyglow)">
             <polyline id="arm-far" stroke="#6d6f78" stroke-width="16" />
             <polyline id="leg-far" stroke="#6d6f78" stroke-width="22" />
             <polyline id="leg" stroke="#fff" stroke-width="25" />
@@ -43,6 +58,7 @@
         </g>
       </g>
     </svg>
+    </div>
     /*CLIPS*/
     <div id="flash" class="clip full" data-start="0" data-duration="/*D*/" data-track-index="9"></div>
   </div>

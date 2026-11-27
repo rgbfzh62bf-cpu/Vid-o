@@ -8,3 +8,5 @@
 
 Aucun média tiers soumis à droits. Pas de visage réel ni généré.
 | SFX whoosh (assets/sfx/whoosh.mp3) | https://freesound.org/people/qubodup/sounds/60007 | qubodup | CC0 |
+| SFX ding (assets/sfx/ding.mp3) | https://freesound.org/people/greenvwbeetle/sounds/241288 | greenvwbeetle | CC0 |
+| SFX tap (assets/sfx/tap.mp3) | https://freesound.org/people/greenvwbeetle/sounds/244654 | greenvwbeetle | CC0 |
