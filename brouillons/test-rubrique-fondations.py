@@ -233,8 +233,8 @@ OUTILS = """<section id="pg-plus">
         <h2 class="pp-h">Estime ton 1RM</h2>
         <p class="pp-lead">Entre une charge que tu as soulevée et le nombre de répétitions faites avec une bonne technique.</p>
         <div class="pp-in">
-          <label>Charge (kg)<input id="rmW" type="number" inputmode="decimal" min="1" max="500" step="0.5" placeholder="ex. 80"></label>
-          <label>Répétitions<input id="rmR" type="number" inputmode="numeric" min="1" max="10" step="1" placeholder="1 à 10"></label>
+          <label>Charge (kg)<input id="rmW" type="number" enterkeyhint="next" inputmode="decimal" min="1" max="500" step="0.5" placeholder="ex. 80"></label>
+          <label>Répétitions<input id="rmR" type="number" enterkeyhint="done" inputmode="numeric" min="1" max="10" step="1" placeholder="1 à 10"></label>
         </div>
         <p class="pp-note">Estimation (formule d'Epley), fiable surtout entre 1 et 10 répétitions. Fais le calcul pour chacun des 3 mouvements.</p></div>
         <div class="pp-res pp-rm" aria-live="polite"><span>Ton 1RM estimé</span><output id="rmOut">— kg</output></div>
@@ -255,6 +255,8 @@ function rm(){var w=parseFloat(W.value.replace(',','.')),r=parseInt(R.value,10);
 if(!(w>0&&w<=500&&r>=1&&r<=10)){O.textContent='— kg';return}
 var v=r===1?w:w*(1+r/30);O.textContent=(Math.round(v*2)/2).toString().replace('.',',')+' kg'}
 W.addEventListener('input',rm);R.addEventListener('input',rm);
+document.addEventListener('pointerdown',function(e){var f=document.activeElement;if(f&&(f===W||f===R)&&e.target!==W&&e.target!==R)f.blur()});
+[W,R].forEach(function(i){i.addEventListener('keydown',function(e){if(e.key==='Enter'){e.preventDefault();i===W?R.focus():i.blur()}})});
 })();
 </script>
 """
