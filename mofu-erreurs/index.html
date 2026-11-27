@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #000; }
+      #root { position: relative; width: 100%; height: 100%; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="38.68" data-width="1080" data-height="1920">
+      <div id="cam" data-composition-id="cam" data-composition-src="compositions/cam.html" data-start="0" data-duration="38.68" data-track-index="0" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="ov" data-composition-id="ov" data-composition-src="compositions/ov.html" data-start="0" data-duration="38.68" data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920" style="z-index:2"></div>
+      <div id="caps" data-composition-id="caps" data-composition-src="compositions/caps.html" data-start="0" data-duration="38.68" data-track-index="2" data-track-kind="captions" data-width="1080" data-height="1920" style="z-index:3"></div>
+      <audio id="vo" class="clip" src="assets/voice.wav" data-start="0" data-duration="38.68" data-track-index="6" data-volume="1"></audio>
+      <audio id="music" class="clip" src="assets/music/bed.mp3" data-start="0" data-duration="38.68" data-track-index="7" data-volume="0.07"></audio>
+      <audio id="wh0" class="clip" src="assets/sfx/whoosh.mp3" data-start="6.37" data-duration="0.45" data-track-index="4" data-volume="0.22"></audio>
+      <audio id="wh1" class="clip" src="assets/sfx/whoosh.mp3" data-start="16.06" data-duration="0.45" data-track-index="4" data-volume="0.22"></audio>
+      <audio id="wh2" class="clip" src="assets/sfx/whoosh.mp3" data-start="25.80" data-duration="0.45" data-track-index="4" data-volume="0.22"></audio>
+      <audio id="wh3" class="clip" src="assets/sfx/whoosh.mp3" data-start="34.17" data-duration="0.45" data-track-index="4" data-volume="0.22"></audio>
+      <audio id="dg0" class="clip" src="assets/sfx/ding.mp3" data-start="5.50" data-duration="0.52" data-track-index="5" data-volume="0.12"></audio>
+      <audio id="dg1" class="clip" src="assets/sfx/ding.mp3" data-start="13.77" data-duration="0.52" data-track-index="5" data-volume="0.12"></audio>
+      <audio id="dg2" class="clip" src="assets/sfx/ding.mp3" data-start="22.85" data-duration="0.52" data-track-index="5" data-volume="0.12"></audio>
+      <audio id="dg3" class="clip" src="assets/sfx/ding.mp3" data-start="32.80" data-duration="0.52" data-track-index="5" data-volume="0.12"></audio>
+    </div>
+    <script>window.__timelines = window.__timelines || {};</script>
+  </body>
+</html>

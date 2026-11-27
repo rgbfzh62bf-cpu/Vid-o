@@ -18,3 +18,4 @@
 - 27/11: tractions-tofu RENDU renders/tractions-tofu.mp4 44.6s (rig traction profil + barre basse australiennes, inset paumes, sondage négatives à gauche, teaser 5 abdos). Taps coupés 2s après chaque début de variante (masquaient le nom). Prochain épisode promis: 5 ABDOS.
 - tractions: pose corrigée (face à la barre, coudes avant, pieds arrière pointes en bas).
 - tractions: surlignage dos côté sol pour australiennes (corps sur le dos). Règle: vérifier côté muscle selon orientation du corps.
+- 27/11: mofu-erreurs RENDU renders/mofu-erreurs.mp4 38.8s. Face cam user (Drive IMG_1452..1463, raw/ ignoré git), coupes silences (raw/edl.json), build.py → cam (punch-ins) + ov (titres erreur/solution/CTA) + caps (sous-titres mots-clés vert). Format MOFU « 3 erreurs perte de poids ». DM: répondre au com, question, puis lien site.

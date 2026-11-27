@@ -1,0 +1,25 @@
+<template>
+  <style>
+    #cam { position:absolute; inset:0; overflow:hidden; background:#000; }
+    #camw { position:absolute; inset:0; transform-origin:50% 40%; }
+    #th { position:absolute; left:0; top:0; width:1080px; height:1920px; object-fit:cover; }
+    #vig { position:absolute; inset:0; background:linear-gradient(180deg, rgba(0,0,0,0.55) 0%, rgba(0,0,0,0) 34%, rgba(0,0,0,0) 52%, rgba(0,0,0,0.5) 100%); }
+  </style>
+  <div id="cam" data-composition-id="cam" data-width="1080" data-height="1920">
+    <div id="camw"><video id="th" class="clip" src="assets/th.mp4" data-start="0" data-duration="38.68" data-track-index="0" muted playsinline></video></div>
+    <div id="vig"></div>
+  </div>
+  <script>(function(){ var tl = gsap.timeline({paused:true});
+    tl.set("#camw", {scale:1.0}, 0.00);
+tl.fromTo("#camw", {scale:1.0}, {scale:1.08, duration:6.52, ease:"none"}, 0.01);
+tl.set("#camw", {scale:1.2}, 6.57);
+tl.set("#camw", {scale:1.0}, 8.32);
+tl.set("#camw", {scale:1.12}, 9.65);
+tl.set("#camw", {scale:1.2}, 16.26);
+tl.set("#camw", {scale:1.12}, 17.73);
+tl.set("#camw", {scale:1.2}, 26.00);
+tl.set("#camw", {scale:1.06}, 34.37);
+tl.to("#camw", {scale:1.16, duration:4.21, ease:"power1.inOut"}, 34.42);
+    tl.set({}, {}, 38.68);
+    window.__timelines["cam"] = tl; })();</script>
+</template>
