@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "dd026be8-2ad1-4f31-9007-d94290a0e3a1",
-  "currentRevision": "a9da68a6-c295-422b-8bf9-a0c32335136d",
+  "currentRevision": "2e8c5cac-bf53-43df-ba8c-a146839e0a16",
   "pendingChanges": false,
   "files": {
     "AGENTS.md": {
@@ -37,16 +37,16 @@
       "content": "/root/.cache/hyperframes/history/dd026be8-2ad1-4f31-9007-d94290a0e3a1/blobs/5e/5e9e6c624d912bab2152067b877088864b3ddae5b5f32a8a321f510fd6c3f342"
     },
     "assets/facecam.mp4": {
-      "hash": "834c56844f4f82468bd631e43eee9817695a4263f0dad14181835b8a9fe3045d",
-      "content": "/root/.cache/hyperframes/history/dd026be8-2ad1-4f31-9007-d94290a0e3a1/blobs/83/834c56844f4f82468bd631e43eee9817695a4263f0dad14181835b8a9fe3045d"
+      "hash": "80bbed95d4c3eb35357225f7fa6802e92dd4d1afade1f3885d3518c8c5d58cfa",
+      "content": "/root/.cache/hyperframes/history/dd026be8-2ad1-4f31-9007-d94290a0e3a1/blobs/80/80bbed95d4c3eb35357225f7fa6802e92dd4d1afade1f3885d3518c8c5d58cfa"
     },
     "compositions/components/caption-highlight.html": {
       "hash": "95e9b174d7f72af405e7d78d3ea7315e400d73dcede708b7743453d2660fc5c6",
       "content": "/root/.cache/hyperframes/history/dd026be8-2ad1-4f31-9007-d94290a0e3a1/blobs/95/95e9b174d7f72af405e7d78d3ea7315e400d73dcede708b7743453d2660fc5c6"
     },
     "compositions/sous-titres.html": {
-      "hash": "16d2181c853c52675ef1290f576d22920c2cb1ce3d767491fd7eb44545f60b8c",
-      "content": "/root/.cache/hyperframes/history/dd026be8-2ad1-4f31-9007-d94290a0e3a1/blobs/16/16d2181c853c52675ef1290f576d22920c2cb1ce3d767491fd7eb44545f60b8c"
+      "hash": "e658e2c10575a938652d961301f05d3ed120fb18298bd14a5e3032933e1d95ff",
+      "content": "/root/.cache/hyperframes/history/dd026be8-2ad1-4f31-9007-d94290a0e3a1/blobs/e6/e658e2c10575a938652d961301f05d3ed120fb18298bd14a5e3032933e1d95ff"
     },
     "assets/sfx/click-soft.mp3": {
       "hash": "075e17bdac5c13662a1c9530050e0046f81d4138e00eb3bf30427a7b4404103d",
@@ -356,12 +356,31 @@
           "after": "/root/.cache/hyperframes/history/dd026be8-2ad1-4f31-9007-d94290a0e3a1/blobs/16/16d2181c853c52675ef1290f576d22920c2cb1ce3d767491fd7eb44545f60b8c"
         }
       }
+    },
+    "2e8c5cac-bf53-43df-ba8c-a146839e0a16": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1795823575983,
+      "endedAt": 1795823575986,
+      "files": {
+        "assets/facecam.mp4": {
+          "before": "/root/.cache/hyperframes/history/dd026be8-2ad1-4f31-9007-d94290a0e3a1/blobs/83/834c56844f4f82468bd631e43eee9817695a4263f0dad14181835b8a9fe3045d",
+          "after": "/root/.cache/hyperframes/history/dd026be8-2ad1-4f31-9007-d94290a0e3a1/blobs/80/80bbed95d4c3eb35357225f7fa6802e92dd4d1afade1f3885d3518c8c5d58cfa"
+        },
+        "compositions/sous-titres.html": {
+          "before": "/root/.cache/hyperframes/history/dd026be8-2ad1-4f31-9007-d94290a0e3a1/blobs/16/16d2181c853c52675ef1290f576d22920c2cb1ce3d767491fd7eb44545f60b8c",
+          "after": "/root/.cache/hyperframes/history/dd026be8-2ad1-4f31-9007-d94290a0e3a1/blobs/e6/e658e2c10575a938652d961301f05d3ed120fb18298bd14a5e3032933e1d95ff"
+        }
+      }
     }
   },
   "checks": {
     "latest": {
-      "revision": "a9da68a6-c295-422b-8bf9-a0c32335136d",
-      "id": "50d4abde-c449-4470-8671-1cd843c03a81"
+      "revision": "2e8c5cac-bf53-43df-ba8c-a146839e0a16",
+      "id": "edda8f94-fab7-45a7-ac3e-cba523c7e506"
     },
     "revisions": {
       "ac19c534-77ea-4b00-a4a1-9fb042d4d5f2": [
@@ -634,7 +653,6 @@
         {
           "id": "1ebd8a3f-2c97-4202-93ea-ad9d57904807",
           "scope": "project",
-          "report": "/home/user/Vid-o/balance/montage/.hyperframes/artifacts/checks/1ebd8a3f-2c97-4202-93ea-ad9d57904807.json",
           "metadata": {
             "ok": true,
             "browserSkipped": false,
@@ -664,7 +682,9 @@
           "revision": "50abba95-b2f6-4fce-8e7c-e7874bb596ca",
           "inputFingerprint": "8ac240db93cf943a9f5a84a260c7f20a32b6ef2437600e00c0be96947f619c60",
           "inputScope": "local-project-files",
-          "attribution": "recorded-revision"
+          "attribution": "recorded-revision",
+          "status": "cleaned",
+          "cleanedAfterRender": "133bc69f-ec51-45bc-b992-4ba5c16f24f8"
         }
       ],
       "a9da68a6-c295-422b-8bf9-a0c32335136d": [
@@ -700,6 +720,43 @@
           "contentHash": "fbd9899f2303025e0794ad51627caebab0b3ddc967568b8e39cd3a6a08d124ed",
           "revision": "a9da68a6-c295-422b-8bf9-a0c32335136d",
           "inputFingerprint": "d2c909c5ab213a00054d14e5cd626dc63ad82584372cbac29c352053be1e9f26",
+          "inputScope": "local-project-files",
+          "attribution": "recorded-revision"
+        }
+      ],
+      "2e8c5cac-bf53-43df-ba8c-a146839e0a16": [
+        {
+          "id": "edda8f94-fab7-45a7-ac3e-cba523c7e506",
+          "scope": "project",
+          "report": "/home/user/Vid-o/balance/montage/.hyperframes/artifacts/checks/edda8f94-fab7-45a7-ac3e-cba523c7e506.json",
+          "metadata": {
+            "ok": true,
+            "browserSkipped": false,
+            "options": {
+              "samples": 9,
+              "atTransitions": false,
+              "maxIssues": 80,
+              "collapseStatic": true,
+              "tolerance": 2,
+              "timeout": 45000,
+              "cache": true,
+              "contrast": true,
+              "craft": true,
+              "strict": false,
+              "snapshots": false,
+              "safeZones": [
+                "tiktok",
+                "reels",
+                "shorts"
+              ],
+              "browserGpuMode": "auto",
+              "includeUnmounted": false
+            }
+          },
+          "createdAt": 1795823589030,
+          "contentHash": "80a337c0b801b21b13c70a01c4ae72db70937db4a39fd31deb5f954f6654104c",
+          "revision": "2e8c5cac-bf53-43df-ba8c-a146839e0a16",
+          "inputFingerprint": "623d01a1fe9f4fdf3bc236ecbfdfe66a26c33685e81dafd3d540b0060753a1b7",
           "inputScope": "local-project-files",
           "attribution": "recorded-revision"
         }
@@ -1906,15 +1963,15 @@
   },
   "renders": {
     "latest": {
-      "id": "71deafe1-b1cc-4cb8-a0a0-8f1860c79b35",
-      "completedAt": 1795822595784,
-      "output": "/home/user/Vid-o/balance/montage/renders/balance-v8.mp4",
+      "id": "133bc69f-ec51-45bc-b992-4ba5c16f24f8",
+      "completedAt": 1795823718973,
+      "output": "/home/user/Vid-o/balance/montage/renders/balance-v9.mp4",
       "status": "completed",
-      "revision": "a9da68a6-c295-422b-8bf9-a0c32335136d"
+      "revision": "2e8c5cac-bf53-43df-ba8c-a146839e0a16"
     },
     "retainedRevisions": [
-      "a9da68a6-c295-422b-8bf9-a0c32335136d",
-      "50abba95-b2f6-4fce-8e7c-e7874bb596ca"
+      "2e8c5cac-bf53-43df-ba8c-a146839e0a16",
+      "a9da68a6-c295-422b-8bf9-a0c32335136d"
     ]
   },
   "pendingArtifactCleanup": []
