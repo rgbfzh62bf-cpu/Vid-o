@@ -16,3 +16,4 @@
 - 27/11: pompes-tofu RENDU renders/pompes-tofu.mp4 39.5s (build.py + pompes.tpl, rig pompes profil, voix clonée, CTA enregistre, boucle). Série '5 X, 5 résultats'.
 - 27/11: pompes-tofu V2 pro (barre progression, cuts sur beat 89bpm, sans sous-titres, glow silhouette, zoom+shake hook, comparaison mains diamant, sondage OUI/NON déclinées, teaser '5 abdos', taps/ding CC0, musique filtre→ouverte). build.py = gabarit série. Ding AVANT la voix (sinon masque 'Numéro').
 - 27/11: tractions-tofu RENDU renders/tractions-tofu.mp4 44.6s (rig traction profil + barre basse australiennes, inset paumes, sondage négatives à gauche, teaser 5 abdos). Taps coupés 2s après chaque début de variante (masquaient le nom). Prochain épisode promis: 5 ABDOS.
+- tractions: pose corrigée (face à la barre, coudes avant, pieds arrière pointes en bas).

@@ -110,14 +110,14 @@
           hd = [sh[0] + ux * 44 + 8, sh[1] + uy * 44 - 18];
           el = ik(sh, hand, UA, FA, 1);
         } else {
-          hand = [BAR[0], BAR[1] + 4];
+          hand = [BAR[0] + 6, BAR[1] + 4];
           var lift = m === "bad" ? 0.22 : 1;
-          sh = [BAR[0] - 10 + 6 * d * lift, BAR[1] + 158 - 128 * d * lift];
-          hip = [sh[0] - 14, sh[1] + TORSO]; knee = [hip[0] + 18, hip[1] + THIGH - 4]; ank = [knee[0] - 34, knee[1] + SHIN - 8];
-          hd = [sh[0] + 10, sh[1] - 47];
-          el = ik(sh, hand, UA, FA, m === "sup" ? -1 : 1);
+          sh = [BAR[0] - 20 - 4 * d * lift, BAR[1] + 160 - 132 * d * lift];
+          hip = [sh[0] - 8, sh[1] + TORSO]; knee = [hip[0] + 12, hip[1] + THIGH - 6]; ank = [knee[0] - 42, knee[1] + SHIN - 14];
+          hd = [sh[0] - 4, sh[1] - 47];
+          el = ik(sh, hand, UA, FA, -1);
         }
-        var toe = m === "aus" ? [ank[0] - 6, ank[1] - 18] : [ank[0] + 16, ank[1] + 10];
+        var toe = m === "aus" ? [ank[0] - 6, ank[1] - 18] : [ank[0] - 10, ank[1] + 20];
         $("leg").setAttribute("points", pts([toe, ank, knee, hip]));
         $("leg-far").setAttribute("points", pts([[toe[0] - 6, toe[1]], [ank[0] - 6, ank[1]], [knee[0] - 6, knee[1]], [hip[0] - 4, hip[1]]]));
         L2("torso", hip, sh);
