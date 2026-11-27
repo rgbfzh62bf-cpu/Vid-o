@@ -352,7 +352,7 @@ body = SECTION.replace('<section id="programmes">', '<section id="programmes" cl
 body = re.sub(r'<h2 style="margin-top:10px">(.*?)</h2>', r'<h1 style="margin-top:10px">\1</h1>', body, count=1)
 g = top + '<main>\n' + body + OUTILS + '</main>\n' + end
 g = menu(g)
-g = g.replace('<a class="bubble" href="#appel" aria-label="Passer un appel"', '<a class="bubble" href="#question" aria-label="Poser une question"', 1)
+g = re.sub(r'<a class="bubble".*?</a>\n?', '', g, count=1, flags=re.S)
 for sid in ('top', 'parcours', 'methode', 'appli', 'avis', 'formules', 'faq', 'appel'):
     g = g.replace(f'href="#{sid}"', f'href="index.html#{sid}"')
 g = g.replace('href="programmes.html"', 'href="#programmes"')
