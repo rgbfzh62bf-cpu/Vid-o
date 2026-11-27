@@ -181,21 +181,74 @@ AVIS_CSS = """
 @media (max-width:600px){.avis{padding:18px;gap:10px;border-radius:14px}.avis .q{width:26px;height:26px}.avis blockquote{font-size:1rem}}
 """
 
+TEASER = """<section id="prog-teaser" class="pt-sec">
+  <div class="wrap">
+    <a class="pt reveal" href="programmes.html">
+      <span class="pt-logo"><img src="athlyse-logo-blanc.png" alt="" width="57" height="47"></span>
+      <span class="pt-txt"><span class="eyebrow">Tu préfères t'entraîner seul ?</span><b>Programmes de force athlétique Fondations</b><small>3 ou 4 séances par semaine · sur l'appli Athlyse · 29 €</small></span>
+      <span class="btn pt-btn">Voir les programmes <span class="arr">→</span></span>
+    </a>
+  </div>
+</section>
+
+"""
+TEASER_CSS = """
+/* TEST bandeau programmes (page d'accueil) */
+.pt-sec{padding-block:0 8px}
+.pt{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:20px;padding:22px 26px;border:1px solid var(--accent);border-radius:18px;background:color-mix(in srgb,var(--accent) 8%,var(--surface));color:var(--ink);text-decoration:none;transition:transform .2s}
+.pt:hover{transform:translateY(-2px)}
+.pt-logo{width:56px;height:56px;border-radius:14px;display:grid;place-items:center;background:color-mix(in srgb,var(--accent) 18%,transparent)}
+.pt-logo img{width:32px;height:auto;display:block}
+.pt-txt{display:grid;gap:4px;min-width:0}
+.pt-txt b{font-family:var(--f-display);font-size:clamp(1.3rem,2.4vw,1.9rem);font-weight:800;text-transform:uppercase;line-height:1.05}
+.pt-txt small{color:var(--muted);font-size:.88rem}
+.pt-btn{white-space:nowrap}
+@media (max-width:820px){.pt{grid-template-columns:auto minmax(0,1fr);gap:12px 14px;padding:16px}.pt-btn{grid-column:1/-1;justify-content:center}.pt-logo{width:48px;height:48px}.pt-logo img{width:28px}.pt-txt small{font-size:.8rem}.pt{align-items:start}}
+/* TEST page programmes */
+.pg-top{padding-top:clamp(28px,5vw,56px);padding-bottom:clamp(24px,4vw,40px)}
+.pg-top + main, main + .call{margin-top:0}
+main + section.call{padding-top:clamp(16px,3vw,32px)}
+.head h1{font-size:clamp(2.4rem,6vw,4.4rem);font-weight:900}
+"""
+
 h = open('index.html').read()
-i = h.index('<section id="faq">')
-h = h[:i] + SECTION + h[i:]
-h = h.replace('<section id="formules">', AVIS + '<section id="formules">', 1)
 k = h.index('</style>', h.index('/* Tablette'))
-h = h[:k] + CSS + AVIS_CSS + h[k:]
-h = (h.replace('<a href="#formules"><small>04</small>Tarifs</a>',
-               '<a href="#avis"><small>04</small>Avis</a>\n    <a href="#formules"><small>05</small>Tarifs</a>\n    <a href="#programmes"><small>06</small>Programmes</a>')
-      .replace('<small>05</small>FAQ', '<small>07</small>FAQ')
-      .replace('<small>06</small>Commencer', '<small>08</small>Commencer'))
+h = h[:k] + CSS + AVIS_CSS + TEASER_CSS + h[k:]
+base = h  # page commune avant les ajouts propres à l'accueil
+
+# ---- Accueil : avis + bandeau, sans la rubrique complète
+h = h.replace('<section id="formules">', AVIS + '<section id="formules">', 1)
+h = h.replace('<section id="faq">', TEASER + '<section id="faq">', 1)
+h = h.replace('<li><a href="#formules">Tarifs</a></li>', '<li><a href="#formules">Tarifs</a></li>\n      <li><a href="programmes.html">Programmes</a></li>', 1)
+MENU_OLD = '<a href="#formules"><small>04</small>Tarifs</a>'
+MENU_NEW = '<a href="#avis"><small>04</small>Avis</a>\n    <a href="#formules"><small>05</small>Tarifs</a>\n    <a href="programmes.html"><small>06</small>Programmes</a>'
+def menu(x):
+    return (x.replace(MENU_OLD, MENU_NEW).replace('<small>05</small>FAQ', '<small>07</small>FAQ')
+             .replace('<small>06</small>Commencer', '<small>08</small>Commencer'))
+h = menu(h)
 open(os.path.join(out, 'index.html'), 'w').write(inline(h))
+
+# ---- Page Programmes : même en-tête, même pied, même contact
+g = base
+top = g[:g.index('<header class="hero"')]
+end = g[g.index('<section class="call" id="appel">'):]
+body = SECTION.replace('<section id="programmes">', '<section id="programmes" class="pg-top">', 1)
+body = re.sub(r'<h2 style="margin-top:10px">(.*?)</h2>', r'<h1 style="margin-top:10px">\1</h1>', body, count=1)
+g = top + '<main>\n' + body + '</main>\n' + end
+g = menu(g)
+for sid in ('top', 'parcours', 'methode', 'appli', 'avis', 'formules', 'faq'):
+    g = g.replace(f'href="#{sid}"', f'href="index.html#{sid}"')
+g = g.replace('href="programmes.html"', 'href="#programmes"')
+g = g.replace('<li><a href="index.html#formules">Tarifs</a></li>', '<li><a href="index.html#formules">Tarifs</a></li>\n      <li><a href="#programmes">Programmes</a></li>', 1)
+g = g.replace('<title>Alexis Coaching</title>', "<title>Programmes Fondations · Alexis Coaching</title>", 1)
+n = g.index('<nav class="nav"')
+g = ('<!doctype html>\n<html lang="fr">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1">\n'
+     + g[:n].replace('<meta name="claude:viewport-fit-sides" content="cover">\n', '') + '</head>\n<body>\n' + g[n:] + '\n</body>\n</html>\n')
+open(os.path.join(out, 'programmes.html'), 'w').write(inline(g))
 
 l = open('liens.html').read()
 ic = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>'
-btn = f'    <a class="l" href="index.html#programmes"><span class="i ath"><img src="athlyse-logo-blanc.png" alt="" width="26" height="21"></span><span>Programme force athlétique<small>Sur Athlyse · en autonomie · 29 €</small></span><span class="go">→</span></a>\n'
+btn = f'    <a class="l" href="programmes.html"><span class="i ath"><img src="athlyse-logo-blanc.png" alt="" width="26" height="21"></span><span>Programme force athlétique<small>Sur Athlyse · en autonomie · 29 €</small></span><span class="go">→</span></a>\n'
 j = l.index('    <a class="l" href="https://calendly.com')
 l = l[:j] + btn + l[j:]
 l = l.replace('</style>', '.l .i.ath img{width:26px;height:auto;display:block}\n</style>', 1)
