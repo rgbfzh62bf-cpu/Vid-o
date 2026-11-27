@@ -226,7 +226,7 @@ OUTILS = """<section id="pg-plus">
         <fieldset class="pp-q" data-q="j"><legend>Combien de jours peux-tu t'entraîner par semaine ?</legend><div class="pp-opt"><button type="button" data-v="3">3 jours</button><button type="button" data-v="4">4 jours ou plus</button></div></fieldset>
         <fieldset class="pp-q" data-q="x"><legend>Depuis combien de temps tu fais de la musculation ?</legend><div class="pp-opt"><button type="button" data-v="0">Moins d'1 an</button><button type="button" data-v="1">1 an ou plus</button></div></fieldset>
         <fieldset class="pp-q" data-q="r"><legend>Tu connais tes 1RM ?</legend><div class="pp-opt"><button type="button" data-v="1">Oui</button><button type="button" data-v="0">Pas vraiment</button></div></fieldset></div>
-        <div class="pp-res" id="quizRes" aria-live="polite"><div class="pp-v on" data-k="0"><p>Réponds aux 3 questions pour voir le programme conseillé.</p></div><div class="pp-v" data-k="4"><p class="eyebrow">Programme conseillé</p><strong>4 séances / semaine</strong><p>Tu as le temps et l'habitude de t'entraîner : 4 séances te permettent d'en faire plus chaque semaine.<span class="pp-r"> Commence par estimer tes 1RM avec l'outil de calcul.</span></p><a class="btn" href="#programmes">Voir le programme →</a></div><div class="pp-v" data-k="3d"><p class="eyebrow">Programme conseillé</p><strong>3 séances / semaine</strong><p>Tu débutes : 3 séances te laissent le temps de récupérer et de bien apprendre les mouvements.<span class="pp-r"> Commence par estimer tes 1RM avec l'outil de calcul.</span></p><a class="btn" href="#programmes">Voir le programme →</a></div><div class="pp-v" data-k="3"><p class="eyebrow">Programme conseillé</p><strong>3 séances / semaine</strong><p>Le programme 3 séances est fait pour ton rythme.<span class="pp-r"> Commence par estimer tes 1RM avec l'outil de calcul.</span></p><a class="btn" href="#programmes">Voir le programme →</a></div></div>
+        <div class="pp-res" id="quizRes" aria-live="polite"><div class="pp-v on" data-k="0"><p>Réponds aux 3 questions pour voir le programme conseillé.</p></div><div class="pp-v" data-k="4"><div><strong>Conseillé : 4 séances / semaine</strong><p>Tu as le temps et l'habitude de t'entraîner.<span class="pp-r"> Estime d'abord tes 1RM.</span></p></div><a class="pp-go" href="#programmes">Voir →</a></div><div class="pp-v" data-k="3d"><div><strong>Conseillé : 3 séances / semaine</strong><p>Tu débutes : tu récupères mieux.<span class="pp-r"> Estime d'abord tes 1RM.</span></p></div><a class="pp-go" href="#programmes">Voir →</a></div><div class="pp-v" data-k="3"><div><strong>Conseillé : 3 séances / semaine</strong><p>Il colle à ton rythme.<span class="pp-r"> Estime d'abord tes 1RM.</span></p></div><a class="pp-go" href="#programmes">Voir →</a></div></div>
       </div>
       <div class="pp-box reveal" id="calcul"><div class="pp-top">
         <p class="eyebrow">Outil gratuit</p>
@@ -282,21 +282,26 @@ OUTILS_CSS = """
 .pp-res{grid-template-areas:"v"}.pp-v{grid-area:v;display:grid;gap:6px;align-content:center;visibility:hidden}.pp-v.on{visibility:visible}.pp-r{display:inline}.pp-res:not(.no1rm) .pp-v.on .pp-r{visibility:hidden}
 .pp-res p{margin:0;font-size:.9rem;color:var(--muted)}
 .pp-res .eyebrow{margin:0}
-.pp-res strong{font-family:var(--f-display);font-size:1.5rem}
+.pp-res strong{font-family:var(--f-display);font-size:1.2rem;line-height:1.15;display:block}
+.pp-v[data-k]:not([data-k="0"]){grid-template-columns:minmax(0,1fr) auto;align-items:center;gap:4px 14px}
+.pp-go{color:var(--accent);font-weight:700;text-decoration:none;white-space:nowrap;font-size:.92rem}
+#quizRes{padding:12px 14px}
+@media (max-width:600px){.pp-v[data-k]:not([data-k="0"]){grid-template-columns:minmax(0,1fr)}.pp-go{justify-self:start}}
+@media (max-width:374px){.pp-opt button{font-size:.8rem;padding:10px 4px}}
 .pp-res .btn{justify-self:start;margin-top:4px;padding:10px 18px;font-size:.88rem}
 .pp-lead{margin:0;color:var(--muted);font-size:.92rem}
 .pp-in{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
 .pp-in label{display:grid;gap:6px;font-weight:700;font-size:.9rem;min-width:0}
 .pp-rm{justify-items:center;text-align:center}
 .pp-rm span{color:var(--muted);font-size:.9rem}
-.pp-rm output{font-family:var(--f-display);font-size:clamp(2.6rem,6vw,3.6rem);font-weight:900;line-height:1}
+.pp-rm output{font-family:var(--f-display);font-size:clamp(2.2rem,5vw,2.8rem);font-weight:900;line-height:1}
 .pp-note{margin:0;font-size:.78rem;color:var(--muted)}
 @media (max-width:820px){
 .pp-steps{grid-template-columns:minmax(0,1fr);gap:10px}.pp-steps li{padding:14px}
 .pp-tools{grid-template-columns:minmax(0,1fr);gap:10px;margin-top:10px}
 .pp-box{padding:16px;gap:12px;grid-row:auto;grid-template-rows:auto auto;row-gap:12px}.pp-tools{row-gap:10px}.pp-top{gap:12px}
 .pp-res{min-height:0}
-.pp-res .btn{justify-self:stretch;justify-content:center}
+
 }
 """
 
