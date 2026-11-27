@@ -22,11 +22,11 @@
   <div id="squats" data-composition-id="squats" data-width="1080" data-height="1920" data-layout-allow-overlap>
 
     <!-- figure, always mounted; its group fades between scenes -->
-    <svg id="fig-svg" class="clip full" data-start="0" data-duration="32.51" data-track-index="0" viewBox="0 0 1080 1920">
+    <svg id="fig-svg" class="clip full" data-start="0" data-duration="35.35" data-track-index="0" viewBox="0 0 1080 1920">
       <defs>
         <filter id="glow" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="9" result="b" /><feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge></filter>
       </defs>
-      <g id="fig">
+      <g id="figwrap" transform="matrix(1.18,0,0,1.18,-97.2,-136.2)"><g id="fig">
         <line x1="150" y1="1090" x2="930" y2="1090" stroke="#2d2f36" stroke-width="4" />
         <ellipse id="shadow" cx="540" cy="1094" rx="120" ry="12" fill="#000" opacity="0.5" />
         <rect id="bench" x="300" y="995" width="170" height="26" rx="8" fill="#3a3d46" opacity="0" />
@@ -44,10 +44,10 @@
           <circle id="head" r="31" fill="#fff" stroke="none" />
         </g>
       </g>
-    </svg>
+    </g></svg>
 
     <!-- 0 · hook -->
-    <div id="t-hook" class="clip ttl big" data-start="0" data-duration="2.9" data-track-index="1" style="top:292px;font-size:70px">TU FAIS TOUJOURS<br />LE MÊME <span class="a">SQUAT</span> ?</div>
+    <div id="t-hook" class="clip ttl big" data-start="0" data-duration="2.9" data-track-index="1" style="top:306px;font-size:70px">TU FAIS TOUJOURS<br />LE MÊME <span class="a">SQUAT</span> ?</div>
     <svg id="x-stamp" class="clip full" data-start="1.5" data-duration="1.4" data-track-index="2" viewBox="0 0 1080 1920">
       <g id="x-g" style="transform-origin:540px 860px">
         <circle cx="540" cy="860" r="190" fill="none" stroke="#ff3b3b" stroke-width="22" />
@@ -56,12 +56,9 @@
     </svg>
 
     <!-- 1 · intro -->
-    <div id="t-intro" class="clip ttl" data-start="2.9" data-duration="3.46" data-track-index="1" style="top:420px">
+    <div id="t-intro" class="clip ttl" data-start="2.9" data-duration="3.46" data-track-index="1" style="top:300px">
       <div id="i-a" class="big" style="font-size:118px"><span class="a">5</span> SQUATS</div>
       <div id="i-b" class="mid" style="margin-top:20px">5 RÉSULTATS</div>
-    </div>
-    <div id="dots" class="clip dots" data-start="2.9" data-duration="3.46" data-track-index="2">
-      <div class="dot" id="d1">1</div><div class="dot" id="d2">2</div><div class="dot" id="d3">3</div><div class="dot" id="d4">4</div><div class="dot" id="d5">5</div>
     </div>
 
     <!-- 2..6 · variants -->
@@ -71,10 +68,10 @@
     <div id="c-2" class="clip chips" data-start="10.56" data-duration="5.58" data-track-index="2"><span class="chip">ADDUCTEURS</span><span class="chip">FESSIERS</span></div>
     <div id="t-3" class="clip ttl big" data-start="16.14" data-duration="4" data-track-index="1" style="top:300px"><span class="num">03</span>PIEDS SERRÉS</div>
     <div id="c-3" class="clip chips" data-start="16.14" data-duration="4" data-track-index="2"><span class="chip">QUADRICEPS</span></div>
-    <div id="t-4" class="clip ttl big" data-start="20.14" data-duration="4.59" data-track-index="1" style="top:300px"><span class="num">04</span>BULGARE</div>
-    <div id="c-4" class="clip chips" data-start="20.14" data-duration="4.59" data-track-index="2"><span class="chip">FESSIERS</span><span class="chip">ÉQUILIBRE</span></div>
-    <div id="t-5" class="clip ttl big" data-start="24.73" data-duration="3.5" data-track-index="1" style="top:300px"><span class="num">05</span>SAUTÉ</div>
-    <div id="c-5" class="clip chips" data-start="24.73" data-duration="3.5" data-track-index="2"><span class="chip">CARDIO</span><span class="chip">EXPLOSIVITÉ</span></div>
+    <div id="t-4" class="clip ttl big" data-start="20.14" data-duration="4.54" data-track-index="1" style="top:300px"><span class="num">04</span>BULGARE</div>
+    <div id="c-4" class="clip chips" data-start="20.14" data-duration="4.54" data-track-index="2"><span class="chip">FESSIERS</span><span class="chip">ÉQUILIBRE</span></div>
+    <div id="t-5" class="clip ttl big" data-start="24.68" data-duration="3.5" data-track-index="1" style="top:300px"><span class="num">05</span>SAUTÉ</div>
+    <div id="c-5" class="clip chips" data-start="24.68" data-duration="3.5" data-track-index="2"><span class="chip">CARDIO</span><span class="chip">EXPLOSIVITÉ</span></div>
 
     <!-- stance inset: feet seen from above -->
     <svg id="inset" class="clip full" data-start="6.36" data-duration="13.78" data-track-index="3" viewBox="0 0 1080 1920">
@@ -85,15 +82,15 @@
         <rect id="foot-r" x="0" y="0" width="34" height="76" rx="17" fill="#c8ff2e" />
       </g>
     </svg>
-    <svg id="heart" class="clip full" data-start="24.73" data-duration="3.5" data-track-index="3" viewBox="0 0 1080 1920">
+    <svg id="heart" class="clip full" data-start="24.68" data-duration="3.5" data-track-index="3" viewBox="0 0 1080 1920">
       <g id="heart-g" style="transform-origin:220px 840px">
         <path transform="translate(0,110)" d="M220 800 C120 730 140 650 190 650 C210 650 220 665 220 675 C220 665 230 650 250 650 C300 650 320 730 220 800 Z" fill="#ff3b3b" />
       </g>
     </svg>
 
     <!-- 7 · outro -->
-    <div id="t-outro" class="clip ttl big" data-start="28.23" data-duration="4.28" data-track-index="1" style="top:300px">ALORS,<br /><span class="a">LEQUEL</span> TU FAIS ?</div>
-    <div id="grid" class="clip grid5" data-start="28.23" data-duration="4.28" data-track-index="2">
+    <div id="t-outro" class="clip ttl big" data-start="28.18" data-duration="6.77" data-track-index="1" style="top:300px">ALORS,<br /><span class="a">LEQUEL</span> TU FAIS ?</div>
+    <div id="grid" class="clip grid5" data-start="28.18" data-duration="6.77" data-track-index="2">
       <div class="row" id="r1"><b>1</b>CLASSIQUE</div>
       <div class="row" id="r2"><b>2</b>SUMO</div>
       <div class="row" id="r3"><b>3</b>PIEDS SERRÉS</div>
@@ -101,7 +98,9 @@
       <div class="row" id="r5"><b>5</b>SAUTÉ</div>
     </div>
 
-    <div id="flash" class="clip full" data-start="0" data-duration="32.51" data-track-index="4"></div>
+    <div id="save" class="clip" data-start="28.18" data-duration="6.77" data-track-index="3" style="position:absolute;left:150px;width:780px;top:1040px;text-align:center"><span style="display:inline-block;font-family:Montserrat,sans-serif;font-weight:800;font-size:34px;color:#0b0b0d;background:#c8ff2e;border-radius:999px;padding:14px 30px">ENREGISTRE-LA POUR TA SÉANCE</span></div>
+    <div id="t-hook2" class="clip ttl big" data-start="34.95" data-duration="0.4" data-track-index="1" style="top:306px;font-size:70px">TU FAIS TOUJOURS<br />LE MÊME <span class="a">SQUAT</span> ?</div>
+    <div id="flash" class="clip full" data-start="0" data-duration="35.35" data-track-index="4"></div>
   </div>
   <script>
     (function () {
@@ -183,28 +182,24 @@
       }
       // figure choreography
       reps(0, 2.9, "bad");
-      tl.to(P, { show: 0, duration: 0.15 }, 2.9);
-      tl.set(P, { show: 1 }, 6.36);
+      reps(2.9, 6.36, "classic");
       reps(6.36, 10.56, "classic");
       reps(10.56, 16.14, "sumo");
       reps(16.14, 20.14, "narrow");
-      reps(20.14, 24.73, "bulgare");
-      jumps(24.73, 28.23);
-      tl.to(P, { show: 0, duration: 0.15 }, 28.195);
+      reps(20.14, 24.68, "bulgare");
+      jumps(24.68, 28.18);
+      tl.to(P, { show: 0, duration: 0.15 }, 28.145);
 
       // hook
-      tl.from("#t-hook", { scale: 1.25, opacity: 0, duration: 0.25, ease: "back.out(2)" }, 0.0);
+      tl.from("#t-hook", { scale: 1.12, duration: 0.35, ease: "power3.out" }, 0);
+      tl.fromTo(P, { d: 0.45 }, { d: 1, duration: 0.3, ease: "power2.out" }, 0);
       tl.fromTo("#x-g", { scale: 2.2, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.22, ease: "back.out(2.4)" }, 1.5);
       tl.to("#x-g", { rotation: 8, duration: 0.08, yoyo: true, repeat: 3 }, 1.72);
       // intro
       tl.from("#i-a", { scale: 0.4, opacity: 0, duration: 0.3, ease: "back.out(2)" }, 2.95);
       tl.from("#i-b", { y: 60, opacity: 0, duration: 0.25, ease: "power3.out" }, 3.4);
-      ["#d1", "#d2", "#d3", "#d4", "#d5"].forEach(function (id, i) {
-        tl.from(id, { scale: 0, opacity: 0, duration: 0.22, ease: "back.out(2.5)" }, 3.6 + i * 0.16);
-      });
-      tl.to("#dots .dot", { backgroundColor: "#c8ff2e", color: "#0b0b0d", duration: 0.1, stagger: 0.12 }, 5.5);
       // variant titles + chips
-      [[1, 6.36], [2, 10.56], [3, 16.14], [4, 20.14], [5, 24.73]].forEach(function (v) {
+      [[1, 6.36], [2, 10.56], [3, 16.14], [4, 20.14], [5, 24.68]].forEach(function (v) {
         tl.from("#t-" + v[0], { x: -120, opacity: 0, duration: 0.25, ease: "power3.out" }, v[1] + 0.02);
         tl.from("#c-" + v[0] + " .chip", { y: 40, opacity: 0, duration: 0.22, stagger: 0.1, ease: "back.out(2)" }, v[1] + 0.25);
       });
@@ -217,16 +212,18 @@
       feet(6.36, 100, 8, true); feet(10.56, 170, 32); feet(16.14, 42, 0.0);
       tl.from("#inset-g", { opacity: 0, x: -40, duration: 0.25 }, 6.41);
       // heart
-      for (var h = 24.830000000000002; h < 28.080000000000002; h += 0.55) tl.fromTo("#heart-g", { scale: 1 }, { scale: 1.22, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out" }, h);
+      for (var h = 24.78; h < 28.03; h += 0.55) tl.fromTo("#heart-g", { scale: 1 }, { scale: 1.22, duration: 0.12, yoyo: true, repeat: 1, ease: "power2.out" }, h);
       // outro
-      tl.from("#t-outro", { scale: 1.3, opacity: 0, duration: 0.25, ease: "back.out(2)" }, 28.25);
-      tl.from("#grid .row", { x: 160, opacity: 0, duration: 0.25, stagger: 0.12, ease: "power3.out" }, 28.58);
-      tl.to("#grid .row", { borderColor: "#c8ff2e", duration: 0.12, stagger: 0.25, yoyo: true, repeat: 1 }, 30.18);
+      tl.from("#t-outro", { scale: 1.3, opacity: 0, duration: 0.25, ease: "back.out(2)" }, 28.2);
+      tl.from("#grid .row", { x: 160, opacity: 0, duration: 0.25, stagger: 0.12, ease: "power3.out" }, 28.53);
+      tl.to("#grid .row", { borderColor: "#c8ff2e", duration: 0.12, stagger: 0.25, yoyo: true, repeat: 1 }, 30.13);
       // flashes on cuts
-      [2.9, 6.36, 10.56, 16.14, 20.14, 24.73, 28.23].forEach(function (c) {
+      [2.9, 6.36, 10.56, 16.14, 20.14, 24.68, 28.18].forEach(function (c) {
         tl.fromTo("#flash", { opacity: 0.35 }, { opacity: 0, duration: 0.18, ease: "power2.out", immediateRender: false }, c);
       });
-      tl.set({}, {}, 32.51);
+      tl.from("#save span", { scale: 0.6, opacity: 0, duration: 0.3, ease: "back.out(2)" }, 29.78);
+      tl.set(P, { show: 1, mode: "bad", d: 0, lift: 0 }, 34.95);
+      tl.set({}, {}, 35.35);
       render();
       window.__timelines["squats"] = tl;
     })();

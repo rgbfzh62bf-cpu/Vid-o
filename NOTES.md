@@ -12,3 +12,4 @@
 - 27/11 04:50 UTC: quota FLUX toujours épuisé, aucune image v2. V1 = mains bizarres (sumo/classic) + bulgare faux → NE PAS POSTER. Prompts stricts prêts (squat-anatomie/batch_v2.py + poses.json). Relancer quand quota revient.
 - 27/11 matin: squat-tofu re-voicé avec voix clonée user (Chatterbox) → renders/squat-tofu.mp4 32.5s = vidéo à poster ce matin. squat-anatomie en attente images propres (relance auto 0h40 Paris).
 - squat-anatomie = maintenant format '5 squats 5 résultats' (classique, sumo, pieds serrés, bulgare, sauté) : build3.py + timing5.json + assets/voice5 (voix clonée tofu) + cfg5_test.json (gabarit; remplacer images/ancres par v2). poses.json: goblet→jump.
+- 27/11: squat-tofu V3 (hook immédiat, silhouette x1.18 matrix sur #figwrap — NE PAS tweener #fig avec svgOrigin, ça casse la position ; intro avec silhouette ; pas de sous-titres pendant hook ; CTA enregistre ; 'plus sous-coté' ; boucle fin=début). 35.4s.
