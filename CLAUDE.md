@@ -38,3 +38,7 @@ New skill needed? Use `find-skills`.
 ## Légendes Instagram (tous les reels)
 - Toujours fournir une légende avec le mot-clé **CHANGEMENT** (ex. « Commente CHANGEMENT … »).
 - Courte : 1-2 lignes max + 5 hashtags ciblés sur le sujet de la vidéo (mix large + niche FR, ex. #legday #musculationfrance).
+
+## DA (2 identités distinctes)
+- Vidéos faites par Claude sans footage du coach (silhouettes, série « 5 X ») : DA vert #c8ff2e, Archivo Black, dings/taps, beat CC0.
+- Vidéos où on voit le coach (face caméra) : DA « STUDIO » = dégradé marque rose #ff4f8b → orange #ff9a3c, Montserrat + Playfair italique, sous-titres phrase (pas majuscules), apparitions flou→net, pas de ding/flash, musique lo-fi maison. Gabarit : mofu-erreurs/build.py. Voix : débruiter DeepFilterNet3.

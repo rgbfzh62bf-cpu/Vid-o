@@ -1,93 +1,84 @@
 <template>
   <style>
-    #ov { position:absolute; inset:0; font-family:"Archivo Black",sans-serif; color:#fff; text-transform:uppercase; }
-    .blk { position:absolute; left:150px; width:760px; top:300px; text-align:center; opacity:0; }
+    #ov { position:absolute; inset:0; color:#fff; font-family:"Montserrat",sans-serif; }
+    .blk { position:absolute; left:150px; width:780px; top:330px; text-align:center; opacity:0; }
     #hook { opacity:1; }
-    .h1 { font-size:66px; line-height:1; text-shadow:0 5px 0 #000, 0 0 24px rgba(0,0,0,0.7); }
-    .h2 { font-size:72px; line-height:1; color:#c8ff2e; margin-top:6px; text-shadow:0 5px 0 #000, 0 0 24px rgba(0,0,0,0.7); }
-    .chip { display:inline-block; margin-top:22px; font-family:"Montserrat",sans-serif; font-weight:800; font-size:34px; color:#0b0b0d;
-      background:#c8ff2e; border-radius:999px; padding:12px 28px; }
-    .tag { display:inline-block; font-size:44px; letter-spacing:0.08em; background:#ff4d4d; color:#fff; padding:10px 26px 12px; border-radius:14px;
-      box-shadow:0 8px 24px rgba(0,0,0,0.45); }
-    .tag b { font-size:56px; margin-left:6px; } .tag i { font-style:normal; font-size:30px; opacity:0.75; }
-    .lab, .fix { position:absolute; left:0; width:760px; top:110px; }
-    .lab { font-size:50px; line-height:1.02; text-shadow:0 5px 0 #000, 0 0 24px rgba(0,0,0,0.8); }
-    .lab .x { color:#ff4d4d; margin-right:14px; }
+    .hk1 { font-weight:800; font-size:64px; line-height:1; letter-spacing:-0.02em; text-shadow:0 2px 18px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.5); }
+    .hk2 { font-weight:800; font-size:64px; line-height:1.1; letter-spacing:-0.02em; text-shadow:0 2px 18px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.5); }
+    em, .c2 { font-family:"Playfair Display",serif; font-style:italic; font-weight:800; }
+    .hk2 em { font-size:80px; background:linear-gradient(90deg, #ff4f8b, #ff9a3c); -webkit-background-clip:text; background-clip:text; color:transparent; padding:0 6px; text-shadow:none; }
+    .sub { margin-top:22px; font-weight:700; font-size:38px; letter-spacing:0.02em; text-shadow:0 2px 18px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.5); }
+    .sub i { display:block; width:120px; height:4px; margin:0 auto 18px; border-radius:2px; background:linear-gradient(90deg, #ff4f8b, #ff9a3c); transform-origin:50% 50%; }
+    .num { font-family:"Playfair Display",serif; font-style:italic; font-weight:800; font-size:150px; line-height:0.9;
+      background:linear-gradient(90deg, #ff4f8b, #ff9a3c); -webkit-background-clip:text; background-clip:text; color:transparent; }
+    .lab, .fix { position:absolute; left:0; width:780px; top:150px; }
+    .kick { display:block; font-weight:800; font-size:30px; letter-spacing:0.24em; text-transform:uppercase; color:#fff; margin-bottom:10px; text-shadow:0 2px 18px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.5); }
+    .lab { font-weight:800; font-size:54px; line-height:1.05; letter-spacing:-0.02em; text-shadow:0 2px 18px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.5); }
     .fix { opacity:0; }
-    .fix .ok { display:inline-block; font-family:"Montserrat",sans-serif; font-weight:800; font-size:30px; letter-spacing:0.12em; color:#0b0b0d;
-      background:#c8ff2e; border-radius:999px; padding:8px 24px; }
-    .fix .s1 { margin-top:12px; font-size:70px; line-height:1; color:#c8ff2e; text-shadow:0 5px 0 #000, 0 0 24px rgba(0,0,0,0.8); }
-    .fix .s2 { margin-top:6px; font-family:"Montserrat",sans-serif; font-weight:800; font-size:38px; text-shadow:0 3px 0 #000, 0 0 18px rgba(0,0,0,0.9); }
-    #cta { top:290px; }
-    .c1 { font-size:70px; text-shadow:0 5px 0 #000, 0 0 24px rgba(0,0,0,0.8); }
-    .pill { display:inline-block; margin-top:14px; font-size:72px; color:#0b0b0d; background:#c8ff2e; border-radius:24px; padding:10px 34px 14px;
-      box-shadow:0 0 40px rgba(200,255,46,0.55), 0 10px 0 #000; }
-    .c3 { margin-top:22px; font-family:"Montserrat",sans-serif; font-weight:800; font-size:36px; text-shadow:0 3px 0 #000, 0 0 18px rgba(0,0,0,0.9); }
-    #prog { position:absolute; left:390px; width:300px; top:258px; display:flex; gap:12px; opacity:0; }
-    #prog i { flex:1; height:10px; border-radius:5px; background:rgba(255,255,255,0.3); }
-    #flash { position:absolute; inset:0; background:#fff; opacity:0; }
+    .fix .kick { color:#ff9a3c; }
+    .fix .s1 { font-family:"Playfair Display",serif; font-style:italic; font-weight:800; font-size:76px; line-height:1; text-shadow:0 2px 18px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.5); }
+    .fix .s2 { margin-top:8px; font-weight:700; font-size:38px; text-shadow:0 2px 18px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.5); }
+    #cta { top:304px; }
+    .c1 { font-weight:800; font-size:60px; letter-spacing:-0.02em; text-shadow:0 2px 18px rgba(0,0,0,0.55), 0 1px 2px rgba(0,0,0,0.5); }
+    .c2 { display:inline-block; margin-top:14px; font-size:76px; font-style:normal; font-family:"Montserrat",sans-serif; font-weight:900; letter-spacing:0.02em;
+      color:#fff; padding:14px 38px 18px; border-radius:22px; background:linear-gradient(90deg, #ff4f8b, #ff9a3c, #ff4f8b); background-size:200% 100%;
+      box-shadow:0 12px 40px rgba(255,79,139,0.35); }
+    #bar { position:absolute; left:150px; width:780px; top:296px; height:4px; border-radius:2px; background:rgba(255,255,255,0.22); overflow:hidden; }
+    #bar i { display:block; width:100%; height:100%; background:linear-gradient(90deg, #ff4f8b, #ff9a3c); transform-origin:0 50%; }
   </style>
   <div id="ov" data-composition-id="ov" data-width="1080" data-height="1920" data-layout-allow-overlap>
-    <div id="hook" class="blk"><div class="h1">LA BALANCE</div><div class="h2">NE BOUGE PAS ?</div>
-      <div id="hchip" class="chip">3 ERREURS QUI TE BLOQUENT</div></div>
+    <div id="hook" class="blk"><div class="hk1">La balance</div><div class="hk2"><em>ne bouge pas</em> ?</div>
+      <div id="hsub" class="sub"><i></i>3 erreurs qui te bloquent</div></div>
 <div id="ch1" class="blk">
-      <div class="tag">ERREUR <b>1</b><i>/3</i></div>
-      <div id="lab1" class="lab"><span class="x">✕</span>QUE DU CARDIO</div>
-      <div id="fix1" class="fix"><div class="ok">LA SOLUTION</div><div class="s1">+ 2 À 3 SÉANCES</div><div class="s2">DE MUSCU / SEMAINE</div></div>
+      <div class="num">01</div>
+      <div id="lab1" class="lab"><span class="kick">Erreur</span>Que du cardio</div>
+      <div id="fix1" class="fix"><span class="kick">La solution</span><div class="s1">2 à 3 séances</div><div class="s2">de muscu par semaine</div></div>
     </div>
 <div id="ch2" class="blk">
-      <div class="tag">ERREUR <b>2</b><i>/3</i></div>
-      <div id="lab2" class="lab"><span class="x">✕</span>TROP PEU, PUIS CRAQUAGE</div>
-      <div id="fix2" class="fix"><div class="ok">LA SOLUTION</div><div class="s1">PETIT DÉFICIT</div><div class="s2">TENU 7 JOURS / 7</div></div>
+      <div class="num">02</div>
+      <div id="lab2" class="lab"><span class="kick">Erreur</span>Trop peu, puis le craquage</div>
+      <div id="fix2" class="fix"><span class="kick">La solution</span><div class="s1">Un petit déficit</div><div class="s2">tenu 7 jours sur 7</div></div>
     </div>
 <div id="ch3" class="blk">
-      <div class="tag">ERREUR <b>3</b><i>/3</i></div>
-      <div id="lab3" class="lab"><span class="x">✕</span>ASSIS TOUTE LA JOURNÉE</div>
-      <div id="fix3" class="fix"><div class="ok">LA SOLUTION</div><div class="s1"><b>8 000</b> PAS</div><div class="s2">MINIMUM PAR JOUR</div></div>
+      <div class="num">03</div>
+      <div id="lab3" class="lab"><span class="kick">Erreur</span>Assis toute la journée</div>
+      <div id="fix3" class="fix"><span class="kick">La solution</span><div class="s1">8 000 pas</div><div class="s2">minimum par jour</div></div>
     </div>
-<div id="cta" class="blk"><div class="c1">COMMENTE</div><div id="ctap" class="pill">CHANGEMENT</div>
-      <div class="c3">JE T'ÉCRIS EN PRIVÉ</div></div>
-<div id="prog"><i id="pd1"></i><i id="pd2"></i><i id="pd3"></i></div>
-    <div id="flash"></div>
+<div id="cta" class="blk"><div class="c1">Commente</div><div id="ctaw" class="c2">CHANGEMENT</div>
+      <div class="sub" id="c3"><i></i>je t'écris en privé</div></div>
+<div id="bar"><i></i></div>
   </div>
   <script>(function(){ var tl = gsap.timeline({paused:true});
-    tl.fromTo("#hook .h1", {y:-40, opacity:0}, {y:0, opacity:1, duration:0.35, ease:"expo.out"}, 0.0);
-    tl.fromTo("#hook .h2", {scale:1.6, opacity:0}, {scale:1, opacity:1, duration:0.4, ease:"back.out(2)"}, 0.18);
-    tl.fromTo("#hchip", {scale:0, opacity:0}, {scale:1, opacity:1, duration:0.35, ease:"back.out(2.4)"}, 5.50);
-    tl.to("#hook", {opacity:0, y:-30, duration:0.2, ease:"power2.in"}, 6.37);
+    tl.fromTo("#hook .hk1", {y:30, opacity:0, filter:"blur(8px)"}, {y:0, opacity:1, filter:"blur(0px)", duration:0.5, ease:"power3.out"}, 0.0);
+    tl.fromTo("#hook .hk2", {y:30, opacity:0, filter:"blur(8px)"}, {y:0, opacity:1, filter:"blur(0px)", duration:0.5, ease:"power3.out"}, 0.15);
+    tl.fromTo("#hsub", {opacity:0, y:16}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 5.40);
+    tl.fromTo("#hsub i", {scaleX:0}, {scaleX:1, duration:0.5, ease:"power3.inOut"}, 5.40);
+    tl.to("#hook", {opacity:0, y:-20, filter:"blur(8px)", duration:0.3, ease:"power2.in"}, 6.27);
 tl.set("#ch1", {opacity:1}, 6.57);
-    tl.fromTo("#ch1 .tag", {scale:2.2, opacity:0}, {scale:1, opacity:1, duration:0.35, ease:"expo.out"}, 6.57);
-    tl.fromTo("#lab1", {x:-60, opacity:0}, {x:0, opacity:1, duration:0.3, ease:"expo.out"}, 6.92);
-    tl.to("#lab1", {x:60, opacity:0, duration:0.2, ease:"power2.in"}, 13.57);
-    tl.fromTo("#fix1", {scale:0.6, opacity:0}, {scale:1, opacity:1, duration:0.4, ease:"back.out(2)"}, 13.77);
-    tl.to("#ch1", {opacity:0, duration:0.2, ease:"power2.in"}, 16.06);
+    tl.fromTo("#ch1 .num", {opacity:0, y:40, filter:"blur(10px)"}, {opacity:1, y:0, filter:"blur(0px)", duration:0.55, ease:"power3.out"}, 6.57);
+    tl.fromTo("#lab1", {opacity:0, y:20}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 6.82);
+    tl.to("#lab1", {opacity:0, y:-14, duration:0.25, ease:"power2.in"}, 13.52);
+    tl.fromTo("#fix1", {opacity:0, y:20, filter:"blur(8px)"}, {opacity:1, y:0, filter:"blur(0px)", duration:0.45, ease:"power3.out"}, 13.77);
+    tl.to("#ch1", {opacity:0, filter:"blur(8px)", duration:0.3, ease:"power2.in"}, 15.96);
 tl.set("#ch2", {opacity:1}, 16.26);
-    tl.fromTo("#ch2 .tag", {scale:2.2, opacity:0}, {scale:1, opacity:1, duration:0.35, ease:"expo.out"}, 16.26);
-    tl.fromTo("#lab2", {x:-60, opacity:0}, {x:0, opacity:1, duration:0.3, ease:"expo.out"}, 16.61);
-    tl.to("#lab2", {x:60, opacity:0, duration:0.2, ease:"power2.in"}, 22.65);
-    tl.fromTo("#fix2", {scale:0.6, opacity:0}, {scale:1, opacity:1, duration:0.4, ease:"back.out(2)"}, 22.85);
-    tl.to("#ch2", {opacity:0, duration:0.2, ease:"power2.in"}, 25.80);
+    tl.fromTo("#ch2 .num", {opacity:0, y:40, filter:"blur(10px)"}, {opacity:1, y:0, filter:"blur(0px)", duration:0.55, ease:"power3.out"}, 16.26);
+    tl.fromTo("#lab2", {opacity:0, y:20}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 16.51);
+    tl.to("#lab2", {opacity:0, y:-14, duration:0.25, ease:"power2.in"}, 22.60);
+    tl.fromTo("#fix2", {opacity:0, y:20, filter:"blur(8px)"}, {opacity:1, y:0, filter:"blur(0px)", duration:0.45, ease:"power3.out"}, 22.85);
+    tl.to("#ch2", {opacity:0, filter:"blur(8px)", duration:0.3, ease:"power2.in"}, 25.70);
 tl.set("#ch3", {opacity:1}, 26.00);
-    tl.fromTo("#ch3 .tag", {scale:2.2, opacity:0}, {scale:1, opacity:1, duration:0.35, ease:"expo.out"}, 26.00);
-    tl.fromTo("#lab3", {x:-60, opacity:0}, {x:0, opacity:1, duration:0.3, ease:"expo.out"}, 26.35);
-    tl.to("#lab3", {x:60, opacity:0, duration:0.2, ease:"power2.in"}, 32.60);
-    tl.fromTo("#fix3", {scale:0.6, opacity:0}, {scale:1, opacity:1, duration:0.4, ease:"back.out(2)"}, 32.80);
-    tl.to("#ch3", {opacity:0, duration:0.2, ease:"power2.in"}, 34.17);
-tl.fromTo("#fix3 .s1 b", {innerText:0}, {innerText:8000, duration:0.9, ease:"power2.out", snap:{innerText:100}, onUpdate:function(){ var e=document.querySelector("#fix3 .s1 b"); e.textContent=Math.round(+e.textContent||0).toLocaleString("fr-FR").replace(/\u202f|\u00a0/g," "); }}, 32.80);
+    tl.fromTo("#ch3 .num", {opacity:0, y:40, filter:"blur(10px)"}, {opacity:1, y:0, filter:"blur(0px)", duration:0.55, ease:"power3.out"}, 26.00);
+    tl.fromTo("#lab3", {opacity:0, y:20}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 26.25);
+    tl.to("#lab3", {opacity:0, y:-14, duration:0.25, ease:"power2.in"}, 32.55);
+    tl.fromTo("#fix3", {opacity:0, y:20, filter:"blur(8px)"}, {opacity:1, y:0, filter:"blur(0px)", duration:0.45, ease:"power3.out"}, 32.80);
+    tl.to("#ch3", {opacity:0, filter:"blur(8px)", duration:0.3, ease:"power2.in"}, 34.07);
 tl.set("#cta", {opacity:1}, 34.37);
-    tl.fromTo("#cta .c1", {y:-30, opacity:0}, {y:0, opacity:1, duration:0.3, ease:"expo.out"}, 34.37);
-    tl.fromTo("#ctap", {scale:0, rotation:-6}, {scale:1, rotation:-3, duration:0.45, ease:"back.out(2.6)"}, 36.01);
-    tl.to("#ctap", {scale:1.08, duration:0.3, ease:"sine.inOut", yoyo:true, repeat:3}, 36.61);
-    tl.fromTo("#cta .c3", {opacity:0, y:20}, {opacity:1, y:0, duration:0.3, ease:"expo.out"}, 36.49);
-tl.fromTo("#prog", {opacity:0}, {opacity:1, duration:0.3}, 6.57); tl.to("#prog", {opacity:0, duration:0.2}, 34.17);
-tl.to("#pd1", {backgroundColor:"#c8ff2e", scaleX:1, duration:0.3}, 6.57);
-tl.to("#pd2", {backgroundColor:"#c8ff2e", scaleX:1, duration:0.3}, 16.26);
-tl.to("#pd3", {backgroundColor:"#c8ff2e", scaleX:1, duration:0.3}, 26.00);
-tl.set("#flash", {opacity:0}, 0);
-tl.fromTo("#flash", {opacity:0.55}, {opacity:0, duration:0.25, ease:"power2.out"}, 6.57);
-tl.fromTo("#flash", {opacity:0.55}, {opacity:0, duration:0.25, ease:"power2.out"}, 16.26);
-tl.fromTo("#flash", {opacity:0.55}, {opacity:0, duration:0.25, ease:"power2.out"}, 26.00);
-tl.fromTo("#flash", {opacity:0.55}, {opacity:0, duration:0.25, ease:"power2.out"}, 34.37);
+    tl.fromTo("#cta .c1", {opacity:0, y:24, filter:"blur(8px)"}, {opacity:1, y:0, filter:"blur(0px)", duration:0.45, ease:"power3.out"}, 34.37);
+    tl.fromTo("#ctaw", {opacity:0, scale:0.9, filter:"blur(10px)"}, {opacity:1, scale:1, filter:"blur(0px)", duration:0.5, ease:"power3.out"}, 35.96);
+    tl.fromTo("#ctaw", {backgroundPosition:"0% 50%"}, {backgroundPosition:"100% 50%", duration:2.4, ease:"sine.inOut"}, 36.41);
+    tl.fromTo("#c3", {opacity:0, y:16}, {opacity:1, y:0, duration:0.4, ease:"power3.out"}, 36.49);
+    tl.fromTo("#c3 i", {scaleX:0}, {scaleX:1, duration:0.5, ease:"power3.inOut"}, 36.49);
+tl.fromTo("#bar i", {scaleX:0}, {scaleX:1, duration:38.68, ease:"none"}, 0);
     tl.set({}, {}, 38.68);
     window.__timelines["ov"] = tl; })();</script>
 </template>
