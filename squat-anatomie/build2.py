@@ -24,6 +24,7 @@ def clip(id_, a, b, inner, cls="", style="", track=1):
 def figure(n, a, b, img, extra="", dim_at=None):
     clip(f"im-{n}", a, b, f'<div id="iw-{n}" class="iw"><img src="{img}" alt="" />{extra}</div>', "imbox", track=0)
     js.append(f'tl.fromTo("#iw-{n}", {{ scale: 1.05 }}, {{ scale: 1, duration: 0.7, ease: "power2.out" }}, {a});')
+    js.append(f'tl.to("#iw-{n}", {{ scale: 1.015, duration: {round(max(0.5,b-a-0.75),2)}, ease: "none" }}, {round(a+0.7,2)});')
     if dim_at: js.append(f'tl.to("#iw-{n} img, #iw-{n} .kb", {{ opacity: 0.28, duration: 0.3 }}, {dim_at});')
 
 def hl(n, m, fx, fy, w=150, hgt=110, rot=0):
@@ -37,7 +38,7 @@ def title(n, a, b, num, txt, size=92):
 
 # ---- hook
 a, b = W["hook"]; cut1 = round(min(1.3, b - 0.6), 2)
-title("hook", 0, b, "", "Pas que tes cuisses", 96)
+title("hook", 0, b, "", "Pas que tes cuisses", 78)
 figure("hook0", 0, cut1, C["stand"]["img"])
 cc = C["classic"]
 ex = "".join(hl("hook", m, *cc["anch"][m], *cc.get("hsize", {}).get(m, [150, 110, 0])) for m in ["quad", "glute", "abs"] if m in cc["anch"])

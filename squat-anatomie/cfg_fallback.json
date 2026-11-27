@@ -49,28 +49,28 @@
 "quad",
 "Quadriceps",
 1,
-90,
+120,
 700
 ],
 [
 "glute",
 "Fessiers",
 1,
-610,
+600,
 960
 ],
 [
 "ham",
 "Ischios",
 0,
-90,
+120,
 1080
 ],
 [
 "abs",
 "Gainage",
 0,
-610,
+600,
 600
 ]
 ]
@@ -117,28 +117,28 @@
 "add",
 "Adducteurs",
 1,
-90,
+120,
 1060
 ],
 [
 "glute",
 "Fessiers",
 1,
-610,
+600,
 800
 ],
 [
 "quad",
 "Quadriceps",
 0,
-610,
+600,
 1110
 ]
 ],
 "loupe": [
 "add",
-"Très bon choix pour l'intérieur des cuisses",
-2.2
+"Top pour l'intérieur des cuisses",
+1.7
 ]
 },
 "bulgare": {
@@ -170,21 +170,21 @@
 "glute",
 "Fessiers",
 1,
-610,
+600,
 720
 ],
 [
 "quad",
 "Quadriceps",
 1,
-90,
+120,
 760
 ]
 ],
 "loupe": [
 "glute",
 "À garder pour les fessiers",
-2.2
+1.7
 ]
 },
 "goblet": {
@@ -229,28 +229,28 @@
 "abs",
 "Gainage",
 1,
-610,
+600,
 620
 ],
 [
 "quad",
 "Quadriceps",
 1,
-90,
+120,
 1060
 ],
 [
 "glute",
 "Fessiers",
 0,
-610,
+600,
 1110
 ]
 ],
 "loupe": [
 "abs",
 "Idéal pour apprendre le mouvement",
-2.2
+1.7
 ]
 },
 "narrow": {
@@ -286,21 +286,21 @@
 "quad",
 "Quadriceps",
 1,
-90,
+120,
 720
 ],
 [
 "glute",
 "Fessiers",
 0,
-610,
+600,
 960
 ]
 ],
 "loupe": [
 "quad",
 "Mon choix pour l'avant des cuisses",
-2.2
+1.7
 ],
 "feetx": 280
 }

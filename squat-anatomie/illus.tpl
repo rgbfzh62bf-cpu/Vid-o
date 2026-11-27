@@ -13,11 +13,11 @@
     .kb i { position: absolute; left: 0; bottom: 0; width: 120px; height: 110px; border-radius: 50%;
       background: radial-gradient(circle at 35% 30%, #5a5a60, #1e1e22 70%); }
     .kb::before { content: ""; position: absolute; left: 22px; top: -4px; width: 76px; height: 60px; border: 13px solid #26262a; border-bottom: none; border-radius: 40px 40px 0 0; }
-    .ttl { position: absolute; left: 120px; width: 840px; top: 300px; text-align: center; font-family: "Playfair Display", serif;
+    .ttl { position: absolute; left: 120px; width: 840px; top: 318px; text-align: center; font-family: "Playfair Display", serif;
       font-style: italic; font-weight: 800; line-height: 1; color: #1b1b1b; }
     .ttl .circ { display: inline-flex; width: 76px; height: 76px; border: 5px solid #1b1b1b; border-radius: 50%; align-items: center;
       justify-content: center; font-style: normal; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 44px; margin-right: 20px; vertical-align: 12px; }
-    .lab { position: absolute; width: 270px; padding: 12px 20px 14px; border-radius: 12px; border: 3px solid #b8352a; box-shadow: 0 8px 22px rgba(0,0,0,0.12); }
+    .lab { position: absolute; width: 268px; padding: 12px 20px 14px; border-radius: 12px; border: 3px solid #b8352a; box-shadow: 0 8px 22px rgba(0,0,0,0.12); }
     .lab b { display: block; font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 36px; line-height: 1.1; }
     .lab span { display: block; font-family: "Montserrat", sans-serif; font-weight: 600; font-size: 28px; line-height: 1.2; }
     .lab.main { background: #b8352a; color: #fff; }
@@ -29,7 +29,7 @@
     .loupe img { position: absolute; }
     .banner { position: absolute; left: 150px; width: 780px; top: 1040px; text-align: center; background: #b8352a; color: #fff; border-radius: 12px;
       padding: 16px 20px; font-family: "Playfair Display", serif; font-style: italic; font-weight: 800; font-size: 40px; line-height: 1.15; box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
-    .nums { position: absolute; left: 190px; width: 700px; top: 470px; display: flex; justify-content: space-between; }
+    .nums { position: absolute; left: 190px; width: 700px; top: 440px; display: flex; justify-content: space-between; }
     .nums span { width: 120px; height: 120px; border-radius: 50%; border: 5px solid #1b1b1b; display: flex; align-items: center; justify-content: center;
       font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 56px; background: #fff; }
     .rows { position: absolute; left: 190px; width: 700px; top: 520px; display: grid; gap: 22px; }
