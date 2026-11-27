@@ -12,5 +12,5 @@ Statut : analysé. Niche user (autres branches) = coach fitness, cible perte de 
 - Rush Drive `IMG_1469.MOV` (126 s, 4K) coupé en 17 segments → `assets/facecam.mp4` (coupe silences + ratés, punch-in 1 plan sur 2, loudnorm -14).
 - `compositions/carte.html` = tableau blanc calé sur la voix ; `compositions/sous-titres.html` = sous-titres mot à mot (bloc registry caption-highlight).
 - v2 : coupe serrée par mot (blancs > 0,25 s retirés), 22 plans, 39,7 s. Regard détecté (mediapipe blendshapes, h<0.06 = lit le script) → fins de plans rognées + 5 cartes mot-clé plein cadre (#c-k1..k5) sur la caméra.
-- Rendu : `balance/montage/renders/balance-v4.mp4`.
+- Rendu : `balance/montage/renders/balance-v5.mp4` (42,7 s). v5 : bords de plans calés sur l’énergie audio (plus de mots coupés), sous-titres réalignés sur une retranscription du montage final (décalage whisper corrigé).
 - v3 : SFX. v4 : restylé à l’identique de la réf (tableau quadrillé, cartes Notes, titre encadré, sous-titres blancs, CTA encadrés blancs). Musique : attente login HeyGen. DA : `DA.md`.
