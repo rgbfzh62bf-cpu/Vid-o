@@ -13,4 +13,4 @@ Statut : analysé. Niche user (autres branches) = coach fitness, cible perte de 
 - `compositions/carte.html` = tableau blanc calé sur la voix ; `compositions/sous-titres.html` = sous-titres mot à mot (bloc registry caption-highlight).
 - v2 : coupe serrée par mot (blancs > 0,25 s retirés), 22 plans, 39,7 s. Regard détecté (mediapipe blendshapes, h<0.06 = lit le script) → fins de plans rognées + 5 cartes mot-clé plein cadre (#c-k1..k5) sur la caméra.
 - Rendu : `balance/montage/renders/balance-v2.mp4` (v1 = 42,8 s).
-- Pas encore : musique / SFX (à proposer).
+- v3 : SFX ajoutés (pop/whoosh/ping). Musique : attente login HeyGen (catalogue gratuit). DA sauvegardée : `DA.md`.

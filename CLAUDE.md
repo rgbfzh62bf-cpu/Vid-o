@@ -20,6 +20,8 @@ New skill needed? Use `find-skills`.
 - But n°1 : rétention maximale (la personne reste le plus longtemps possible).
 - Au moins 3 call to action par vidéo, répartis (début / milieu / fin), ex. : « reste jusqu'à la fin », « enregistre la vidéo », « commente MOT pour recevoir… ».
 - Format de référence : voir `NOTES.md` (split face cam + tableau blanc qui se construit case par case et mène à un résultat).
+- But business : vues → abonnés → prospects (DM) → clients. Chaque vidéo pousse vers l'abonnement ou le commentaire-DM.
+- DA obligatoire (CTA, couleurs, typo, cartes mot-clé, SFX) : voir `DA.md`. Projet modèle : `balance/montage/`.
 
 ## Token rules
 - Reuse registry blocks over custom code.
