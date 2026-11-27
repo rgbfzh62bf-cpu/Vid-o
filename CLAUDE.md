@@ -34,3 +34,7 @@ New skill needed? Use `find-skills`.
 - Médias uniquement libres de droits avec licence vérifiée (CC0/domaine public de préférence ; CC BY = créditer). Jamais de vidéos/musiques d'autres créateurs, jamais de CC NC/ND pour usage pro.
 - Garder la source + licence de chaque média dans `CREDITS.md` du projet.
 - Contenu IA réaliste : activer l'étiquette "contenu IA" à la publication. Pas de promesses santé trompeuses.
+
+## Légendes Instagram (tous les reels)
+- Toujours fournir une légende avec le mot-clé **CHANGEMENT** (ex. « Commente CHANGEMENT … »).
+- Courte : 1-2 lignes max + 3-5 hashtags.
