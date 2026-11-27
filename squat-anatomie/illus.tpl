@@ -29,8 +29,8 @@
     .loupe img { position: absolute; }
     .banner { position: absolute; left: 150px; width: 780px; top: 1040px; text-align: center; background: #b8352a; color: #fff; border-radius: 12px;
       padding: 16px 20px; font-family: "Playfair Display", serif; font-style: italic; font-weight: 800; font-size: 40px; line-height: 1.15; box-shadow: 0 10px 28px rgba(0,0,0,0.18); }
-    .nums { position: absolute; left: 190px; width: 700px; top: 440px; display: flex; justify-content: space-between; }
-    .nums span { width: 120px; height: 120px; border-radius: 50%; border: 5px solid #1b1b1b; display: flex; align-items: center; justify-content: center;
+    .nums { position: absolute; left: 150px; width: 780px; top: 440px; display: flex; justify-content: space-between; }
+    .nums span { width: 116px; height: 116px; border-radius: 50%; border: 5px solid #1b1b1b; display: flex; align-items: center; justify-content: center;
       font-family: "Montserrat", sans-serif; font-weight: 800; font-size: 56px; background: #fff; }
     .rows { position: absolute; left: 190px; width: 700px; top: 520px; display: grid; gap: 22px; }
     .row { display: flex; align-items: center; gap: 24px; font-family: "Playfair Display", serif; font-style: italic; font-weight: 800; font-size: 56px;

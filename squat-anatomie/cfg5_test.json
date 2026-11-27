@@ -1,0 +1,296 @@
+{
+"stand": {
+"img": "assets/img/stand_3.png"
+},
+"classic": {
+"img": "assets/img/classic_3.png",
+"anch": {
+"quad": [
+0.42,
+0.555
+],
+"glute": [
+0.66,
+0.57
+],
+"ham": [
+0.47,
+0.615
+],
+"abs": [
+0.57,
+0.49
+]
+},
+"hsize": {
+"quad": [
+190,
+90,
+-5
+],
+"glute": [
+120,
+120,
+0
+],
+"ham": [
+170,
+70,
+0
+],
+"abs": [
+110,
+170,
+0
+]
+},
+"labels": [
+[
+"quad",
+"Quadriceps",
+1,
+120,
+700
+],
+[
+"glute",
+"Fessiers",
+1,
+600,
+960
+]
+],
+"loupe": [
+"quad",
+"La base : cuisses + fessiers",
+1.7
+]
+},
+"sumo": {
+"img": "assets/img/sumo_3.png",
+"feet": [
+150,
+32
+],
+"anch": {
+"add": [
+0.31,
+0.575
+],
+"quad": [
+0.74,
+0.55
+],
+"glute": [
+0.76,
+0.52
+]
+},
+"hsize": {
+"add": [
+80,
+150,
+-35
+],
+"quad": [
+100,
+160,
+50
+],
+"glute": [
+100,
+100,
+0
+]
+},
+"labels": [
+[
+"add",
+"Adducteurs",
+1,
+120,
+1060
+],
+[
+"glute",
+"Fessiers",
+1,
+600,
+800
+],
+[
+"quad",
+"Quadriceps",
+0,
+600,
+1110
+]
+],
+"loupe": [
+"add",
+"Fessiers + intérieur des cuisses",
+1.7
+]
+},
+"narrow": {
+"img": "assets/img/classic_3.png",
+"feet": [
+40,
+0
+],
+"anch": {
+"quad": [
+0.42,
+0.555
+],
+"glute": [
+0.66,
+0.57
+]
+},
+"hsize": {
+"quad": [
+190,
+90,
+-5
+],
+"glute": [
+120,
+120,
+0
+]
+},
+"labels": [
+[
+"quad",
+"Quadriceps",
+1,
+120,
+720
+],
+[
+"glute",
+"Fessiers",
+0,
+600,
+960
+]
+],
+"loupe": [
+"quad",
+"L'avant des cuisses brûle",
+1.7
+],
+"feetx": 280
+},
+"bulgare": {
+"img": "assets/img/bulgare_3.png",
+"anch": {
+"glute": [
+0.63,
+0.52
+],
+"quad": [
+0.43,
+0.55
+]
+},
+"hsize": {
+"glute": [
+130,
+130,
+0
+],
+"quad": [
+180,
+90,
+-8
+]
+},
+"labels": [
+[
+"glute",
+"Fessiers",
+1,
+600,
+720
+],
+[
+"quad",
+"Quadriceps",
+1,
+120,
+760
+]
+],
+"loupe": [
+"glute",
+"Le roi des fessiers",
+1.7
+]
+},
+"jump": {
+"img": "assets/img/classic_3.png",
+"anch": {
+"quad": [
+0.42,
+0.555
+],
+"glute": [
+0.66,
+0.57
+],
+"ham": [
+0.47,
+0.615
+],
+"abs": [
+0.57,
+0.49
+]
+},
+"hsize": {
+"quad": [
+190,
+90,
+-5
+],
+"glute": [
+120,
+120,
+0
+],
+"ham": [
+170,
+70,
+0
+],
+"abs": [
+110,
+170,
+0
+]
+},
+"labels": [
+[
+"quad",
+"Quadriceps",
+1,
+120,
+720
+],
+[
+"glute",
+"Fessiers",
+1,
+600,
+960
+]
+],
+"loupe": [
+"quad",
+"Parfait pour le cardio",
+1.7
+]
+}
+}
