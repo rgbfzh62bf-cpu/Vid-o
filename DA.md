@@ -31,7 +31,7 @@ Projet modèle : `balance/montage/` (copier le projet, changer rush + textes + t
 - Option : CTA abonnement quand la vidéo fait partie d'une série.
 
 ## Cartes mot-clé plein cadre (masquer un regard vers le script)
-- Couvrent la face cam (0-860) : quadrillage sombre `#1c1c1e`/`#2a2a2e`, post-it jaune centré, sur-titre gris 34px + mot-clé Inter 800 96px. Cut net. Son : `whoosh-short`.
+- Couvrent la face cam (0-860) : quadrillage sombre `#1c1c1e`/`#2a2a2e`, post-it jaune centré, sur-titre gris 34px + mot-clé Inter 800 96px. Entrée cut net, tenue ≥ 1,6 s (temps de lecture), sortie fondu 0,35 s. Son : `whoosh-short`.
 
 ## Montage et son
 - Coupe serrée : blancs > 0,25 s retirés, ratés supprimés, regard vers le script détecté (mediapipe) → rogné ou masqué.

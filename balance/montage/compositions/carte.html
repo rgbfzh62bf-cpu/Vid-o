@@ -183,11 +183,11 @@
       const kw = (id, t0, t1) => {
         tl.set(S + id, { opacity: 1 }, t0);
         tl.fromTo(S + id, { scale: 1.06 }, { scale: 1, duration: 0.35, ease: "power3.out" }, t0);
-        tl.set(S + id, { opacity: 0 }, t1);
+        tl.to(S + id, { opacity: 0, duration: 0.35, ease: "power1.in" }, t1 - 0.35);
       };
-      kw("#c-k0", 7.01, 7.57); kw("#c-k1", 10.14, 11.15); kw("#c-k2", 13.29, 14.24); kw("#c-k3", 25.67, 26.92);
-      kw("#c-k4", 26.92, 28.08); kw("#c-k5", 29.38, 30.24);
-      kw("#c-k6", 11.71, 12.21); kw("#c-k7", 23.64, 24.19);
+      kw("#c-k0", 7.01, 8.90); kw("#c-k1", 10.14, 11.71); kw("#c-k2", 13.29, 15.10); kw("#c-k3", 25.67, 27.27);
+      kw("#c-k4", 26.92, 28.80); kw("#c-k5", 29.38, 31.20);
+      kw("#c-k6", 11.71, 13.29); kw("#c-k7", 23.64, 25.45);
 
       window.__timelines["carte"] = tl;
     })();
