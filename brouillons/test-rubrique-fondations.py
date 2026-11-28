@@ -177,14 +177,29 @@ AVIS = f"""<section id="avis">
     <div class="head reveal"><div><p class="eyebrow">Avis clients</p><h2 style="margin-top:10px">Ce qu'ils en disent</h2></div><p>Les retours des personnes que j'accompagne, publiés tels quels.</p></div>
   </div>
   <div class="avis-bande"><div class="avis-piste">{PISTE}</div></div>
+  <div class="wrap avis-nav"><button type="button" class="avis-fl" data-dir="-1" aria-label="Avis précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button><button type="button" class="avis-fl" data-dir="1" aria-label="Avis suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div>
 </section>
+<script>
+(function(){{
+var bande=document.querySelector('.avis-bande'),piste=bande.querySelector('.avis-piste'),hover=false,busy=false;
+function anim(){{return piste.getAnimations?piste.getAnimations()[0]:null}}
+function maj(){{var a=anim();if(!a)return;(hover||busy)?a.pause():a.play()}}
+bande.addEventListener('pointerenter',function(){{hover=true;maj()}});bande.addEventListener('pointerleave',function(){{hover=false;maj()}});
+document.querySelectorAll('.avis-fl').forEach(function(b){{b.addEventListener('click',function(){{
+var c=piste.querySelector('.avis'),pas=c.getBoundingClientRect().width+parseFloat(getComputedStyle(c).marginRight),dir=+b.dataset.dir,a=anim();
+if(!a){{bande.scrollBy({{left:dir*pas,behavior:'smooth'}});return}}
+if(busy)return;busy=true;maj();
+var D=a.effect.getTiming().duration,moit=piste.scrollWidth/2,dt=pas/moit*D,t0=performance.now(),s=a.currentTime||0;
+(function f(t){{var p=Math.min(1,(t-t0)/450),e=1-Math.pow(1-p,3);a.currentTime=((s+dir*dt*e)%D+D)%D;if(p<1)requestAnimationFrame(f);else{{busy=false;maj()}}}})(t0);
+}})}});
+}})();
+</script>
 
 """
 AVIS_CSS = """
 /* TEST rubrique avis : bande qui défile */
 .avis-bande{overflow:hidden;padding-block:4px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
 .avis-piste{display:flex;width:max-content;align-items:stretch;animation:slide 40s linear infinite}
-.avis-bande:hover .avis-piste,.avis-bande:active .avis-piste{animation-play-state:paused}
 .avis{flex:none;width:min(380px,82vw);margin:0 16px 0 0;display:grid;grid-template-rows:auto 1fr auto;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
 .avis .q{width:30px;height:30px;color:var(--accent)}
 .avis blockquote{margin:0;font-weight:700;font-size:1.05rem;line-height:1.55}
@@ -192,6 +207,12 @@ AVIS_CSS = """
 .avis figcaption b{font-size:1rem}.avis figcaption span{font-size:.82rem;color:var(--muted)}
 @media (max-width:600px){.avis{padding:18px;gap:10px;border-radius:14px;margin-right:10px}.avis .q{width:24px;height:24px}.avis blockquote{font-size:.98rem}.avis-piste{animation-duration:30s}}
 @media (prefers-reduced-motion:reduce){.avis-piste{animation:none}.avis-bande{overflow-x:auto}}
+.avis-nav{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
+.avis-fl{width:48px;height:48px;border-radius:50%;border:2px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:border-color .2s,background .2s,color .2s;padding:0}
+.avis-fl svg{width:20px;height:20px}
+@media (hover:hover){.avis-fl:hover{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}}
+.avis-fl:focus-visible{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
+@media (max-width:600px){.avis-nav{justify-content:center;margin-top:14px}}
 """
 
 TEASER = """<section id="prog-teaser" class="pt-sec">
