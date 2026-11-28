@@ -25,3 +25,7 @@ New skill needed? Use `find-skills`.
 - Load only the skills the current task needs.
 - Search with grep, read file excerpts, never whole files unless required.
 - Keep project state in `NOTES.md` (short). Read it on resume instead of rebuilding context; update it after each finished task.
+
+## Rendu visuel (Sheets, docs, vidéos)
+- Tout livrable doit être esthétique : alignements nets, largeurs/hauteurs cohérentes, bords qui tombent juste, même style partout.
+- Toute modif de mise en page : vérifier le rendu (export PDF/PNG) avant de dire « fait ». Pas de « je n'ai pas vu le rendu ».
