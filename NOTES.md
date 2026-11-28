@@ -18,3 +18,4 @@
 - 2026-11-28 v10 : graphique BILAN aligné sur le tableau (ancré à H6, hauteur 445 px = lignes 6 à 18), 2 fichiers.
 - 2026-11-28 v11 : BILAN, ligne bleue sous le titre prolongée jusqu'à la colonne O ; graphique ramené à 510 px de large (H à O), 2 fichiers.
 - Règle : tout doit être esthétique, rendu vérifié visuellement avant de livrer (ajoutée à CLAUDE.md).
+- 2026-11-28 v12 : vraie cause du blocage BILAN 4j = ancien graphique (1096971635) posé sur le tableau. Déplacé en H6 (420×445), il est maintenant superposé à 1586681600, qui est identique : il faudra en supprimer un (suppression refusée par le contrôle auto). Rendu vérifié par export PDF pour les 2 fichiers.
