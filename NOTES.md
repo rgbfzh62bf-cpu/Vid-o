@@ -14,3 +14,4 @@
 - 2026-11-28 v6 : colonnes A→G (exercice à charge conseillée) figées sur les 24 semaines. Fusions de D2/D3/D6/D7 réduites de D:I à D:G (sinon Sheets refuse de figer).
 - 2026-11-28 v7 : 3j BILAN, le graphique (id 1016337248) cachait les semaines B2 S3 → B3 S4 ; déplacé sous le tableau (ligne 20). Lignes 11-18 passées à 34 px (2 fichiers). Onglet COMMENCER ICI renommé LEXIQUE. Pas de graphique dans le BILAN 4j.
 - 2026-11-28 v8 : étiquettes du graphique BILAN (O7:O18) passées de S1..S4 à B1 S1..B3 S4. Graphique ajouté au BILAN 4j (id 1586681600, ligne 20).
+- 2026-11-28 v9 : BILAN, graphiques déplacés à droite du tableau (H6, 560 px) dans les 2 fichiers. Sur mobile, un graphique au-dessus ou en dessous du tableau capte le défilement.
