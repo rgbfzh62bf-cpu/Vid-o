@@ -168,51 +168,60 @@ def carte(a, cache):
     h = ' aria-hidden="true"' if cache else ''
     return (f'<figure class="avis"{h}>{Q_SVG}<blockquote>{txt}</blockquote>'
             f'<figcaption><b>{prenom}</b><span>{type_} · depuis {depuis}</span></figcaption></figure>')
-# La bande doit couvrir au moins 1 600 px par moitié pour défiler sans trou sur grand écran
-REP = max(1, -(-4 // len(AVIS_LIST)))
-moitie = [a for _ in range(REP) for a in AVIS_LIST]
-PISTE = ''.join(carte(a, k >= len(AVIS_LIST)) for k, a in enumerate(moitie)) + ''.join(carte(a, True) for a in moitie)
+import os as _os
+if _os.environ.get('AVIS_DEMO'):  # test local uniquement, jamais publié
+    AVIS_LIST = AVIS_LIST * 4
+CARTES = ''.join(carte(a, False) for a in AVIS_LIST)
 AVIS = f"""<section id="avis">
   <div class="wrap">
     <div class="head reveal"><div><p class="eyebrow">Avis clients</p><h2 style="margin-top:10px">Ce qu'ils en disent</h2></div><p>Les retours des personnes que j'accompagne, publiés tels quels.</p></div>
+    <div class="avis-car"><div class="avis-piste" tabindex="0" aria-label="Avis clients, faire glisser pour voir les autres">{CARTES}</div></div>
+    <div class="avis-dots" role="group" aria-label="Choisir un avis"></div>
   </div>
-  <div class="avis-bande"><div class="avis-piste">{PISTE}</div></div>
-  <div class="wrap avis-nav"><button type="button" class="avis-fl" data-dir="-1" aria-label="Avis précédent"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg></button><button type="button" class="avis-fl" data-dir="1" aria-label="Avis suivant"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg></button></div>
 </section>
 <script>
 (function(){{
-var bande=document.querySelector('.avis-bande'),piste=bande.querySelector('.avis-piste'),hover=false,busy=false;
-function anim(){{return piste.getAnimations?piste.getAnimations()[0]:null}}
-function maj(){{var a=anim();if(!a)return;(hover||busy)?a.pause():a.play()}}
-bande.addEventListener('pointerenter',function(){{hover=true;maj()}});bande.addEventListener('pointerleave',function(){{hover=false;maj()}});
-document.querySelectorAll('.avis-fl').forEach(function(b){{b.addEventListener('click',function(){{
-var c=piste.querySelector('.avis'),pas=c.getBoundingClientRect().width+parseFloat(getComputedStyle(c).marginRight),dir=+b.dataset.dir,a=anim();
-if(!a){{bande.scrollBy({{left:dir*pas,behavior:'smooth'}});return}}
-if(busy)return;busy=true;maj();
-var D=a.effect.getTiming().duration,moit=piste.scrollWidth/2,dt=pas/moit*D,t0=performance.now(),s=a.currentTime||0;
-(function f(t){{var p=Math.min(1,(t-t0)/450),e=1-Math.pow(1-p,3);a.currentTime=((s+dir*dt*e)%D+D)%D;if(p<1)requestAnimationFrame(f);else{{busy=false;maj()}}}})(t0);
-}})}});
+var car=document.querySelector('.avis-car'),pi=car.querySelector('.avis-piste'),dots=document.querySelector('.avis-dots'),cs=[].slice.call(pi.children),
+pause=false,vu=false,n=0,cur=0,red=matchMedia('(prefers-reduced-motion: reduce)').matches;
+function pas(){{return cs.length>1?cs[1].offsetLeft-cs[0].offsetLeft:pi.clientWidth}}
+function pages(){{return Math.max(1,cs.length-Math.round(pi.clientWidth/pas())+1)}}
+function va(k,inst){{cur=(k+n)%n;majDots();pi.scrollTo({{left:cur*pas(),behavior:inst||red?'auto':'smooth'}})}}
+function majDots(){{[].forEach.call(dots.children,function(d,k){{d.classList.toggle('on',k===cur);d.setAttribute('aria-current',k===cur)}})}}
+function construire(){{n=pages();car.classList.toggle('seul',n<2);dots.innerHTML='';if(n<2)return;
+for(var k=0;k<n;k++){{var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Avis '+(k+1));(function(k){{b.onclick=function(){{va(k);redemarre()}}}})(k);dots.appendChild(b)}}
+cur=Math.min(cur,n-1);majDots()}}
+var st;pi.addEventListener('scroll',function(){{clearTimeout(st);st=setTimeout(function(){{var k=Math.min(n-1,Math.round(pi.scrollLeft/pas()));if(k!==cur){{cur=k;majDots()}}}},80)}},{{passive:true}});
+var t;function redemarre(){{clearInterval(t);if(red)return;t=setInterval(function(){{if(!pause&&vu&&n>1&&!document.hidden)va(cur+1)}},7000)}}
+car.addEventListener('pointerenter',function(e){{if(e.pointerType==='mouse')pause=true}});car.addEventListener('pointerleave',function(e){{if(e.pointerType==='mouse'){{pause=false;redemarre()}}}});
+car.addEventListener('touchstart',function(){{pause=true}},{{passive:true}});car.addEventListener('touchend',function(){{setTimeout(function(){{pause=false;redemarre()}},4000)}});
+var dx=null,sl=0;pi.addEventListener('pointerdown',function(e){{if(e.pointerType!=='mouse'||n<2)return;dx=e.clientX;sl=pi.scrollLeft;pi.classList.add('glisse')}});
+addEventListener('pointermove',function(e){{if(dx===null)return;pi.scrollLeft=sl-(e.clientX-dx)}});
+addEventListener('pointerup',function(e){{if(dx===null)return;var d=e.clientX-dx,k=Math.round(sl/pas());dx=null;pi.classList.remove('glisse');
+if(d<-40)k++;else if(d>40)k--;va(Math.max(0,Math.min(n-1,k)))}});
+new IntersectionObserver(function(es){{vu=es[0].isIntersecting}},{{threshold:.4}}).observe(car);
+construire();redemarre();var rt;addEventListener('resize',function(){{clearTimeout(rt);rt=setTimeout(function(){{construire();va(cur,true)}},150)}});
 }})();
 </script>
 
 """
 AVIS_CSS = """
-/* TEST rubrique avis : bande qui défile */
-.avis-bande{overflow:hidden;padding-block:4px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
-.avis-piste{display:flex;width:max-content;align-items:stretch;animation:slide 40s linear infinite}
-.avis{flex:none;width:min(380px,82vw);margin:0 16px 0 0;display:grid;grid-template-rows:auto 1fr auto;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+/* TEST rubrique avis : un avis à la fois, points pour choisir */
+.avis-piste{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;overscroll-behavior-x:contain;cursor:grab;align-items:stretch;outline:none}
+.avis-piste::-webkit-scrollbar{display:none}
+.avis-piste.glisse{scroll-snap-type:none;cursor:grabbing;user-select:none}
+.avis-car.seul .avis-piste{justify-content:center;cursor:auto}
+.avis{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;margin:0;display:grid;grid-template-rows:auto 1fr auto;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;min-width:0}
 .avis .q{width:30px;height:30px;color:var(--accent)}
 .avis blockquote{margin:0;font-weight:700;font-size:1.05rem;line-height:1.55}
 .avis figcaption{display:grid;gap:2px;padding-top:14px;border-top:1px solid var(--line)}
 .avis figcaption b{font-size:1rem}.avis figcaption span{font-size:.82rem;color:var(--muted)}
-@media (max-width:600px){.avis{padding:18px;gap:10px;border-radius:14px;margin-right:10px}.avis .q{width:24px;height:24px}.avis blockquote{font-size:.98rem}.avis-piste{animation-duration:30s}}
-@media (prefers-reduced-motion:reduce){.avis-piste{animation:none}.avis-bande{overflow-x:auto}}
-.avis-nav{display:flex;justify-content:flex-end;gap:10px;margin-top:18px}
-.avis-fl{width:48px;height:48px;border-radius:50%;border:2px solid var(--line);background:var(--surface);color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:border-color .2s,background .2s,color .2s;padding:0}
-.avis-fl svg{width:20px;height:20px}
-@media (hover:hover){.avis-fl:hover{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}}
-.avis-fl:focus-visible{border-color:var(--accent);background:var(--accent);color:var(--on-accent)}
-@media (max-width:600px){.avis-nav{justify-content:center;margin-top:14px}}
+.avis-dots{display:flex;justify-content:center;gap:4px;margin-top:16px}
+.avis-dots:empty{display:none}
+.avis-dots button{width:28px;height:28px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center}
+.avis-dots button::before{content:"";width:8px;height:8px;border-radius:999px;background:var(--line);transition:width .3s,background .3s}
+.avis-dots button.on::before{width:26px;background:var(--accent)}
+@media (max-width:1023px){.avis{flex-basis:calc((100% - 16px)/2)}}
+@media (max-width:700px){.avis-piste{gap:10px}.avis{flex-basis:100%;padding:18px;gap:10px;border-radius:14px}.avis .q{width:24px;height:24px}.avis blockquote{font-size:.98rem}.avis-dots{margin-top:12px}}
 """
 
 TEASER = """<section id="prog-teaser" class="pt-sec">
