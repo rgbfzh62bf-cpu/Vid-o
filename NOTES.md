@@ -16,3 +16,4 @@
 - 2026-11-28 v8 : étiquettes du graphique BILAN (O7:O18) passées de S1..S4 à B1 S1..B3 S4. Graphique ajouté au BILAN 4j (id 1586681600, ligne 20).
 - 2026-11-28 v9 : BILAN, graphiques déplacés à droite du tableau (H6, 560 px) dans les 2 fichiers. Sur mobile, un graphique au-dessus ou en dessous du tableau capte le défilement.
 - 2026-11-28 v10 : graphique BILAN aligné sur le tableau (ancré à H6, hauteur 445 px = lignes 6 à 18), 2 fichiers.
+- 2026-11-28 v11 : BILAN, ligne bleue sous le titre prolongée jusqu'à la colonne O ; graphique ramené à 510 px de large (H à O), 2 fichiers.
