@@ -157,28 +157,41 @@ CSS = """
 @media (min-width:600px) and (max-width:820px){.prog-grid,.prog-cards{gap:14px}.prog-row{padding:20px}}
 """
 
-AVIS = """<section id="avis">
+AVIS_LIST = [
+    # (prénom, depuis quand, accompagnement, avis mot pour mot)
+    ("[Prénom]", "septembre 2026", "Renforcement musculaire",
+     "Super coach ! Je fais du renfo avec lui depuis septembre et j'ai déjà bien progressé. Il est pédagogue, motivant, et il sait adapter les séances à mes besoins. Je le recommande vivement."),
+]
+Q_SVG = '<svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 21v-7.5C3 8.6 5.4 5.3 10.2 3.6l1 1.9C8.4 6.7 7 8.6 6.8 11H10v10H3zm11 0v-7.5c0-4.9 2.4-8.2 7.2-9.9l1 1.9c-2.8 1.2-4.2 3.1-4.4 5.5H21v10h-7z"/></svg>'
+def carte(a, cache):
+    prenom, depuis, type_, txt = a
+    h = ' aria-hidden="true"' if cache else ''
+    return (f'<figure class="avis"{h}>{Q_SVG}<blockquote>{txt}</blockquote>'
+            f'<figcaption><b>{prenom}</b><span>{type_} · depuis {depuis}</span></figcaption></figure>')
+# La bande doit couvrir au moins 1 600 px par moitié pour défiler sans trou sur grand écran
+REP = max(1, -(-4 // len(AVIS_LIST)))
+moitie = [a for _ in range(REP) for a in AVIS_LIST]
+PISTE = ''.join(carte(a, k >= len(AVIS_LIST)) for k, a in enumerate(moitie)) + ''.join(carte(a, True) for a in moitie)
+AVIS = f"""<section id="avis">
   <div class="wrap">
     <div class="head reveal"><div><p class="eyebrow">Avis clients</p><h2 style="margin-top:10px">Ce qu'ils en disent</h2></div><p>Les retours des personnes que j'accompagne, publiés tels quels.</p></div>
-    <div class="avis-grid">
-      <figure class="avis reveal">
-        <svg class="q" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M3 21v-7.5C3 8.6 5.4 5.3 10.2 3.6l1 1.9C8.4 6.7 7 8.6 6.8 11H10v10H3zm11 0v-7.5c0-4.9 2.4-8.2 7.2-9.9l1 1.9c-2.8 1.2-4.2 3.1-4.4 5.5H21v10h-7z"/></svg>
-        <blockquote>Super coach ! Je fais du renfo avec lui depuis septembre et j'ai déjà bien progressé. Il est pédagogue, motivant, et il sait adapter les séances à mes besoins. Je le recommande vivement.</blockquote>
-        <figcaption>Avis client · renforcement musculaire</figcaption>
-      </figure>
-    </div>
   </div>
+  <div class="avis-bande"><div class="avis-piste">{PISTE}</div></div>
 </section>
 
 """
 AVIS_CSS = """
-/* TEST rubrique avis */
-.avis-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:16px}
-.avis{margin:0;display:grid;grid-template-rows:auto 1fr auto;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:28px}
-.avis .q{width:32px;height:32px;color:var(--accent)}
-.avis blockquote{margin:0;font-size:clamp(1.05rem,1.6vw,1.3rem);line-height:1.55}
-.avis figcaption{font-size:.82rem;color:var(--muted);padding-top:14px;border-top:1px solid var(--line)}
-@media (max-width:600px){.avis{padding:18px;gap:10px;border-radius:14px}.avis .q{width:26px;height:26px}.avis blockquote{font-size:1rem}}
+/* TEST rubrique avis : bande qui défile */
+.avis-bande{overflow:hidden;padding-block:4px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.avis-piste{display:flex;width:max-content;align-items:stretch;animation:slide 40s linear infinite}
+.avis-bande:hover .avis-piste,.avis-bande:active .avis-piste{animation-play-state:paused}
+.avis{flex:none;width:min(380px,82vw);margin:0 16px 0 0;display:grid;grid-template-rows:auto 1fr auto;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px}
+.avis .q{width:30px;height:30px;color:var(--accent)}
+.avis blockquote{margin:0;font-weight:700;font-size:1.05rem;line-height:1.55}
+.avis figcaption{display:grid;gap:2px;padding-top:14px;border-top:1px solid var(--line)}
+.avis figcaption b{font-size:1rem}.avis figcaption span{font-size:.82rem;color:var(--muted)}
+@media (max-width:600px){.avis{padding:18px;gap:10px;border-radius:14px;margin-right:10px}.avis .q{width:24px;height:24px}.avis blockquote{font-size:.98rem}.avis-piste{animation-duration:30s}}
+@media (prefers-reduced-motion:reduce){.avis-piste{animation:none}.avis-bande{overflow-x:auto}}
 """
 
 TEASER = """<section id="prog-teaser" class="pt-sec">
