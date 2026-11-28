@@ -37,6 +37,4 @@ Même format que `mon-montage/` (branche relaxed-ptolemy-mcqmou) : 9 phrases de 
 - Progresser : Ne pas changer de programme chaque semaine · La régularité avant l'intensité · Patience : ça se compte en mois
 
 ## Légende
-Tu veux pousser, récupérer et progresser pour de vrai ? Commente « MUSCLE » et je t'envoie ma méthode 💪
-
-#priseDeMuscle #musculation #nutrition #motivation
+Voir caption.txt (règle « CHANGEMENT »).
