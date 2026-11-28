@@ -11,3 +11,4 @@
 - 2026-11-27 v3 : protections ajoutées (32 plages, mode avertissement) sur les 2 fichiers. Cases libres : K:N des lignes d'exercices, MES 1RM D7:D9 + D14. Le passage en mode avertissement est voulu, parce que celui qui copie le fichier en devient propriétaire et pourrait sinon tout modifier sans alerte. Vérifié : S1 B2 > S1 B1 (ex. 3j squat principale 75→78 %, couché 77→80 %).
 - 2026-11-27 v4 : « série principale / séries allégées » → « top set / back-off » partout (2 fichiers). Définition ajoutée dans COMMENCER ICI, étape 3.
 - 2026-11-27 v5 : noms remis en simple (« Squat », « Développé couché »), « Top set : » / « Back-off : » placés en tête de CONSIGNE (2 fichiers, 24 semaines).
+- 2026-11-28 v6 : colonnes A→G (exercice à charge conseillée) figées sur les 24 semaines. Fusions de D2/D3/D6/D7 réduites de D:I à D:G (sinon Sheets refuse de figer).
