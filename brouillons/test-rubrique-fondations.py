@@ -210,7 +210,7 @@ AVIS_CSS = """
 .avis-piste::-webkit-scrollbar{display:none}
 .avis-piste.glisse{scroll-snap-type:none;cursor:grabbing;user-select:none}
 .avis-car.seul .avis-piste{justify-content:center;cursor:auto}
-.avis{flex:0 0 calc((100% - 32px)/3);scroll-snap-align:start;margin:0;display:grid;grid-template-rows:auto 1fr auto;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;min-width:0}
+.avis{flex:0 0 calc((100% - 16px)/2);scroll-snap-align:start;margin:0;display:grid;grid-template-rows:auto 1fr auto;gap:14px;background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px;min-width:0}
 .avis .q{width:30px;height:30px;color:var(--accent)}
 .avis blockquote{margin:0;font-weight:700;font-size:1.05rem;line-height:1.55}
 .avis figcaption{display:grid;gap:2px;padding-top:14px;border-top:1px solid var(--line)}
@@ -220,7 +220,6 @@ AVIS_CSS = """
 .avis-dots button{width:28px;height:28px;padding:0;border:0;background:none;cursor:pointer;display:grid;place-items:center}
 .avis-dots button::before{content:"";width:8px;height:8px;border-radius:999px;background:var(--line);transition:width .3s,background .3s}
 .avis-dots button.on::before{width:26px;background:var(--accent)}
-@media (max-width:1023px){.avis{flex-basis:calc((100% - 16px)/2)}}
 @media (max-width:700px){.avis-piste{gap:10px}.avis{flex-basis:100%;padding:18px;gap:10px;border-radius:14px}.avis .q{width:24px;height:24px}.avis blockquote{font-size:.98rem}.avis-dots{margin-top:12px}}
 """
 
