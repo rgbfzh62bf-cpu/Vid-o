@@ -1,2 +1,3 @@
 - 28/11: pompes-tofu légende Insta → pompes-tofu/caption.txt (ultra court, CTA « Enregistre ça », 8 #).
 - RÈGLE légendes: user N'ENVOIE PAS de programme → jamais de CTA « commente X et je t'envoie… ». CTA = enregistre/commente simple.
+- RÈGLE légendes: toujours 3 # seulement, en rapport direct avec le sujet de CHAQUE vidéo (pas de # génériques). Format: 1 ligne accroche + CTA court + 3 #.
