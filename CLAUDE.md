@@ -25,3 +25,9 @@ New skill needed? Use `find-skills`.
 - Load only the skills the current task needs.
 - Search with grep, read file excerpts, never whole files unless required.
 - Keep project state in `NOTES.md` (short). Read it on resume instead of rebuilding context; update it after each finished task.
+
+## Format Instagram (toutes les vidéos)
+- Livrer en 1080×1920 (9:16), 30 fps.
+- Zones sûres du Reel ouvert (plein écran, interface IG par-dessus) : rien d'important (texte, vignettes, visage) au-dessus de y=220, en dessous de y=1500, ni à droite de x=950 (boutons). Marge gauche ≥ 60 px.
+- L'aperçu de la grille du profil recadre en 3:4 au centre (y≈240–1680) : le sujet doit y rester lisible.
+- Vérifier chaque rendu avec une image de contrôle où les zones sûres sont tracées.
