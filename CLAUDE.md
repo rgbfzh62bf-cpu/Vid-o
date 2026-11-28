@@ -31,3 +31,7 @@ New skill needed? Use `find-skills`.
 - Zones sûres du Reel ouvert (plein écran, interface IG par-dessus) : rien d'important (texte, vignettes, visage) au-dessus de y=220, en dessous de y=1500, ni à droite de x=950 (boutons). Marge gauche ≥ 60 px.
 - L'aperçu de la grille du profil recadre en 3:4 au centre (y≈240–1680) : le sujet doit y rester lisible.
 - Vérifier chaque rendu avec une image de contrôle où les zones sûres sont tracées.
+
+## Légende Instagram (toutes les vidéos)
+- But = aider, rien à vendre ni à envoyer : jamais « je t'envoie ma méthode / mon plan ».
+- Structure : phrase 1 = question liée au sujet ; phrase 2 = « Commente « CHANGEMENT » si tu t'y mets dès aujourd'hui. » (ou variante sans promesse). 20 mots max hors hashtags. Écrire dans `caption.txt` du projet.
